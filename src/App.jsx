@@ -1,5 +1,5 @@
-import React from "react";
 
+import React from "react";
 import {
   BrowserRouter,
   Routes,
@@ -8,7 +8,7 @@ import {
 } from "react-router-dom";
 
 /* =========================================================
-   MAIN WEBSITE COMPONENTS
+   WEBSITE COMPONENTS
 ========================================================= */
 
 import Navbar from "./components/Navbar.jsx";
@@ -16,11 +16,10 @@ import Footer from "./components/Footer.jsx";
 import ScrollToTop from "./components/ScrollToTop.jsx";
 
 /* =========================================================
-   MAIN WEBSITE PAGES
+   WEBSITE PAGES
 ========================================================= */
 
-import Home from "./Pages/Home.jsx";
-
+import Home from "./pages/Home.jsx";
 import Login from "./pages/Login.jsx";
 import Join from "./pages/Join.jsx";
 import About from "./pages/About.jsx";
@@ -50,23 +49,31 @@ import AdminGallery from "./admin/AdminGallery.jsx";
 import AdminMessages from "./admin/AdminMessages.jsx";
 import AdminSettings from "./admin/AdminSettings.jsx";
 
+/* =========================================================
+   MANAGER PAGES
+========================================================= */
+
 import ManagerDashboard from "./admin/ManagerDashboard.jsx";
 import ManagerMembers from "./admin/ManagerMembers.jsx";
 import ManagerMemberships from "./admin/ManagerMemberships.jsx";
 import ManagerClasses from "./admin/ManagerClasses.jsx";
 import ManagerTrainers from "./admin/ManagerTrainers.jsx";
 import ManagerMessages from "./admin/ManagerMessages.jsx";
+
+/* =========================================================
+   USER PAGES
+========================================================= */
+
 import UserDashboard from "./user/UserDashboard.jsx";
 import UserProfile from "./user/UserProfile.jsx";
 import MyMembership from "./user/MyMembership.jsx";
 import MyClasses from "./user/MyClasses.jsx";
 
 /* =========================================================
-   CSS
+   GLOBAL CSS
 ========================================================= */
 
 import "./App.css";
-
 
 /* =========================================================
    APP CONTENT
@@ -76,8 +83,7 @@ const AppContent = () => {
   const location = useLocation();
 
   /* =======================================================
-     HIDE WEBSITE NAVBAR + FOOTER
-
+     HIDE NAVBAR AND FOOTER ON AUTH / ADMIN PAGES
   ======================================================= */
 
   const hideLayout =
@@ -85,47 +91,28 @@ const AppContent = () => {
     location.pathname === "/join" ||
     location.pathname.startsWith("/admin");
 
-
   return (
     <div className="app">
 
-      {/* ===================================================
-          SCROLL TO TOP
-      =================================================== */}
-
+      {/* SCROLL TO TOP */}
       <ScrollToTop />
 
-
-      {/* ===================================================
-          WEBSITE NAVBAR
-
-          Admin pages par navbar nahi dikhega
-      =================================================== */}
-
+      {/* WEBSITE NAVBAR */}
       {!hideLayout && <Navbar />}
 
-
-      {/* ===================================================
-          MAIN CONTENT
-      =================================================== */}
-
+      {/* MAIN WEBSITE CONTENT */}
       <main className="app-main">
 
         <Routes>
 
-          {/* =================================================
-              HOME
-          ================================================= */}
+          {/* ================= HOME ================= */}
 
           <Route
             path="/"
             element={<Home />}
           />
 
-
-          {/* =================================================
-              USER AUTH
-          ================================================= */}
+          {/* ================= AUTH ================= */}
 
           <Route
             path="/login"
@@ -137,20 +124,14 @@ const AppContent = () => {
             element={<Join />}
           />
 
-
-          {/* =================================================
-              ABOUT
-          ================================================= */}
+          {/* ================= ABOUT ================= */}
 
           <Route
             path="/about"
             element={<About />}
           />
 
-
-          {/* =================================================
-              CLASSES
-          ================================================= */}
+          {/* ================= CLASSES ================= */}
 
           <Route
             path="/classes"
@@ -162,10 +143,7 @@ const AppContent = () => {
             element={<ClassDetail />}
           />
 
-
-          {/* =================================================
-              TRAINERS
-          ================================================= */}
+          {/* ================= TRAINERS ================= */}
 
           <Route
             path="/trainers"
@@ -177,10 +155,7 @@ const AppContent = () => {
             element={<TrainerDetail />}
           />
 
-
-          {/* =================================================
-              MEMBERSHIP
-          ================================================= */}
+          {/* ================= MEMBERSHIP ================= */}
 
           <Route
             path="/membership"
@@ -197,20 +172,14 @@ const AppContent = () => {
             element={<MembershipSuccess />}
           />
 
-
-          {/* =================================================
-              CONTACT
-          ================================================= */}
+          {/* ================= CONTACT ================= */}
 
           <Route
             path="/contact"
             element={<Contact />}
           />
 
-
-          {/* =================================================
-              LEGAL PAGES
-          ================================================= */}
+          {/* ================= LEGAL ================= */}
 
           <Route
             path="/privacy-policy"
@@ -222,12 +191,8 @@ const AppContent = () => {
             element={<TermsConditions />}
           />
 
-
           {/* =================================================
-              SUPER ADMIN LOGIN
-
-              URL:
-              /admin
+             SUPER ADMIN
           ================================================= */}
 
           <Route
@@ -235,111 +200,119 @@ const AppContent = () => {
             element={<AdminLogin />}
           />
 
-
           <Route
             path="/admin/dashboard"
             element={<AdminDashboard />}
           />
-           <Route
-  path="/admin/members"
-  element={<AdminMembers />}
-/>
-<Route
-  path="/admin/classes"
-  element={<AdminClasses />}
-/>
 
-<Route
-  path="/admin/trainers"
-  element={<AdminTrainers />}
-/>
+          <Route
+            path="/admin/members"
+            element={<AdminMembers />}
+          />
 
-<Route
-  path="/admin/memberships"
-  element={<AdminMemberships />}
-/>
-<Route
-  path="/admin/payments"
-  element={<AdminPayments />}
-/>
+          <Route
+            path="/admin/memberships"
+            element={<AdminMemberships />}
+          />
 
-<Route
-  path="/admin/gallery"
-  element={<AdminGallery />}
-/>
-<Route
-  path="/admin/messages"
-  element={<AdminMessages />}
-/>
+          <Route
+            path="/admin/classes"
+            element={<AdminClasses />}
+          />
 
-<Route
-  path="/admin/settings"
-  element={<AdminSettings />}
-/>
-<Route
-  path="/admin/manager-dashboard"
-  element={<ManagerDashboard />}
-/>
-<Route
-  path="/admin/manager/members"
-  element={<ManagerMembers />}
-/>
+          <Route
+            path="/admin/trainers"
+            element={<AdminTrainers />}
+          />
 
-<Route
-  path="/admin/manager/memberships"
-  element={<ManagerMemberships />}
-/>
+          <Route
+            path="/admin/payments"
+            element={<AdminPayments />}
+          />
 
-<Route
-  path="/admin/manager/classes"
-  element={<ManagerClasses />}
-/>
+          <Route
+            path="/admin/gallery"
+            element={<AdminGallery />}
+          />
 
-<Route
-  path="/admin/manager/trainers"
-  element={<ManagerTrainers />}
-/>
+          <Route
+            path="/admin/messages"
+            element={<AdminMessages />}
+          />
 
-<Route
-  path="/admin/manager/messages"
-  element={<ManagerMessages />}
-/>
-<Route
-  path="/user/dashboard"
-  element={<UserDashboard />}
-/>
+          <Route
+            path="/admin/settings"
+            element={<AdminSettings />}
+          />
 
-<Route
-  path="/user/profile"
-  element={<UserProfile />}
-/>
+          {/* =================================================
+             MANAGER
+          ================================================= */}
 
-<Route
-  path="/user/membership"
-  element={<MyMembership />}
-/>
+          <Route
+            path="/admin/manager-dashboard"
+            element={<ManagerDashboard />}
+          />
 
-<Route
-  path="/user/classes"
-  element={<MyClasses />}
-/>
+          <Route
+            path="/admin/manager/members"
+            element={<ManagerMembers />}
+          />
+
+          <Route
+            path="/admin/manager/memberships"
+            element={<ManagerMemberships />}
+          />
+
+          <Route
+            path="/admin/manager/classes"
+            element={<ManagerClasses />}
+          />
+
+          <Route
+            path="/admin/manager/trainers"
+            element={<ManagerTrainers />}
+          />
+
+          <Route
+            path="/admin/manager/messages"
+            element={<ManagerMessages />}
+          />
+
+          {/* =================================================
+             USER DASHBOARD
+          ================================================= */}
+
+          <Route
+            path="/user/dashboard"
+            element={<UserDashboard />}
+          />
+
+          <Route
+            path="/user/profile"
+            element={<UserProfile />}
+          />
+
+          <Route
+            path="/user/membership"
+            element={<MyMembership />}
+          />
+
+          <Route
+            path="/user/classes"
+            element={<MyClasses />}
+          />
+
         </Routes>
 
       </main>
 
-
-      {/* ===================================================
-          WEBSITE FOOTER
-
-          Admin pages par footer nahi dikhega
-      =================================================== */}
-
+      {/* WEBSITE FOOTER */}
       {!hideLayout && <Footer />}
 
     </div>
   );
 };
-
 
 /* =========================================================
    MAIN APP
