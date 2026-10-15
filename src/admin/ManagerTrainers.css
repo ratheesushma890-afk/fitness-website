@@ -1,0 +1,99 @@
+/* =========================================================
+   MANAGER TRAINERS
+========================================================= */
+
+@import "./ManagerMembers.css";
+
+.manager-table {
+  min-width: 1100px;
+}
+
+.manager-status.active {
+  color: #55e5a5;
+  background: rgba(40,209,137,.09);
+}
+
+.manager-status.on-leave {
+  color: #ffc96b;
+  background: rgba(255,184,77,.09);
+}
+
+.manager-status.inactive {
+  color: #ff8290;
+  background: rgba(255,75,94,.09);
+}
+
+/* TRAINER FORM */
+
+.manager-form-modal {
+  width: min(740px, 100%);
+}
+
+.manager-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 14px;
+}
+
+.manager-form-grid label {
+  display: grid;
+  gap: 8px;
+
+  color: #a9bac5;
+
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.manager-form-grid input,
+.manager-form-grid select {
+  width: 100%;
+  min-height: 49px;
+
+  padding: 0 14px;
+
+  border: 1px solid rgba(255,255,255,.09);
+  border-radius: 9px;
+  outline: none;
+
+  color: #fff;
+  background: #06121e;
+
+  font-family: inherit;
+  font-size: 15px;
+}
+
+.manager-form-grid input:focus,
+.manager-form-grid select:focus {
+  border-color: #20afff;
+}
+
+.manager-form-grid select option {
+  background: #071522;
+}
+
+.manager-save-btn {
+  width: 100%;
+  min-height: 49px;
+
+  margin-top: 19px;
+
+  border: 0;
+  border-radius: 9px;
+
+  color: #fff;
+  background: linear-gradient(135deg, #19b9ff, #0871ef);
+
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 900;
+
+  cursor: pointer;
+}
+
+@media (max-width: 600px) {
+  .manager-form-grid {
+    grid-template-columns: 1fr;
+  }
+}

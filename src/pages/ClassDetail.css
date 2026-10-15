@@ -1,0 +1,2002 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap");
+
+/* =========================================================
+   RESET / PAGE
+========================================================= */
+
+.class-detail-page {
+  width: 100%;
+  overflow-x: hidden;
+  font-family: "Inter", sans-serif;
+  background: #03131f;
+  color: #ffffff;
+}
+
+.class-detail-page *,
+.class-detail-page *::before,
+.class-detail-page *::after {
+  box-sizing: border-box;
+}
+
+.cd-container {
+  width: min(1240px, calc(100% - 44px));
+  margin: 0 auto;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.cd-hero {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  min-height: 400px;
+  overflow: hidden;
+  background: #03131f;
+}
+
+.cd-hero-image {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+  object-position: center 32%;
+}
+
+.cd-hero-overlay {
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(2, 15, 25, 0.98) 0%,
+      rgba(2, 15, 25, 0.92) 30%,
+      rgba(2, 15, 25, 0.67) 55%,
+      rgba(2, 15, 25, 0.2) 100%
+    ),
+    linear-gradient(
+      0deg,
+      rgba(3, 19, 31, 0.76) 0%,
+      transparent 50%
+    );
+}
+
+.cd-hero-glow {
+  position: absolute;
+  left: -100px;
+  bottom: -180px;
+
+  width: 390px;
+  height: 390px;
+
+  border-radius: 50%;
+
+  background: rgba(22, 140, 255, 0.18);
+  filter: blur(75px);
+
+  pointer-events: none;
+}
+
+.cd-hero-container {
+  position: relative;
+  z-index: 5;
+
+  width: min(1240px, calc(100% - 44px));
+  height: 400px;
+
+  margin: 0 auto;
+
+  padding-top: 70px;
+  padding-bottom: 20px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+
+/* =========================================================
+   BACK BUTTON
+========================================================= */
+
+.cd-back {
+  width: fit-content;
+
+  padding: 8px 13px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 7px;
+
+  background: rgba(3, 19, 31, 0.68);
+  backdrop-filter: blur(10px);
+
+  color: #ffffff;
+
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 800;
+
+  letter-spacing: 0.2px;
+
+  cursor: pointer;
+
+  transition:
+    background 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.cd-back svg {
+  font-size: 17px;
+}
+
+.cd-back:hover {
+  background: #168cff;
+  border-color: #168cff;
+  transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   HERO CONTENT
+========================================================= */
+
+.cd-hero-content {
+  width: min(690px, 100%);
+}
+
+.cd-class-label {
+  margin-bottom: 9px;
+
+  display: flex;
+  align-items: center;
+  gap: 11px;
+
+  color: #dce9f3;
+
+  font-size: 15px;
+  font-weight: 800;
+
+  text-transform: uppercase;
+}
+
+.cd-class-label span {
+  min-width: 44px;
+  height: 34px;
+
+  padding: 0 9px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 5px;
+
+  background: #168cff;
+  color: #ffffff;
+
+  font-size: 14px;
+  font-weight: 900;
+}
+
+.cd-hero-content h1 {
+  max-width: 760px;
+
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size: clamp(52px, 6vw, 78px);
+  line-height: 0.92;
+
+  font-weight: 900;
+  letter-spacing: -3px;
+
+  text-transform: uppercase;
+}
+
+.cd-hero-content p {
+  max-width: 610px;
+
+  margin: 11px 0 0;
+
+  color: #d6e2eb;
+
+  font-size: 17px;
+  line-height: 1.5;
+  font-weight: 500;
+}
+
+.cd-hero-button {
+  width: fit-content;
+
+  margin-top: 13px;
+  padding: 11px 18px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  border-radius: 6px;
+
+  background: #168cff;
+  color: #ffffff;
+
+  text-decoration: none;
+
+  font-size: 14px;
+  font-weight: 900;
+
+  letter-spacing: 0.2px;
+
+  transition:
+    background 0.3s ease,
+    transform 0.3s ease;
+}
+
+.cd-hero-button svg {
+  font-size: 18px;
+}
+
+.cd-hero-button:hover {
+  background: #0877dd;
+  transform: translateY(-2px);
+}
+
+.cd-big-number {
+  position: absolute;
+
+  right: 0;
+  bottom: 4px;
+
+  color: transparent;
+
+  font-size: clamp(120px, 15vw, 195px);
+  line-height: 0.8;
+  font-weight: 900;
+
+  -webkit-text-stroke: 2px rgba(255, 255, 255, 0.1);
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   QUICK DETAILS
+========================================================= */
+
+.cd-details-bar {
+  position: relative;
+  z-index: 5;
+
+  background: #061b2a;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.cd-details-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.cd-detail-item {
+  min-height: 76px;
+
+  padding: 11px 12px;
+
+  display: flex;
+  align-items: center;
+  gap: 11px;
+
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.cd-detail-item:last-child {
+  border-right: 0;
+}
+
+.cd-detail-icon {
+  width: 40px;
+  height: 40px;
+
+  flex: 0 0 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(22, 140, 255, 0.75);
+  border-radius: 50%;
+
+  background: rgba(22, 140, 255, 0.08);
+
+  color: #168cff;
+
+  font-size: 19px;
+}
+
+.cd-detail-item > div:last-child {
+  min-width: 0;
+}
+
+.cd-detail-item span {
+  display: block;
+
+  margin-bottom: 2px;
+
+  color: #7f9bb0;
+
+  font-size: 11px;
+  font-weight: 800;
+
+  letter-spacing: 0.5px;
+}
+
+.cd-detail-item strong {
+  display: block;
+
+  color: #ffffff;
+
+  font-size: 15px;
+  line-height: 1.3;
+  font-weight: 800;
+}
+
+
+/* =========================================================
+   ABOUT SECTION
+========================================================= */
+
+.cd-about {
+  position: relative;
+
+  padding: 48px 0;
+
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 80% 30%,
+      rgba(22, 140, 255, 0.12),
+      transparent 30%
+    ),
+    linear-gradient(
+      135deg,
+      #041725 0%,
+      #061d2d 52%,
+      #041521 100%
+    );
+
+  color: #ffffff;
+}
+
+.cd-bg-text {
+  position: absolute;
+
+  left: 1%;
+  top: -10px;
+
+  color: transparent;
+
+  font-size: clamp(110px, 17vw, 220px);
+  line-height: 1;
+
+  font-weight: 900;
+  letter-spacing: -10px;
+
+  -webkit-text-stroke: 2px rgba(255, 255, 255, 0.025);
+
+  pointer-events: none;
+}
+
+.cd-about-grid {
+  position: relative;
+  z-index: 2;
+
+  display: grid;
+  grid-template-columns: 0.78fr 1.22fr;
+
+  gap: 42px;
+
+  align-items: center;
+}
+
+
+/* =========================================================
+   ABOUT IMAGE
+========================================================= */
+
+.cd-about-visual {
+  position: relative;
+
+  width: 100%;
+  max-width: 430px;
+}
+
+.cd-about-shape {
+  position: absolute;
+
+  left: -9px;
+  bottom: -9px;
+
+  width: 88%;
+  height: 88%;
+
+  border-radius: 14px;
+
+  background: #168cff;
+}
+
+.cd-about-image {
+  position: relative;
+
+  height: 410px;
+
+  overflow: hidden;
+
+  border-radius: 14px;
+
+  background: #071d2c;
+
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.25);
+}
+
+.cd-about-image img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+  object-position: center;
+}
+
+.cd-image-overlay {
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      0deg,
+      rgba(3, 19, 31, 0.94) 0%,
+      rgba(3, 19, 31, 0.08) 55%
+    );
+}
+
+.cd-image-text {
+  position: absolute;
+
+  left: 21px;
+  bottom: 21px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.cd-image-text span {
+  color: #ffffff;
+
+  font-size: 23px;
+  line-height: 1;
+  font-weight: 900;
+}
+
+.cd-image-text strong {
+  margin-top: 4px;
+
+  color: #168cff;
+
+  font-size: 29px;
+  line-height: 1;
+  font-weight: 900;
+}
+
+
+/* =========================================================
+   SECTION LABEL
+========================================================= */
+
+.cd-section-label,
+.cd-benefit-heading {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  color: #cbdbe7;
+
+  font-size: 13px;
+  font-weight: 900;
+
+  letter-spacing: 0.5px;
+}
+
+.cd-section-label span,
+.cd-benefit-heading span {
+  min-width: 37px;
+  height: 30px;
+
+  padding: 0 8px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 4px;
+
+  background: #168cff;
+  color: #ffffff;
+
+  font-size: 12px;
+  font-weight: 900;
+}
+
+
+/* =========================================================
+   ABOUT CONTENT
+========================================================= */
+
+.cd-about-content h2 {
+  margin: 11px 0;
+
+  color: #ffffff;
+
+  font-size: clamp(42px, 4.6vw, 60px);
+  line-height: 0.96;
+
+  font-weight: 900;
+  letter-spacing: -2.3px;
+
+  text-transform: uppercase;
+}
+
+.cd-about-text {
+  max-width: 700px;
+
+  margin: 0;
+
+  color: #a9bdcb;
+
+  font-size: 17px;
+  line-height: 1.6;
+
+  font-weight: 500;
+}
+
+
+/* =========================================================
+   BENEFITS
+========================================================= */
+
+.cd-benefit-heading {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.cd-benefit-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 8px;
+}
+
+.cd-benefit-card {
+  min-height: 80px;
+
+  padding: 12px;
+
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+
+  background: rgba(7, 31, 48, 0.9);
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    background 0.3s ease;
+}
+
+.cd-benefit-card:hover {
+  transform: translateY(-2px);
+
+  border-color: rgba(22, 140, 255, 0.45);
+
+  background: #09263a;
+}
+
+.cd-check {
+  width: 31px;
+  height: 31px;
+
+  flex: 0 0 31px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #168cff;
+  color: #ffffff;
+
+  font-size: 16px;
+}
+
+.cd-benefit-card strong {
+  display: block;
+
+  margin-bottom: 3px;
+
+  color: #ffffff;
+
+  font-size: 15px;
+  font-weight: 800;
+}
+
+.cd-benefit-card p {
+  margin: 0;
+
+  color: #8fa8b9;
+
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+
+/* =========================================================
+   TRAINING SECTION
+========================================================= */
+
+.cd-training {
+  padding: 48px 0;
+
+  background:
+    radial-gradient(
+      circle at 8% 80%,
+      rgba(22, 140, 255, 0.12),
+      transparent 26%
+    ),
+    #02111c;
+}
+
+.cd-training-grid {
+  display: grid;
+  grid-template-columns: 1fr 350px;
+
+  gap: 42px;
+
+  align-items: center;
+}
+
+.cd-training .cd-section-label {
+  color: #c3d4df;
+}
+
+.cd-training-content h2 {
+  margin: 11px 0;
+
+  color: #ffffff;
+
+  font-size: clamp(42px, 4.6vw, 60px);
+  line-height: 0.96;
+
+  letter-spacing: -2.3px;
+  font-weight: 900;
+}
+
+.cd-training-content h2 strong {
+  color: #168cff;
+}
+
+.cd-training-content > p {
+  max-width: 680px;
+
+  margin: 0;
+
+  color: #9eb3c2;
+
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+.cd-training-points {
+  margin-top: 17px;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 9px 16px;
+}
+
+.cd-training-points div {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  color: #e4edf4;
+
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.cd-training-points svg {
+  flex: 0 0 auto;
+
+  color: #168cff;
+
+  font-size: 18px;
+}
+
+
+/* =========================================================
+   SCHEDULE CARD
+========================================================= */
+
+.cd-schedule-card {
+  padding: 19px;
+
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 14px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #09283e 0%,
+      #061c2b 55%,
+      #041621 100%
+    );
+
+  box-shadow: 0 18px 42px rgba(0, 0, 0, 0.25);
+}
+
+.cd-schedule-head {
+  padding-bottom: 12px;
+
+  display: flex;
+  align-items: center;
+  gap: 11px;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.09);
+}
+
+.cd-schedule-head > svg {
+  color: #168cff;
+
+  font-size: 28px;
+}
+
+.cd-schedule-head span {
+  display: block;
+
+  color: #7f9bb0;
+
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.cd-schedule-head strong {
+  display: block;
+
+  margin-top: 2px;
+
+  color: #ffffff;
+
+  font-size: 17px;
+  font-weight: 900;
+
+  text-transform: uppercase;
+}
+
+.cd-schedule-card h3 {
+  margin: 15px 0 5px;
+
+  color: #168cff;
+
+  font-size: 13px;
+  font-weight: 900;
+
+  letter-spacing: 0.6px;
+}
+
+.cd-schedule-row {
+  padding: 8px 0;
+
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.cd-schedule-row > svg {
+  flex: 0 0 20px;
+
+  color: #168cff;
+
+  font-size: 20px;
+}
+
+.cd-schedule-row span {
+  display: block;
+
+  color: #7f9bb0;
+
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.cd-schedule-row strong {
+  display: block;
+
+  margin-top: 2px;
+
+  color: #ffffff;
+
+  font-size: 14px;
+  line-height: 1.3;
+
+  font-weight: 800;
+}
+
+.cd-schedule-button {
+  width: 100%;
+
+  margin-top: 14px;
+  padding: 12px 16px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+
+  border-radius: 6px;
+
+  background: #168cff;
+  color: #ffffff;
+
+  text-decoration: none;
+
+  font-size: 13px;
+  font-weight: 900;
+
+  transition:
+    background 0.3s ease,
+    transform 0.3s ease;
+}
+
+.cd-schedule-button:hover {
+  background: #0877dd;
+  transform: translateY(-2px);
+}
+/* =========================================================
+   BOTTOM CTA
+========================================================= */
+
+.cd-cta {
+  position: relative;
+
+  padding: 32px 0;
+
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      110deg,
+      #071d2c 0%,
+      #09283d 55%,
+      #061a28 100%
+    );
+
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.cd-cta-bg {
+  position: absolute;
+
+  right: -150px;
+  top: -250px;
+
+  width: 480px;
+  height: 480px;
+
+  border-radius: 50%;
+
+  background: rgba(22, 140, 255, 0.18);
+
+  filter: blur(80px);
+
+  pointer-events: none;
+}
+
+.cd-cta-inner {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 30px;
+}
+
+.cd-cta-inner > div > span {
+  color: #168cff;
+
+  font-size: 12px;
+  font-weight: 900;
+
+  letter-spacing: 0.8px;
+}
+
+.cd-cta h2 {
+  margin: 5px 0;
+
+  color: #ffffff;
+
+  font-size: clamp(36px, 4.5vw, 54px);
+  line-height: 1;
+
+  letter-spacing: -2px;
+
+  font-weight: 900;
+}
+
+.cd-cta h2 strong {
+  color: #168cff;
+}
+
+.cd-cta p {
+  max-width: 590px;
+
+  margin: 0;
+
+  color: #9fb4c3;
+
+  font-size: 15px;
+  line-height: 1.55;
+}
+
+.cd-cta-button {
+  flex: 0 0 auto;
+
+  padding: 13px 21px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  border-radius: 6px;
+
+  background: #168cff;
+  color: #ffffff;
+
+  text-decoration: none;
+
+  font-size: 14px;
+  font-weight: 900;
+
+  transition:
+    background 0.3s ease,
+    transform 0.3s ease;
+}
+
+.cd-cta-button:hover {
+  background: #0877dd;
+  transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   404 PAGE
+========================================================= */
+
+.cd-not-found {
+  min-height: 100vh;
+
+  padding: 90px 22px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  background: #03131f;
+  color: #ffffff;
+
+  font-family: "Inter", sans-serif;
+}
+
+.cd-not-found > span {
+  color: #168cff;
+
+  font-size: 80px;
+  line-height: 1;
+
+  font-weight: 900;
+}
+
+.cd-not-found h1 {
+  margin: 9px 0;
+
+  font-size: 38px;
+  font-weight: 900;
+}
+
+.cd-not-found p {
+  margin: 0 0 20px;
+
+  color: #9fb4c3;
+
+  font-size: 16px;
+}
+
+.cd-not-found a {
+  padding: 12px 18px;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  border-radius: 6px;
+
+  background: #168cff;
+  color: #ffffff;
+
+  text-decoration: none;
+
+  font-size: 13px;
+  font-weight: 800;
+}
+
+/* =========================================================
+   CLASS DETAIL — FINAL RESPONSIVE FIX
+   TABLET + MOBILE
+========================================================= */
+
+
+/* =========================================================
+   TABLET — 1024px
+========================================================= */
+
+@media (max-width: 1024px) {
+
+  /* ---------- COMMON CONTAINER ---------- */
+
+  .cd-container,
+  .cd-hero-container {
+    width: 92%;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+
+  /* ---------- HERO ---------- */
+
+  .cd-hero {
+    height: 390px;
+    min-height: 390px;
+  }
+
+  .cd-hero-container {
+    height: 390px;
+    min-height: 390px;
+
+    padding-top: 55px;
+    padding-bottom: 24px;
+  }
+
+  .cd-hero-content {
+    width: 68%;
+    max-width: 650px;
+  }
+
+  .cd-hero-content h1 {
+    font-size: 58px;
+  }
+
+  .cd-hero-content p {
+    font-size: 16px;
+  }
+
+  .cd-big-number {
+    font-size: 130px;
+  }
+
+
+  /* ---------- DETAILS ---------- */
+
+  .cd-details-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .cd-detail-item {
+    min-height: 74px;
+  }
+
+  .cd-detail-item:nth-child(3) {
+    border-right: 0;
+  }
+
+  .cd-detail-item:nth-child(4),
+  .cd-detail-item:nth-child(5) {
+    border-top: 1px solid rgba(255,255,255,0.08);
+  }
+
+
+  /* ---------- ABOUT ---------- */
+
+  .cd-about {
+    padding: 42px 0;
+  }
+
+  .cd-about-grid {
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 30px;
+  }
+
+  .cd-about-image {
+    height: 380px;
+  }
+
+  .cd-about-content h2 {
+    font-size: 45px;
+  }
+
+
+  /* ---------- TRAINING ---------- */
+
+  .cd-training {
+    padding: 42px 0;
+  }
+
+  .cd-training-grid {
+    grid-template-columns: 1fr 320px;
+    gap: 30px;
+  }
+
+  .cd-training-content h2 {
+    font-size: 45px;
+  }
+
+
+  /* ---------- CTA ---------- */
+
+  .cd-cta {
+    padding: 30px 0;
+  }
+}
+
+
+/* =========================================================
+   TABLET PORTRAIT — 768px
+========================================================= */
+
+@media (max-width: 768px) {
+
+  /* ---------- CENTER EVERYTHING ---------- */
+
+  .cd-container,
+  .cd-hero-container {
+    width: 90%;
+    max-width: 680px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+
+  /* =======================================================
+     HERO
+  ======================================================= */
+
+  .cd-hero {
+    height: 370px;
+    min-height: 370px;
+  }
+
+  .cd-hero-container {
+    height: 370px;
+    min-height: 370px;
+
+    padding-top: 45px;
+    padding-bottom: 22px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .cd-hero-image {
+    object-position: 58% center;
+  }
+
+  .cd-hero-content {
+    width: 80%;
+    max-width: 570px;
+  }
+
+  .cd-hero-content h1 {
+    font-size: 50px;
+    line-height: 0.94;
+  }
+
+  .cd-hero-content p {
+    max-width: 520px;
+
+    font-size: 15px;
+    line-height: 1.5;
+  }
+
+  .cd-big-number {
+    display: none;
+  }
+
+
+  /* =======================================================
+     DETAILS
+  ======================================================= */
+
+  .cd-details-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .cd-detail-item {
+    min-height: 70px;
+  }
+
+  .cd-detail-item:nth-child(2),
+  .cd-detail-item:nth-child(4) {
+    border-right: 0;
+  }
+
+  .cd-detail-item:nth-child(3) {
+    border-right: 1px solid rgba(255,255,255,0.08);
+  }
+
+  .cd-detail-item:last-child {
+    grid-column: 1 / -1;
+    border-right: 0;
+  }
+
+
+  /* =======================================================
+     ABOUT
+  ======================================================= */
+
+  .cd-about {
+    padding: 38px 0;
+  }
+
+  .cd-about-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .cd-about-visual {
+    width: 100%;
+    max-width: 520px;
+
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .cd-about-image {
+    height: 390px;
+  }
+
+  .cd-about-content {
+    width: 100%;
+  }
+
+  .cd-about-content h2 {
+    font-size: 42px;
+  }
+
+
+  /* =======================================================
+     TRAINING
+  ======================================================= */
+
+  .cd-training {
+    padding: 38px 0;
+  }
+
+  .cd-training-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .cd-training-content h2 {
+    font-size: 42px;
+  }
+
+  .cd-schedule-card {
+    width: 100%;
+    max-width: 520px;
+  }
+
+
+  /* =======================================================
+     CTA
+  ======================================================= */
+
+  .cd-cta-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE — 600px
+========================================================= */
+
+@media (max-width: 600px) {
+
+  
+
+  .cd-container,
+  .cd-hero-container {
+    width: calc(100% - 32px);
+    max-width: none;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+
+  /* =======================================================
+     HERO
+  ======================================================= */
+
+  .cd-hero {
+    position: relative;
+
+    height: 350px;
+    min-height: 350px;
+
+    overflow: hidden;
+  }
+
+  .cd-hero-image {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: 60% center;
+  }
+
+  .cd-hero-overlay {
+    background:
+      linear-gradient(
+        to top,
+        rgba(3, 19, 31, 0.99) 0%,
+        rgba(3, 19, 31, 0.90) 42%,
+        rgba(3, 19, 31, 0.48) 75%,
+        rgba(3, 19, 31, 0.25) 100%
+      );
+  }
+
+  .cd-hero-container {
+    height: 350px;
+    min-height: 300px;
+
+    padding-top: 20px;
+    padding-bottom: 22px;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: flex-start;
+    align-items: stretch;
+  }
+
+
+  .cd-back {
+  align-self: flex-start;
+
+  margin-top: 80px;   
+  margin-bottom: 0;
+
+  padding: 7px 10px;
+
+  font-size: 11px;
+}
+
+
+  /* ---------- HERO CONTENT ---------- */
+
+  .cd-hero-content {
+    width: 100%;
+    max-width: 100%;
+
+    /* controlled gap */
+    margin-top: auto;
+    margin-bottom: 0;
+  }
+
+  .cd-class-label {
+    margin-bottom: 7px;
+
+    font-size: 12px;
+  }
+
+  .cd-class-label span {
+    min-width: 36px;
+    height: 28px;
+
+    font-size: 11px;
+  }
+
+  .cd-hero-content h1 {
+    width: 100%;
+
+    font-size: 42px;
+    line-height: 0.94;
+
+    letter-spacing: -1.7px;
+  }
+
+  .cd-hero-content p {
+    width: 100%;
+    max-width: 100%;
+
+    margin-top: 8px;
+
+    font-size: 14px;
+    line-height: 1.45;
+  }
+
+  .cd-hero-button {
+    margin-top: 11px;
+
+    padding: 10px 14px;
+
+    font-size: 12px;
+  }
+
+  .cd-big-number {
+    display: none;
+  }
+
+
+  /* =======================================================
+     DETAILS
+  ======================================================= */
+
+  .cd-details-bar {
+    width: 100%;
+  }
+
+  .cd-details-grid {
+    width: 100%;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .cd-detail-item {
+    min-width: 0;
+    min-height: 68px;
+
+    padding: 9px 10px;
+
+    gap: 8px;
+  }
+
+  .cd-detail-icon {
+    width: 34px;
+    height: 34px;
+
+    flex: 0 0 34px;
+
+    font-size: 15px;
+  }
+
+  .cd-detail-item span {
+    font-size: 9px;
+  }
+
+  .cd-detail-item strong {
+    font-size: 12px;
+  }
+
+  .cd-detail-item:nth-child(2),
+  .cd-detail-item:nth-child(4) {
+    border-right: 0;
+  }
+
+  .cd-detail-item:nth-child(3) {
+    border-right: 1px solid rgba(255,255,255,0.08);
+  }
+
+  .cd-detail-item:last-child {
+    grid-column: 1 / -1;
+
+    min-height: 62px;
+
+    border-right: 0;
+  }
+
+
+  /* =======================================================
+     ABOUT
+  ======================================================= */
+
+  .cd-about {
+    padding: 30px 0;
+  }
+
+  .cd-about-grid {
+    width: 100%;
+
+    grid-template-columns: 1fr;
+
+    gap: 20px;
+  }
+
+  .cd-about-visual {
+    width: 100%;
+    max-width: 100%;
+
+    margin: 0 auto;
+  }
+
+  .cd-about-image {
+    width: 100%;
+    height: 300px;
+  }
+
+  .cd-about-content {
+    width: 100%;
+  }
+
+  .cd-section-label,
+  .cd-benefit-heading {
+    font-size: 11px;
+  }
+
+  .cd-about-content h2 {
+    margin: 8px 0 10px;
+
+    font-size: 36px;
+    line-height: 0.98;
+  }
+
+  .cd-about-text {
+    width: 100%;
+
+    font-size: 14px;
+    line-height: 1.55;
+  }
+
+
+  /* =======================================================
+     BENEFITS
+  ======================================================= */
+
+  .cd-benefit-heading {
+    margin-top: 16px;
+    margin-bottom: 8px;
+  }
+
+  .cd-benefit-grid {
+    width: 100%;
+
+    grid-template-columns: 1fr;
+
+    gap: 8px;
+  }
+
+  .cd-benefit-card {
+    width: 100%;
+
+    min-height: 0;
+
+    padding: 11px;
+
+    gap: 9px;
+  }
+
+  .cd-check {
+    width: 29px;
+    height: 29px;
+
+    flex: 0 0 29px;
+  }
+
+  .cd-benefit-card strong {
+    font-size: 14px;
+  }
+
+  .cd-benefit-card p {
+    font-size: 12px;
+  }
+
+
+  /* =======================================================
+     TRAINING
+  ======================================================= */
+
+  .cd-training {
+    padding: 30px 0;
+  }
+
+  .cd-training-grid {
+    width: 100%;
+
+    grid-template-columns: 1fr;
+
+    gap: 20px;
+  }
+
+  .cd-training-content {
+    width: 100%;
+  }
+
+  .cd-training-content h2 {
+    margin: 8px 0 10px;
+
+    font-size: 36px;
+    line-height: 0.98;
+  }
+
+  .cd-training-content > p {
+    font-size: 14px;
+    line-height: 1.55;
+  }
+
+  .cd-training-points {
+    margin-top: 14px;
+
+    grid-template-columns: 1fr;
+
+    gap: 8px;
+  }
+
+  .cd-training-points div {
+    font-size: 13px;
+  }
+
+
+  /* =======================================================
+     SCHEDULE CARD
+  ======================================================= */
+
+  .cd-schedule-card {
+    width: 100%;
+    max-width: 100%;
+
+    margin: 0;
+
+    padding: 15px;
+  }
+
+  .cd-schedule-head {
+    padding-bottom: 10px;
+  }
+
+  .cd-schedule-head strong {
+    font-size: 15px;
+  }
+
+  .cd-schedule-card h3 {
+    margin: 12px 0 4px;
+  }
+
+  .cd-schedule-row {
+    padding: 7px 0;
+  }
+
+  .cd-schedule-row strong {
+    font-size: 13px;
+  }
+
+  .cd-schedule-button {
+    width: 100%;
+
+    min-height: 44px;
+
+    margin-top: 12px;
+  }
+
+
+  /* =======================================================
+     CTA
+  ======================================================= */
+
+  .cd-cta {
+    padding: 26px 0;
+  }
+
+  .cd-cta-inner {
+    width: 100%;
+
+    flex-direction: column;
+    align-items: stretch;
+
+    gap: 14px;
+  }
+
+  .cd-cta-inner > div {
+    width: 100%;
+  }
+
+  .cd-cta h2 {
+    margin: 4px 0 6px;
+
+    font-size: 34px;
+  }
+
+  .cd-cta p {
+    width: 100%;
+
+    font-size: 13px;
+  }
+
+  .cd-cta-button {
+    width: 100%;
+
+    min-height: 45px;
+
+    padding: 11px 15px;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE — 430px
+========================================================= */
+
+@media (max-width: 430px) {
+
+  .cd-container,
+  .cd-hero-container {
+    width: calc(100% - 28px);
+  }
+
+
+  /* ---------- HERO ---------- */
+
+  .cd-hero,
+  .cd-hero-container {
+    height: 330px;
+    min-height: 330px;
+  }
+
+  .cd-hero-container {
+    padding-top: 16px;
+    padding-bottom: 18px;
+  }
+
+  .cd-hero-content h1 {
+    font-size: 38px;
+  }
+
+  .cd-hero-content p {
+    font-size: 13px;
+  }
+
+  .cd-hero-button {
+    padding: 9px 12px;
+  }
+
+
+  /* ---------- DETAILS ---------- */
+
+  .cd-detail-item {
+    padding: 8px;
+
+    gap: 7px;
+  }
+
+  .cd-detail-icon {
+    width: 31px;
+    height: 31px;
+
+    flex-basis: 31px;
+  }
+
+
+  /* ---------- ABOUT ---------- */
+
+  .cd-about {
+    padding: 26px 0;
+  }
+
+  .cd-about-image {
+    height: 260px;
+  }
+
+  .cd-about-grid {
+    gap: 17px;
+  }
+
+  .cd-about-content h2 {
+    font-size: 32px;
+  }
+
+
+  /* ---------- TRAINING ---------- */
+
+  .cd-training {
+    padding: 26px 0;
+  }
+
+  .cd-training-grid {
+    gap: 17px;
+  }
+
+  .cd-training-content h2 {
+    font-size: 32px;
+  }
+
+
+  /* ---------- CTA ---------- */
+
+  .cd-cta {
+    padding: 23px 0;
+  }
+
+  .cd-cta h2 {
+    font-size: 31px;
+  }
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE — 360px
+========================================================= */
+
+@media (max-width: 360px) {
+
+  .cd-container,
+  .cd-hero-container {
+    width: calc(100% - 24px);
+  }
+
+
+  /* ---------- HERO ---------- */
+
+  .cd-hero,
+  .cd-hero-container {
+    height: 315px;
+    min-height: 315px;
+  }
+
+  .cd-hero-container {
+    padding-top: 14px;
+    padding-bottom: 16px;
+  }
+
+  .cd-back {
+    padding: 6px 9px;
+
+    font-size: 10px;
+  }
+
+  .cd-class-label {
+    font-size: 11px;
+  }
+
+  .cd-class-label span {
+    min-width: 32px;
+    height: 25px;
+
+    font-size: 10px;
+  }
+
+  .cd-hero-content h1 {
+    font-size: 34px;
+  }
+
+  .cd-hero-content p {
+    font-size: 12px;
+  }
+
+  .cd-hero-button {
+    margin-top: 9px;
+
+    font-size: 11px;
+  }
+
+
+  /* ---------- DETAILS ---------- */
+
+  .cd-detail-item {
+    min-height: 62px;
+
+    padding: 7px;
+
+    gap: 6px;
+  }
+
+  .cd-detail-icon {
+    width: 29px;
+    height: 29px;
+
+    flex: 0 0 29px;
+
+    font-size: 13px;
+  }
+
+  .cd-detail-item span {
+    font-size: 8px;
+  }
+
+  .cd-detail-item strong {
+    font-size: 10px;
+  }
+
+
+  /* ---------- ABOUT ---------- */
+
+  .cd-about-image {
+    height: 230px;
+  }
+
+  .cd-about-content h2,
+  .cd-training-content h2 {
+    font-size: 29px;
+  }
+
+  .cd-about-text,
+  .cd-training-content > p {
+    font-size: 13px;
+  }
+
+
+  /* ---------- CTA ---------- */
+
+  .cd-cta h2 {
+    font-size: 28px;
+  }
+}
+
+
+/* =========================================================
+   TOUCH DEVICES
+========================================================= */
+
+@media (hover: none) {
+
+  .cd-back,
+  .cd-hero-button,
+  .cd-schedule-button,
+  .cd-cta-button {
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+  }
+
+  .cd-back:hover,
+  .cd-hero-button:hover,
+  .cd-benefit-card:hover,
+  .cd-schedule-button:hover,
+  .cd-cta-button:hover {
+    transform: none;
+  }
+}

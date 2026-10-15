@@ -1,0 +1,1112 @@
+/* =========================================================
+   FITZONE PRIVACY POLICY
+========================================================= */
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap");
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+.pp-page {
+  width: 100%;
+  min-height: 100vh;
+
+  overflow-x: hidden;
+
+  font-family: "Inter", sans-serif;
+
+  color: #ffffff;
+
+  background:
+    radial-gradient(
+      circle at 90% 40%,
+      rgba(0, 145, 255, 0.08),
+      transparent 28%
+    ),
+    #020f19;
+}
+
+
+.pp-page *,
+.pp-page *::before,
+.pp-page *::after {
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.pp-hero {
+  position: relative;
+
+  width: 100%;
+  min-height: 330px;
+
+  display: flex;
+  align-items: center;
+
+  overflow: hidden;
+
+  border-bottom:
+    1px solid rgba(0, 168, 255, 0.35);
+
+  background-image:
+    linear-gradient(
+      90deg,
+      rgba(1, 16, 27, 0.98) 0%,
+      rgba(2, 21, 35, 0.93) 35%,
+      rgba(2, 19, 31, 0.4) 65%,
+      rgba(1, 13, 22, 0.25) 100%
+    ),
+    url("https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&fit=crop&w=1900&q=90");
+
+  background-size: cover;
+
+  background-position: center 35%;
+}
+
+
+.pp-hero-overlay {
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(0, 8, 15, 0.1),
+      rgba(0, 10, 18, 0.3)
+    );
+}
+
+
+.pp-hero-content {
+  position: relative;
+
+  z-index: 2;
+
+  width: min(1250px, calc(100% - 60px));
+
+  margin: 0 auto;
+
+  padding: 45px 0;
+}
+
+
+/* =========================================================
+   BREADCRUMB
+========================================================= */
+
+.pp-breadcrumb {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  margin-bottom: 22px;
+
+  color: #a9bfcc;
+
+  font-size: 15px;
+  font-weight: 500;
+}
+
+
+.pp-breadcrumb b {
+  color: #169ff4;
+}
+
+
+/* =========================================================
+   HERO TITLE
+========================================================= */
+
+.pp-hero h1 {
+  margin: 0;
+
+  font-size: clamp(52px, 5.8vw, 76px);
+
+  line-height: 0.98;
+
+  font-weight: 900;
+
+  letter-spacing: -3px;
+}
+
+
+.pp-hero h1 span {
+  color: #08a6ff;
+}
+
+
+.pp-hero-content > p {
+  width: min(560px, 100%);
+
+  margin: 20px 0 0;
+
+  color: #d0dbe2;
+
+  font-size: 18px;
+  line-height: 1.65;
+}
+
+
+/* =========================================================
+   UPDATED
+========================================================= */
+
+.pp-update {
+  width: fit-content;
+
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  margin-top: 20px;
+
+  padding: 10px 16px;
+
+  border:
+    1px solid rgba(0, 166, 255, 0.8);
+
+  border-radius: 30px;
+
+  color: #d5e2e9;
+
+  background:
+    rgba(0, 90, 150, 0.12);
+
+  font-size: 13px;
+}
+
+
+.pp-update svg,
+.pp-update strong {
+  color: #08a6ff;
+}
+
+
+/* =========================================================
+   MAIN
+========================================================= */
+
+.pp-main {
+  width: 100%;
+
+  padding: 28px 0 40px;
+}
+
+
+.pp-layout {
+  width: min(1250px, calc(100% - 60px));
+
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns:
+    265px minmax(0, 1fr);
+
+  align-items: start;
+
+  gap: 22px;
+}
+
+
+/* =========================================================
+   LEFT SIDEBAR
+========================================================= */
+
+.pp-sidebar {
+  overflow: hidden;
+
+  border:
+    1px solid rgba(0, 153, 255, 0.45);
+
+  border-radius: 12px;
+
+  background:
+    linear-gradient(
+      180deg,
+      #041c2c,
+      #031622
+    );
+}
+
+
+.pp-sidebar-title {
+  padding: 20px 20px 17px;
+
+  color: #0da9ff;
+
+  font-size: 13px;
+  font-weight: 900;
+
+  letter-spacing: 1.6px;
+}
+
+
+.pp-sidebar nav {
+  display: flex;
+  flex-direction: column;
+}
+
+
+.pp-sidebar a {
+  min-height: 50px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 7px 14px;
+
+  border-left:
+    3px solid transparent;
+
+  color: #d4dee4;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  text-decoration: none;
+
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease,
+    color 0.25s ease;
+}
+
+
+.pp-sidebar a span {
+  flex: 0 0 auto;
+
+  width: 38px;
+  height: 34px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 7px;
+
+  color: #ffffff;
+
+  background:
+    linear-gradient(
+      135deg,
+      #075184,
+      #063554
+    );
+
+  font-size: 12px;
+  font-weight: 800;
+}
+
+
+.pp-sidebar a:hover {
+  border-left-color: #09a9ff;
+
+  color: #ffffff;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(0, 154, 255, 0.2),
+      rgba(0, 154, 255, 0.03)
+    );
+}
+
+
+.pp-sidebar a:hover span {
+  background:
+    linear-gradient(
+      135deg,
+      #078ff7,
+      #09b5ff
+    );
+}
+
+
+/* =========================================================
+   RIGHT SCROLL AREA
+========================================================= */
+
+.pp-scroll-area {
+  height: 720px;
+
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  padding-right: 12px;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 18px;
+
+  scroll-behavior: smooth;
+  
+  scrollbar-width: none;
+
+  
+  -ms-overflow-style: none;
+}
+
+
+/* =========================================================
+   RIGHT CUSTOM SCROLLBAR
+========================================================= */
+
+.pp-scroll-area::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+
+
+/* =========================================================
+   POLICY CARD
+========================================================= */
+
+.pp-card {
+  flex: 0 0 auto;
+
+  scroll-margin-top: 15px;
+
+  padding: 27px;
+
+  border:
+    1px solid rgba(0, 151, 255, 0.48);
+
+  border-radius: 12px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(4, 30, 47, 0.98),
+      rgba(2, 20, 32, 0.98)
+    );
+
+  box-shadow:
+    0 15px 45px
+    rgba(0, 0, 0, 0.12);
+}
+
+
+.pp-card > p {
+  margin: 12px 0 0;
+
+  color: #bdccd5;
+
+  font-size: 16px;
+  line-height: 1.75;
+}
+
+
+/* =========================================================
+   HEADING
+========================================================= */
+
+.pp-section-heading {
+  display: flex;
+  align-items: center;
+
+  gap: 18px;
+}
+
+
+.pp-section-icon {
+  flex: 0 0 auto;
+
+  width: 62px;
+  height: 62px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border:
+    1px solid #08a7ff;
+
+  border-radius: 50%;
+
+  color: #0cb0ff;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(0, 163, 255, 0.25),
+      rgba(0, 71, 115, 0.1)
+    );
+
+  box-shadow:
+    inset 0 0 22px
+    rgba(0, 160, 255, 0.1);
+}
+
+
+.pp-section-icon svg {
+  font-size: 27px;
+}
+
+
+.pp-number {
+  display: block;
+
+  margin-bottom: 3px;
+
+  color: #0aabff;
+
+  font-size: 14px;
+  font-weight: 900;
+}
+
+
+.pp-section-heading h2 {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size: 29px;
+  line-height: 1.15;
+
+  font-weight: 900;
+
+  letter-spacing: -0.8px;
+}
+
+
+/* =========================================================
+   INFO GRID
+========================================================= */
+
+.pp-info-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 13px;
+
+  margin-top: 22px;
+}
+
+
+.pp-info-box {
+  min-height: 190px;
+
+  padding: 19px;
+
+  border:
+    1px solid rgba(0, 150, 255, 0.38);
+
+  border-radius: 10px;
+
+  background:
+    rgba(0, 112, 181, 0.045);
+}
+
+
+.pp-info-box > svg {
+  color: #0baaff;
+
+  font-size: 30px;
+}
+
+
+.pp-info-box h3 {
+  margin: 12px 0 15px;
+
+  color: #ffffff;
+
+  font-size: 17px;
+  font-weight: 800;
+}
+
+
+.pp-info-box ul {
+  display: flex;
+  flex-direction: column;
+
+  gap: 10px;
+
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+
+.pp-info-box li {
+  display: flex;
+  align-items: flex-start;
+
+  gap: 9px;
+
+  color: #c1d0d9;
+
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+
+.pp-info-box li svg {
+  flex: 0 0 auto;
+
+  margin-top: 2px;
+
+  color: #00b8ff;
+
+  font-size: 15px;
+}
+
+
+/* =========================================================
+   USE GRID
+========================================================= */
+
+.pp-use-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 13px;
+
+  margin-top: 22px;
+}
+
+
+.pp-use-box {
+  display: flex;
+  align-items: flex-start;
+
+  gap: 14px;
+
+  padding: 18px;
+
+  border:
+    1px solid rgba(0, 151, 255, 0.35);
+
+  border-radius: 9px;
+
+  background:
+    rgba(0, 126, 204, 0.04);
+}
+
+
+.pp-use-box > svg {
+  flex: 0 0 auto;
+
+  color: #0babff;
+
+  font-size: 27px;
+}
+
+
+.pp-use-box h3 {
+  margin: 0 0 6px;
+
+  color: #ffffff;
+
+  font-size: 16px;
+  font-weight: 800;
+}
+
+
+.pp-use-box p {
+  margin: 0;
+
+  color: #9fb3bf;
+
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+
+/* =========================================================
+   SECURITY
+========================================================= */
+
+.pp-security-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 12px;
+
+  margin-top: 22px;
+}
+
+
+.pp-security-grid > div {
+  padding: 20px 16px;
+
+  border:
+    1px solid rgba(0, 154, 255, 0.35);
+
+  border-radius: 9px;
+
+  text-align: center;
+
+  background:
+    rgba(0, 138, 220, 0.04);
+}
+
+
+.pp-security-grid svg {
+  color: #0aaaff;
+
+  font-size: 27px;
+}
+
+
+.pp-security-grid h3 {
+  margin: 10px 0 7px;
+
+  color: #ffffff;
+
+  font-size: 16px;
+}
+
+
+.pp-security-grid p {
+  margin: 0;
+
+  color: #9eb2bd;
+
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+
+/* =========================================================
+   RIGHTS
+========================================================= */
+
+.pp-rights {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 11px;
+
+  margin-top: 20px;
+}
+
+
+.pp-rights > div {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 14px;
+
+  border:
+    1px solid rgba(0, 152, 255, 0.3);
+
+  border-radius: 8px;
+
+  color: #c4d2da;
+
+  background:
+    rgba(0, 133, 214, 0.04);
+
+  font-size: 14px;
+  font-weight: 600;
+}
+
+
+.pp-rights svg {
+  flex: 0 0 auto;
+
+  color: #08b2ff;
+
+  font-size: 17px;
+}
+
+
+/* =========================================================
+   CONTACT CARD
+========================================================= */
+
+.pp-contact {
+  display: flex;
+  align-items: center;
+
+  gap: 20px;
+
+  padding: 30px;
+
+  background:
+    radial-gradient(
+      circle at 0% 50%,
+      rgba(0, 160, 255, 0.16),
+      transparent 30%
+    ),
+    linear-gradient(
+      135deg,
+      #062c43,
+      #031a29
+    );
+}
+
+
+.pp-contact-icon {
+  flex: 0 0 auto;
+
+  width: 70px;
+  height: 70px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  color: #ffffff;
+
+  background:
+    linear-gradient(
+      135deg,
+      #078ff7,
+      #08b6ff
+    );
+}
+
+
+.pp-contact-icon svg {
+  font-size: 30px;
+}
+
+
+.pp-contact > div:last-child > span {
+  color: #0aaaff;
+
+  font-size: 13px;
+  font-weight: 900;
+
+  letter-spacing: 1.5px;
+}
+
+
+.pp-contact h2 {
+  margin: 4px 0 8px;
+
+  font-size: 27px;
+}
+
+
+.pp-contact p {
+  margin: 0;
+
+  color: #aebfc9;
+
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+
+.pp-contact a {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 8px;
+
+  margin-top: 13px;
+
+  color: #0aaaff;
+
+  font-size: 15px;
+  font-weight: 700;
+
+  text-decoration: none;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+  .pp-layout {
+    width: calc(100% - 35px);
+
+    grid-template-columns: 220px minmax(0, 1fr);
+  }
+
+
+  .pp-hero-content {
+    width: calc(100% - 35px);
+  }
+
+
+  .pp-sidebar a {
+    font-size: 12px;
+  }
+
+
+  .pp-info-grid,
+  .pp-use-grid {
+    grid-template-columns: 1fr;
+  }
+
+
+  .pp-security-grid {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+  .pp-hero {
+    min-height: 390px;
+
+    background-position: 65% center;
+  }
+
+
+  .pp-hero::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+      rgba(1, 15, 25, 0.35);
+  }
+
+
+  .pp-hero-content {
+    width: calc(100% - 28px);
+
+    padding: 40px 0;
+  }
+
+
+  .pp-breadcrumb {
+    font-size: 13px;
+  }
+
+
+  .pp-hero h1 {
+    font-size: 48px;
+
+    letter-spacing: -2px;
+  }
+
+
+  .pp-hero-content > p {
+    max-width: 90%;
+
+    font-size: 16px;
+  }
+
+
+  /* =========================================
+     MOBILE LAYOUT
+  ========================================= */
+
+  .pp-main {
+    padding-top: 18px;
+  }
+
+
+  .pp-layout {
+    width: calc(100% - 24px);
+
+    grid-template-columns: 1fr;
+
+    gap: 15px;
+  }
+
+
+  /* SIDEBAR BECOMES HORIZONTAL */
+
+  .pp-sidebar {
+    position: sticky;
+
+    top: 78px;
+
+    z-index: 20;
+  }
+
+
+  .pp-sidebar-title {
+    padding: 12px 14px;
+
+    font-size: 12px;
+  }
+
+
+  .pp-sidebar nav {
+    flex-direction: row;
+
+    overflow-x: auto;
+
+    padding: 0 8px 10px;
+  }
+
+
+  .pp-sidebar nav::-webkit-scrollbar {
+    height: 4px;
+  }
+
+
+  .pp-sidebar a {
+    flex: 0 0 auto;
+
+    min-height: 42px;
+
+    padding: 5px 10px;
+
+    border-left: 0;
+
+    border-bottom:
+      2px solid transparent;
+
+    font-size: 12px;
+  }
+
+
+  .pp-sidebar a span {
+    width: 32px;
+    height: 30px;
+  }
+
+
+  .pp-sidebar a:hover {
+    border-left-color: transparent;
+
+    border-bottom-color: #09a9ff;
+  }
+
+
+  /* MOBILE USE NORMAL PAGE SCROLL */
+
+  .pp-scroll-area {
+    height: auto;
+
+    overflow: visible;
+
+    padding-right: 0;
+  }
+
+
+  .pp-card {
+    padding: 20px 15px;
+  }
+
+
+  .pp-section-heading {
+    gap: 12px;
+  }
+
+
+  .pp-section-icon {
+    width: 52px;
+    height: 52px;
+  }
+
+
+  .pp-section-icon svg {
+    font-size: 23px;
+  }
+
+
+  .pp-section-heading h2 {
+    font-size: 23px;
+  }
+
+
+  .pp-number {
+    font-size: 12px;
+  }
+
+
+  .pp-card > p {
+    font-size: 15px;
+  }
+
+
+  .pp-info-grid,
+  .pp-use-grid,
+  .pp-security-grid,
+  .pp-rights {
+    grid-template-columns: 1fr;
+  }
+
+
+  .pp-info-box h3 {
+    font-size: 16px;
+  }
+
+
+  .pp-info-box li {
+    font-size: 14px;
+  }
+
+
+  .pp-contact {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 420px) {
+
+  .pp-hero h1 {
+    font-size: 42px;
+  }
+
+
+  .pp-hero-content > p {
+    max-width: 100%;
+
+    font-size: 15px;
+  }
+
+
+  .pp-update {
+    padding: 9px 12px;
+
+    font-size: 11px;
+  }
+
+
+  .pp-section-heading h2 {
+    font-size: 21px;
+  }
+
+
+  .pp-card {
+    padding: 18px 13px;
+  }
+
+}

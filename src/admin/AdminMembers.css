@@ -1,0 +1,876 @@
+/* =========================================================
+   FITZONE ADMIN — MEMBERS
+========================================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+.admin-members-page {
+  width: 100%;
+  min-height: 100vh;
+
+  padding: 25px;
+
+  color: #ffffff;
+
+  background:
+    radial-gradient(
+      circle at 90% 5%,
+      rgba(0, 153, 255, 0.09),
+      transparent 25%
+    ),
+    #040b14;
+
+  font-family: "Inter", sans-serif;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.admin-members-header {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  margin-bottom: 20px;
+}
+
+.admin-members-title {
+  display: flex;
+  align-items: center;
+
+  gap: 13px;
+}
+
+.admin-members-back {
+  width: 45px;
+  height: 45px;
+
+  flex: 0 0 45px;
+
+  display: grid;
+  place-items: center;
+
+  padding: 0;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.08);
+
+  border-radius: 10px;
+
+  color: #ffffff;
+
+  background: #091827;
+
+  font-size: 20px;
+
+  cursor: pointer;
+}
+
+.admin-members-title span {
+  display: block;
+
+  color: #20afff;
+
+  font-size: 12px;
+
+  font-weight: 900;
+
+  letter-spacing: 1.3px;
+}
+
+.admin-members-title h1 {
+  margin: 4px 0;
+
+  font-size: 32px;
+
+  font-weight: 900;
+}
+
+.admin-members-title h1 strong {
+  color: #20afff;
+}
+
+.admin-members-title p {
+  margin: 0;
+
+  color: #8ca2b3;
+
+  font-size: 14px;
+}
+
+.admin-members-add {
+  min-height: 46px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+
+  padding: 0 17px;
+
+  border: 0;
+  border-radius: 9px;
+
+  color: #ffffff;
+
+  background:
+    linear-gradient(
+      135deg,
+      #19b9ff,
+      #0871ef
+    );
+
+  font-family: inherit;
+
+  font-size: 14px;
+
+  font-weight: 800;
+
+  cursor: pointer;
+}
+
+
+/* =========================================================
+   SUMMARY
+========================================================= */
+
+.admin-members-summary {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 13px;
+
+  margin-bottom: 15px;
+}
+
+.admin-members-summary article {
+  min-height: 100px;
+
+  padding: 17px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 13px;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.065);
+
+  border-radius: 13px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #091827,
+      #06121e
+    );
+}
+
+.admin-members-summary article > span {
+  width: 45px;
+  height: 45px;
+
+  flex: 0 0 45px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 10px;
+
+  color: #20afff;
+
+  background:
+    rgba(25, 174, 255, 0.08);
+
+  font-size: 21px;
+}
+
+.admin-members-summary small {
+  display: block;
+
+  color: #91a6b6;
+
+  font-size: 14px;
+
+  font-weight: 700;
+}
+
+.admin-members-summary strong {
+  display: block;
+
+  margin-top: 3px;
+
+  color: #ffffff;
+
+  font-size: 27px;
+
+  font-weight: 900;
+}
+
+
+/* =========================================================
+   PANEL
+========================================================= */
+
+.admin-members-panel {
+  width: 100%;
+
+  overflow: hidden;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.065);
+
+  border-radius: 14px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #091827,
+      #06121e
+    );
+}
+
+.admin-members-panel-head {
+  padding: 18px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 15px;
+
+  border-bottom:
+    1px solid rgba(255, 255, 255, 0.06);
+}
+
+.admin-members-panel-head > div:first-child > span {
+  color: #20afff;
+
+  font-size: 11px;
+
+  font-weight: 900;
+
+  letter-spacing: 1.2px;
+}
+
+.admin-members-panel-head h2 {
+  margin: 4px 0 0;
+
+  color: #ffffff;
+
+  font-size: 24px;
+}
+
+
+/* =========================================================
+   TOOLS
+========================================================= */
+
+.admin-members-tools {
+  display: flex;
+  align-items: center;
+
+  gap: 9px;
+}
+
+.admin-members-search {
+  position: relative;
+
+  width: 245px;
+  height: 44px;
+
+  display: flex;
+  align-items: center;
+}
+
+.admin-members-search svg {
+  position: absolute;
+
+  left: 13px;
+
+  color: #7790a4;
+
+  font-size: 17px;
+}
+
+.admin-members-search input,
+.admin-members-tools select {
+  height: 44px;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.08);
+
+  border-radius: 8px;
+
+  outline: none;
+
+  color: #ffffff;
+
+  background: #071522;
+
+  font-family: inherit;
+
+  font-size: 14px;
+}
+
+.admin-members-search input {
+  width: 100%;
+
+  padding:
+    0
+    13px
+    0
+    40px;
+}
+
+.admin-members-search input::placeholder {
+  color: #637b8e;
+}
+
+.admin-members-tools select {
+  min-width: 135px;
+
+  padding: 0 10px;
+}
+
+.admin-members-tools option {
+  background: #071522;
+}
+
+
+/* =========================================================
+   TABLE
+========================================================= */
+
+.admin-members-table-wrap {
+  width: 100%;
+
+  overflow-x: auto;
+}
+
+.admin-members-table {
+  width: 100%;
+  min-width: 1050px;
+
+  border-collapse: collapse;
+}
+
+.admin-members-table th {
+  padding: 14px 15px;
+
+  color: #7891a5;
+
+  background:
+    rgba(255, 255, 255, 0.015);
+
+  font-size: 13px;
+
+  font-weight: 800;
+
+  text-align: left;
+}
+
+.admin-members-table td {
+  padding: 15px;
+
+  border-top:
+    1px solid rgba(255, 255, 255, 0.05);
+
+  color: #c7d4dd;
+
+  font-size: 14px;
+
+  vertical-align: middle;
+}
+
+.admin-members-table tbody tr {
+  transition:
+    background 0.2s ease;
+}
+
+.admin-members-table tbody tr:hover {
+  background:
+    rgba(25, 174, 255, 0.025);
+}
+
+
+/* MEMBER */
+
+.admin-member-user {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+}
+
+.admin-member-user > span {
+  width: 39px;
+  height: 39px;
+
+  flex: 0 0 39px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 50%;
+
+  color: #ffffff;
+
+  background:
+    linear-gradient(
+      135deg,
+      #19b9ff,
+      #0871ef
+    );
+
+  font-size: 15px;
+
+  font-weight: 900;
+}
+
+.admin-member-user strong {
+  display: block;
+
+  color: #ffffff;
+
+  font-size: 14px;
+}
+
+.admin-member-user small {
+  display: block;
+
+  margin-top: 3px;
+
+  color: #657f92;
+
+  font-size: 11px;
+}
+
+
+/* CONTACT */
+
+.admin-member-contact {
+  display: grid;
+
+  gap: 5px;
+}
+
+.admin-member-contact span {
+  display: flex;
+  align-items: center;
+
+  gap: 6px;
+
+  font-size: 13px;
+}
+
+.admin-member-contact svg {
+  color: #20afff;
+}
+
+
+/* PLAN */
+
+.admin-member-plan {
+  color: #ffffff;
+
+  font-size: 14px;
+}
+
+
+/* STATUS */
+
+.admin-member-status {
+  display: inline-flex;
+
+  padding:
+    6px
+    10px;
+
+  border-radius: 999px;
+
+  font-size: 12px;
+
+  font-weight: 800;
+}
+
+.admin-member-status.active {
+  color: #57e5ad;
+
+  background:
+    rgba(42, 211, 148, 0.08);
+}
+
+.admin-member-status.pending {
+  color: #ffc76b;
+
+  background:
+    rgba(255, 187, 67, 0.08);
+}
+
+.admin-member-status.expired {
+  color: #ff8491;
+
+  background:
+    rgba(255, 75, 94, 0.08);
+}
+
+
+/* ACTIONS */
+
+.admin-member-actions {
+  display: flex;
+
+  gap: 6px;
+}
+
+.admin-member-actions button {
+  width: 35px;
+  height: 35px;
+
+  display: grid;
+  place-items: center;
+
+  padding: 0;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.07);
+
+  border-radius: 7px;
+
+  color: #20afff;
+
+  background:
+    rgba(255, 255, 255, 0.025);
+
+  font-size: 15px;
+
+  cursor: pointer;
+}
+
+.admin-member-actions button:hover {
+  background:
+    rgba(25, 174, 255, 0.08);
+}
+
+.admin-member-actions button.delete {
+  color: #ff7e8d;
+}
+
+
+/* =========================================================
+   EMPTY
+========================================================= */
+
+.admin-members-empty {
+  min-height: 230px;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  color: #7891a5;
+
+  text-align: center;
+}
+
+.admin-members-empty svg {
+  margin-bottom: 8px;
+
+  color: #20afff;
+
+  font-size: 35px;
+}
+
+.admin-members-empty strong {
+  color: #ffffff;
+
+  font-size: 17px;
+}
+
+.admin-members-empty p {
+  margin: 5px 0 0;
+
+  font-size: 14px;
+}
+
+
+/* =========================================================
+   MODAL
+========================================================= */
+
+.admin-member-modal-backdrop {
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 9999;
+
+  padding: 18px;
+
+  display: grid;
+  place-items: center;
+
+  background:
+    rgba(0, 5, 12, 0.76);
+
+  backdrop-filter:
+    blur(5px);
+}
+
+.admin-member-modal {
+  position: relative;
+
+  width: min(520px, 100%);
+
+  padding: 28px;
+
+  border:
+    1px solid rgba(32, 175, 255, 0.14);
+
+  border-radius: 17px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #0a1d2e,
+      #06121e
+    );
+
+  box-shadow:
+    0 25px 70px
+    rgba(0, 0, 0, 0.45);
+}
+
+.admin-member-modal-close {
+  position: absolute;
+
+  top: 14px;
+  right: 14px;
+
+  width: 36px;
+  height: 36px;
+
+  display: grid;
+  place-items: center;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.07);
+
+  border-radius: 8px;
+
+  color: #ffffff;
+
+  background:
+    rgba(255, 255, 255, 0.03);
+
+  font-size: 17px;
+
+  cursor: pointer;
+}
+
+.admin-member-modal-avatar {
+  width: 60px;
+  height: 60px;
+
+  display: grid;
+  place-items: center;
+
+  margin-bottom: 14px;
+
+  border-radius: 50%;
+
+  color: #ffffff;
+
+  background:
+    linear-gradient(
+      135deg,
+      #19b9ff,
+      #0871ef
+    );
+
+  font-size: 22px;
+
+  font-weight: 900;
+}
+
+.admin-member-modal > span {
+  color: #20afff;
+
+  font-size: 11px;
+
+  font-weight: 900;
+
+  letter-spacing: 1.2px;
+}
+
+.admin-member-modal h2 {
+  margin: 5px 0 3px;
+
+  color: #ffffff;
+
+  font-size: 27px;
+}
+
+.admin-member-modal > p {
+  margin: 0;
+
+  color: #71899c;
+
+  font-size: 13px;
+}
+
+.admin-member-modal-grid {
+  margin-top: 20px;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 9px;
+}
+
+.admin-member-modal-grid > div {
+  padding: 13px;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.055);
+
+  border-radius: 9px;
+
+  background:
+    rgba(255, 255, 255, 0.02);
+}
+
+.admin-member-modal-grid small {
+  display: block;
+
+  margin-bottom: 5px;
+
+  color: #758da0;
+
+  font-size: 12px;
+}
+
+.admin-member-modal-grid strong {
+  display: block;
+
+  color: #ffffff;
+
+  font-size: 14px;
+
+  word-break: break-word;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 800px) {
+
+  .admin-members-page {
+    padding: 17px;
+  }
+
+  .admin-members-header {
+    align-items: flex-start;
+  }
+
+  .admin-members-title h1 {
+    font-size: 28px;
+  }
+
+  .admin-members-summary {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .admin-members-panel-head {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .admin-members-tools {
+    width: 100%;
+  }
+
+  .admin-members-search {
+    flex: 1;
+    width: auto;
+  }
+}
+
+
+@media (max-width: 520px) {
+
+  .admin-members-page {
+    padding: 12px;
+  }
+
+  .admin-members-header {
+    flex-direction: column;
+  }
+
+  .admin-members-title {
+    align-items: flex-start;
+  }
+
+  .admin-members-title h1 {
+    font-size: 25px;
+  }
+
+  .admin-members-title p {
+    font-size: 13px;
+  }
+
+  .admin-members-add {
+    width: 100%;
+
+    justify-content: center;
+  }
+
+  .admin-members-summary {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-members-summary small {
+    font-size: 14px;
+  }
+
+  .admin-members-summary strong {
+    font-size: 28px;
+  }
+
+  .admin-members-tools {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .admin-members-search,
+  .admin-members-tools select {
+    width: 100%;
+  }
+
+  .admin-member-modal {
+    padding:
+      24px
+      17px;
+  }
+
+  .admin-member-modal-grid {
+    grid-template-columns: 1fr;
+  }
+}

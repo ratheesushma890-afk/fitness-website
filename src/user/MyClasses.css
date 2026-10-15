@@ -1,0 +1,314 @@
+.myclasses-page,
+.myclasses-page * {
+  box-sizing: border-box;
+}
+
+.myclasses-page {
+  min-height: 100vh;
+
+  padding: 28px;
+
+  color: #fff;
+
+  background:
+    radial-gradient(circle at 95% 0%, rgba(25,174,255,.1), transparent 26%),
+    #040b14;
+
+  font-family: "Inter", sans-serif;
+}
+
+.myclasses-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  margin-bottom: 20px;
+}
+
+.myclasses-header > div {
+  display: flex;
+  align-items: center;
+
+  gap: 13px;
+}
+
+.myclasses-header > div > button {
+  width: 48px;
+  height: 48px;
+
+  display: grid;
+  place-items: center;
+
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 9px;
+
+  color: #fff;
+  background: #091827;
+
+  font-size: 20px;
+
+  cursor: pointer;
+}
+
+.myclasses-header span {
+  color: #20afff;
+
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 1.2px;
+}
+
+.myclasses-header h1 {
+  margin: 5px 0 0;
+
+  font-size: 33px;
+}
+
+.myclasses-header h1 strong {
+  color: #20afff;
+}
+
+.myclasses-explore {
+  min-height: 47px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+
+  padding: 0 16px;
+
+  border: 0;
+  border-radius: 8px;
+
+  color: #fff;
+  background: linear-gradient(135deg,#19b9ff,#0871ef);
+
+  font-size: 13px;
+  font-weight: 900;
+
+  cursor: pointer;
+}
+
+.myclasses-banner {
+  min-height: 200px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  overflow: hidden;
+
+  padding: 29px;
+
+  border: 1px solid rgba(32,175,255,.11);
+  border-radius: 16px;
+
+  background:
+    radial-gradient(circle at 90% 50%, rgba(32,175,255,.15), transparent 28%),
+    linear-gradient(135deg,#0a1c2c,#07131f);
+}
+
+.myclasses-banner > div {
+  position: relative;
+  z-index: 2;
+}
+
+.myclasses-banner span {
+  color: #20afff;
+
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 1.2px;
+}
+
+.myclasses-banner h2 {
+  margin: 6px 0;
+
+  font-size: 34px;
+}
+
+.myclasses-banner h2 strong {
+  color: #20afff;
+}
+
+.myclasses-banner p {
+  max-width: 580px;
+
+  color: #9fb2bf;
+
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.myclasses-banner > svg {
+  margin-right: 70px;
+
+  color: rgba(32,175,255,.14);
+
+  font-size: 105px;
+}
+
+.myclasses-grid {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+
+  gap: 14px;
+
+  margin-top: 15px;
+}
+
+.myclass-card {
+  padding: 19px;
+
+  border: 1px solid rgba(255,255,255,.07);
+  border-radius: 14px;
+
+  background: linear-gradient(145deg,#091827,#06121e);
+
+  transition: .2s;
+}
+
+.myclass-card:hover {
+  transform: translateY(-3px);
+
+  border-color: rgba(32,175,255,.22);
+}
+
+.myclass-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.myclass-card-top span {
+  padding: 6px 9px;
+
+  border-radius: 30px;
+
+  color: #20afff;
+  background: rgba(32,175,255,.08);
+
+  font-size: 10px;
+  font-weight: 900;
+}
+
+.myclass-card-top svg {
+  color: #20afff;
+
+  font-size: 22px;
+}
+
+.myclass-card h3 {
+  margin: 15px 0 8px;
+
+  font-size: 21px;
+}
+
+.myclass-trainer {
+  display: flex;
+  align-items: center;
+
+  gap: 7px;
+
+  margin: 0 0 15px;
+
+  color: #91a5b2;
+
+  font-size: 13px;
+}
+
+.myclass-trainer svg {
+  color: #20afff;
+}
+
+.myclass-details {
+  display: grid;
+  gap: 8px;
+
+  padding: 13px;
+
+  border-radius: 9px;
+
+  background: rgba(255,255,255,.025);
+}
+
+.myclass-details > div {
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+
+  color: #9dafba;
+
+  font-size: 13px;
+}
+
+.myclass-details svg {
+  color: #20afff;
+}
+
+.myclass-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-top: 14px;
+  padding-top: 13px;
+
+  border-top: 1px solid rgba(255,255,255,.06);
+}
+
+.myclass-footer span {
+  color: #71899a;
+
+  font-size: 12px;
+}
+
+.myclass-footer strong {
+  font-size: 13px;
+}
+
+@media (max-width: 950px) {
+  .myclasses-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .myclasses-page {
+    padding: 15px 12px;
+  }
+
+  .myclasses-header h1 {
+    font-size: 24px;
+  }
+
+  .myclasses-explore {
+    padding: 0 10px;
+
+    font-size: 11px;
+  }
+
+  .myclasses-banner {
+    padding: 22px 18px;
+  }
+
+  .myclasses-banner h2 {
+    max-width: 85%;
+
+    font-size: 28px;
+  }
+
+  .myclasses-banner > svg {
+    margin-right: -20px;
+
+    font-size: 75px;
+  }
+
+  .myclasses-grid {
+    grid-template-columns: 1fr;
+  }
+}

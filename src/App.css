@@ -1,0 +1,98 @@
+/* =========================================================
+   FITZONE — APP.CSS
+========================================================= */
+
+.app {
+  position: relative;
+
+  width: 100%;
+  min-width: 0;
+
+  min-height: 100vh;
+  min-height: 100dvh;
+
+  margin: 0;
+  padding: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  background: #050b14;
+}
+
+
+/* =========================================================
+   MAIN
+========================================================= */
+
+.app-main {
+  position: relative;
+
+  width: 100%;
+  min-width: 0;
+
+  margin: 0;
+  padding: 0;
+
+  flex: 1 0 auto;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.app > .fzft-root {
+  position: relative;
+
+  width: 100%;
+
+  height: auto;
+  min-height: 0;
+  max-height: none;
+
+  margin: 0;
+  padding: 0;
+
+  flex: 0 0 auto;
+
+  overflow: visible;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .app {
+    width: 100%;
+    min-height: 100dvh;
+  }
+
+  .app-main {
+    width: 100%;
+    height: auto;
+  }
+
+  .app > .fzft-root {
+    width: 100%;
+
+    height: auto !important;
+    max-height: none !important;
+
+    overflow: visible !important;
+  }
+}
+
+
+@media (max-width: 430px) {
+
+  .app,
+  .app-main,
+  .app > .fzft-root {
+    width: 100%;
+    max-width: 100%;
+  }
+}

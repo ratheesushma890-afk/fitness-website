@@ -1,0 +1,1178 @@
+/* =========================================================
+   FITZONE — MEMBERSHIP SUCCESS
+========================================================= */
+
+.success-page {
+  width: 100%;
+  min-height: 100vh;
+
+  padding: 45px 24px;
+
+  font-family: "Inter", sans-serif;
+  color: #ffffff;
+
+  background:
+    radial-gradient(
+      circle at 15% 15%,
+      rgba(0, 153, 255, 0.14),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 85% 75%,
+      rgba(0, 106, 255, 0.12),
+      transparent 30%
+    ),
+    linear-gradient(
+      145deg,
+      #020b14 0%,
+      #061827 48%,
+      #020a12 100%
+    );
+}
+
+.success-page * {
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.success-container {
+  width: min(100%, 1280px);
+
+  margin: 0 auto;
+}
+
+
+/* =========================================================
+   SINGLE MAIN CARD
+========================================================= */
+
+.success-card {
+  width: 100%;
+
+  padding: 28px;
+
+  border:
+    1px solid
+    rgba(0, 157, 255, 0.55);
+
+  border-radius: 28px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(4, 24, 41, 0.98),
+      rgba(2, 15, 27, 0.99)
+    );
+
+  box-shadow:
+    0 30px 100px rgba(0, 0, 0, 0.45),
+    0 0 50px rgba(0, 132, 255, 0.08);
+}
+
+
+/* =========================================================
+   TOP
+========================================================= */
+
+.success-top {
+  position: relative;
+
+  display: grid;
+
+  grid-template-columns:
+    1fr
+    1.5fr
+    1fr;
+
+  align-items: center;
+
+  gap: 25px;
+
+  padding:
+    5px
+    5px
+    28px;
+
+  border-bottom:
+    1px solid
+    rgba(255, 255, 255, 0.08);
+}
+
+
+/* =========================================================
+   BRAND
+========================================================= */
+
+.success-brand-name {
+  color: #ffffff;
+
+  font-size: 31px;
+  font-weight: 900;
+
+  font-style: italic;
+
+  letter-spacing: -1.5px;
+}
+
+.success-brand-name span {
+  color: #0c9fff;
+}
+
+.success-brand small {
+  display: block;
+
+  margin-top: 4px;
+
+  color: #94aabc;
+
+  font-size: 9px;
+  font-weight: 700;
+
+  letter-spacing: 2px;
+}
+
+
+/* =========================================================
+   HEADING
+========================================================= */
+
+.success-heading {
+  text-align: center;
+}
+
+.success-check {
+  width: 65px;
+  height: 65px;
+
+  margin:
+    -58px
+    auto
+    13px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border:
+    6px solid
+    #083968;
+
+  border-radius: 50%;
+
+  color: #ffffff;
+
+  background:
+    linear-gradient(
+      135deg,
+      #087ef1,
+      #10c5ff
+    );
+
+  box-shadow:
+    0 0 35px
+    rgba(0, 166, 255, 0.35);
+}
+
+.success-check svg {
+  width: 31px;
+  height: 31px;
+
+  stroke-width: 3;
+}
+
+.success-heading h1 {
+  margin:
+    0
+    0
+    8px;
+
+  color: #ffffff;
+
+  font-size: 31px;
+  font-weight: 900;
+}
+
+.success-heading p {
+  margin: 0;
+
+  color: #b1c4d3;
+
+  font-size: 14px;
+
+  line-height: 1.6;
+}
+
+.success-heading p strong {
+  color: #13a9ff;
+}
+
+
+/* =========================================================
+   PLAN STATUS
+========================================================= */
+
+.success-plan-status {
+  justify-self: end;
+
+  display: flex;
+  align-items: center;
+
+  gap: 11px;
+
+  padding:
+    13px
+    17px;
+
+  border:
+    1px solid
+    rgba(0, 153, 255, 0.35);
+
+  border-radius: 14px;
+
+  background:
+    rgba(0, 113, 206, 0.06);
+}
+
+.success-plan-status > svg {
+  width: 28px;
+  height: 28px;
+
+  color: #ffc84c;
+}
+
+.success-plan-status strong {
+  display: block;
+
+  margin-bottom: 5px;
+
+  color: #24b1ff;
+
+  font-size: 14px;
+}
+
+.success-plan-status span {
+  display: flex;
+  align-items: center;
+
+  gap: 6px;
+
+  color: #58e7a4;
+
+  font-size: 12px;
+}
+
+.success-plan-status i {
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  background: #21dc8a;
+}
+
+
+/* =========================================================
+   MEMBER + WORKOUT
+========================================================= */
+
+.success-member-workout {
+  display: grid;
+
+  grid-template-columns:
+    1fr
+    1.35fr;
+
+  margin-top: 18px;
+
+  overflow: hidden;
+
+  border:
+    1px solid
+    rgba(0, 149, 255, 0.25);
+
+  border-radius: 18px;
+
+  background:
+    rgba(0, 96, 170, 0.035);
+}
+
+
+/* =========================================================
+   MEMBER
+========================================================= */
+
+.success-member {
+  display: flex;
+  align-items: center;
+
+  gap: 18px;
+
+  padding: 23px;
+
+  border-right:
+    1px solid
+    rgba(0, 157, 255, 0.22);
+}
+
+.success-avatar {
+  width: 105px;
+  height: 105px;
+
+  flex: 0 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border:
+    2px solid
+    #1baeff;
+
+  border-radius: 50%;
+
+  color: #ffffff;
+
+  background:
+    linear-gradient(
+      145deg,
+      #0d3352,
+      #071c2f
+    );
+}
+
+.success-avatar svg {
+  width: 42px;
+  height: 42px;
+}
+
+.success-member-info h2 {
+  margin:
+    0
+    0
+    12px;
+
+  color: #ffffff;
+
+  font-size: 24px;
+  font-weight: 900;
+}
+
+.success-member-info p {
+  display: flex;
+  align-items: center;
+
+  gap: 9px;
+
+  margin:
+    7px
+    0;
+
+  color: #b5c9d8;
+
+  font-size: 13px;
+}
+
+.success-member-info p svg {
+  flex: 0 0 auto;
+
+  color: #0ca7ff;
+}
+
+
+/* =========================================================
+   WORKOUT
+========================================================= */
+
+.success-workout {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+
+  gap: 18px;
+
+  padding: 25px;
+}
+
+.success-workout-icon {
+  width: 80px;
+  height: 80px;
+
+  flex: 0 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border:
+    1px solid
+    rgba(0, 153, 255, 0.25);
+
+  border-radius: 50%;
+
+  color: #16aaff;
+
+  background:
+    rgba(0, 126, 224, 0.07);
+}
+
+.success-workout-icon svg {
+  width: 35px;
+  height: 35px;
+}
+
+.success-workout-content {
+  padding-right: 80px;
+}
+
+.success-workout-content > span {
+  color: #9eb4c5;
+
+  font-size: 12px;
+}
+
+.success-workout-content h3 {
+  margin:
+    5px
+    0
+    9px;
+
+  color: #ffffff;
+
+  font-size: 25px;
+  font-weight: 900;
+}
+
+.success-workout-content p {
+  margin: 0;
+
+  color: #9db2c2;
+
+  font-size: 13px;
+
+  line-height: 1.6;
+}
+
+.success-enrolled {
+  position: absolute;
+
+  top: 20px;
+  right: 20px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 5px;
+
+  padding:
+    7px
+    10px;
+
+  border:
+    1px solid
+    rgba(36, 226, 141, 0.25);
+
+  border-radius: 100px;
+
+  color: #3fe99b;
+
+  background:
+    rgba(22, 195, 118, 0.1);
+
+  font-size: 11px;
+  font-weight: 800;
+}
+
+
+/* =========================================================
+   FITNESS ROW
+========================================================= */
+
+.success-fitness-row {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, 1fr);
+
+  margin-top: 15px;
+
+  overflow: hidden;
+
+  border:
+    1px solid
+    rgba(0, 149, 255, 0.25);
+
+  border-radius: 17px;
+}
+
+.success-stat {
+  min-width: 0;
+
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  padding:
+    18px
+    17px;
+
+  border-right:
+    1px solid
+    rgba(0, 149, 255, 0.18);
+}
+
+.success-stat:last-child {
+  border-right: 0;
+}
+
+.success-stat-icon {
+  width: 44px;
+  height: 44px;
+
+  flex: 0 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  color: #11a9ff;
+
+  background:
+    rgba(0, 142, 255, 0.09);
+}
+
+.success-stat-icon.gold {
+  color: #ffc64d;
+}
+
+.success-stat span {
+  display: block;
+
+  margin-bottom: 5px;
+
+  color: #8da6b8;
+
+  font-size: 11px;
+}
+
+.success-stat strong {
+  display: block;
+
+  color: #ffffff;
+
+  font-size: 14px;
+  font-weight: 800;
+
+  overflow-wrap: anywhere;
+}
+
+
+/* =========================================================
+   PAYMENT
+========================================================= */
+
+.success-payment {
+  margin-top: 15px;
+
+  padding: 20px;
+
+  border:
+    1px solid
+    rgba(0, 149, 255, 0.25);
+
+  border-radius: 17px;
+}
+
+.success-payment-title {
+  display: flex;
+  align-items: center;
+
+  gap: 9px;
+
+  margin-bottom: 17px;
+}
+
+.success-payment-title svg {
+  color: #10a7ff;
+
+  font-size: 21px;
+}
+
+.success-payment-title h3 {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size: 17px;
+  font-weight: 800;
+}
+
+.success-payment-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, 1fr);
+}
+
+.success-payment-item {
+  min-width: 0;
+
+  padding:
+    4px
+    22px;
+
+  border-right:
+    1px solid
+    rgba(0, 149, 255, 0.2);
+}
+
+.success-payment-item:first-child {
+  padding-left: 0;
+}
+
+.success-payment-item:last-child {
+  border-right: 0;
+}
+
+.success-payment-item span {
+  display: block;
+
+  margin-bottom: 7px;
+
+  color: #8ca5b7;
+
+  font-size: 11px;
+}
+
+.success-payment-item strong {
+  display: block;
+
+  color: #ffffff;
+
+  font-size: 14px;
+  font-weight: 800;
+
+  overflow-wrap: anywhere;
+}
+
+.success-payment-item .success-big-price {
+  font-size: 22px;
+}
+
+.success-payment-item .success-paid {
+  display: flex;
+  align-items: center;
+
+  gap: 6px;
+
+  color: #3ee69b;
+}
+
+.success-paid svg {
+  width: 17px;
+  height: 17px;
+}
+
+
+/* =========================================================
+   BOTTOM
+========================================================= */
+
+.success-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 25px;
+
+  margin-top: 15px;
+
+  padding:
+    17px
+    19px;
+
+  border:
+    1px solid
+    rgba(0, 149, 255, 0.3);
+
+  border-radius: 17px;
+}
+
+.success-next {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+}
+
+.success-next-icon {
+  font-size: 28px;
+}
+
+.success-next strong {
+  display: block;
+
+  margin-bottom: 4px;
+
+  color: #ffffff;
+
+  font-size: 15px;
+}
+
+.success-next p {
+  margin: 0;
+
+  color: #8fa8ba;
+
+  font-size: 12px;
+
+  line-height: 1.5;
+}
+
+.success-actions {
+  flex: 0 0 auto;
+
+  display: flex;
+
+  gap: 10px;
+}
+
+.success-actions button {
+  min-height: 44px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  padding:
+    0
+    18px;
+
+  border-radius: 11px;
+
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 800;
+
+  cursor: pointer;
+
+  transition:
+    0.25s ease;
+}
+
+.success-class-btn {
+  border: 1px solid #14aaff;
+
+  color: #ffffff;
+
+  background:
+    linear-gradient(
+      135deg,
+      #087ff1,
+      #08baff
+    );
+
+  box-shadow:
+    0 8px 25px
+    rgba(0, 146, 255, 0.2);
+}
+
+.success-home-btn {
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.14);
+
+  color: #dceaf4;
+
+  background:
+    rgba(255, 255, 255, 0.025);
+}
+
+.success-actions button:hover {
+  transform:
+    translateY(-2px);
+}
+
+
+/* =========================================================
+   EMPTY
+========================================================= */
+
+.success-empty {
+  width: min(100%, 480px);
+
+  margin:
+    100px
+    auto;
+
+  padding: 35px;
+
+  text-align: center;
+
+  border:
+    1px solid
+    rgba(0, 157, 255, 0.25);
+
+  border-radius: 20px;
+
+  background: #061827;
+}
+
+.success-empty > svg {
+  width: 45px;
+  height: 45px;
+
+  color: #0da7ff;
+}
+
+.success-empty h2 {
+  margin:
+    15px
+    0
+    8px;
+}
+
+.success-empty p {
+  color: #91a9bb;
+}
+
+.success-empty button {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 8px;
+
+  margin-top: 12px;
+
+  padding:
+    13px
+    20px;
+
+  border: 0;
+  border-radius: 10px;
+
+  color: white;
+
+  background: #0b94f6;
+
+  font-weight: 800;
+
+  cursor: pointer;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 950px) {
+
+  .success-top {
+    grid-template-columns:
+      1fr
+      1fr;
+  }
+
+  .success-heading {
+    grid-column:
+      1 / -1;
+
+    grid-row: 1;
+  }
+
+  .success-brand {
+    grid-row: 2;
+  }
+
+  .success-plan-status {
+    grid-row: 2;
+  }
+
+  .success-check {
+    margin-top: -55px;
+  }
+
+  .success-member-workout {
+    grid-template-columns: 1fr;
+  }
+
+  .success-member {
+    border-right: 0;
+
+    border-bottom:
+      1px solid
+      rgba(0, 149, 255, 0.2);
+  }
+
+  .success-fitness-row {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+
+  .success-stat:nth-child(2) {
+    border-right: 0;
+  }
+
+  .success-stat:nth-child(-n + 2) {
+    border-bottom:
+      1px solid
+      rgba(0, 149, 255, 0.18);
+  }
+
+  .success-payment-grid {
+    grid-template-columns:
+      repeat(2, 1fr);
+
+    gap: 18px 0;
+  }
+
+  .success-payment-item:nth-child(2) {
+    border-right: 0;
+  }
+
+  .success-bottom {
+    align-items: flex-start;
+
+    flex-direction: column;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .success-page {
+    min-height: 100svh;
+
+    padding:
+      42px
+      12px
+      30px;
+  }
+
+  .success-card {
+    padding: 14px;
+
+    border-radius: 20px;
+  }
+
+
+  /* TOP */
+
+  .success-top {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 15px;
+
+    padding-bottom: 20px;
+  }
+
+  .success-heading {
+    order: 1;
+  }
+
+  .success-brand {
+    order: 2;
+
+    text-align: center;
+  }
+
+  .success-plan-status {
+    order: 3;
+
+    justify-self: auto;
+  }
+
+  .success-check {
+    width: 58px;
+    height: 58px;
+
+    margin:
+      -47px
+      auto
+      12px;
+
+    border-width: 5px;
+  }
+
+  .success-check svg {
+    width: 26px;
+    height: 26px;
+  }
+
+  .success-heading h1 {
+    font-size: 24px;
+  }
+
+  .success-heading p {
+    font-size: 13px;
+  }
+
+  .success-brand-name {
+    font-size: 27px;
+  }
+
+
+  /* MEMBER */
+
+  .success-member {
+    align-items: flex-start;
+
+    padding: 17px;
+
+    gap: 13px;
+  }
+
+  .success-avatar {
+    width: 64px;
+    height: 64px;
+  }
+
+  .success-avatar svg {
+    width: 27px;
+    height: 27px;
+  }
+
+  .success-member-info {
+    min-width: 0;
+  }
+
+  .success-member-info h2 {
+    font-size: 19px;
+  }
+
+  .success-member-info p {
+    font-size: 12px;
+
+    overflow-wrap: anywhere;
+  }
+
+
+  /* WORKOUT */
+
+  .success-workout {
+    align-items: flex-start;
+
+    padding:
+      58px
+      17px
+      18px;
+
+    gap: 12px;
+  }
+
+  .success-workout-icon {
+    width: 55px;
+    height: 55px;
+  }
+
+  .success-workout-icon svg {
+    width: 25px;
+    height: 25px;
+  }
+
+  .success-workout-content {
+    min-width: 0;
+
+    padding-right: 0;
+  }
+
+  .success-workout-content h3 {
+    font-size: 20px;
+  }
+
+  .success-enrolled {
+    top: 14px;
+    right: 14px;
+  }
+
+
+  /* FITNESS */
+
+  .success-fitness-row {
+    grid-template-columns: 1fr;
+  }
+
+  .success-stat {
+    border-right: 0;
+
+    border-bottom:
+      1px solid
+      rgba(0, 149, 255, 0.18);
+  }
+
+  .success-stat:nth-child(2) {
+    border-right: 0;
+  }
+
+  .success-stat:last-child {
+    border-bottom: 0;
+  }
+
+
+  /* PAYMENT */
+
+  .success-payment {
+    padding: 16px;
+  }
+
+  .success-payment-grid {
+    grid-template-columns: 1fr;
+
+    gap: 0;
+  }
+
+  .success-payment-item,
+  .success-payment-item:first-child {
+    padding:
+      13px
+      0;
+
+    border-right: 0;
+
+    border-bottom:
+      1px solid
+      rgba(0, 149, 255, 0.16);
+  }
+
+  .success-payment-item:last-child {
+    border-bottom: 0;
+  }
+
+
+  /* BOTTOM */
+
+  .success-bottom {
+    padding: 16px;
+  }
+
+  .success-next {
+    align-items: flex-start;
+  }
+
+  .success-actions {
+    width: 100%;
+
+    flex-direction: column;
+  }
+
+  .success-actions button {
+    width: 100%;
+
+    min-height: 48px;
+  }
+}

@@ -1,0 +1,1524 @@
+/* =========================================================
+   FITZONE SUPER ADMIN DASHBOARD
+========================================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+
+  width: 100%;
+  min-height: 100%;
+}
+
+body {
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   MAIN LAYOUT
+========================================================= */
+
+.fit-admin {
+  width: 100%;
+  height: 100vh;
+
+  display: grid;
+
+  grid-template-columns:
+    260px minmax(0, 1fr);
+
+  overflow: hidden;
+
+  color: #ffffff;
+
+  background: #040b14;
+
+  font-family: "Inter", sans-serif;
+
+  font-size: 16px;
+}
+
+
+/* =========================================================
+   LEFT SIDEBAR
+========================================================= */
+
+.fit-admin-sidebar {
+  position: relative;
+  z-index: 100;
+
+  width: 260px;
+  height: 100vh;
+
+  padding: 20px 15px;
+
+  display: flex;
+  flex-direction: column;
+
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  border-right:
+    1px solid rgba(255, 255, 255, 0.07);
+
+  background:
+    radial-gradient(
+      circle at 20% 4%,
+      rgba(25, 180, 255, 0.08),
+      transparent 25%
+    ),
+    linear-gradient(
+      180deg,
+      #071827 0%,
+      #04101b 100%
+    );
+
+  scrollbar-width: thin;
+  scrollbar-color:
+    rgba(31, 177, 255, 0.35)
+    transparent;
+}
+
+
+/* SIDEBAR SCROLL */
+
+.fit-admin-sidebar::-webkit-scrollbar {
+  width: 4px;
+}
+
+.fit-admin-sidebar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.fit-admin-sidebar::-webkit-scrollbar-thumb {
+  border-radius: 20px;
+
+  background:
+    rgba(31, 177, 255, 0.3);
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.fit-admin-logo {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+
+  gap: 11px;
+
+  padding:
+    2px
+    7px
+    22px;
+}
+
+.fit-admin-logo > span {
+  width: 45px;
+  height: 45px;
+
+  flex: 0 0 45px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 11px;
+
+  color: #ffffff;
+
+  background:
+    linear-gradient(
+      135deg,
+      #19b9ff,
+      #0870ef
+    );
+
+  box-shadow:
+    0 9px 25px
+    rgba(0, 123, 255, 0.2);
+
+  font-size: 21px;
+}
+
+.fit-admin-logo > div {
+  min-width: 0;
+}
+
+.fit-admin-logo strong {
+  display: block;
+
+  color: #ffffff;
+
+  font-size: 21px;
+  line-height: 1.05;
+
+  font-weight: 900;
+}
+
+.fit-admin-logo strong span {
+  color: #20b1ff;
+}
+
+.fit-admin-logo small {
+  display: block;
+
+  margin-top: 5px;
+
+  color: #7891a5;
+
+  font-size: 11px;
+  line-height: 1;
+
+  font-weight: 800;
+
+  letter-spacing: 1.1px;
+}
+
+
+/* MOBILE CLOSE */
+
+.fit-admin-sidebar-close {
+  display: none;
+}
+
+
+/* =========================================================
+   MANAGEMENT LABEL
+========================================================= */
+
+.fit-admin-menu-label {
+  padding:
+    0
+    11px
+    9px;
+
+  color: #728b9f;
+
+  font-size: 12px;
+  line-height: 1.2;
+
+  font-weight: 900;
+
+  letter-spacing: 1.2px;
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+.fit-admin-sidebar nav {
+  width: 100%;
+
+  display: grid;
+
+  gap: 5px;
+}
+
+.fit-admin-sidebar nav button,
+.fit-admin-logout {
+  width: 100%;
+  min-height: 47px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 11px;
+
+  padding:
+    0
+    13px;
+
+  border:
+    1px solid transparent;
+
+  border-radius: 9px;
+
+  color: #a5b7c5;
+
+  background: transparent;
+
+  font-family: inherit;
+
+  font-size: 15px;
+  line-height: 1;
+
+  font-weight: 700;
+
+  text-align: left;
+
+  cursor: pointer;
+
+  transition:
+    color 0.25s ease,
+    background 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.fit-admin-sidebar nav button svg,
+.fit-admin-logout svg {
+  flex: 0 0 auto;
+
+  font-size: 20px;
+}
+
+.fit-admin-sidebar nav button span,
+.fit-admin-logout span {
+  flex: 1;
+}
+
+
+/* HOVER */
+
+.fit-admin-sidebar nav button:hover {
+  color: #ffffff;
+
+  transform: translateX(2px);
+
+  border-color:
+    rgba(30, 174, 255, 0.08);
+
+  background:
+    rgba(23, 169, 255, 0.065);
+}
+
+.fit-admin-sidebar nav button:hover svg {
+  color: #22b3ff;
+}
+
+
+/* ACTIVE */
+
+.fit-admin-sidebar nav button.active {
+  color: #ffffff;
+
+  border-color:
+    rgba(31, 176, 255, 0.16);
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(24, 184, 255, 0.2),
+      rgba(8, 113, 239, 0.12)
+    );
+
+  box-shadow:
+    inset 3px 0 0 #20b3ff;
+}
+
+.fit-admin-sidebar nav button.active svg {
+  color: #23b4ff;
+}
+
+
+/* =========================================================
+   LOGOUT
+========================================================= */
+
+.fit-admin-logout {
+  margin-top: auto;
+
+  color: #ff8996;
+}
+
+.fit-admin-logout svg {
+  color: #ff7585;
+}
+
+.fit-admin-logout:hover {
+  color: #ffadb6;
+
+  border-color:
+    rgba(255, 82, 101, 0.1);
+
+  background:
+    rgba(255, 76, 95, 0.065);
+}
+
+
+/* =========================================================
+   RIGHT CONTENT
+========================================================= */
+
+.fit-admin-content {
+  position: relative;
+
+  min-width: 0;
+  height: 100vh;
+
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  background:
+    radial-gradient(
+      circle at 88% 5%,
+      rgba(0, 153, 255, 0.08),
+      transparent 25%
+    ),
+    #040b14;
+
+  scroll-behavior: smooth;
+
+  scrollbar-width: thin;
+
+  scrollbar-color:
+    rgba(28, 174, 255, 0.5)
+    rgba(255, 255, 255, 0.025);
+}
+
+
+/* RIGHT SCROLLBAR */
+
+.fit-admin-content::-webkit-scrollbar {
+  width: 7px;
+}
+
+.fit-admin-content::-webkit-scrollbar-track {
+  background:
+    rgba(255, 255, 255, 0.025);
+}
+
+.fit-admin-content::-webkit-scrollbar-thumb {
+  border-radius: 20px;
+
+  background:
+    linear-gradient(
+      #1eb5ff,
+      #0872ef
+    );
+}
+
+.fit-admin-content::-webkit-scrollbar-thumb:hover {
+  background: #25b9ff;
+}
+
+
+/* =========================================================
+   RIGHT INNER WRAPPER
+========================================================= */
+
+.fit-admin-scroll {
+  width: 100%;
+
+  min-height: 100vh;
+
+  padding:
+    20px
+    25px
+    35px;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.fit-admin-header {
+  width: 100%;
+  min-height: 52px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 14px;
+
+  margin: 0 0 18px;
+}
+
+.fit-admin-menu-btn {
+  display: none;
+}
+
+.fit-admin-heading {
+  flex: 1;
+
+  min-width: 0;
+}
+
+.fit-admin-heading > span {
+  display: block;
+
+  color: #20adff;
+
+  font-size: 12px;
+  line-height: 1.2;
+
+  font-weight: 900;
+
+  letter-spacing: 1.3px;
+}
+
+.fit-admin-heading h1 {
+  margin:
+    5px
+    0
+    0;
+
+  color: #ffffff;
+
+  font-size: 29px;
+  line-height: 1.15;
+
+  font-weight: 800;
+
+  letter-spacing: -0.7px;
+}
+
+.fit-admin-heading h1 strong {
+  color: #1cafff;
+
+  font-weight: 900;
+}
+
+
+/* =========================================================
+   PROFILE
+========================================================= */
+
+.fit-admin-profile {
+  flex: 0 0 auto;
+
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+}
+
+.fit-admin-profile > span {
+  width: 44px;
+  height: 44px;
+
+  flex: 0 0 44px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 50%;
+
+  color: #ffffff;
+
+  background:
+    linear-gradient(
+      135deg,
+      #18b8ff,
+      #0871ef
+    );
+
+  font-size: 14px;
+
+  font-weight: 900;
+}
+
+.fit-admin-profile strong {
+  display: block;
+
+  color: #ffffff;
+
+  font-size: 15px;
+
+  font-weight: 800;
+}
+
+.fit-admin-profile small {
+  display: block;
+
+  margin-top: 3px;
+
+  color: #8399aa;
+
+  font-size: 12px;
+
+  font-weight: 600;
+}
+
+
+/* =========================================================
+   WELCOME BOX
+========================================================= */
+
+.fit-admin-welcome {
+  width: 100%;
+  min-height: 170px;
+
+  padding:
+    24px
+    27px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  overflow: hidden;
+
+  border:
+    1px solid rgba(35, 168, 245, 0.14);
+
+  border-radius: 16px;
+
+  background:
+    radial-gradient(
+      circle at 90% 20%,
+      rgba(0, 163, 255, 0.16),
+      transparent 30%
+    ),
+    linear-gradient(
+      145deg,
+      #0a1c2e,
+      #071522
+    );
+}
+
+.fit-admin-welcome > div {
+  min-width: 0;
+}
+
+.fit-admin-welcome span {
+  display: block;
+
+  color: #20b0ff;
+
+  font-size: 12px;
+
+  font-weight: 900;
+
+  letter-spacing: 1.4px;
+}
+
+.fit-admin-welcome h2 {
+  margin:
+    6px
+    0
+    8px;
+
+  color: #ffffff;
+
+  font-size: 38px;
+  line-height: 1.08;
+
+  font-weight: 900;
+
+  letter-spacing: -1.2px;
+}
+
+.fit-admin-welcome h2 strong {
+  color: #1aafff;
+}
+
+.fit-admin-welcome p {
+  max-width: 650px;
+
+  margin: 0;
+
+  color: #98aebe;
+
+  font-size: 15px;
+  line-height: 1.55;
+
+  font-weight: 500;
+}
+
+.fit-admin-welcome > svg {
+  flex: 0 0 auto;
+
+  color:
+    rgba(30, 177, 255, 0.2);
+
+  font-size: 88px;
+}
+
+
+/* =========================================================
+   STAT CARDS
+========================================================= */
+
+.fit-admin-stats {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+
+  gap: 13px;
+
+  margin-top: 14px;
+}
+
+.fit-admin-stat-card {
+  position: relative;
+
+  min-width: 0;
+  min-height: 190px;
+
+  padding: 18px;
+
+  display: flex;
+  flex-direction: column;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.065);
+
+  border-radius: 13px;
+
+  color: inherit;
+
+  background:
+    linear-gradient(
+      145deg,
+      #091827,
+      #06121e
+    );
+
+  font-family: inherit;
+
+  text-align: left;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease,
+    background 0.25s ease;
+}
+
+.fit-admin-stat-card:hover {
+  transform: translateY(-4px);
+
+  border-color:
+    rgba(30, 174, 255, 0.24);
+
+  background:
+    linear-gradient(
+      145deg,
+      #0b1d2e,
+      #071725
+    );
+
+  box-shadow:
+    0 15px 32px
+    rgba(0, 0, 0, 0.18);
+}
+
+.fit-admin-stat-card:active {
+  transform: translateY(-1px);
+}
+
+
+/* TOP */
+
+.fit-admin-stat-top {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 11px;
+}
+
+
+/* ICON */
+
+.fit-admin-stat-icon {
+  width: 42px;
+  height: 42px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 9px;
+
+  color: #23b3ff;
+
+  background:
+    rgba(22, 169, 255, 0.08);
+
+  font-size: 20px;
+}
+
+.fit-admin-stat-arrow {
+  color: #567184;
+
+  font-size: 18px;
+
+  transition:
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.fit-admin-stat-card:hover
+.fit-admin-stat-arrow {
+  color: #22b3ff;
+
+  transform: translateX(3px);
+}
+
+
+/* TITLE */
+
+.fit-admin-stat-title {
+  display: block;
+
+  color: #9eb2c1;
+
+  font-size: 14px;
+  line-height: 1.3;
+
+  font-weight: 700;
+}
+
+
+/* VALUE */
+
+.fit-admin-stat-card > strong {
+  display: block;
+
+  margin:
+    4px
+    0;
+
+  color: #ffffff;
+
+  font-size: 32px;
+  line-height: 1.1;
+
+  font-weight: 900;
+
+  letter-spacing: -0.5px;
+}
+
+
+/* DESCRIPTION */
+
+.fit-admin-stat-card > p {
+  margin:
+    0
+    0
+    12px;
+
+  color: #748c9f;
+
+  font-size: 12px;
+  line-height: 1.45;
+
+  font-weight: 500;
+}
+
+
+/* VIEW DETAILS */
+
+.fit-admin-stat-open {
+  margin-top: auto;
+
+  display: flex;
+  align-items: center;
+
+  gap: 6px;
+
+  color: #20afff;
+
+  font-size: 12px;
+
+  font-weight: 800;
+}
+
+.fit-admin-stat-open svg {
+  font-size: 14px;
+}
+
+
+/* =========================================================
+   BOTTOM GRID
+========================================================= */
+
+.fit-admin-bottom {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1.25fr)
+    minmax(300px, 0.75fr);
+
+  gap: 14px;
+
+  margin-top: 14px;
+}
+
+
+/* =========================================================
+   PANEL
+========================================================= */
+
+.fit-admin-panel {
+  min-width: 0;
+  min-height: 260px;
+
+  padding: 20px;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.06);
+
+  border-radius: 14px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #091827,
+      #06121e
+    );
+}
+
+.fit-admin-panel > span {
+  display: block;
+
+  color: #1facff;
+
+  font-size: 12px;
+
+  font-weight: 900;
+
+  letter-spacing: 1.2px;
+}
+
+.fit-admin-panel h3 {
+  margin:
+    6px
+    0
+    16px;
+
+  color: #ffffff;
+
+  font-size: 23px;
+  line-height: 1.2;
+
+  font-weight: 800;
+}
+
+
+/* =========================================================
+   EMPTY ACTIVITY
+========================================================= */
+
+.fit-admin-empty {
+  min-height: 165px;
+
+  padding: 18px;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  border:
+    1px dashed
+    rgba(37, 174, 255, 0.14);
+
+  border-radius: 10px;
+}
+
+.fit-admin-empty > svg {
+  margin-bottom: 9px;
+
+  color: #21afff;
+
+  font-size: 30px;
+}
+
+.fit-admin-empty strong {
+  color: #ffffff;
+
+  font-size: 15px;
+
+  font-weight: 800;
+}
+
+.fit-admin-empty p {
+  max-width: 400px;
+
+  margin:
+    6px
+    0
+    0;
+
+  color: #8399aa;
+
+  font-size: 13px;
+  line-height: 1.5;
+
+  font-weight: 500;
+}
+
+
+/* =========================================================
+   QUICK ACCESS
+========================================================= */
+
+.fit-admin-quick {
+  display: grid;
+
+  gap: 8px;
+}
+
+.fit-admin-quick button {
+  width: 100%;
+  min-height: 47px;
+
+  display: grid;
+
+  grid-template-columns:
+    22px
+    minmax(0, 1fr)
+    18px;
+
+  align-items: center;
+
+  gap: 10px;
+
+  padding:
+    0
+    12px;
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.06);
+
+  border-radius: 8px;
+
+  color: #d3dfe7;
+
+  background:
+    rgba(255, 255, 255, 0.02);
+
+  font-family: inherit;
+
+  font-size: 14px;
+
+  font-weight: 700;
+
+  text-align: left;
+
+  cursor: pointer;
+
+  transition:
+    color 0.25s ease,
+    background 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.fit-admin-quick button svg {
+  color: #1eafff;
+
+  font-size: 19px;
+}
+
+.fit-admin-quick button svg:last-child {
+  color: #657f92;
+
+  font-size: 16px;
+}
+
+.fit-admin-quick button:hover {
+  color: #ffffff;
+
+  transform: translateX(2px);
+
+  border-color:
+    rgba(30, 175, 255, 0.17);
+
+  background:
+    rgba(22, 169, 255, 0.06);
+}
+
+.fit-admin-quick button:hover
+svg:last-child {
+  color: #20afff;
+}
+
+
+/* =========================================================
+   MOBILE BACKDROP
+========================================================= */
+
+.fit-admin-backdrop {
+  display: none;
+}
+
+
+/* =========================================================
+   LAPTOP
+========================================================= */
+
+@media (max-width: 1100px) {
+
+  .fit-admin {
+    grid-template-columns:
+      235px minmax(0, 1fr);
+  }
+
+  .fit-admin-sidebar {
+    width: 235px;
+
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .fit-admin-sidebar nav button,
+  .fit-admin-logout {
+    font-size: 14px;
+  }
+
+  .fit-admin-stats {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+  .fit-admin-bottom {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* =========================================================
+   TABLET / MOBILE SIDEBAR
+========================================================= */
+
+@media (max-width: 760px) {
+
+  body {
+    overflow: auto;
+  }
+
+  .fit-admin {
+    display: block;
+
+    height: auto;
+    min-height: 100vh;
+
+    overflow: visible;
+  }
+
+
+  /* SIDEBAR */
+
+  .fit-admin-sidebar {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    z-index: 1001;
+
+    width: min(290px, 86vw);
+    height: 100dvh;
+
+    padding:
+      18px
+      14px;
+
+    display: flex;
+
+    transform:
+      translateX(-105%);
+
+    transition:
+      transform 0.3s ease;
+
+    box-shadow:
+      20px
+      0
+      50px
+      rgba(0, 0, 0, 0.4);
+  }
+
+  .fit-admin-sidebar.open {
+    transform:
+      translateX(0);
+  }
+
+
+  /* CLOSE */
+
+  .fit-admin-sidebar-close {
+    width: 38px;
+    height: 38px;
+
+    margin-left: auto;
+
+    flex: 0 0 38px;
+
+    display: grid;
+    place-items: center;
+
+    padding: 0;
+
+    border:
+      1px solid
+      rgba(255, 255, 255, 0.08);
+
+    border-radius: 8px;
+
+    color: #ffffff;
+
+    background:
+      rgba(255, 255, 255, 0.04);
+
+    font-size: 19px;
+
+    cursor: pointer;
+  }
+
+
+  /* BACKDROP */
+
+  .fit-admin-backdrop {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 1000;
+
+    display: block;
+
+    padding: 0;
+
+    border: 0;
+
+    background:
+      rgba(0, 4, 10, 0.68);
+
+    backdrop-filter:
+      blur(3px);
+
+    cursor: pointer;
+  }
+
+
+  /* RIGHT */
+
+  .fit-admin-content {
+    width: 100%;
+    height: auto;
+    min-height: 100vh;
+
+    overflow: visible;
+  }
+
+  .fit-admin-scroll {
+    min-height: 100vh;
+
+    padding:
+      15px
+      16px
+      30px;
+  }
+
+
+  /* MENU BUTTON */
+
+  .fit-admin-menu-btn {
+    width: 43px;
+    height: 43px;
+
+    flex: 0 0 43px;
+
+    display: grid;
+    place-items: center;
+
+    padding: 0;
+
+    border:
+      1px solid
+      rgba(255, 255, 255, 0.08);
+
+    border-radius: 8px;
+
+    color: #ffffff;
+
+    background: #091827;
+
+    font-size: 20px;
+
+    cursor: pointer;
+  }
+
+
+  /* HEADER */
+
+  .fit-admin-header {
+    gap: 10px;
+
+    margin-bottom: 15px;
+  }
+
+  .fit-admin-heading > span {
+    font-size: 10px;
+  }
+
+  .fit-admin-heading h1 {
+    font-size: 24px;
+  }
+
+
+  /* PROFILE */
+
+  .fit-admin-profile > div {
+    display: none;
+  }
+
+  .fit-admin-profile > span {
+    width: 42px;
+    height: 42px;
+
+    flex-basis: 42px;
+
+    font-size: 13px;
+  }
+
+
+  /* WELCOME */
+
+  .fit-admin-welcome {
+    min-height: 155px;
+
+    padding: 20px;
+  }
+
+  .fit-admin-welcome h2 {
+    font-size: 32px;
+  }
+
+  .fit-admin-welcome p {
+    font-size: 14px;
+  }
+
+  .fit-admin-welcome > svg {
+    font-size: 60px;
+  }
+
+
+  /* CARDS */
+
+  .fit-admin-stat-card {
+    min-height: 180px;
+  }
+
+  .fit-admin-stat-title {
+    font-size: 14px;
+  }
+
+  .fit-admin-stat-card > strong {
+    font-size: 30px;
+  }
+
+  .fit-admin-stat-card > p {
+    font-size: 13px;
+  }
+
+
+  /* PANEL */
+
+  .fit-admin-panel h3 {
+    font-size: 22px;
+  }
+
+  .fit-admin-quick button {
+    font-size: 14px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 500px) {
+
+  .fit-admin-scroll {
+    padding:
+      12px
+      12px
+      25px;
+  }
+
+
+  /* HEADER */
+
+  .fit-admin-header {
+    gap: 8px;
+  }
+
+  .fit-admin-heading > span {
+    font-size: 9px;
+
+    letter-spacing: 0.7px;
+  }
+
+  .fit-admin-heading h1 {
+    font-size: 20px;
+  }
+
+
+  /* WELCOME */
+
+  .fit-admin-welcome {
+    min-height: 150px;
+
+    padding: 18px;
+  }
+
+  .fit-admin-welcome span {
+    font-size: 11px;
+  }
+
+  .fit-admin-welcome h2 {
+    font-size: 28px;
+  }
+
+  .fit-admin-welcome p {
+    font-size: 13px;
+  }
+
+  .fit-admin-welcome > svg {
+    display: none;
+  }
+
+
+  /* STATS */
+
+  .fit-admin-stats {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+
+    gap: 8px;
+
+    margin-top: 10px;
+  }
+
+  .fit-admin-stat-card {
+    min-height: 180px;
+
+    padding:
+      14px
+      12px;
+  }
+
+  .fit-admin-stat-icon {
+    width: 39px;
+    height: 39px;
+
+    font-size: 18px;
+  }
+
+  .fit-admin-stat-arrow {
+    font-size: 16px;
+  }
+
+  .fit-admin-stat-title {
+    font-size: 13px;
+  }
+
+  .fit-admin-stat-card > strong {
+    font-size: 27px;
+  }
+
+  .fit-admin-stat-card > p {
+    font-size: 12px;
+  }
+
+  .fit-admin-stat-open {
+    font-size: 11px;
+  }
+
+
+  /* BOTTOM */
+
+  .fit-admin-bottom {
+    gap: 10px;
+
+    margin-top: 10px;
+  }
+
+  .fit-admin-panel {
+    min-height: auto;
+
+    padding: 16px;
+  }
+
+  .fit-admin-panel > span {
+    font-size: 11px;
+  }
+
+  .fit-admin-panel h3 {
+    margin-bottom: 13px;
+
+    font-size: 21px;
+  }
+
+  .fit-admin-empty {
+    min-height: 145px;
+  }
+
+  .fit-admin-empty strong {
+    font-size: 14px;
+  }
+
+  .fit-admin-empty p {
+    font-size: 12px;
+  }
+
+  .fit-admin-quick button {
+    min-height: 48px;
+
+    font-size: 14px;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 380px) {
+
+  .fit-admin-heading h1 {
+    font-size: 18px;
+  }
+
+  .fit-admin-welcome h2 {
+    font-size: 25px;
+  }
+
+  .fit-admin-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .fit-admin-stat-card {
+    min-height: 170px;
+  }
+
+  .fit-admin-stat-title {
+    font-size: 14px;
+  }
+
+  .fit-admin-stat-card > strong {
+    font-size: 29px;
+  }
+}

@@ -1,0 +1,660 @@
+/* =========================================================
+   FITNESS NAVBAR
+========================================================= */
+
+.gym-navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  width: 100%;
+  height: 78px;
+
+  background: rgba(255, 255, 255, 0.97);
+  border-bottom: 1px solid #e8edf3;
+
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   NAVBAR CONTAINER
+========================================================= */
+
+.gym-nav-container {
+  width: min(1240px, calc(100% - 48px));
+  height: 100%;
+
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.gym-logo {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  flex-shrink: 0;
+
+  text-decoration: none;
+}
+
+
+/* LOGO ICON */
+
+.gym-logo-icon {
+  width: 43px;
+  height: 43px;
+
+  flex: 0 0 43px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 12px;
+
+  background: linear-gradient(
+    135deg,
+    #1689ff,
+    #0056d8
+  );
+
+  color: #ffffff;
+
+  font-size: 21px;
+
+  box-shadow: 0 8px 20px rgba(0, 103, 255, 0.2);
+
+  transform: rotate(-5deg);
+}
+
+
+/* LOGO TEXT */
+
+.gym-logo-text {
+  display: flex;
+  align-items: center;
+
+  white-space: nowrap;
+
+  font-size: 21px;
+  font-weight: 800;
+
+  letter-spacing: -0.6px;
+
+  color: #111827;
+}
+
+.gym-logo-text span {
+  color: #111827;
+}
+
+.gym-logo-text strong {
+  color: #087cf0;
+  font-weight: 900;
+}
+
+
+/* =========================================================
+   DESKTOP NAVIGATION
+========================================================= */
+
+.gym-nav-links {
+  display: flex;
+  align-items: center;
+
+  gap: 34px;
+}
+
+.gym-nav-links a {
+  position: relative;
+
+  color: #4b5563;
+
+  font-size: 15px;
+  font-weight: 600;
+
+  text-decoration: none;
+
+  white-space: nowrap;
+
+  transition: color 0.25s ease;
+}
+
+.gym-nav-links a:hover,
+.gym-nav-links a.active {
+  color: #087cf0;
+}
+
+
+/* ACTIVE LINE */
+
+.gym-nav-links a::after {
+  content: "";
+
+  position: absolute;
+
+  left: 50%;
+  bottom: -9px;
+
+  width: 0;
+  height: 2px;
+
+  border-radius: 20px;
+
+  background: #087cf0;
+
+  transform: translateX(-50%);
+
+  transition: width 0.25s ease;
+}
+
+.gym-nav-links a:hover::after,
+.gym-nav-links a.active::after {
+  width: 100%;
+}
+
+
+/* =========================================================
+   RIGHT ACTIONS
+========================================================= */
+
+.gym-nav-actions {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  flex-shrink: 0;
+}
+
+
+/* LOGIN */
+
+.gym-login {
+  display: flex;
+  align-items: center;
+
+  gap: 7px;
+
+  padding: 10px 12px;
+
+  color: #253142;
+
+  font-size: 15px;
+  font-weight: 600;
+
+  text-decoration: none;
+
+  transition: color 0.25s ease;
+}
+
+.gym-login svg {
+  font-size: 18px;
+}
+
+.gym-login:hover {
+  color: #087cf0;
+}
+
+
+/* =========================================================
+   JOIN BUTTON
+========================================================= */
+
+.gym-join-btn {
+  min-height: 44px;
+
+  padding: 0 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  border-radius: 10px;
+
+  background: linear-gradient(
+    135deg,
+    #1689ff,
+    #0066e6
+  );
+
+  color: #ffffff;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  text-decoration: none;
+
+  white-space: nowrap;
+
+  box-shadow: 0 7px 18px rgba(0, 105, 230, 0.2);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.gym-join-btn:hover {
+  transform: translateY(-2px);
+
+  box-shadow: 0 10px 24px rgba(0, 105, 230, 0.28);
+}
+
+.gym-join-btn svg {
+  font-size: 17px;
+}
+
+
+/* =========================================================
+   HAMBURGER BUTTON
+========================================================= */
+
+.gym-menu-btn {
+  width: 43px;
+  height: 43px;
+
+  padding: 0;
+
+  display: none;
+  align-items: center;
+  justify-content: center;
+
+  flex: 0 0 43px;
+
+  border: 1px solid #e1e7ee;
+  border-radius: 10px;
+
+  background: #ffffff;
+  color: #18212f;
+
+  font-size: 23px;
+
+  cursor: pointer;
+
+  box-sizing: border-box;
+
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.gym-menu-btn:hover {
+  background: #087cf0;
+  color: #ffffff;
+  border-color: #087cf0;
+}
+
+.gym-menu-btn svg {
+  width: 23px;
+  height: 23px;
+
+  display: block;
+
+  flex-shrink: 0;
+}
+
+
+/* =========================================================
+   MOBILE MENU
+========================================================= */
+
+.gym-mobile-menu {
+  display: none;
+}
+
+
+/* =========================================================
+   SMALL DESKTOP / TABLET
+========================================================= */
+
+@media (max-width: 1050px) {
+
+  .gym-nav-container {
+    width: calc(100% - 36px);
+  }
+
+  .gym-nav-links {
+    gap: 20px;
+  }
+
+  .gym-nav-links a {
+    font-size: 14px;
+  }
+
+  .gym-join-btn {
+    padding: 0 15px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE NAVBAR
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .gym-navbar {
+    height: 70px;
+
+    width: 100%;
+  }
+
+
+  /* IMPORTANT:
+     logo left + hamburger right */
+
+  .gym-nav-container {
+    width: 100%;
+    height: 70px;
+
+    max-width: none;
+
+    margin: 0;
+
+    padding: 0 16px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 12px;
+
+    box-sizing: border-box;
+  }
+
+
+  /* HIDE DESKTOP ITEMS */
+
+  .gym-nav-links,
+  .gym-login,
+  .gym-join-btn {
+    display: none;
+  }
+
+
+  /* LOGO */
+
+  .gym-logo {
+    min-width: 0;
+    max-width: calc(100% - 60px);
+
+    flex-shrink: 1;
+  }
+
+
+  /* HAMBURGER */
+
+  .gym-menu-btn {
+    display: flex;
+
+    position: relative;
+
+    top: auto;
+    right: auto;
+    bottom: auto;
+    left: auto;
+
+    margin: 0 0 0 auto;
+
+    flex: 0 0 43px;
+
+    z-index: 1002;
+  }
+
+
+  /* =======================================================
+     MOBILE DROPDOWN
+  ======================================================= */
+
+  .gym-mobile-menu {
+    position: fixed;
+
+    top: 70px;
+    left: 0;
+    right: 0;
+
+    z-index: 999;
+
+    width: 100%;
+    max-width: 100%;
+
+    margin: 0;
+
+    padding: 15px 16px 22px;
+
+    display: flex;
+    flex-direction: column;
+
+    box-sizing: border-box;
+
+    background: #ffffff;
+
+    border-bottom: 1px solid #e5e7eb;
+
+    box-shadow: 0 18px 40px rgba(20, 35, 55, 0.12);
+
+    transform: translateY(-120%);
+
+    opacity: 0;
+    visibility: hidden;
+
+    pointer-events: none;
+
+    transition:
+      transform 0.3s ease,
+      opacity 0.3s ease,
+      visibility 0.3s ease;
+  }
+
+
+  /* MENU OPEN */
+
+  .gym-mobile-menu.show {
+    transform: translateY(0);
+
+    opacity: 1;
+    visibility: visible;
+
+    pointer-events: auto;
+  }
+
+
+  /* MENU LINKS */
+
+  .gym-mobile-menu > a {
+    width: 100%;
+
+    padding: 13px 4px;
+
+    border-bottom: 1px solid #edf0f3;
+
+    color: #253142;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    text-decoration: none;
+
+    box-sizing: border-box;
+  }
+
+  .gym-mobile-menu > a:hover,
+  .gym-mobile-menu > a.active {
+    color: #087cf0;
+  }
+
+
+  /* MOBILE LOGIN */
+
+  .gym-mobile-menu .mobile-login {
+    min-height: 46px;
+
+    margin-top: 12px;
+    padding: 0 15px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    border: 1px solid #dce4ed;
+    border-radius: 10px;
+
+    background: #ffffff;
+
+    color: #253142;
+  }
+
+
+  /* MOBILE JOIN */
+
+  .gym-mobile-menu .mobile-join {
+    min-height: 46px;
+
+    margin-top: 10px;
+    padding: 0 15px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    border: none;
+    border-radius: 10px;
+
+    background: linear-gradient(
+      135deg,
+      #1689ff,
+      #0066e6
+    );
+
+    color: #ffffff;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+  .gym-navbar {
+    height: 66px;
+  }
+
+  .gym-nav-container {
+    height: 66px;
+
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+
+  /* LOGO */
+
+  .gym-logo {
+    gap: 8px;
+
+    max-width: calc(100% - 55px);
+  }
+
+  .gym-logo-icon {
+    width: 38px;
+    height: 38px;
+
+    flex-basis: 38px;
+
+    border-radius: 10px;
+
+    font-size: 18px;
+  }
+
+  .gym-logo-text {
+    font-size: 18px;
+  }
+
+
+  /* HAMBURGER */
+
+  .gym-menu-btn {
+    width: 40px;
+    height: 40px;
+
+    flex: 0 0 40px;
+
+    margin-left: auto;
+
+    font-size: 21px;
+  }
+
+  .gym-menu-btn svg {
+    width: 21px;
+    height: 21px;
+  }
+
+
+  /* DROPDOWN */
+
+  .gym-mobile-menu {
+    top: 66px;
+
+    width: 100%;
+
+    padding: 14px 12px 20px;
+  }
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 360px) {
+
+  .gym-nav-container {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .gym-logo-text {
+    font-size: 16px;
+  }
+
+  .gym-logo-icon {
+    width: 36px;
+    height: 36px;
+
+    flex-basis: 36px;
+  }
+
+  .gym-menu-btn {
+    width: 38px;
+    height: 38px;
+
+    flex-basis: 38px;
+  }
+}

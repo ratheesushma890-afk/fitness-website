@@ -1,0 +1,4119 @@
+
+/* =========================================================
+   PAGE
+========================================================= */
+
+.join-page {
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+
+  font-family: "Inter", sans-serif;
+  color: #ffffff;
+
+  background:
+    radial-gradient(
+      circle at 8% 15%,
+      rgba(19, 157, 255, 0.08),
+      transparent 25%
+    ),
+    linear-gradient(
+      180deg,
+      #030914 0%,
+      #06111d 50%,
+      #040a13 100%
+    );
+}
+
+.join-page *,
+.join-page *::before,
+.join-page *::after {
+  box-sizing: border-box;
+}
+
+.join-page button,
+.join-page input,
+.join-page select {
+  font-family: inherit;
+}
+
+
+/* =========================================================
+   02 — HERO
+========================================================= */
+
+.join-hero {
+  position: relative;
+
+  width: 100%;
+  min-height: 285px;
+
+  display: flex;
+  align-items: center;
+
+  overflow: hidden;
+
+  border-bottom:
+    1px solid rgba(255, 255, 255, 0.06);
+
+  background:
+    radial-gradient(
+      circle at 82% 20%,
+      rgba(19, 162, 255, 0.18),
+      transparent 27%
+    ),
+    linear-gradient(
+      120deg,
+      #020710 0%,
+      #06101c 55%,
+      #071b2e 100%
+    );
+}
+
+.join-hero::before {
+  content: "";
+
+  position: absolute;
+
+  width: 340px;
+  height: 340px;
+
+  right: -100px;
+  top: -170px;
+
+  border-radius: 50%;
+
+  border:
+    1px solid rgba(34, 174, 255, 0.13);
+}
+
+.join-hero::after {
+  content: "";
+
+  position: absolute;
+
+  width: 210px;
+  height: 210px;
+
+  right: 14%;
+  bottom: -155px;
+
+  border-radius: 50%;
+
+  background:
+    rgba(20, 160, 255, 0.06);
+}
+
+.join-hero-overlay {
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(2, 7, 16, 0.97),
+      rgba(2, 7, 16, 0.7) 60%,
+      rgba(2, 7, 16, 0.15)
+    );
+}
+
+.join-hero-container {
+  position: relative;
+  z-index: 2;
+
+  width: min(1320px, calc(100% - 50px));
+
+  margin: 0 auto;
+
+  padding: 70px 0 25px;
+}
+
+
+/* =========================================================
+   03 — BACK BUTTON
+========================================================= */
+
+.join-back {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 7px;
+
+  margin: 0 0 11px;
+  padding: 0;
+
+  border: 0;
+  outline: 0;
+
+  color: #a7b9ca;
+  background: transparent;
+
+  font-size: 15px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.join-back svg {
+  font-size: 19px;
+}
+
+.join-back:hover {
+  color: #ffffff;
+
+  transform: translateX(-3px);
+}
+
+
+/* =========================================================
+   04 — HERO CONTENT
+========================================================= */
+
+.join-hero-content {
+  max-width: 860px;
+}
+
+.join-eyebrow {
+  display: flex;
+  align-items: center;
+
+  gap: 9px;
+
+  margin-bottom: 7px;
+
+  color: #1eacff;
+
+  font-size: 13px;
+  font-weight: 900;
+
+  letter-spacing: 1.8px;
+}
+
+.join-eyebrow span {
+  width: 34px;
+  height: 2px;
+
+  background: #1eacff;
+}
+
+.join-hero-content h1 {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size: clamp(45px, 5vw, 63px);
+  line-height: 1;
+
+  font-weight: 900;
+
+  letter-spacing: -2px;
+}
+
+.join-hero-content h1 strong {
+  color: #19aaff;
+}
+
+.join-hero-content > p {
+  max-width: 700px;
+
+  margin: 10px 0 0;
+
+  color: #a3b5c7;
+
+  font-size: 17px;
+  line-height: 1.5;
+}
+
+
+/* =========================================================
+   05 — HERO POINTS
+========================================================= */
+
+.join-hero-points {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 8px 22px;
+
+  margin-top: 13px;
+}
+
+.join-hero-points div {
+  display: flex;
+  align-items: center;
+
+  gap: 7px;
+
+  color: #e1eaf3;
+
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.join-hero-points div > span {
+  width: 31px;
+  height: 31px;
+
+  flex: 0 0 31px;
+
+  display: grid;
+  place-items: center;
+
+  border:
+    1px solid rgba(28, 172, 255, 0.2);
+
+  border-radius: 50%;
+
+  color: #24afff;
+
+  background:
+    rgba(20, 160, 255, 0.09);
+}
+
+.join-hero-points svg {
+  font-size: 15px;
+}
+
+
+/* =========================================================
+   06 — MAIN LAYOUT
+========================================================= */
+
+.join-main {
+  width: 100%;
+
+  padding: 32px 0 55px;
+}
+
+.join-container {
+  width: min(1320px, calc(100% - 50px));
+
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    405px;
+
+  gap: 26px;
+
+  align-items: start;
+}
+
+
+/* =========================================================
+   07 — DESKTOP SAME HEIGHT
+========================================================= */
+
+@media (min-width: 901px) {
+
+  .join-left,
+  .join-summary {
+    height: 680px;
+  }
+
+
+  /* LEFT SCROLL */
+
+  .join-left {
+    min-width: 0;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    padding-right: 5px;
+
+    scroll-behavior: smooth;
+
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .join-left::-webkit-scrollbar {
+    display: none;
+
+    width: 0;
+    height: 0;
+  }
+
+
+  /* RIGHT */
+
+  .join-summary {
+    position: sticky;
+
+    top: 88px;
+
+    width: 100%;
+
+    align-self: start;
+
+    overflow: visible;
+  }
+
+  .join-summary-card {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    padding: 18px;
+
+    overflow: hidden;
+
+    border:
+      1px solid rgba(67, 170, 235, 0.2);
+
+    border-radius: 17px;
+
+    background:
+      radial-gradient(
+        circle at 100% 0%,
+        rgba(0, 156, 255, 0.12),
+        transparent 29%
+      ),
+      linear-gradient(
+        155deg,
+        #0a1929,
+        #06111e
+      );
+
+    box-shadow:
+      0 22px 55px
+      rgba(0, 0, 0, 0.28);
+  }
+}
+
+
+/* =========================================================
+   08 — SECTION HEADING
+========================================================= */
+
+.join-section-heading {
+  margin-bottom: 18px;
+}
+
+.join-section-heading > span {
+  display: block;
+
+  margin-bottom: 5px;
+
+  color: #20adff;
+
+  font-size: 13px;
+  font-weight: 900;
+
+  letter-spacing: 1.5px;
+}
+
+.join-section-heading h2 {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size: clamp(36px, 3vw, 43px);
+  line-height: 1.05;
+
+  font-weight: 900;
+
+  letter-spacing: -1.2px;
+}
+
+.join-section-heading h2 strong {
+  color: #19aaff;
+}
+
+.join-section-heading p {
+  max-width: 720px;
+
+  margin: 7px 0 0;
+
+  color: #95a9bc;
+
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+
+/* =========================================================
+   09 — PLAN GRID
+========================================================= */
+
+.join-plans {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 12px;
+}
+
+
+/* =========================================================
+   10 — PLAN CARD
+========================================================= */
+
+.join-plan-card {
+  position: relative;
+
+  min-width: 0;
+  min-height: 470px;
+
+  padding: 20px 17px 17px;
+
+  display: flex;
+  flex-direction: column;
+
+  overflow: hidden;
+
+  text-align: left;
+
+  border:
+    1px solid rgba(95, 168, 220, 0.17);
+
+  border-radius: 15px;
+
+  color: #ffffff;
+
+  background:
+    radial-gradient(
+      circle at 100% 0%,
+      rgba(0, 147, 255, 0.06),
+      transparent 30%
+    ),
+    linear-gradient(
+      150deg,
+      #091725,
+      #06111d
+    );
+
+  cursor: pointer;
+
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.join-plan-card:hover {
+  transform: translateY(-4px);
+
+  border-color:
+    rgba(28, 171, 255, 0.5);
+
+  box-shadow:
+    0 18px 40px
+    rgba(0, 0, 0, 0.25);
+}
+
+.join-plan-card.selected {
+  border:
+    2px solid #18a9ff;
+
+  background:
+    radial-gradient(
+      circle at 50% 0%,
+      rgba(0, 153, 255, 0.15),
+      transparent 37%
+    ),
+    linear-gradient(
+      150deg,
+      #0b243e,
+      #061423
+    );
+}
+
+
+/* =========================================================
+   11 — POPULAR
+========================================================= */
+
+.join-popular {
+  position: absolute;
+
+  top: 0;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  padding: 6px 15px;
+
+  white-space: nowrap;
+
+  border-radius:
+    0 0 9px 9px;
+
+  color: #ffffff;
+
+  background:
+    linear-gradient(
+      135deg,
+      #18b7ff,
+      #0874ee
+    );
+
+  font-size: 10px;
+  font-weight: 900;
+
+  letter-spacing: 0.7px;
+}
+
+
+/* =========================================================
+   12 — PLAN ICON
+========================================================= */
+
+.join-plan-icon {
+  width: 52px;
+  height: 52px;
+
+  flex: 0 0 52px;
+
+  margin-bottom: 11px;
+
+  display: grid;
+  place-items: center;
+
+  border:
+    1px solid rgba(31, 172, 255, 0.22);
+
+  border-radius: 12px;
+
+  color: #4fc0ff;
+
+  background:
+    rgba(20, 160, 255, 0.09);
+
+  font-size: 23px;
+}
+
+.join-plan-card.selected
+.join-plan-icon {
+  margin-top: 21px;
+
+  color: #ffffff;
+
+  border-color: transparent;
+
+  background:
+    linear-gradient(
+      135deg,
+      #19b7ff,
+      #0770ef
+    );
+}
+
+
+/* =========================================================
+   13 — PLAN TAG
+========================================================= */
+
+.join-plan-tag {
+  display: inline-block;
+
+  width: fit-content;
+
+  margin-bottom: 5px;
+
+  padding: 4px 8px;
+
+  border-radius: 999px;
+
+  color: #43baff;
+
+  background:
+    rgba(20, 160, 255, 0.08);
+
+  font-size: 10px;
+  font-weight: 900;
+
+  letter-spacing: 0.8px;
+}
+
+
+/* =========================================================
+   14 — PLAN TITLE
+========================================================= */
+
+.join-plan-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 9px;
+}
+
+.join-plan-top h3 {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size: 28px;
+  line-height: 1.05;
+
+  font-weight: 900;
+}
+
+.join-plan-check {
+  width: 27px;
+  height: 27px;
+
+  flex: 0 0 27px;
+
+  display: grid;
+  place-items: center;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.15);
+
+  border-radius: 50%;
+
+  color: #ffffff;
+
+  font-size: 12px;
+}
+
+.join-plan-card.selected
+.join-plan-check {
+  border-color: #159fff;
+  background: #159fff;
+}
+
+
+/* =========================================================
+   15 — PLAN DESCRIPTION
+========================================================= */
+
+.join-plan-description {
+  min-height: 57px;
+
+  margin: 9px 0 12px;
+
+  color: #9eb1c3;
+
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+
+/* =========================================================
+   16 — PRICE
+========================================================= */
+
+.join-plan-price {
+  margin-bottom: 13px;
+
+  color: #ffffff;
+
+  font-size: 30px;
+  line-height: 1;
+
+  font-weight: 900;
+}
+
+.join-plan-price small {
+  margin-left: 3px;
+
+  color: #94a9bd;
+
+  font-size: 13px;
+  font-weight: 600;
+}
+
+
+/* =========================================================
+   17 — FEATURES
+========================================================= */
+
+.join-plan-card ul {
+  margin: 0 0 13px;
+  padding: 0;
+
+  list-style: none;
+}
+
+.join-plan-card li {
+  display: flex;
+  align-items: flex-start;
+
+  gap: 7px;
+
+  margin-bottom: 7px;
+
+  color: #cedae5;
+
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.join-plan-card li > span {
+  width: 19px;
+  height: 19px;
+
+  flex: 0 0 19px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 50%;
+
+  color: #ffffff;
+  background: #149fff;
+
+  font-size: 9px;
+}
+
+
+/* =========================================================
+   18 — PLAN BUTTON
+========================================================= */
+
+.join-plan-select-text {
+  width: 100%;
+  min-height: 44px;
+
+  margin-top: auto;
+
+  padding: 0 11px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 7px;
+
+  border:
+    1px solid #17a8ff;
+
+  border-radius: 9px;
+
+  color: #54c2ff;
+
+  font-size: 12px;
+  font-weight: 900;
+
+  letter-spacing: 0.6px;
+}
+
+.join-plan-card.selected
+.join-plan-select-text {
+  color: #ffffff;
+
+  border-color: transparent;
+
+  background:
+    linear-gradient(
+      135deg,
+      #18b7ff,
+      #0872ef
+    );
+}
+
+
+/* =========================================================
+   19 — DURATION
+========================================================= */
+
+.join-duration-section {
+  margin-top: 34px;
+}
+
+.join-duration-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+
+  gap: 9px;
+}
+
+.join-duration-card {
+  position: relative;
+
+  min-height: 120px;
+
+  padding: 16px 8px 11px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  gap: 5px;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.09);
+
+  border-radius: 11px;
+
+  color: #ffffff;
+
+  background:
+    linear-gradient(
+      145deg,
+      #091725,
+      #06111d
+    );
+
+  cursor: pointer;
+
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.join-duration-card:hover {
+  transform: translateY(-3px);
+
+  border-color:
+    rgba(24, 169, 255, 0.5);
+}
+
+.join-duration-card.selected {
+  border-color: #16a7ff;
+
+  background:
+    linear-gradient(
+      145deg,
+      #0d2c49,
+      #071827
+    );
+}
+
+.join-duration-card > svg {
+  color: #22afff;
+
+  font-size: 24px;
+}
+
+.join-duration-card > strong {
+  color: #ffffff;
+
+  font-size: 17px;
+  font-weight: 900;
+}
+
+.join-duration-card >
+span:not(.join-duration-badge) {
+  color: #91a6ba;
+
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.join-duration-badge {
+  position: absolute;
+
+  top: -8px;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  padding: 4px 8px;
+
+  white-space: nowrap;
+
+  border-radius: 999px;
+
+  color: #ffffff;
+  background: #149fff;
+
+  font-size: 9px;
+  font-weight: 900;
+}
+
+.join-duration-check {
+  position: absolute;
+
+  width: 22px;
+  height: 22px;
+
+  right: 7px;
+  top: 7px;
+
+  display: grid;
+  place-items: center;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.14);
+
+  border-radius: 50%;
+
+  font-size: 9px;
+}
+
+.join-duration-card.selected
+.join-duration-check {
+  border-color: #159fff;
+  background: #159fff;
+}
+
+
+/* =========================================================
+   20 — FORM SECTION
+========================================================= */
+
+.join-form-section {
+  margin-top: 34px;
+
+  padding-bottom: 18px;
+}
+
+.join-form {
+  padding: 20px;
+
+  border:
+    1px solid rgba(91, 163, 218, 0.14);
+
+  border-radius: 15px;
+
+  background:
+    linear-gradient(
+      150deg,
+      #091725,
+      #06111d
+    );
+}
+
+.join-form-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 13px;
+}
+
+
+/* =========================================================
+   21 — FIELD
+========================================================= */
+
+.join-field {
+  min-width: 0;
+}
+
+.join-field label {
+  display: block;
+
+  margin-bottom: 6px;
+
+  color: #e9f1f9;
+
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.join-field label span {
+  margin-left: 2px;
+
+  color: #ff6878;
+}
+
+
+/* =========================================================
+   22 — INPUT
+========================================================= */
+
+.join-input-wrap {
+  position: relative;
+
+  width: 100%;
+  min-height: 51px;
+
+  display: flex;
+  align-items: center;
+
+  border:
+    1px solid rgba(116, 164, 202, 0.17);
+
+  border-radius: 9px;
+
+  background: #0b1a2a;
+
+  transition:
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.join-input-wrap:focus-within {
+  border-color: #17a9ff;
+
+  box-shadow:
+    0 0 0 3px
+    rgba(23, 169, 255, 0.07);
+}
+
+.join-input-wrap >
+svg:first-child {
+  position: absolute;
+
+  left: 14px;
+
+  color: #91a7bc;
+
+  font-size: 18px;
+
+  pointer-events: none;
+}
+
+.join-input-wrap input,
+.join-input-wrap select {
+  width: 100%;
+  min-height: 49px;
+
+  padding:
+    0 39px
+    0 42px;
+
+  border: 0;
+  outline: 0;
+
+  color: #ffffff;
+  background: transparent;
+
+  font-size: 15px;
+}
+
+.join-input-wrap input::placeholder {
+  color: #71869b;
+}
+
+.join-input-wrap select {
+  appearance: none;
+  -webkit-appearance: none;
+
+  cursor: pointer;
+}
+
+.join-input-wrap select option {
+  color: #ffffff;
+  background: #091725;
+}
+
+.join-goal-field {
+  margin-top: 13px;
+}
+
+.join-select-arrow,
+.join-date-arrow {
+  position: absolute;
+
+  right: 13px;
+
+  color: #8197ac;
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   23 — ERROR
+========================================================= */
+
+.join-field-error
+.join-input-wrap {
+  border-color: #ff6475;
+}
+
+.join-error-text {
+  display: block;
+
+  margin-top: 4px;
+
+  color: #ff7c89;
+
+  font-size: 12px;
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   24 — DATE
+========================================================= */
+
+.join-date-wrap {
+  cursor: pointer;
+}
+
+.join-date-wrap
+input[type="date"] {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  opacity: 0;
+
+  cursor: pointer;
+}
+
+.join-date-display {
+  width: 100%;
+
+  padding-left: 42px;
+  padding-right: 39px;
+
+  color: #cedae5;
+
+  font-size: 15px;
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   25 — CURRENT SELECTION
+========================================================= */
+
+.join-current-selection {
+  margin-top: 13px;
+
+  padding: 13px;
+
+  border:
+    1px solid rgba(20, 163, 255, 0.17);
+
+  border-radius: 10px;
+
+  background:
+    rgba(18, 157, 255, 0.05);
+}
+
+.join-current-selection-title {
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+
+  margin-bottom: 10px;
+}
+
+.join-current-selection-title > svg {
+  color: #18a8ff;
+
+  font-size: 20px;
+}
+
+.join-current-selection-title span {
+  display: block;
+
+  margin-bottom: 2px;
+
+  color: #7d94a9;
+
+  font-size: 9px;
+  font-weight: 900;
+
+  letter-spacing: 0.8px;
+}
+
+.join-current-selection-title strong {
+  color: #ffffff;
+
+  font-size: 15px;
+}
+
+.join-current-selection-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+
+  gap: 6px;
+}
+
+.join-current-selection-grid > div {
+  padding: 8px;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.055);
+
+  border-radius: 8px;
+
+  background:
+    rgba(0, 0, 0, 0.12);
+}
+
+.join-current-selection-grid span {
+  display: block;
+
+  margin-bottom: 2px;
+
+  color: #758ba0;
+
+  font-size: 8px;
+  font-weight: 900;
+}
+
+.join-current-selection-grid strong {
+  color: #eef6ff;
+
+  font-size: 12px;
+}
+
+
+/* =========================================================
+   26 — SELECTED CLASS
+========================================================= */
+
+.join-form-class {
+  margin-top: 10px;
+
+  padding: 10px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 9px;
+
+  border:
+    1px solid rgba(20, 164, 255, 0.14);
+
+  border-radius: 9px;
+
+  background:
+    rgba(20, 164, 255, 0.04);
+}
+
+.join-form-class-icon {
+  width: 39px;
+  height: 39px;
+
+  flex: 0 0 39px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 9px;
+
+  color: #ffffff;
+  background: #159fff;
+
+  font-size: 17px;
+}
+
+.join-form-class-info {
+  flex: 1;
+
+  min-width: 0;
+}
+
+.join-form-class-info span {
+  display: block;
+
+  color: #7d94a9;
+
+  font-size: 8px;
+  font-weight: 900;
+}
+
+.join-form-class-info strong {
+  display: block;
+
+  margin-top: 1px;
+
+  color: #ffffff;
+
+  font-size: 13px;
+}
+
+.join-form-class-info small {
+  display: block;
+
+  margin-top: 1px;
+
+  color: #879caf;
+
+  font-size: 10px;
+}
+
+.join-form-class > svg {
+  color: #18a8ff;
+
+  font-size: 18px;
+}
+
+
+/* =========================================================
+   27 — FORM NOTE
+========================================================= */
+
+.join-form-note {
+  margin-top: 10px;
+
+  padding: 10px;
+
+  display: flex;
+  align-items: flex-start;
+
+  gap: 8px;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.05);
+
+  border-radius: 9px;
+
+  background:
+    rgba(255, 255, 255, 0.022);
+}
+
+.join-form-note > svg {
+  flex: 0 0 auto;
+
+  margin-top: 2px;
+
+  color: #18a8ff;
+
+  font-size: 17px;
+}
+
+.join-form-note strong {
+  display: block;
+
+  margin-bottom: 2px;
+
+  color: #edf5fd;
+
+  font-size: 13px;
+}
+
+.join-form-note p {
+  margin: 0;
+
+  color: #8398ac;
+
+  font-size: 11px;
+  line-height: 1.4;
+}
+
+
+/* =========================================================
+   28 — SUBMIT
+========================================================= */
+
+.join-submit-btn {
+  width: 100%;
+  min-height: 53px;
+
+  margin-top: 12px;
+
+  padding: 0 16px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  border: 0;
+  outline: 0;
+
+  border-radius: 10px;
+
+  color: #ffffff;
+
+  background:
+    linear-gradient(
+      135deg,
+      #18b8ff,
+      #0871ef
+    );
+
+  box-shadow:
+    0 13px 30px
+    rgba(0, 116, 232, 0.2);
+
+  font-size: 14px;
+  font-weight: 900;
+
+  letter-spacing: 0.6px;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.join-submit-btn:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 17px 35px
+    rgba(0, 126, 255, 0.27);
+}
+
+.join-submit-btn svg {
+  font-size: 18px;
+}
+
+.join-submit-btn:disabled {
+  opacity: 0.65;
+
+  cursor: not-allowed;
+
+  transform: none;
+}
+
+
+/* =========================================================
+   29 — SUMMARY TOP
+========================================================= */
+
+.join-summary-top {
+  display: flex;
+  align-items: center;
+
+  gap: 9px;
+
+  margin-bottom: 11px;
+}
+
+.join-summary-icon {
+  width: 39px;
+  height: 39px;
+
+  flex: 0 0 39px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 10px;
+
+  color: #ffffff;
+
+  background:
+    linear-gradient(
+      135deg,
+      #19b7ff,
+      #0870ef
+    );
+
+  font-size: 18px;
+}
+
+.join-summary-top > span {
+  color: #c3d1de;
+
+  font-size: 13px;
+  font-weight: 900;
+
+  letter-spacing: 0.8px;
+}
+
+
+/* =========================================================
+   30 — SUMMARY PLAN
+========================================================= */
+
+.join-summary-plan {
+  display: grid;
+
+  grid-template-columns:
+    50px
+    minmax(0, 1fr);
+
+  gap: 10px;
+
+  align-items: center;
+}
+
+.join-summary-plan-icon {
+  width: 50px;
+  height: 50px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 11px;
+
+  color: #ffffff;
+
+  background:
+    linear-gradient(
+      135deg,
+      #18b7ff,
+      #076fff
+    );
+
+  font-size: 22px;
+}
+
+.join-summary-plan >
+div:last-child > span {
+  display: inline-block;
+
+  margin-bottom: 1px;
+
+  color: #3cbcff;
+
+  font-size: 10px;
+  font-weight: 900;
+
+  letter-spacing: 0.7px;
+}
+
+.join-summary-plan h2 {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size: 30px;
+  line-height: 1;
+
+  font-weight: 900;
+}
+
+.join-summary-plan p {
+  margin: 4px 0 0;
+
+  color: #95a9bc;
+
+  font-size: 12px;
+  line-height: 1.35;
+}
+
+
+/* =========================================================
+   31 — SUMMARY MONTHLY PRICE
+========================================================= */
+
+.join-summary-monthly {
+  display: flex;
+  align-items: baseline;
+
+  gap: 5px;
+
+  margin-top: 11px;
+}
+
+.join-summary-monthly strong {
+  color: #ffffff;
+
+  font-size: 33px;
+  line-height: 1;
+
+  font-weight: 900;
+}
+
+.join-summary-monthly span {
+  color: #a0b2c3;
+
+  font-size: 13px;
+}
+
+
+/* =========================================================
+   32 — SUMMARY DIVIDER
+========================================================= */
+
+.join-summary-divider {
+  width: 100%;
+  height: 1px;
+
+  margin: 11px 0;
+
+  background:
+    rgba(255, 255, 255, 0.07);
+}
+
+
+/* =========================================================
+   33 — SUMMARY ROWS
+========================================================= */
+
+.join-summary-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 10px;
+
+  margin-bottom: 7px;
+}
+
+.join-summary-row span {
+  color: #a5b7c7;
+
+  font-size: 13px;
+}
+
+.join-summary-row strong {
+  color: #ffffff;
+
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.join-summary-row.discount span,
+.join-summary-row.discount strong {
+  color: #49d998;
+}
+
+
+/* =========================================================
+   34 — TOTAL
+========================================================= */
+
+.join-summary-total {
+  margin-top: 9px;
+
+  padding: 10px 11px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 10px;
+
+  border:
+    1px solid rgba(25, 168, 255, 0.27);
+
+  border-radius: 10px;
+
+  background:
+    rgba(18, 159, 255, 0.07);
+}
+
+.join-summary-total span {
+  display: block;
+
+  margin-bottom: 1px;
+
+  color: #ffffff;
+
+  font-size: 11px;
+  font-weight: 900;
+
+  letter-spacing: 0.7px;
+}
+
+.join-summary-total small {
+  display: block;
+
+  color: #8da2b6;
+
+  font-size: 9px;
+}
+
+.join-summary-total > strong {
+  color: #ffffff;
+
+  font-size: 25px;
+  font-weight: 900;
+}
+
+
+/* =========================================================
+   35 — WHAT'S INCLUDED
+========================================================= */
+
+.join-summary-card > h3 {
+  margin: 11px 0 8px;
+
+  color: #ffffff;
+
+  font-size: 17px;
+  line-height: 1.2;
+
+  font-weight: 900;
+}
+
+.join-summary-features {
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+.join-summary-features li {
+  display: flex;
+  align-items: center;
+
+  gap: 7px;
+
+  margin-bottom: 5px;
+
+  color: #cbd7e2;
+
+  font-size: 13px;
+  line-height: 1.3;
+}
+
+.join-summary-features li > span {
+  width: 18px;
+  height: 18px;
+
+  flex: 0 0 18px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 50%;
+
+  color: #ffffff;
+  background: #159fff;
+
+  font-size: 8px;
+}
+
+
+/* =========================================================
+   36 — SUMMARY DATE
+========================================================= */
+
+.join-summary-date {
+  margin-top: 8px;
+
+  padding: 8px 9px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.06);
+
+  border-radius: 8px;
+
+  background:
+    rgba(255, 255, 255, 0.024);
+}
+
+.join-summary-date > svg {
+  flex: 0 0 auto;
+
+  color: #19a9ff;
+
+  font-size: 16px;
+}
+
+.join-summary-date span {
+  display: block;
+
+  margin-bottom: 1px;
+
+  color: #8096ab;
+
+  font-size: 12px;
+  font-weight: 900;
+
+  letter-spacing: 0.7px;
+}
+
+.join-summary-date strong {
+  color: #ffffff;
+
+  font-size: 12px;
+}
+
+
+/* =========================================================
+   37 — SUMMARY CLASS
+========================================================= */
+
+.join-summary-class {
+  margin-top: 6px;
+
+  padding: 8px 9px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+
+  border:
+    1px solid rgba(20, 164, 255, 0.13);
+
+  border-radius: 8px;
+
+  background:
+    rgba(20, 164, 255, 0.04);
+}
+
+.join-summary-class > svg {
+  flex: 0 0 auto;
+
+  color: #18a8ff;
+
+  font-size: 16px;
+}
+
+.join-summary-class span {
+  display: block;
+
+  color: #8197ac;
+
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.join-summary-class strong {
+  display: block;
+
+  margin-top: 1px;
+
+  color: #ffffff;
+
+  font-size: 12px;
+}
+
+.join-summary-class small {
+  display: block;
+
+  margin-top: 1px;
+
+  color: #8499ad;
+
+  font-size: 12px;
+}
+
+
+/* =========================================================
+   38 — SUMMARY NOTE
+========================================================= */
+
+.join-summary-note {
+  margin-top: 7px;
+
+  padding-top: 7px;
+
+  display: flex;
+  align-items: flex-start;
+
+  gap: 7px;
+
+  border-top:
+    1px solid rgba(255, 255, 255, 0.05);
+}
+
+.join-summary-note > svg {
+  flex: 0 0 auto;
+
+  margin-top: 1px;
+
+  color: #18a8ff;
+
+  font-size: 15px;
+}
+
+.join-summary-note p {
+  margin: 0;
+
+  color: #8297ab;
+
+  font-size: 14px;
+  line-height: 1.35;
+}
+
+
+/* =========================================================
+   39 — LAPTOP
+========================================================= */
+
+@media (max-width: 1180px) and (min-width: 901px) {
+
+  .join-hero-container,
+  .join-container {
+    width: calc(100% - 36px);
+  }
+
+  .join-container {
+    grid-template-columns:
+      minmax(0, 1fr)
+      360px;
+
+    gap: 20px;
+  }
+
+  .join-left,
+  .join-summary {
+    height: 650px;
+  }
+
+  .join-plans {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+  .join-plan-card {
+    min-height: auto;
+  }
+
+  .join-plan-card:last-child {
+    grid-column: 1 / -1;
+  }
+
+  .join-plan-description {
+    min-height: auto;
+  }
+
+  .join-summary-card {
+    padding: 15px;
+  }
+
+  .join-summary-top {
+    margin-bottom: 8px;
+  }
+
+  .join-summary-plan {
+    grid-template-columns:
+      45px
+      minmax(0, 1fr);
+
+    gap: 8px;
+  }
+
+  .join-summary-plan-icon {
+    width: 45px;
+    height: 45px;
+
+    font-size: 20px;
+  }
+
+  .join-summary-plan h2 {
+    font-size: 27px;
+  }
+
+  .join-summary-plan p {
+    font-size: 11px;
+  }
+
+  .join-summary-monthly {
+    margin-top: 8px;
+  }
+
+  .join-summary-monthly strong {
+    font-size: 30px;
+  }
+
+  .join-summary-divider {
+    margin: 8px 0;
+  }
+
+  .join-summary-row {
+    margin-bottom: 5px;
+  }
+
+  .join-summary-row span {
+    font-size: 12px;
+  }
+
+  .join-summary-row strong {
+    font-size: 13px;
+  }
+
+  .join-summary-total {
+    margin-top: 7px;
+
+    padding: 8px 9px;
+  }
+
+  .join-summary-total > strong {
+    font-size: 22px;
+  }
+
+  .join-summary-card > h3 {
+    margin: 8px 0 6px;
+
+    font-size: 15px;
+  }
+
+  .join-summary-features li {
+    margin-bottom: 4px;
+
+    font-size: 11px;
+  }
+
+  .join-summary-date {
+    margin-top: 6px;
+
+    padding: 7px;
+  }
+
+  .join-summary-class {
+    margin-top: 5px;
+
+    padding: 7px;
+  }
+
+  .join-summary-note {
+    margin-top: 5px;
+    padding-top: 5px;
+  }
+
+  .join-summary-note p {
+    font-size: 9px;
+  }
+}
+
+
+/* =========================================================
+   40 — TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .join-hero {
+    min-height: 285px;
+  }
+
+  .join-hero-container {
+    width:
+      min(760px, calc(100% - 32px));
+
+    padding: 72px 0 24px;
+  }
+
+  .join-hero-content h1 {
+    font-size: 48px;
+  }
+
+  .join-hero-content > p {
+    font-size: 16px;
+  }
+
+  .join-main {
+    padding: 30px 0 52px;
+  }
+
+  .join-container {
+    width:
+      min(760px, calc(100% - 32px));
+
+    display: block;
+  }
+
+
+  /* NO INTERNAL LEFT HEIGHT ON TABLET */
+
+  .join-left {
+    width: 100%;
+    height: auto;
+
+    overflow: visible;
+
+    padding-right: 0;
+  }
+
+
+  /* PLANS */
+
+  .join-plans {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+  .join-plan-card {
+    min-height: auto;
+  }
+
+  .join-plan-card:last-child {
+    grid-column: 1 / -1;
+  }
+
+  .join-plan-description {
+    min-height: auto;
+  }
+
+
+  /* DURATION */
+
+  .join-duration-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+
+  /* SUMMARY NORMAL */
+
+  .join-summary {
+    position: static;
+
+    width: 100%;
+    height: auto;
+
+    margin-top: 26px;
+
+    overflow: visible;
+  }
+
+  .join-summary-card {
+    width: 100%;
+    height: auto;
+
+    overflow: visible;
+
+    padding: 22px;
+
+    border:
+      1px solid rgba(67, 170, 235, 0.2);
+
+    border-radius: 16px;
+
+    background:
+      radial-gradient(
+        circle at 100% 0%,
+        rgba(0, 156, 255, 0.12),
+        transparent 29%
+      ),
+      linear-gradient(
+        155deg,
+        #0a1929,
+        #06111e
+      );
+  }
+
+  .join-summary-plan h2 {
+    font-size: 30px;
+  }
+
+  .join-summary-plan p {
+    font-size: 13px;
+  }
+
+  .join-summary-monthly strong {
+    font-size: 34px;
+  }
+
+  .join-summary-row span,
+  .join-summary-row strong {
+    font-size: 14px;
+  }
+
+  .join-summary-card > h3 {
+    font-size: 18px;
+  }
+
+  .join-summary-features li {
+    font-size: 14px;
+
+    margin-bottom: 7px;
+  }
+
+  .join-summary-note p {
+    font-size: 12px;
+  }
+}
+
+
+/* =========================================================
+   41 — MOBILE
+========================================================= */
+
+@media (max-width: 680px) {
+
+  /* HERO */
+
+  .join-hero {
+    min-height: auto;
+  }
+
+  .join-hero-container {
+    width: calc(100% - 26px);
+
+    padding: 68px 0 22px;
+  }
+
+  .join-back {
+    margin-bottom: 10px;
+
+    font-size: 14px;
+  }
+
+  .join-eyebrow {
+    margin-bottom: 6px;
+
+    font-size: 11px;
+    letter-spacing: 1.2px;
+  }
+
+  .join-eyebrow span {
+    width: 27px;
+  }
+
+  .join-hero-content h1 {
+    font-size: 39px;
+    line-height: 1.02;
+
+    letter-spacing: -1.3px;
+  }
+
+  .join-hero-content > p {
+    margin-top: 8px;
+
+    font-size: 15px;
+    line-height: 1.45;
+  }
+
+  .join-hero-points {
+    display: grid;
+
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+
+    gap: 7px;
+
+    margin-top: 11px;
+  }
+
+  .join-hero-points div {
+    font-size: 13px;
+  }
+
+  .join-hero-points div > span {
+    width: 30px;
+    height: 30px;
+
+    flex: 0 0 30px;
+  }
+
+
+  /* MAIN */
+
+  .join-main {
+    padding: 27px 0 45px;
+  }
+
+  .join-container {
+    width: calc(100% - 26px);
+  }
+
+
+  /* HEADINGS */
+
+  .join-section-heading {
+    margin-bottom: 15px;
+  }
+
+  .join-section-heading > span {
+    margin-bottom: 4px;
+
+    font-size: 11px;
+  }
+
+  .join-section-heading h2 {
+    font-size: 31px;
+  }
+
+  .join-section-heading p {
+    margin-top: 6px;
+
+    font-size: 14px;
+    line-height: 1.45;
+  }
+
+
+  /* PLAN */
+
+  .join-plans {
+    grid-template-columns: 1fr;
+
+    gap: 10px;
+  }
+
+  .join-plan-card,
+  .join-plan-card:last-child {
+    grid-column: auto;
+
+    min-height: auto;
+
+    padding: 18px 15px;
+
+    border-radius: 14px;
+  }
+
+  .join-plan-card.selected
+  .join-plan-icon {
+    margin-top: 21px;
+  }
+
+  .join-plan-icon {
+    width: 50px;
+    height: 50px;
+
+    flex: 0 0 50px;
+
+    margin-bottom: 10px;
+
+    font-size: 22px;
+  }
+
+  .join-plan-top h3 {
+    font-size: 27px;
+  }
+
+  .join-plan-description {
+    min-height: 0;
+
+    margin: 8px 0 11px;
+
+    font-size: 14px;
+  }
+
+  .join-plan-price {
+    margin-bottom: 12px;
+
+    font-size: 29px;
+  }
+
+  .join-plan-price small {
+    font-size: 13px;
+  }
+
+  .join-plan-card li {
+    margin-bottom: 6px;
+
+    font-size: 14px;
+  }
+
+  .join-plan-select-text {
+    min-height: 46px;
+
+    font-size: 12px;
+  }
+
+
+  /* DURATION */
+
+  .join-duration-section {
+    margin-top: 30px;
+  }
+
+  .join-duration-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+
+    gap: 8px;
+  }
+
+  .join-duration-card {
+    min-height: 117px;
+
+    padding: 16px 6px 10px;
+  }
+
+  .join-duration-card > strong {
+    font-size: 16px;
+  }
+
+  .join-duration-card >
+  span:not(.join-duration-badge) {
+    font-size: 10px;
+  }
+
+
+  /* FORM */
+
+  .join-form-section {
+    margin-top: 30px;
+  }
+
+  .join-form {
+    padding: 16px 13px;
+
+    border-radius: 14px;
+  }
+
+  .join-form-grid {
+    grid-template-columns: 1fr;
+
+    gap: 12px;
+  }
+
+  .join-field label {
+    font-size: 14px;
+  }
+
+  .join-input-wrap {
+    min-height: 54px;
+  }
+
+  .join-input-wrap input,
+  .join-input-wrap select {
+    min-height: 52px;
+
+    font-size: 16px;
+  }
+
+  .join-goal-field {
+    margin-top: 12px;
+  }
+
+  .join-date-display {
+    font-size: 15px;
+  }
+
+
+  /* SELECTION */
+
+  .join-current-selection {
+    margin-top: 12px;
+
+    padding: 12px;
+  }
+
+  .join-current-selection-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+
+    gap: 6px;
+  }
+
+  .join-current-selection-grid strong {
+    font-size: 13px;
+  }
+
+
+  /* CLASS */
+
+  .join-form-class {
+    padding: 10px;
+  }
+
+  .join-form-class-info strong {
+    font-size: 14px;
+  }
+
+  .join-form-class-info small {
+    font-size: 11px;
+  }
+
+
+  /* NOTE */
+
+  .join-form-note {
+    padding: 10px;
+  }
+
+  .join-form-note strong {
+    font-size: 13px;
+  }
+
+  .join-form-note p {
+    font-size: 12px;
+  }
+
+
+  /* BUTTON */
+
+  .join-submit-btn {
+    min-height: 55px;
+
+    font-size: 14px;
+  }
+
+
+  /* SUMMARY */
+
+  .join-summary {
+    margin-top: 23px;
+  }
+
+  .join-summary-card {
+    padding: 17px 15px;
+
+    border-radius: 15px;
+  }
+
+  .join-summary-top {
+    margin-bottom: 10px;
+  }
+
+  .join-summary-top > span {
+    font-size: 12px;
+  }
+
+  .join-summary-plan {
+    grid-template-columns:
+      50px
+      minmax(0, 1fr);
+
+    gap: 9px;
+  }
+
+  .join-summary-plan-icon {
+    width: 50px;
+    height: 50px;
+
+    font-size: 21px;
+  }
+
+  .join-summary-plan h2 {
+    font-size: 28px;
+  }
+
+  .join-summary-plan p {
+    font-size: 13px;
+  }
+
+  .join-summary-monthly {
+    margin-top: 10px;
+  }
+
+  .join-summary-monthly strong {
+    font-size: 31px;
+  }
+
+  .join-summary-monthly span {
+    font-size: 13px;
+  }
+
+  .join-summary-divider {
+    margin: 10px 0;
+  }
+
+  .join-summary-row {
+    margin-bottom: 7px;
+  }
+
+  .join-summary-row span,
+  .join-summary-row strong {
+    font-size: 14px;
+  }
+
+  .join-summary-total {
+    margin-top: 9px;
+
+    padding: 10px;
+  }
+
+  .join-summary-total > strong {
+    font-size: 24px;
+  }
+
+  .join-summary-card > h3 {
+    margin: 11px 0 8px;
+
+    font-size: 17px;
+  }
+
+  .join-summary-features li {
+    margin-bottom: 6px;
+
+    font-size: 14px;
+  }
+
+  .join-summary-date {
+    padding: 9px;
+  }
+
+  .join-summary-date strong {
+    font-size: 13px;
+  }
+
+  .join-summary-class {
+    padding: 9px;
+  }
+
+  .join-summary-class strong {
+    font-size: 13px;
+  }
+
+  .join-summary-class small {
+    font-size: 12px;
+  }
+
+  .join-summary-note p {
+    font-size: 12px;
+  }
+}
+
+
+/* =========================================================
+   42 — SMALL MOBILE
+========================================================= */
+
+@media (max-width: 430px) {
+
+  .join-hero-container,
+  .join-container {
+    width: calc(100% - 22px);
+  }
+
+  .join-hero-container {
+    padding: 66px 0 20px;
+  }
+
+  .join-hero-content h1 {
+    font-size: 36px;
+  }
+
+  .join-hero-content > p {
+    font-size: 15px;
+  }
+
+  .join-hero-points {
+    grid-template-columns: 1fr;
+  }
+
+  .join-section-heading h2 {
+    font-size: 29px;
+  }
+
+  .join-plan-card {
+    padding: 17px 14px;
+  }
+
+  .join-plan-top h3 {
+    font-size: 26px;
+  }
+
+  .join-plan-price {
+    font-size: 28px;
+  }
+
+  .join-duration-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+  .join-form {
+    padding: 15px 11px;
+  }
+
+  .join-current-selection-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+  .join-summary-card {
+    padding: 16px 14px;
+  }
+
+  .join-summary-plan {
+    grid-template-columns:
+      47px
+      minmax(0, 1fr);
+  }
+
+  .join-summary-plan-icon {
+    width: 47px;
+    height: 47px;
+
+    font-size: 20px;
+  }
+
+  .join-summary-plan h2 {
+    font-size: 27px;
+  }
+
+  .join-summary-monthly strong {
+    font-size: 30px;
+  }
+
+  .join-summary-total > strong {
+    font-size: 23px;
+  }
+}
+
+
+/* =========================================================
+   43 — EXTRA SMALL MOBILE
+========================================================= */
+
+@media (max-width: 360px) {
+
+  .join-hero-container,
+  .join-container {
+    width: calc(100% - 18px);
+  }
+
+  .join-hero-content h1 {
+    font-size: 33px;
+  }
+
+  .join-section-heading h2 {
+    font-size: 27px;
+  }
+
+  .join-duration-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .join-current-selection-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .join-summary-plan {
+    grid-template-columns:
+      45px
+      minmax(0, 1fr);
+  }
+
+  .join-summary-plan-icon {
+    width: 45px;
+    height: 45px;
+  }
+
+  .join-summary-plan h2 {
+    font-size: 25px;
+  }
+
+  .join-summary-monthly strong {
+    font-size: 28px;
+  }
+}
+
+/* =========================================================
+   FINAL JOIN MOBILE FULL SCROLL FIX
+   Paste at the VERY END of Join.css
+========================================================= */
+
+@media (max-width: 900px) {
+
+  /* =======================================================
+     FULL PAGE
+  ======================================================= */
+
+  .join-page {
+    position: relative !important;
+
+    display: block !important;
+
+    width: 100% !important;
+
+    height: auto !important;
+    min-height: 100vh !important;
+    min-height: 100dvh !important;
+    max-height: none !important;
+
+    overflow-x: hidden !important;
+    overflow-y: visible !important;
+  }
+
+
+  /* =======================================================
+     HERO
+  ======================================================= */
+
+  .join-hero {
+    position: relative !important;
+
+    width: 100% !important;
+
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+
+    overflow: hidden !important;
+  }
+
+  .join-hero-container {
+    position: relative !important;
+
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+  }
+
+
+  /* =======================================================
+     MAIN SECTION
+  ======================================================= */
+
+  .join-main {
+    position: relative !important;
+
+    display: block !important;
+
+    width: 100% !important;
+
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+
+    overflow: visible !important;
+
+    padding-bottom: 70px !important;
+  }
+
+
+  /* =======================================================
+     MAIN CONTAINER
+  ======================================================= */
+
+  .join-container {
+    position: relative !important;
+
+    display: block !important;
+
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+
+    overflow: visible !important;
+  }
+
+
+  /* =======================================================
+     LEFT CONTENT
+     IMPORTANT — REMOVE DESKTOP 680px SCROLL BOX
+  ======================================================= */
+
+  .join-left {
+    position: relative !important;
+
+    display: block !important;
+
+    width: 100% !important;
+
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+
+    padding-right: 0 !important;
+
+    overflow: visible !important;
+
+    scrollbar-width: auto !important;
+  }
+
+  .join-left::-webkit-scrollbar {
+    display: initial !important;
+  }
+
+
+  /* =======================================================
+     PLANS
+  ======================================================= */
+
+  .join-plans {
+    height: auto !important;
+    max-height: none !important;
+
+    overflow: visible !important;
+  }
+
+  .join-plan-card {
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+
+    overflow: visible !important;
+  }
+
+
+  /* =======================================================
+     DURATION
+  ======================================================= */
+
+  .join-duration-section,
+  .join-duration-grid {
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+
+    overflow: visible !important;
+  }
+
+
+  /* =======================================================
+     FORM SECTION
+  ======================================================= */
+
+  .join-form-section {
+    position: relative !important;
+
+    display: block !important;
+
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+
+    overflow: visible !important;
+
+    padding-bottom: 20px !important;
+  }
+
+  .join-form {
+    position: relative !important;
+
+    display: block !important;
+
+    width: 100% !important;
+
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+
+    overflow: visible !important;
+  }
+
+  .join-form-grid {
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+
+    overflow: visible !important;
+  }
+
+  .join-field,
+  .join-goal-field {
+    height: auto !important;
+    max-height: none !important;
+
+    overflow: visible !important;
+  }
+
+
+  /* =======================================================
+     CURRENT SELECTION
+  ======================================================= */
+
+  .join-current-selection {
+    height: auto !important;
+    max-height: none !important;
+
+    overflow: visible !important;
+  }
+
+
+  /* =======================================================
+     SUBMIT BUTTON
+  ======================================================= */
+
+  .join-submit-btn {
+    position: relative !important;
+
+    display: flex !important;
+
+    visibility: visible !important;
+    opacity: 1 !important;
+
+    width: 100% !important;
+
+    flex-shrink: 0 !important;
+  }
+
+
+  /* =======================================================
+     RIGHT SUMMARY
+     DESKTOP STICKY REMOVE ON MOBILE
+  ======================================================= */
+
+  .join-summary {
+    position: relative !important;
+
+    top: auto !important;
+
+    display: block !important;
+
+    width: 100% !important;
+
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+
+    margin-top: 28px !important;
+
+    overflow: visible !important;
+  }
+
+  .join-summary-card {
+    position: relative !important;
+
+    display: block !important;
+
+    width: 100% !important;
+
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+
+    overflow: visible !important;
+  }
+
+
+  /* =======================================================
+     LAST CONTENT SAFETY
+  ======================================================= */
+
+  .join-summary-note {
+    margin-bottom: 10px !important;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 680px) {
+
+  .join-page {
+    height: auto !important;
+    max-height: none !important;
+
+    overflow-y: visible !important;
+  }
+
+  .join-main {
+    height: auto !important;
+
+    padding-bottom: 80px !important;
+
+    overflow: visible !important;
+  }
+
+  .join-container,
+  .join-left,
+  .join-form-section,
+  .join-form,
+  .join-summary,
+  .join-summary-card {
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+
+    overflow: visible !important;
+  }
+
+
+  /* PLAN CARDS ONE COLUMN */
+
+  .join-plans {
+    grid-template-columns: 1fr !important;
+  }
+
+  .join-plan-card,
+  .join-plan-card:last-child {
+    grid-column: auto !important;
+
+    width: 100% !important;
+
+    height: auto !important;
+    min-height: 0 !important;
+  }
+
+
+  /* FORM ONE COLUMN */
+
+  .join-form-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+
+  /* SUMMARY */
+
+  .join-summary {
+    position: static !important;
+
+    margin-top: 25px !important;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 430px) {
+
+  .join-page {
+    width: 100% !important;
+
+    height: auto !important;
+    min-height: 100dvh !important;
+
+    overflow-x: hidden !important;
+    overflow-y: visible !important;
+  }
+
+  .join-hero-container,
+  .join-container {
+    width: calc(100% - 22px) !important;
+  }
+
+  .join-main {
+    padding-bottom: 90px !important;
+  }
+
+  .join-left,
+  .join-form,
+  .join-summary,
+  .join-summary-card {
+    width: 100% !important;
+
+    height: auto !important;
+    max-height: none !important;
+
+    overflow: visible !important;
+  }
+
+  .join-duration-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr)) !important;
+  }
+
+  .join-current-selection-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr)) !important;
+  }
+
+  .join-submit-btn {
+    min-height: 55px !important;
+  }
+}
+
+
+/* =========================================================
+   EXTRA SMALL MOBILE
+========================================================= */
+
+@media (max-width: 360px) {
+
+  .join-hero-container,
+  .join-container {
+    width: calc(100% - 18px) !important;
+  }
+
+  .join-duration-grid,
+  .join-current-selection-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .join-main {
+    padding-bottom: 100px !important;
+  }
+}
+/* =========================================================
+   JOIN — FINAL MOBILE SUMMARY CUT FIX
+   KEEP THIS AT THE VERY END OF Join.css
+========================================================= */
+
+@media screen and (max-width: 900px) {
+
+  .join-page,
+  .join-main,
+  .join-container,
+  .join-left,
+  .join-summary,
+  .join-summary-card {
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+  }
+
+  .join-page {
+    display: block !important;
+    position: relative !important;
+
+    width: 100% !important;
+
+    overflow-x: hidden !important;
+    overflow-y: visible !important;
+  }
+
+  .join-main {
+    display: block !important;
+    position: relative !important;
+
+    width: 100% !important;
+
+    overflow: visible !important;
+
+    padding-bottom: 100px !important;
+  }
+
+  .join-container {
+    display: flex !important;
+    flex-direction: column !important;
+
+    width: min(100% - 28px, 700px) !important;
+
+    margin-left: auto !important;
+    margin-right: auto !important;
+
+    overflow: visible !important;
+  }
+
+  .join-left {
+    display: block !important;
+    position: relative !important;
+
+    width: 100% !important;
+
+    flex: none !important;
+
+    overflow: visible !important;
+  }
+
+
+  /* ===============================
+     RIGHT SUMMARY
+  =============================== */
+
+  .join-summary {
+    display: block !important;
+
+    position: static !important;
+    inset: auto !important;
+    top: auto !important;
+
+    width: 100% !important;
+
+    margin: 30px 0 0 !important;
+
+    flex: none !important;
+
+    overflow: visible !important;
+  }
+
+  .join-summary-card {
+    display: block !important;
+
+    position: relative !important;
+
+    width: 100% !important;
+
+    height: auto !important;
+    min-height: max-content !important;
+    max-height: none !important;
+
+    padding: 20px !important;
+    margin: 0 !important;
+
+    overflow: visible !important;
+  }
+
+
+  /* ===============================
+     EVERYTHING INSIDE SUMMARY
+  =============================== */
+
+  .join-summary-card > * {
+    position: relative;
+
+    max-height: none !important;
+
+    flex-shrink: 0 !important;
+  }
+
+
+  /* Member / Alex Morgan area */
+
+  .join-summary-member,
+  .join-member,
+  .join-member-info,
+  .join-summary-user,
+  .join-summary-details {
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+
+    overflow: visible !important;
+  }
+
+
+  /* ===============================
+     FORM
+  =============================== */
+
+  .join-form-section,
+  .join-form,
+  .join-form-grid {
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+
+    overflow: visible !important;
+  }
+
+
+  /* ===============================
+     BOTTOM CONTENT
+  =============================== */
+
+  .join-submit-btn {
+    display: flex !important;
+
+    position: relative !important;
+
+    visibility: visible !important;
+    opacity: 1 !important;
+
+    flex-shrink: 0 !important;
+  }
+}
+
+
+/* =========================================================
+   PHONE
+========================================================= */
+
+@media screen and (max-width: 600px) {
+
+  .join-container {
+    width: calc(100% - 24px) !important;
+  }
+
+  .join-summary {
+    position: static !important;
+
+    height: auto !important;
+    max-height: none !important;
+
+    overflow: visible !important;
+  }
+
+  .join-summary-card {
+    display: block !important;
+
+    height: auto !important;
+    min-height: 700px !important;
+    max-height: none !important;
+
+    overflow: visible !important;
+
+    padding-bottom: 60px !important;
+  }
+
+  .join-summary-card > div,
+  .join-summary-card > section {
+    height: auto !important;
+    max-height: none !important;
+
+    overflow: visible !important;
+  }
+
+  .join-main {
+    padding-bottom: 120px !important;
+  }
+}
+
+/* =========================================================
+   SELECTED TRAINING — IMAGE CARD
+   Classes / Gallery se selected workout
+========================================================= */
+
+.join-selected-section {
+  width: 100%;
+  margin: 0 0 30px;
+}
+
+
+/* heading thoda compact */
+
+.join-selected-section .join-section-heading {
+  margin-bottom: 13px;
+}
+
+.join-selected-section .join-section-heading > span {
+  margin-bottom: 4px;
+}
+
+.join-selected-section .join-section-heading h2 {
+  margin: 0;
+}
+
+.join-selected-section .join-section-heading p {
+  margin-top: 5px;
+}
+
+
+/* =========================================================
+   MAIN SELECTED WORKOUT CARD
+========================================================= */
+
+.join-selected-workout {
+  width: 100%;
+
+  display: grid;
+  grid-template-columns: 205px minmax(0, 1fr);
+  align-items: stretch;
+
+  gap: 15px;
+
+  padding: 11px;
+
+  overflow: hidden;
+
+  border:
+    1px solid rgba(33, 170, 255, 0.22);
+
+  border-radius: 16px;
+
+  background:
+    radial-gradient(
+      circle at 0% 0%,
+      rgba(20, 167, 255, 0.09),
+      transparent 34%
+    ),
+    linear-gradient(
+      145deg,
+      #091827 0%,
+      #06111d 100%
+    );
+
+  box-shadow:
+    0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+
+/* =========================================================
+   IMAGE
+========================================================= */
+
+.join-selected-workout-image {
+  position: relative;
+
+  width: 100%;
+  height: 185px;
+
+  overflow: hidden;
+
+  border-radius: 12px;
+
+  background: #071522;
+}
+
+
+/* IMPORTANT:
+   image ko crop/cut hone se bachata hai
+*/
+
+.join-selected-workout-image img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+  object-position: center;
+
+  border-radius: inherit;
+
+  transition:
+    transform 0.35s ease,
+    filter 0.35s ease;
+}
+
+
+/* bahut zyada zoom nahi */
+
+.join-selected-workout:hover
+.join-selected-workout-image img {
+  transform: scale(1.025);
+}
+
+
+/* subtle image dark overlay */
+
+.join-selected-workout-image::after {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      180deg,
+      transparent 48%,
+      rgba(2, 10, 18, 0.62) 100%
+    );
+}
+
+
+/* =========================================================
+   NO IMAGE PLACEHOLDER
+========================================================= */
+
+.join-selected-workout-placeholder {
+  width: 100%;
+  height: 100%;
+
+  display: grid;
+  place-items: center;
+
+  color: #29b7ff;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(24, 169, 255, 0.14),
+      transparent 65%
+    ),
+    #071522;
+
+  font-size: 42px;
+}
+
+
+/* =========================================================
+   IMAGE WORKOUT BADGE
+========================================================= */
+
+.join-workout-badge {
+  position: absolute;
+
+  left: 9px;
+  bottom: 9px;
+
+  z-index: 2;
+
+  max-width: calc(100% - 18px);
+
+  display: inline-flex;
+  align-items: center;
+
+  gap: 5px;
+
+  padding: 6px 9px;
+
+  overflow: hidden;
+
+  border:
+    1px solid rgba(74, 195, 255, 0.32);
+
+  border-radius: 999px;
+
+  color: #ffffff;
+
+  background:
+    rgba(3, 19, 32, 0.87);
+
+  backdrop-filter: blur(9px);
+  -webkit-backdrop-filter: blur(9px);
+
+  font-size: 10px;
+  font-weight: 900;
+
+  line-height: 1;
+
+  letter-spacing: 0.7px;
+
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.join-workout-badge svg {
+  flex: 0 0 auto;
+
+  color: #2db9ff;
+
+  font-size: 12px;
+}
+
+
+/* =========================================================
+   RIGHT CONTENT
+========================================================= */
+
+.join-selected-workout-content {
+  min-width: 0;
+
+  padding: 5px 5px 4px 0;
+
+  display: flex;
+  flex-direction: column;
+}
+
+
+/* =========================================================
+   TOP TITLE
+========================================================= */
+
+.join-workout-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  gap: 10px;
+}
+
+.join-workout-top > div:first-child {
+  min-width: 0;
+}
+
+.join-workout-label {
+  display: block;
+
+  margin-bottom: 3px;
+
+  color: #20afff;
+
+  font-size: 12px;
+  font-weight: 900;
+
+  line-height: 1.2;
+
+  letter-spacing: 1.2px;
+}
+
+.join-workout-top h3 {
+  margin: 0;
+
+  overflow: hidden;
+
+  color: #ffffff;
+
+  font-size: 22px;
+  font-weight: 900;
+
+  line-height: 1.15;
+
+  letter-spacing: -0.35px;
+
+  text-overflow: ellipsis;
+}
+
+
+/* =========================================================
+   SELECTED BADGE
+========================================================= */
+
+.join-workout-selected {
+  flex: 0 0 auto;
+
+  display: inline-flex;
+  align-items: center;
+
+  gap: 4px;
+
+  padding: 5px 8px;
+
+  border:
+    1px solid rgba(66, 220, 152, 0.18);
+
+  border-radius: 999px;
+
+  color: #4cdda0;
+
+  background:
+    rgba(48, 201, 131, 0.07);
+
+  font-size: 12px;
+  font-weight: 800;
+
+  white-space: nowrap;
+}
+
+.join-workout-selected svg {
+  font-size: 12px;
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.join-workout-description {
+  max-width: 600px;
+
+  margin: 8px 0 9px;
+
+  color: #94a9bb;
+
+  font-size: 12px;
+
+  line-height: 1.5;
+}
+
+
+/* =========================================================
+   BEST FOR
+========================================================= */
+
+.join-workout-purpose {
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+
+  margin: 0 0 10px;
+}
+
+.join-workout-purpose > span {
+  flex: 0 0 auto;
+
+  display: inline-flex;
+  align-items: center;
+
+  gap: 4px;
+
+  color: #1caeff;
+
+  font-size: 12px;
+  font-weight: 900;
+
+  letter-spacing: 0.6px;
+}
+
+.join-workout-purpose > span svg {
+  font-size: 12px;
+}
+
+.join-workout-purpose strong {
+  min-width: 0;
+
+  color: #e9f4fc;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  line-height: 1.35;
+}
+
+
+/* =========================================================
+   WORKOUT META
+========================================================= */
+
+.join-workout-meta {
+  margin-top: auto;
+
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 6px;
+}
+
+.join-workout-meta > div {
+  min-width: 105px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 7px;
+
+  padding: 7px 8px;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.055);
+
+  border-radius: 8px;
+
+  background:
+    rgba(255, 255, 255, 0.025);
+}
+
+.join-workout-meta > div > svg {
+  flex: 0 0 auto;
+
+  color: #21afff;
+
+  font-size: 14px;
+}
+
+.join-workout-meta > div > span {
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 1px;
+
+  color: #71889d;
+
+  font-size: 12px;
+
+  line-height: 1.2;
+}
+
+.join-workout-meta > div strong {
+  display: block;
+
+  max-width: 130px;
+
+  overflow: hidden;
+
+  color: #ffffff;
+
+  font-size: 12px;
+  font-weight: 800;
+
+  line-height: 1.25;
+
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+
+/* =========================================================
+   LAPTOP
+========================================================= */
+
+@media (max-width: 1180px) and (min-width: 901px) {
+
+  .join-selected-workout {
+    grid-template-columns:
+      180px minmax(0, 1fr);
+
+    gap: 12px;
+
+    padding: 10px;
+  }
+
+  .join-selected-workout-image {
+    height: 175px;
+  }
+
+  .join-selected-workout-content {
+    padding-top: 3px;
+  }
+
+  .join-workout-top h3 {
+    font-size: 19px;
+  }
+
+  .join-workout-description {
+    margin: 6px 0 8px;
+
+    font-size: 11px;
+  }
+
+  .join-workout-purpose {
+    margin-bottom: 8px;
+  }
+
+  .join-workout-meta > div {
+    min-width: 95px;
+
+    padding: 6px 7px;
+  }
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .join-selected-section {
+    margin-bottom: 28px;
+  }
+
+  .join-selected-workout {
+    grid-template-columns:
+      190px minmax(0, 1fr);
+
+    gap: 13px;
+
+    padding: 10px;
+  }
+
+  .join-selected-workout-image {
+    height: 180px;
+  }
+
+  .join-workout-top h3 {
+    font-size: 20px;
+  }
+
+  .join-workout-description {
+    font-size: 12px;
+  }
+
+  .join-workout-meta > div {
+    min-width: 105px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 680px) {
+
+  .join-selected-section {
+    margin-bottom: 25px;
+  }
+
+  .join-selected-section
+  .join-section-heading {
+    margin-bottom: 11px;
+  }
+
+
+  /* CARD */
+
+  .join-selected-workout {
+    display: block;
+
+    padding: 9px;
+
+    border-radius: 14px;
+  }
+
+
+  /* IMAGE CHOTI */
+
+  .join-selected-workout-image {
+    width: 100%;
+    height: 190px;
+
+    border-radius: 11px;
+  }
+
+  .join-selected-workout-image img {
+    object-position: center;
+  }
+
+
+  /* CONTENT */
+
+  .join-selected-workout-content {
+    padding: 11px 4px 4px;
+  }
+
+
+  /* TITLE */
+
+  .join-workout-top {
+    gap: 7px;
+  }
+
+  .join-workout-label {
+    font-size: 8px;
+  }
+
+  .join-workout-top h3 {
+    font-size: 19px;
+
+    line-height: 1.15;
+  }
+
+  .join-workout-selected {
+    padding: 5px 7px;
+
+    font-size: 8px;
+  }
+
+
+  /* DESCRIPTION */
+
+  .join-workout-description {
+    margin: 7px 0 8px;
+
+    font-size: 12px;
+
+    line-height: 1.45;
+  }
+
+
+  /* BEST FOR */
+
+  .join-workout-purpose {
+    display: block;
+
+    margin-bottom: 9px;
+  }
+
+  .join-workout-purpose > span {
+    margin-bottom: 3px;
+  }
+
+  .join-workout-purpose strong {
+    display: block;
+
+    font-size: 11px;
+  }
+
+
+  /* META */
+
+  .join-workout-meta {
+    display: grid;
+
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+
+    gap: 6px;
+  }
+
+  .join-workout-meta > div {
+    min-width: 0;
+
+    padding: 7px;
+  }
+
+  .join-workout-meta > div strong {
+    max-width: 100%;
+
+    font-size: 10px;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 430px) {
+
+  .join-selected-workout {
+    padding: 8px;
+  }
+
+  .join-selected-workout-image {
+    height: 175px;
+  }
+
+  .join-workout-badge {
+    left: 7px;
+    bottom: 7px;
+
+    max-width: calc(100% - 14px);
+
+    padding: 6px 8px;
+
+    font-size: 8px;
+  }
+
+  .join-selected-workout-content {
+    padding:
+      10px 3px
+      3px;
+  }
+
+  .join-workout-top h3 {
+    font-size: 18px;
+  }
+
+  .join-workout-description {
+    font-size: 11px;
+  }
+
+  .join-workout-meta {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 360px) {
+
+  .join-selected-workout-image {
+    height: 165px;
+  }
+
+  .join-workout-top {
+    flex-direction: column;
+  }
+
+  .join-workout-selected {
+    align-self: flex-start;
+  }
+
+  .join-workout-meta {
+    grid-template-columns: 1fr;
+  }
+}

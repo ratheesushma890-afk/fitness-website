@@ -1,0 +1,248 @@
+/* =========================================================
+   MANAGER MESSAGES
+========================================================= */
+
+@import "./ManagerMembers.css";
+
+.manager-status.read {
+  color: #55e5a5;
+  background: rgba(40,209,137,.09);
+}
+
+.manager-status.unread {
+  color: #55caff;
+  background: rgba(32,175,255,.1);
+}
+
+/* MESSAGE LIST */
+
+.manager-message-list {
+  width: 100%;
+  padding: 8px;
+}
+
+.manager-message-list > article {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 5px;
+
+  border-bottom: 1px solid rgba(255,255,255,.055);
+  border-radius: 8px;
+}
+
+.manager-message-list > article.unread {
+  background: rgba(25,174,255,.04);
+}
+
+.manager-message-main {
+  flex: 1;
+  min-width: 0;
+
+  display: grid;
+
+  grid-template-columns:
+    46px
+    180px
+    minmax(250px, 1fr)
+    85px;
+
+  align-items: center;
+
+  gap: 13px;
+
+  padding: 12px;
+
+  border: 0;
+
+  color: #fff;
+  background: transparent;
+
+  font-family: inherit;
+
+  text-align: left;
+
+  cursor: pointer;
+}
+
+.manager-message-avatar {
+  width: 44px;
+  height: 44px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 50%;
+
+  color: #fff;
+  background: linear-gradient(135deg, #19b9ff, #0871ef);
+
+  font-size: 16px;
+  font-weight: 900;
+}
+
+.manager-message-main strong {
+  display: block;
+
+  color: #fff;
+
+  font-size: 15px;
+  font-weight: 800;
+}
+
+.manager-message-main small {
+  display: block;
+
+  overflow: hidden;
+
+  margin-top: 4px;
+
+  color: #8298a8;
+
+  font-size: 13px;
+
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.manager-message-subject {
+  min-width: 0;
+}
+
+.manager-message-subject strong {
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.manager-message-subject p {
+  overflow: hidden;
+
+  margin: 5px 0 0;
+
+  color: #8ca1b0;
+
+  font-size: 13px;
+  line-height: 1.4;
+
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.manager-message-delete {
+  width: 39px;
+  height: 39px;
+
+  display: grid;
+  place-items: center;
+
+  border: 1px solid rgba(255,75,94,.12);
+  border-radius: 8px;
+
+  color: #ff8290;
+  background: rgba(255,75,94,.04);
+
+  font-size: 17px;
+
+  cursor: pointer;
+}
+
+/* MESSAGE DETAIL */
+
+.manager-message-detail > strong {
+  display: block;
+
+  color: #fff;
+
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.manager-message-detail > small {
+  display: block;
+
+  margin-top: 4px;
+
+  color: #8298a7;
+
+  font-size: 14px;
+}
+
+.manager-message-detail > p {
+  margin: 19px 0;
+
+  padding: 16px;
+
+  border: 1px solid rgba(255,255,255,.05);
+  border-radius: 10px;
+
+  color: #b3c2cb;
+  background: rgba(255,255,255,.025);
+
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+/* MODAL BUTTONS */
+
+.manager-modal-actions {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 10px;
+}
+
+.manager-modal-actions button {
+  min-height: 45px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  padding: 0 15px;
+
+  border: 1px solid rgba(32,175,255,.15);
+  border-radius: 9px;
+
+  color: #20afff;
+  background: rgba(32,175,255,.06);
+
+  font-size: 14px;
+  font-weight: 800;
+
+  cursor: pointer;
+}
+
+.manager-modal-actions button.danger {
+  color: #ff8290;
+
+  border-color: rgba(255,75,94,.14);
+
+  background: rgba(255,75,94,.055);
+}
+
+@media (max-width: 800px) {
+  .manager-message-list {
+    overflow-x: auto;
+  }
+
+  .manager-message-list > article {
+    min-width: 720px;
+  }
+}
+
+@media (max-width: 500px) {
+  .manager-modal-actions {
+    flex-direction: column;
+  }
+
+  .manager-modal-actions button {
+    width: 100%;
+  }
+}

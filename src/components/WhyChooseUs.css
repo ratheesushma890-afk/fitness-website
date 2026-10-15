@@ -1,0 +1,938 @@
+/* =========================================================
+   WHY CHOOSE US
+========================================================= */
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap");
+
+.why-section {
+  position: relative;
+
+  width: 100%;
+
+  padding: 75px 0;
+
+  overflow: hidden;
+
+  font-family: "Inter", sans-serif;
+
+  color: #ffffff;
+
+  background:
+    radial-gradient(
+      circle at 10% 80%,
+      rgba(7, 143, 247, 0.12),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 90% 15%,
+      rgba(42, 183, 255, 0.08),
+      transparent 25%
+    ),
+    #031522;
+}
+
+.why-section * {
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   BIG BACKGROUND TEXT
+========================================================= */
+
+.why-bg-text {
+  position: absolute;
+
+  top: 10px;
+  right: -20px;
+
+  color: rgba(255, 255, 255, 0.018);
+
+  font-size: clamp(90px, 12vw, 180px);
+
+  line-height: 1;
+
+  font-weight: 900;
+
+  letter-spacing: 5px;
+
+  pointer-events: none;
+
+  user-select: none;
+}
+
+
+/* =========================================================
+   MAIN CONTAINER
+========================================================= */
+
+.why-container {
+  position: relative;
+
+  z-index: 5;
+
+  width: min(1200px, calc(100% - 48px));
+
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 0.95fr)
+    minmax(0, 1.05fr);
+
+  align-items: center;
+
+  gap: 75px;
+}
+
+
+/* =========================================================
+   LEFT IMAGE AREA
+========================================================= */
+
+.why-image-side {
+  position: relative;
+
+  width: 100%;
+
+  max-width: 520px;
+
+  margin: 0 auto;
+
+  padding:
+    20px
+    25px
+    30px
+    0;
+}
+
+
+/* =========================================================
+   BLUE CIRCLE
+========================================================= */
+
+.why-circle {
+  position: absolute;
+
+  width: 320px;
+  height: 320px;
+
+  right: -35px;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  border-radius: 50%;
+
+  border: 35px solid rgba(7, 143, 247, 0.12);
+
+  z-index: 1;
+}
+
+
+/* =========================================================
+   IMAGE BOX
+========================================================= */
+
+.why-image-box {
+  position: relative;
+
+  z-index: 3;
+
+  width: 100%;
+  height: 500px;
+
+  overflow: hidden;
+
+  border-radius:
+    8px
+    70px
+    8px
+    70px;
+
+  border:
+    1px solid rgba(160, 195, 220, 0.18);
+
+  box-shadow:
+    0 25px 55px rgba(0, 0, 0, 0.38);
+}
+
+.why-image-box img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  object-position: center;
+
+  transition:
+    transform 0.7s ease;
+}
+
+.why-image-side:hover
+.why-image-box img {
+  transform: scale(1.05);
+}
+
+
+/* IMAGE OVERLAY */
+
+.why-image-overlay {
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      to top,
+      rgba(3, 21, 34, 0.72),
+      rgba(3, 21, 34, 0.03) 55%
+    );
+}
+
+
+/* =========================================================
+   IMAGE NUMBER
+========================================================= */
+
+.why-image-number {
+  position: absolute;
+
+  top: 20px;
+  left: 22px;
+
+  z-index: 5;
+
+  color: #ffffff;
+
+  font-size: 14px;
+
+  font-weight: 800;
+
+  letter-spacing: 2px;
+}
+
+
+/* =========================================================
+   MEMBERS CARD
+========================================================= */
+
+.why-experience-card {
+  position: absolute;
+
+  z-index: 10;
+
+  left: -35px;
+  bottom: 0;
+
+  min-width: 200px;
+
+  min-height: 85px;
+
+  padding: 14px 18px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 13px;
+
+  border:
+    1px solid rgba(35, 162, 255, 0.32);
+
+  border-radius: 14px;
+
+  background:
+    rgba(8, 36, 56, 0.94);
+
+  backdrop-filter: blur(12px);
+
+  box-shadow:
+    0 15px 35px rgba(0, 0, 0, 0.32);
+}
+
+
+/* MEMBERS ICON */
+
+.why-experience-icon {
+  width: 46px;
+  height: 46px;
+
+  flex: 0 0 46px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background:
+    rgba(7, 143, 247, 0.17);
+
+  color: #28a9ff;
+
+  font-size: 20px;
+}
+
+
+/* NUMBER */
+
+.why-experience-card strong {
+  display: block;
+
+  margin-bottom: 4px;
+
+  color: #ffffff;
+
+  font-size: 22px;
+
+  line-height: 1;
+
+  font-weight: 900;
+}
+
+.why-experience-card span {
+  display: block;
+
+  color: #b6c5d0;
+
+  font-size: 12px;
+
+  font-weight: 600;
+}
+
+
+/* =========================================================
+   SMALL FLOATING CARD
+========================================================= */
+
+.why-small-card {
+  position: absolute;
+
+  z-index: 10;
+
+  right: -18px;
+  top: 70px;
+
+  min-height: 42px;
+
+  padding: 0 15px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  border-radius: 50px;
+
+  border:
+    1px solid rgba(35, 162, 255, 0.3);
+
+  background:
+    rgba(3, 21, 34, 0.9);
+
+  color: #ffffff;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.why-small-card svg {
+  color: #28a9ff;
+
+  font-size: 17px;
+}
+
+
+/* =========================================================
+   RIGHT CONTENT
+========================================================= */
+
+.why-content {
+  position: relative;
+
+  width: 100%;
+
+  max-width: 600px;
+}
+
+
+/* =========================================================
+   SMALL LABEL
+========================================================= */
+
+.why-label {
+  margin-bottom: 13px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  color: #28a9ff;
+
+  font-size: 13px;
+
+  font-weight: 800;
+
+  letter-spacing: 2.3px;
+}
+
+.why-label span {
+  width: 35px;
+  height: 3px;
+
+  border-radius: 20px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #078ff7,
+      #2ab7ff
+    );
+
+  transform: skewX(-25deg);
+}
+
+
+/* =========================================================
+   HEADING
+========================================================= */
+
+.why-content h2 {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size:
+    clamp(36px, 4vw, 56px);
+
+  line-height: 1.02;
+
+  font-weight: 900;
+
+  letter-spacing: -2px;
+
+  text-transform: uppercase;
+}
+
+.why-content h2 span {
+  display: block;
+
+  margin-top: 6px;
+
+  color: #078ff7;
+
+  text-shadow:
+    0 5px 22px
+    rgba(7, 143, 247, 0.25);
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.why-description {
+  max-width: 560px;
+
+  margin:
+    19px
+    0
+    25px;
+
+  color: #c5d1d9;
+
+  font-size: 15px;
+
+  line-height: 1.65;
+}
+
+
+/* =========================================================
+   BENEFITS GRID
+========================================================= */
+
+.why-benefits {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 13px;
+}
+
+
+/* BENEFIT CARD */
+
+.why-benefit {
+  min-width: 0;
+
+  min-height: 100px;
+
+  padding: 15px;
+
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 12px;
+
+  border-radius: 12px;
+
+  border:
+    1px solid
+    rgba(160, 195, 220, 0.14);
+
+  background:
+    rgba(8, 36, 56, 0.55);
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    background 0.3s ease;
+}
+
+.why-benefit:hover {
+  transform:
+    translateY(-4px);
+
+  border-color:
+    rgba(26, 160, 255, 0.48);
+
+  background:
+    rgba(8, 47, 74, 0.75);
+}
+
+
+/* =========================================================
+   BENEFIT ICON
+========================================================= */
+
+.why-benefit-icon {
+  width: 43px;
+  height: 43px;
+
+  flex: 0 0 43px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 10px;
+
+  background:
+    rgba(8, 143, 247, 0.16);
+
+  color: #28a9ff;
+
+  font-size: 19px;
+}
+
+.why-benefit-icon svg {
+  width: 19px;
+  height: 19px;
+}
+
+
+/* =========================================================
+   BENEFIT TEXT
+========================================================= */
+
+.why-benefit h3 {
+  margin:
+    1px
+    0
+    5px;
+
+  color: #ffffff;
+
+  font-size: 15px;
+
+  line-height: 1.3;
+
+  font-weight: 800;
+}
+
+.why-benefit p {
+  margin: 0;
+
+  color: #aebdc6;
+
+  font-size: 12px;
+
+  line-height: 1.45;
+}
+
+
+/* =========================================================
+   BOTTOM
+========================================================= */
+
+.why-bottom {
+  margin-top: 24px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 22px;
+}
+
+
+/* =========================================================
+   BUTTON
+========================================================= */
+
+.why-btn {
+  min-width: 190px;
+  height: 48px;
+
+  padding: 0 21px;
+
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 9px;
+
+  border: none;
+
+  border-radius: 50px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #078ff7,
+      #006ed4
+    );
+
+  color: #ffffff;
+
+  font-family: inherit;
+
+  font-size: 14px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 8px 24px
+    rgba(7, 143, 247, 0.3);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.why-btn:hover {
+  transform:
+    translateY(-3px);
+
+  box-shadow:
+    0 12px 30px
+    rgba(7, 143, 247, 0.42);
+}
+
+
+/* =========================================================
+   BOTTOM TEXT
+========================================================= */
+
+.why-bottom-text {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+}
+
+.why-check {
+  width: 37px;
+  height: 37px;
+
+  flex: 0 0 37px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background:
+    rgba(7, 143, 247, 0.14);
+
+  color: #28a9ff;
+}
+
+.why-bottom-text strong {
+  display: block;
+
+  margin-bottom: 3px;
+
+  color: #ffffff;
+
+  font-size: 12px;
+
+  font-weight: 700;
+}
+
+.why-bottom-text span {
+  display: block;
+
+  color: #9fb0ba;
+
+  font-size: 11px;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+  .why-section {
+    padding: 60px 0;
+  }
+
+  .why-container {
+    grid-template-columns: 1fr;
+
+    gap: 55px;
+  }
+
+  .why-image-side {
+    max-width: 620px;
+  }
+
+  .why-image-box {
+    height: 520px;
+  }
+
+  .why-content {
+    max-width: 650px;
+
+    margin: 0 auto;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .why-section {
+    padding:
+      48px
+      0
+      50px;
+  }
+
+  .why-container {
+    width: 100%;
+
+    padding: 0 15px;
+
+    gap: 42px;
+  }
+
+
+  /* IMAGE */
+
+  .why-image-side {
+    width: 100%;
+
+    padding:
+      0
+      12px
+      30px
+      0;
+  }
+
+  .why-image-box {
+    height: 390px;
+
+    border-radius:
+      8px
+      45px
+      8px
+      45px;
+  }
+
+  .why-circle {
+    width: 240px;
+    height: 240px;
+
+    right: -30px;
+
+    border-width: 25px;
+  }
+
+
+  /* MEMBER CARD */
+
+  .why-experience-card {
+    left: 10px;
+    bottom: 0;
+
+    min-width: 180px;
+
+    min-height: 76px;
+
+    padding: 12px 14px;
+  }
+
+  .why-experience-icon {
+    width: 41px;
+    height: 41px;
+
+    flex-basis: 41px;
+  }
+
+  .why-experience-card strong {
+    font-size: 20px;
+  }
+
+
+  /* SMALL CARD */
+
+  .why-small-card {
+    right: 0;
+    top: 30px;
+
+    min-height: 38px;
+
+    padding: 0 12px;
+
+    font-size: 11px;
+  }
+
+
+  /* CONTENT */
+
+  .why-label {
+    margin-bottom: 11px;
+
+    font-size: 11px;
+
+    letter-spacing: 1.8px;
+  }
+
+  .why-content h2 {
+    font-size: 35px;
+
+    line-height: 1.04;
+
+    letter-spacing: -1.2px;
+  }
+
+  .why-description {
+    margin:
+      16px
+      0
+      21px;
+
+    font-size: 14px;
+
+    line-height: 1.55;
+  }
+
+
+  /* BENEFITS */
+
+  .why-benefits {
+    grid-template-columns: 1fr;
+
+    gap: 10px;
+  }
+
+  .why-benefit {
+    min-height: 88px;
+
+    padding: 13px;
+  }
+
+  .why-benefit h3 {
+    font-size: 15px;
+  }
+
+  .why-benefit p {
+    font-size: 12px;
+  }
+
+
+  /* BOTTOM */
+
+  .why-bottom {
+    margin-top: 20px;
+
+    flex-direction: column;
+
+    align-items: stretch;
+
+    gap: 15px;
+  }
+
+  .why-btn {
+    width: 100%;
+
+    height: 49px;
+  }
+
+  .why-bottom-text {
+    justify-content: center;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 400px) {
+
+  .why-container {
+    padding:
+      0
+      13px;
+  }
+
+  .why-image-box {
+    height: 350px;
+  }
+
+  .why-content h2 {
+    font-size: 31px;
+  }
+
+  .why-description {
+    font-size: 13px;
+  }
+
+  .why-experience-card {
+    min-width: 165px;
+  }
+
+  .why-experience-card strong {
+    font-size: 19px;
+  }
+}

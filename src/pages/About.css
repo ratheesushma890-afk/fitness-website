@@ -1,0 +1,2476 @@
+/* =========================================================
+   FITZONE ABOUT PAGE
+   COMPACT HERO + LARGE FONT + ANIMATED STATS
+========================================================= */
+
+.about-page {
+  width: 100%;
+  overflow: hidden;
+
+  font-family: "Inter", sans-serif;
+
+  color: #ffffff;
+  background: #031522;
+}
+
+.about-page * {
+  box-sizing: border-box;
+}
+
+.about-container {
+  width: min(1220px, calc(100% - 48px));
+
+  margin: 0 auto;
+}
+
+
+/* =========================================================
+   HERO — COMPACT HEIGHT
+========================================================= */
+
+.about-hero {
+  position: relative;
+
+  width: 100%;
+
+  min-height: 510px;
+  height: 72vh;
+  max-height: 610px;
+
+  display: flex;
+  align-items: flex-end;
+
+  overflow: hidden;
+
+  background:
+    url("https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1900&q=90")
+    center 43% / cover no-repeat;
+}
+
+
+/* =========================================================
+   HERO OVERLAY
+========================================================= */
+
+.about-hero-overlay {
+  position: absolute;
+  inset: 0;
+
+  z-index: 1;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(2, 14, 24, 0.98) 0%,
+      rgba(2, 14, 24, 0.91) 42%,
+      rgba(2, 14, 24, 0.34) 100%
+    ),
+    linear-gradient(
+      0deg,
+      rgba(3, 21, 34, 0.96) 0%,
+      rgba(3, 21, 34, 0.12) 45%,
+      transparent 100%
+    );
+}
+
+
+/* =========================================================
+   HERO DECORATION
+========================================================= */
+
+.about-hero-lines {
+  position: absolute;
+
+  z-index: 2;
+
+  width: 330px;
+  height: 330px;
+
+  right: -90px;
+  top: 80px;
+
+  border:
+    1px solid
+    rgba(42, 174, 255, 0.17);
+
+  transform: rotate(45deg);
+}
+
+.about-hero-lines::before {
+  content: "";
+
+  position: absolute;
+
+  width: 190px;
+  height: 190px;
+
+  left: -70px;
+  top: 65px;
+
+  border:
+    1px solid
+    rgba(42, 174, 255, 0.12);
+}
+
+
+/* =========================================================
+   HERO CONTAINER
+========================================================= */
+
+.about-hero-container {
+  position: relative;
+  z-index: 3;
+
+  width: min(1220px, calc(100% - 48px));
+
+  margin: 0 auto;
+
+  padding: 70px 0 48px;
+
+  display: flex;
+
+  align-items: flex-end;
+  justify-content: space-between;
+
+  gap: 50px;
+}
+
+
+/* =========================================================
+   HERO CONTENT
+========================================================= */
+
+.about-hero-content {
+  max-width: 850px;
+}
+
+.about-eyebrow {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  margin-bottom: 13px;
+
+  color: #2ab7ff;
+
+  font-size: 15px;
+  font-weight: 900;
+
+  letter-spacing: 2.4px;
+}
+
+.about-eyebrow span {
+  width: 42px;
+  height: 3px;
+
+  border-radius: 30px;
+
+  background: #078ff7;
+}
+
+
+/* =========================================================
+   LARGE HERO HEADING
+========================================================= */
+
+.about-hero-content h1 {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size: clamp(64px, 7.3vw, 100px);
+
+  line-height: 0.88;
+
+  font-weight: 900;
+
+  letter-spacing: -4.5px;
+}
+
+.about-hero-content h1 strong {
+  color: #078ff7;
+}
+
+.about-hero-content > p {
+  max-width: 670px;
+
+  margin: 20px 0 0;
+
+  color: #c4d2da;
+
+  font-size: 18px;
+
+  font-weight: 500;
+
+  line-height: 1.65;
+}
+
+
+/* =========================================================
+   HERO BUTTONS
+========================================================= */
+
+.about-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 12px;
+
+  margin-top: 24px;
+}
+
+.about-primary-btn,
+.about-secondary-btn {
+  min-height: 56px;
+
+  padding: 0 23px;
+
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 10px;
+
+  border-radius: 9px;
+
+  text-decoration: none;
+
+  font-size: 14px;
+  font-weight: 900;
+
+  letter-spacing: 0.7px;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.about-primary-btn {
+  color: #ffffff;
+
+  border:
+    1px solid #38baff;
+
+  background:
+    linear-gradient(
+      100deg,
+      #078ff7,
+      #006ed4
+    );
+
+  box-shadow:
+    0 12px 30px
+    rgba(7, 143, 247, 0.2);
+}
+
+.about-secondary-btn {
+  color: #ffffff;
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.25);
+
+  background:
+    rgba(255, 255, 255, 0.055);
+
+  backdrop-filter: blur(8px);
+}
+
+.about-primary-btn:hover,
+.about-secondary-btn:hover {
+  transform: translateY(-3px);
+}
+
+.about-primary-btn:hover {
+  box-shadow:
+    0 17px 36px
+    rgba(7, 143, 247, 0.3);
+}
+
+.about-primary-btn svg,
+.about-secondary-btn svg {
+  font-size: 18px;
+
+  transition: transform 0.3s ease;
+}
+
+.about-primary-btn:hover svg,
+.about-secondary-btn:hover svg {
+  transform: translateX(4px);
+}
+
+
+/* =========================================================
+   HERO RIGHT INDEX
+========================================================= */
+
+.about-hero-index {
+  min-width: 135px;
+
+  margin-bottom: 7px;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: flex-end;
+}
+
+.about-hero-index > span {
+  color: #2ab7ff;
+
+  font-size: 18px;
+
+  font-weight: 900;
+}
+
+.about-hero-index > div {
+  width: 100%;
+  height: 1px;
+
+  margin: 10px 0;
+
+  background:
+    rgba(255, 255, 255, 0.24);
+}
+
+.about-hero-index p {
+  margin: 0;
+
+  color: #8199a7;
+
+  font-size: 11px;
+
+  text-align: right;
+
+  letter-spacing: 1.3px;
+}
+
+.about-hero-index strong {
+  display: block;
+
+  margin-top: 3px;
+
+  color: #ffffff;
+
+  font-size: 17px;
+}
+
+
+/* =========================================================
+   ANIMATED STATS SECTION
+========================================================= */
+
+.about-stats {
+  position: relative;
+  z-index: 5;
+
+  background:
+    linear-gradient(
+      90deg,
+      #041a29,
+      #062338,
+      #041a29
+    );
+
+  border-top:
+    1px solid
+    rgba(255, 255, 255, 0.08);
+
+  border-bottom:
+    1px solid
+    rgba(255, 255, 255, 0.08);
+}
+
+.about-stats-container {
+  width: min(1220px, calc(100% - 48px));
+
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, 1fr);
+}
+
+
+/* =========================================================
+   SINGLE STAT
+========================================================= */
+
+.about-stat {
+  position: relative;
+
+  min-height: 145px;
+
+  padding: 24px 28px;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: flex-start;
+  justify-content: center;
+
+  overflow: hidden;
+
+  border-right:
+    1px solid
+    rgba(255, 255, 255, 0.08);
+
+  transition:
+    background 0.3s ease;
+}
+
+.about-stat:first-child {
+  border-left:
+    1px solid
+    rgba(255, 255, 255, 0.08);
+}
+
+.about-stat:hover {
+  background:
+    rgba(7, 143, 247, 0.06);
+}
+
+
+/* SMALL NUMBER */
+
+.about-stat-index {
+  position: absolute;
+
+  top: 16px;
+  right: 18px;
+
+  color:
+    rgba(255, 255, 255, 0.18);
+
+  font-size: 11px;
+
+  font-weight: 900;
+
+  letter-spacing: 1px;
+}
+
+
+/* BIG COUNTER */
+
+.about-stat-number {
+  color: #ffffff;
+
+  font-size: 46px;
+
+  line-height: 1;
+
+  font-weight: 900;
+
+  letter-spacing: -2px;
+
+  font-variant-numeric:
+    tabular-nums;
+}
+
+.about-stat p {
+  margin: 7px 0 0;
+
+  color: #a4b7c2;
+
+  font-size: 14px;
+
+  font-weight: 700;
+
+  text-transform: uppercase;
+
+  letter-spacing: 1px;
+}
+
+.about-stat-line {
+  position: absolute;
+
+  left: 28px;
+  bottom: 0;
+
+  width: 42px;
+  height: 3px;
+
+  background: #078ff7;
+
+  transition: width 0.35s ease;
+}
+
+.about-stat:hover
+.about-stat-line {
+  width: calc(100% - 56px);
+}
+
+
+/* =========================================================
+   STORY SECTION
+========================================================= */
+
+.about-story {
+  padding: 85px 0;
+
+  background:
+    radial-gradient(
+      circle at 0% 40%,
+      rgba(7, 143, 247, 0.08),
+      transparent 24%
+    ),
+    #031522;
+}
+
+.about-story-grid {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    minmax(0, 0.95fr);
+
+  gap: 72px;
+
+  align-items: center;
+}
+
+
+/* =========================================================
+   STORY VISUAL
+========================================================= */
+
+.about-story-visual {
+  position: relative;
+
+  min-height: 540px;
+}
+
+.about-story-main {
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 80%;
+  height: 465px;
+
+  overflow: hidden;
+
+  border-radius:
+    5px 45px 5px 5px;
+}
+
+.about-story-main img,
+.about-story-small img,
+.about-facility-main img,
+.about-facility-small img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  transition:
+    transform 0.6s ease;
+}
+
+.about-story-main:hover img,
+.about-story-small:hover img,
+.about-facility-main:hover img,
+.about-facility-small:hover img {
+  transform: scale(1.055);
+}
+
+.about-image-number {
+  position: absolute;
+
+  top: 20px;
+  left: 20px;
+
+  width: 45px;
+  height: 45px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.25);
+
+  border-radius: 50%;
+
+  color: #ffffff;
+
+  background:
+    rgba(3, 21, 34, 0.42);
+
+  backdrop-filter: blur(7px);
+
+  font-size: 12px;
+
+  font-weight: 900;
+}
+
+.about-story-small {
+  position: absolute;
+
+  right: 0;
+  bottom: 0;
+
+  width: 46%;
+  height: 240px;
+
+  overflow: hidden;
+
+  border:
+    7px solid #031522;
+
+  border-radius:
+    30px 5px 5px 5px;
+}
+
+
+/* =========================================================
+   STORY BADGE
+========================================================= */
+
+.about-story-badge {
+  position: absolute;
+
+  left: 22px;
+  bottom: 20px;
+
+  min-width: 185px;
+
+  padding: 16px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  border:
+    1px solid
+    rgba(42, 183, 255, 0.28);
+
+  border-radius: 12px;
+
+  background:
+    rgba(4, 27, 43, 0.94);
+
+  backdrop-filter: blur(12px);
+
+  box-shadow:
+    0 15px 35px
+    rgba(0, 0, 0, 0.28);
+}
+
+.about-story-badge > svg {
+  color: #2ab7ff;
+
+  font-size: 27px;
+}
+
+.about-story-badge strong {
+  display: block;
+
+  color: #ffffff;
+
+  font-size: 15px;
+}
+
+.about-story-badge span {
+  display: block;
+
+  margin-top: 2px;
+
+  color: #7e98a6;
+
+  font-size: 10px;
+
+  font-weight: 900;
+
+  letter-spacing: 1px;
+}
+
+
+/* =========================================================
+   COMMON SECTION LABEL
+========================================================= */
+
+.about-section-label {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  color: #2ab7ff;
+
+  font-size: 13px;
+
+  font-weight: 900;
+
+  letter-spacing: 2px;
+}
+
+.about-section-label span {
+  color: #718b9a;
+}
+
+
+/* =========================================================
+   COMMON LARGE HEADINGS
+========================================================= */
+
+.about-story-content h2,
+.about-values-header h2,
+.about-facilities-content h2,
+.about-mission-content h2,
+.about-cta-content h2 {
+  margin: 13px 0 0;
+
+  color: #ffffff;
+
+  font-size: clamp(44px, 4.5vw, 62px);
+
+  line-height: 0.98;
+
+  font-weight: 900;
+
+  letter-spacing: -2.4px;
+}
+
+.about-story-content h2 strong,
+.about-values-header h2 strong,
+.about-facilities-content h2 strong,
+.about-mission-content h2 strong,
+.about-cta-content h2 strong {
+  color: #078ff7;
+}
+
+
+/* =========================================================
+   STORY TEXT
+========================================================= */
+
+.about-story-content
+> p {
+  margin: 16px 0 0;
+
+  color: #8ca4b2;
+
+  font-size: 16px;
+
+  line-height: 1.72;
+}
+
+.about-story-content
+.about-story-lead {
+  margin-top: 23px;
+
+  color: #d0dce3;
+
+  font-size: 18px;
+
+  font-weight: 500;
+}
+
+
+/* =========================================================
+   STORY FEATURES
+========================================================= */
+
+.about-story-features {
+  margin-top: 26px;
+
+  display: grid;
+
+  gap: 15px;
+}
+
+.about-story-feature {
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 13px;
+}
+
+.about-story-feature
+> span {
+  width: 32px;
+  height: 32px;
+
+  flex: 0 0 32px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background:
+    rgba(7, 143, 247, 0.12);
+
+  color: #2ab7ff;
+}
+
+.about-story-feature strong {
+  color: #ffffff;
+
+  font-size: 16px;
+}
+
+.about-story-feature p {
+  margin: 4px 0 0;
+
+  color: #8098a6;
+
+  font-size: 14px;
+
+  line-height: 1.55;
+}
+
+.about-text-link {
+  margin-top: 26px;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  color: #2ab7ff;
+
+  text-decoration: none;
+
+  font-size: 13px;
+
+  font-weight: 900;
+
+  letter-spacing: 1px;
+}
+
+
+/* =========================================================
+   VALUES SECTION
+========================================================= */
+
+.about-values {
+  position: relative;
+
+  padding: 80px 0 90px;
+
+  overflow: hidden;
+
+  border-top:
+    1px solid
+    rgba(255, 255, 255, 0.06);
+
+  background: #041a29;
+}
+
+.about-big-word {
+  position: absolute;
+
+  top: -8px;
+  left: 50%;
+
+  transform:
+    translateX(-50%);
+
+  color:
+    rgba(255, 255, 255, 0.018);
+
+  font-size: 190px;
+
+  line-height: 1;
+
+  font-weight: 900;
+
+  letter-spacing: -9px;
+
+  pointer-events: none;
+}
+
+.about-values-header {
+  position: relative;
+
+  display: flex;
+
+  align-items: flex-end;
+  justify-content: space-between;
+
+  gap: 45px;
+}
+
+.about-values-header > p {
+  max-width: 380px;
+
+  margin: 0 0 5px;
+
+  color: #91a7b4;
+
+  font-size: 16px;
+
+  line-height: 1.65;
+}
+
+
+/* =========================================================
+   VALUE GRID
+========================================================= */
+
+.about-values-grid {
+  position: relative;
+
+  margin-top: 43px;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, 1fr);
+
+  gap: 14px;
+}
+
+.about-value-card {
+  position: relative;
+
+  min-height: 300px;
+
+  padding: 27px 22px;
+
+  overflow: hidden;
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.08);
+
+  border-radius: 15px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #082438,
+      #051a29
+    );
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.about-value-card:hover {
+  transform:
+    translateY(-6px);
+
+  border-color:
+    rgba(42, 183, 255, 0.42);
+
+  box-shadow:
+    0 18px 40px
+    rgba(0, 0, 0, 0.18);
+}
+
+.about-value-number {
+  position: absolute;
+
+  top: 18px;
+  right: 19px;
+
+  color:
+    rgba(255, 255, 255, 0.18);
+
+  font-size: 13px;
+
+  font-weight: 900;
+}
+
+.about-value-icon {
+  width: 53px;
+  height: 53px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 12px;
+
+  background:
+    rgba(7, 143, 247, 0.12);
+
+  color: #2ab7ff;
+
+  font-size: 25px;
+}
+
+.about-value-card h3 {
+  margin: 22px 0 10px;
+
+  color: #ffffff;
+
+  font-size: 21px;
+
+  font-weight: 900;
+}
+
+.about-value-card > p {
+  margin: 0;
+
+  color: #8ba1ae;
+
+  font-size: 14px;
+
+  line-height: 1.7;
+}
+
+.about-value-bottom {
+  position: absolute;
+
+  left: 22px;
+  right: 22px;
+  bottom: 20px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+}
+
+.about-value-bottom span {
+  width: 38px;
+  height: 2px;
+
+  background: #078ff7;
+
+  transition:
+    width 0.3s ease;
+}
+
+.about-value-bottom svg {
+  color: #2ab7ff;
+
+  font-size: 18px;
+}
+
+.about-value-card:hover
+.about-value-bottom span {
+  width: 70px;
+}
+
+
+/* =========================================================
+   FACILITIES
+========================================================= */
+
+.about-facilities {
+  padding: 90px 0;
+
+  background: #031522;
+}
+
+.about-facilities-grid {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 0.9fr)
+    minmax(0, 1.1fr);
+
+  gap: 75px;
+
+  align-items: center;
+}
+
+.about-facilities-content
+> p {
+  max-width: 550px;
+
+  margin: 21px 0 0;
+
+  color: #8ca4b2;
+
+  font-size: 16px;
+
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   FACILITY LIST
+========================================================= */
+
+.about-facility-list {
+  margin: 27px 0 29px;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, 1fr);
+
+  gap: 14px 18px;
+}
+
+.about-facility-item {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  color: #c5d3da;
+
+  font-size: 14px;
+}
+
+.about-facility-item
+> span {
+  width: 27px;
+  height: 27px;
+
+  flex: 0 0 27px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background:
+    rgba(7, 143, 247, 0.12);
+
+  color: #2ab7ff;
+}
+
+
+/* =========================================================
+   FACILITY VISUAL
+========================================================= */
+
+.about-facility-visual {
+  position: relative;
+
+  min-height: 520px;
+}
+
+.about-facility-main {
+  position: absolute;
+
+  top: 0;
+  right: 0;
+
+  width: 83%;
+  height: 455px;
+
+  overflow: hidden;
+
+  border-radius:
+    42px 5px 5px 5px;
+}
+
+.about-facility-small {
+  position: absolute;
+
+  left: 0;
+  bottom: 0;
+
+  width: 45%;
+  height: 220px;
+
+  overflow: hidden;
+
+  border:
+    7px solid #031522;
+
+  border-radius:
+    5px 28px 5px 5px;
+}
+
+.about-equipment-tag {
+  position: absolute;
+
+  right: 17px;
+  bottom: 17px;
+
+  padding: 13px 15px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  border:
+    1px solid
+    rgba(42, 183, 255, 0.25);
+
+  border-radius: 10px;
+
+  background:
+    rgba(3, 21, 34, 0.91);
+
+  backdrop-filter: blur(9px);
+}
+
+.about-equipment-tag
+> svg {
+  color: #2ab7ff;
+
+  font-size: 21px;
+}
+
+.about-equipment-tag span {
+  display: block;
+
+  color: #819aa8;
+
+  font-size: 9px;
+
+  font-weight: 900;
+}
+
+.about-equipment-tag strong {
+  display: block;
+
+  margin-top: 2px;
+
+  color: #ffffff;
+
+  font-size: 13px;
+}
+
+
+/* =========================================================
+   MISSION
+========================================================= */
+
+.about-mission {
+  padding: 15px 0 85px;
+
+  background: #031522;
+}
+
+.about-mission-card {
+  padding: 42px;
+
+  display: grid;
+
+  grid-template-columns:
+    auto minmax(0, 1fr) auto;
+
+  align-items: center;
+
+  gap: 32px;
+
+  border:
+    1px solid
+    rgba(42, 183, 255, 0.2);
+
+  border-radius: 20px;
+
+  background:
+    radial-gradient(
+      circle at 100% 0%,
+      rgba(7, 143, 247, 0.14),
+      transparent 31%
+    ),
+    linear-gradient(
+      145deg,
+      #09283d,
+      #051a29
+    );
+}
+
+.about-mission-icon {
+  width: 76px;
+  height: 76px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 17px;
+
+  background:
+    rgba(7, 143, 247, 0.13);
+
+  color: #2ab7ff;
+
+  font-size: 32px;
+}
+
+.about-mission-content h2 {
+  font-size: 49px;
+}
+
+.about-mission-content
+> p {
+  max-width: 620px;
+
+  margin: 15px 0 0;
+
+  color: #8ca4b2;
+
+  font-size: 15px;
+
+  line-height: 1.65;
+}
+
+.about-mission-quote {
+  min-width: 180px;
+
+  padding-left: 27px;
+
+  border-left:
+    1px solid
+    rgba(255, 255, 255, 0.1);
+}
+
+.about-mission-quote
+> svg {
+  margin-bottom: 10px;
+
+  color: #2ab7ff;
+
+  font-size: 24px;
+}
+
+.about-mission-quote p {
+  margin: 0;
+
+  color: #becbd2;
+
+  font-size: 13px;
+
+  font-weight: 800;
+
+  line-height: 1.65;
+}
+
+.about-mission-quote strong {
+  color: #2ab7ff;
+}
+
+
+/* =========================================================
+   FINAL CTA
+========================================================= */
+
+.about-cta {
+  position: relative;
+
+  min-height: 400px;
+
+  display: flex;
+
+  align-items: center;
+
+  background:
+    url("https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&fit=crop&w=1900&q=90")
+    center 42% / cover no-repeat;
+}
+
+.about-cta-overlay {
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(2, 15, 25, 0.95),
+      rgba(3, 21, 34, 0.82),
+      rgba(2, 15, 25, 0.95)
+    );
+}
+
+.about-cta-content {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  text-align: center;
+}
+
+.about-cta-content
+> span {
+  color: #2ab7ff;
+
+  font-size: 13px;
+
+  font-weight: 900;
+
+  letter-spacing: 2px;
+}
+
+.about-cta-content h2 {
+  max-width: 850px;
+
+  font-size: 61px;
+}
+
+.about-cta-content
+> p {
+  margin: 15px 0 23px;
+
+  color: #bdccd4;
+
+  font-size: 16px;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+  .about-story-grid,
+  .about-facilities-grid {
+    grid-template-columns:
+      1fr;
+
+    gap: 50px;
+  }
+
+  .about-values-grid {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+
+  .about-mission-card {
+    grid-template-columns:
+      auto 1fr;
+  }
+
+  .about-mission-quote {
+    grid-column:
+      1 / -1;
+
+    padding:
+      22px 0 0;
+
+    border-left: 0;
+
+    border-top:
+      1px solid
+      rgba(255, 255, 255, 0.1);
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+  .about-container {
+    width: 100%;
+
+    padding: 0 16px;
+  }
+
+
+  /* =======================================================
+     MOBILE HERO — SHORTER HEIGHT
+  ======================================================= */
+
+  .about-hero {
+    min-height: 480px;
+    height: auto;
+
+    max-height: none;
+
+    background-position:
+      62% center;
+  }
+
+  .about-hero-container {
+    width: 100%;
+
+    padding:
+      75px 17px 38px;
+  }
+
+  .about-hero-index {
+    display: none;
+  }
+
+  .about-eyebrow {
+    margin-bottom: 11px;
+
+    font-size: 12px;
+  }
+
+  .about-eyebrow span {
+    width: 31px;
+  }
+
+
+  /* LARGE MOBILE HEADING */
+
+  .about-hero-content h1 {
+    font-size: 51px;
+
+    line-height: 0.94;
+
+    letter-spacing: -2.5px;
+  }
+
+  .about-hero-content > p {
+    margin-top: 16px;
+
+    font-size: 16px;
+
+    line-height: 1.55;
+  }
+
+  .about-hero-actions {
+    margin-top: 20px;
+  }
+
+  .about-primary-btn,
+  .about-secondary-btn {
+    min-height: 54px;
+
+    padding: 0 18px;
+
+    font-size: 12px;
+  }
+
+
+  /* =======================================================
+     MOBILE STATS
+  ======================================================= */
+
+  .about-stats-container {
+    width: 100%;
+
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+
+  .about-stat {
+    min-height: 130px;
+
+    padding: 21px 18px;
+
+    border-bottom:
+      1px solid
+      rgba(255, 255, 255, 0.08);
+  }
+
+  .about-stat-number {
+    font-size: 39px;
+  }
+
+  .about-stat p {
+    font-size: 12px;
+  }
+
+  .about-stat-line {
+    left: 18px;
+  }
+
+
+  /* =======================================================
+     MOBILE STORY
+  ======================================================= */
+
+  .about-story {
+    padding: 62px 0;
+  }
+
+  .about-story-grid {
+    gap: 40px;
+  }
+
+  .about-story-visual {
+    min-height: 445px;
+  }
+
+  .about-story-main {
+    width: 86%;
+    height: 385px;
+  }
+
+  .about-story-small {
+    width: 49%;
+    height: 190px;
+  }
+
+  .about-story-badge {
+    left: 10px;
+    bottom: 14px;
+
+    min-width: 160px;
+
+    padding: 13px;
+  }
+
+
+  /* BIG MOBILE SECTION HEADINGS */
+
+  .about-story-content h2,
+  .about-values-header h2,
+  .about-facilities-content h2,
+  .about-mission-content h2,
+  .about-cta-content h2 {
+    font-size: 40px;
+
+    line-height: 1;
+  }
+
+  .about-section-label {
+    font-size: 11px;
+  }
+
+  .about-story-content
+  .about-story-lead {
+    font-size: 16px;
+  }
+
+  .about-story-content
+  > p {
+    font-size: 15px;
+  }
+
+  .about-story-feature
+  strong {
+    font-size: 15px;
+  }
+
+  .about-story-feature p {
+    font-size: 14px;
+  }
+
+
+  /* =======================================================
+     VALUES
+  ======================================================= */
+
+  .about-values {
+    padding: 62px 0;
+  }
+
+  .about-big-word {
+    font-size: 100px;
+  }
+
+  .about-values-header {
+    display: block;
+  }
+
+  .about-values-header > p {
+    margin-top: 18px;
+
+    font-size: 15px;
+  }
+
+  .about-values-grid {
+    margin-top: 31px;
+
+    grid-template-columns: 1fr;
+  }
+
+  .about-value-card {
+    min-height: 270px;
+
+    padding: 24px 20px;
+  }
+
+  .about-value-card h3 {
+    font-size: 22px;
+  }
+
+  .about-value-card > p {
+    font-size: 15px;
+  }
+
+
+  /* =======================================================
+     FACILITIES
+  ======================================================= */
+
+  .about-facilities {
+    padding: 65px 0;
+  }
+
+  .about-facilities-content
+  > p {
+    font-size: 15px;
+  }
+
+  .about-facility-list {
+    grid-template-columns: 1fr;
+  }
+
+  .about-facility-item {
+    font-size: 15px;
+  }
+
+  .about-facility-visual {
+    min-height: 430px;
+  }
+
+  .about-facility-main {
+    width: 87%;
+    height: 370px;
+  }
+
+  .about-facility-small {
+    width: 48%;
+    height: 185px;
+  }
+
+
+  /* =======================================================
+     MISSION
+  ======================================================= */
+
+  .about-mission {
+    padding:
+      5px 0 65px;
+  }
+
+  .about-mission-card {
+    padding: 26px 20px;
+
+    display: block;
+  }
+
+  .about-mission-icon {
+    width: 60px;
+    height: 60px;
+
+    margin-bottom: 20px;
+
+    font-size: 27px;
+  }
+
+  .about-mission-content
+  > p {
+    font-size: 15px;
+  }
+
+  .about-mission-quote {
+    margin-top: 22px;
+  }
+
+
+  /* =======================================================
+     CTA
+  ======================================================= */
+
+  .about-cta {
+    min-height: 380px;
+
+    padding: 55px 0;
+  }
+
+  .about-cta-content
+  > span {
+    font-size: 11px;
+  }
+
+  .about-cta-content
+  > p {
+    font-size: 15px;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 430px) {
+
+  /* HERO */
+
+  .about-hero {
+    min-height: 470px;
+  }
+
+  .about-hero-container {
+    padding:
+      68px 15px 34px;
+  }
+
+  .about-hero-content h1 {
+    font-size: 45px;
+
+    letter-spacing: -2px;
+  }
+
+  .about-hero-content > p {
+    font-size: 15px;
+  }
+
+  .about-hero-actions {
+    width: 100%;
+  }
+
+  .about-primary-btn,
+  .about-secondary-btn {
+    min-height: 52px;
+
+    font-size: 12px;
+  }
+
+
+  /* STATS */
+
+  .about-stat {
+    min-height: 125px;
+
+    padding: 19px 14px;
+  }
+
+  .about-stat-number {
+    font-size: 36px;
+  }
+
+  .about-stat p {
+    font-size: 11px;
+
+    letter-spacing: 0.6px;
+  }
+
+  .about-stat-index {
+    top: 12px;
+    right: 12px;
+
+    font-size: 9px;
+  }
+
+
+  /* STORY */
+
+  .about-story-visual {
+    min-height: 400px;
+  }
+
+  .about-story-main {
+    height: 345px;
+  }
+
+  .about-story-small {
+    height: 165px;
+  }
+
+
+  /* HEADINGS */
+
+  .about-story-content h2,
+  .about-values-header h2,
+  .about-facilities-content h2,
+  .about-mission-content h2,
+  .about-cta-content h2 {
+    font-size: 36px;
+  }
+
+
+  /* VALUES */
+
+  .about-value-card {
+    min-height: 280px;
+  }
+
+
+  /* FACILITY */
+
+  .about-facility-visual {
+    min-height: 390px;
+  }
+
+  .about-facility-main {
+    height: 335px;
+  }
+
+  .about-facility-small {
+    height: 160px;
+  }
+
+
+  /* CTA */
+
+  .about-cta-content h2 {
+    font-size: 38px;
+  }
+
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 360px) {
+
+  .about-hero-content h1 {
+    font-size: 40px;
+  }
+
+  .about-story-content h2,
+  .about-values-header h2,
+  .about-facilities-content h2,
+  .about-mission-content h2 {
+    font-size: 33px;
+  }
+
+  .about-stat-number {
+    font-size: 33px;
+  }
+
+  .about-stat p {
+    font-size: 10px;
+  }
+
+}
+/* =========================================================
+   FITZONE ABOUT PAGE
+   COMPACT HEIGHT + LESS SPACE/PADDING
+   FONTS / COLORS / DESIGN UNCHANGED
+========================================================= */
+
+
+/* =========================================================
+   DESKTOP HERO — SHORTER
+========================================================= */
+
+.about-hero {
+  min-height: 430px;
+  height: 58vh;
+  max-height: 500px;
+}
+
+.about-hero-container {
+  padding: 55px 0 32px;
+  gap: 35px;
+}
+
+
+/* hero text spacing only — font sizes unchanged */
+
+.about-eyebrow {
+  margin-bottom: 10px;
+}
+
+.about-hero-content > p {
+  margin-top: 14px;
+}
+
+.about-hero-actions {
+  margin-top: 18px;
+}
+
+
+/* =========================================================
+   STATS — COMPACT
+========================================================= */
+
+.about-stat {
+  min-height: 118px;
+  padding: 18px 24px;
+}
+
+.about-stat p {
+  margin-top: 5px;
+}
+
+.about-stat-index {
+  top: 13px;
+  right: 16px;
+}
+
+
+/* =========================================================
+   STORY — LESS TOP/BOTTOM SPACE
+========================================================= */
+
+.about-story {
+  padding: 58px 0;
+}
+
+.about-story-grid {
+  gap: 52px;
+}
+
+.about-story-visual {
+  min-height: 485px;
+}
+
+.about-story-main {
+  height: 420px;
+}
+
+.about-story-small {
+  height: 210px;
+}
+
+.about-story-content h2 {
+  margin-top: 10px;
+}
+
+.about-story-content > p {
+  margin-top: 12px;
+}
+
+.about-story-content .about-story-lead {
+  margin-top: 17px;
+}
+
+.about-story-features {
+  margin-top: 20px;
+  gap: 12px;
+}
+
+.about-text-link {
+  margin-top: 20px;
+}
+
+
+/* =========================================================
+   VALUES — LESS SPACE
+========================================================= */
+
+.about-values {
+  padding: 58px 0 64px;
+}
+
+.about-values-grid {
+  margin-top: 30px;
+  gap: 12px;
+}
+
+.about-value-card {
+  min-height: 270px;
+  padding: 23px 20px;
+}
+
+.about-value-card h3 {
+  margin: 17px 0 8px;
+}
+
+.about-value-bottom {
+  left: 20px;
+  right: 20px;
+  bottom: 17px;
+}
+
+
+/* =========================================================
+   FACILITIES — LESS SPACE
+========================================================= */
+
+.about-facilities {
+  padding: 62px 0;
+}
+
+.about-facilities-grid {
+  gap: 55px;
+}
+
+.about-facilities-content > p {
+  margin-top: 15px;
+}
+
+.about-facility-list {
+  margin: 20px 0 22px;
+  gap: 11px 16px;
+}
+
+.about-facility-visual {
+  min-height: 470px;
+}
+
+.about-facility-main {
+  height: 410px;
+}
+
+.about-facility-small {
+  height: 195px;
+}
+
+
+/* =========================================================
+   MISSION — LESS SPACE
+========================================================= */
+
+.about-mission {
+  padding: 8px 0 58px;
+}
+
+.about-mission-card {
+  padding: 32px;
+  gap: 25px;
+}
+
+.about-mission-content > p {
+  margin-top: 11px;
+}
+
+
+/* =========================================================
+   FINAL CTA — SHORTER
+========================================================= */
+
+.about-cta {
+  min-height: 330px;
+}
+
+.about-cta-content > p {
+  margin: 11px 0 18px;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+  .about-hero {
+    min-height: 420px;
+    height: 55vh;
+    max-height: 470px;
+  }
+
+  .about-hero-container {
+    padding: 52px 0 30px;
+  }
+
+  .about-story-grid,
+  .about-facilities-grid {
+    gap: 38px;
+  }
+
+  .about-story {
+    padding: 52px 0;
+  }
+
+  .about-values {
+    padding: 52px 0 58px;
+  }
+
+  .about-facilities {
+    padding: 55px 0;
+  }
+
+  .about-mission {
+    padding: 5px 0 52px;
+  }
+
+  .about-cta {
+    min-height: 320px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+  /* ---------------- HERO ---------------- */
+
+  .about-hero {
+    min-height: 410px;
+    height: auto;
+    max-height: none;
+  }
+
+  .about-hero-container {
+    padding: 64px 17px 27px;
+  }
+
+  .about-eyebrow {
+    margin-bottom: 8px;
+  }
+
+  .about-hero-content > p {
+    margin-top: 12px;
+  }
+
+  .about-hero-actions {
+    margin-top: 15px;
+  }
+
+
+  /* ---------------- STATS ---------------- */
+
+  .about-stat {
+    min-height: 108px;
+    padding: 17px 16px;
+  }
+
+  .about-stat-index {
+    top: 10px;
+    right: 11px;
+  }
+
+
+  /* ---------------- STORY ---------------- */
+
+  .about-story {
+    padding: 45px 0;
+  }
+
+  .about-story-grid {
+    gap: 30px;
+  }
+
+  .about-story-visual {
+    min-height: 405px;
+  }
+
+  .about-story-main {
+    height: 350px;
+  }
+
+  .about-story-small {
+    height: 170px;
+  }
+
+  .about-story-badge {
+    bottom: 10px;
+    padding: 11px;
+  }
+
+  .about-story-content h2 {
+    margin-top: 9px;
+  }
+
+  .about-story-content .about-story-lead {
+    margin-top: 15px;
+  }
+
+  .about-story-content > p {
+    margin-top: 11px;
+  }
+
+  .about-story-features {
+    margin-top: 17px;
+    gap: 11px;
+  }
+
+  .about-text-link {
+    margin-top: 17px;
+  }
+
+
+  /* ---------------- VALUES ---------------- */
+
+  .about-values {
+    padding: 45px 0;
+  }
+
+  .about-values-header > p {
+    margin-top: 13px;
+  }
+
+  .about-values-grid {
+    margin-top: 24px;
+    gap: 11px;
+  }
+
+  .about-value-card {
+    min-height: 250px;
+    padding: 21px 18px;
+  }
+
+  .about-value-card h3 {
+    margin: 15px 0 7px;
+  }
+
+
+  /* ---------------- FACILITIES ---------------- */
+
+  .about-facilities {
+    padding: 46px 0;
+  }
+
+  .about-facilities-grid {
+    gap: 30px;
+  }
+
+  .about-facilities-content > p {
+    margin-top: 13px;
+  }
+
+  .about-facility-list {
+    margin: 18px 0 20px;
+    gap: 10px;
+  }
+
+  .about-facility-visual {
+    min-height: 390px;
+  }
+
+  .about-facility-main {
+    height: 335px;
+  }
+
+  .about-facility-small {
+    height: 165px;
+  }
+
+
+  /* ---------------- MISSION ---------------- */
+
+  .about-mission {
+    padding: 3px 0 45px;
+  }
+
+  .about-mission-card {
+    padding: 22px 18px;
+  }
+
+  .about-mission-icon {
+    margin-bottom: 15px;
+  }
+
+  .about-mission-content > p {
+    margin-top: 10px;
+  }
+
+  .about-mission-quote {
+    margin-top: 17px;
+  }
+
+
+  /* ---------------- CTA ---------------- */
+
+  .about-cta {
+    min-height: 310px;
+    padding: 42px 0;
+  }
+
+  .about-cta-content > p {
+    margin: 10px 0 17px;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 430px) {
+
+  .about-hero {
+    min-height: 395px;
+  }
+
+  .about-hero-container {
+    padding: 60px 15px 24px;
+  }
+
+  .about-hero-actions {
+    margin-top: 14px;
+  }
+
+  .about-stat {
+    min-height: 104px;
+    padding: 16px 13px;
+  }
+
+  .about-story {
+    padding: 40px 0;
+  }
+
+  .about-story-visual {
+    min-height: 365px;
+  }
+
+  .about-story-main {
+    height: 315px;
+  }
+
+  .about-story-small {
+    height: 150px;
+  }
+
+  .about-values {
+    padding: 40px 0;
+  }
+
+  .about-value-card {
+    min-height: 245px;
+  }
+
+  .about-facilities {
+    padding: 42px 0;
+  }
+
+  .about-facility-visual {
+    min-height: 355px;
+  }
+
+  .about-facility-main {
+    height: 305px;
+  }
+
+  .about-facility-small {
+    height: 145px;
+  }
+
+  .about-mission {
+    padding: 2px 0 40px;
+  }
+
+  .about-cta {
+    min-height: 290px;
+    padding: 38px 0;
+  }
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 360px) {
+
+  .about-hero {
+    min-height: 390px;
+  }
+
+  .about-hero-container {
+    padding-top: 58px;
+    padding-bottom: 22px;
+  }
+
+  .about-story {
+    padding: 38px 0;
+  }
+
+  .about-values {
+    padding: 38px 0;
+  }
+
+  .about-facilities {
+    padding: 38px 0;
+  }
+
+  .about-mission {
+    padding-bottom: 38px;
+  }
+}

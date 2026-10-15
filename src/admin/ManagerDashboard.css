@@ -1,0 +1,1445 @@
+/* =========================================================
+   FITZONE MANAGER DASHBOARD
+   LARGE FONT + RESPONSIVE
+========================================================= */
+
+.manager-dashboard,
+.manager-dashboard * {
+  box-sizing: border-box;
+}
+
+.manager-dashboard {
+  width: 100%;
+  height: 100vh;
+
+  display: grid;
+  grid-template-columns: 275px minmax(0, 1fr);
+
+  overflow: hidden;
+
+  color: #ffffff;
+  background: #040b14;
+
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+}
+
+
+/* =========================================================
+   SIDEBAR
+========================================================= */
+
+.manager-sidebar {
+  width: 275px;
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+
+  padding: 20px 15px;
+
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  border-right: 1px solid rgba(255, 255, 255, 0.07);
+
+  background:
+    radial-gradient(
+      circle at 20% 0%,
+      rgba(24, 178, 255, 0.1),
+      transparent 27%
+    ),
+    linear-gradient(
+      180deg,
+      #081725 0%,
+      #05111d 100%
+    );
+
+  z-index: 100;
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.manager-logo {
+  min-height: 68px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 0 6px 19px;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.manager-logo-icon {
+  width: 47px;
+  height: 47px;
+
+  flex: 0 0 47px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 11px;
+
+  color: #ffffff;
+
+  background:
+    linear-gradient(
+      135deg,
+      #1bbcff,
+      #0871ef
+    );
+
+  font-size: 23px;
+}
+
+.manager-logo-content {
+  flex: 1;
+}
+
+.manager-logo-content strong {
+  display: block;
+
+  color: #ffffff;
+
+  font-size: 22px;
+  font-weight: 900;
+
+  line-height: 1.1;
+}
+
+.manager-logo-content strong span {
+  color: #20afff;
+}
+
+.manager-logo-content small {
+  display: block;
+
+  margin-top: 5px;
+
+  color: #8ca1b0;
+
+  font-size: 12px;
+  font-weight: 800;
+
+  letter-spacing: 1.1px;
+}
+
+.manager-sidebar-close {
+  display: none;
+
+  width: 38px;
+  height: 38px;
+
+  place-items: center;
+
+  border: 0;
+  border-radius: 8px;
+
+  color: #ffffff;
+
+  background: rgba(255, 255, 255, 0.05);
+
+  font-size: 22px;
+
+  cursor: pointer;
+}
+
+
+/* =========================================================
+   SIDEBAR MENU
+========================================================= */
+
+.manager-menu-title {
+  margin: 21px 11px 10px;
+
+  color: #71899a;
+
+  font-size: 12px;
+  font-weight: 900;
+
+  letter-spacing: 1.5px;
+}
+
+.manager-navigation {
+  display: grid;
+
+  gap: 5px;
+}
+
+.manager-navigation button {
+  width: 100%;
+  min-height: 50px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 0 14px;
+
+  border: 0;
+  border-radius: 9px;
+
+  color: #9eb1be;
+
+  background: transparent;
+
+  font-family: inherit;
+
+  font-size: 16px;
+  font-weight: 700;
+
+  text-align: left;
+
+  cursor: pointer;
+
+  transition:
+    color 0.2s ease,
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.manager-navigation button:hover {
+  color: #ffffff;
+
+  background: rgba(25, 174, 255, 0.07);
+
+  transform: translateX(2px);
+}
+
+.manager-navigation button.active {
+  color: #ffffff;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(25, 174, 255, 0.2),
+      rgba(25, 174, 255, 0.04)
+    );
+
+  box-shadow: inset 3px 0 0 #20afff;
+}
+
+.manager-nav-icon {
+  width: 24px;
+
+  display: grid;
+  place-items: center;
+
+  color: #8299aa;
+
+  font-size: 20px;
+}
+
+.manager-navigation button.active .manager-nav-icon {
+  color: #20afff;
+}
+
+.manager-nav-text {
+  font-size: 16px;
+}
+
+
+/* =========================================================
+   ACCESS CARD
+========================================================= */
+
+.manager-access-card {
+  display: flex;
+  align-items: center;
+
+  gap: 11px;
+
+  margin-top: 21px;
+
+  padding: 13px;
+
+  border: 1px solid rgba(32, 175, 255, 0.12);
+
+  border-radius: 10px;
+
+  background: rgba(32, 175, 255, 0.045);
+}
+
+.manager-access-icon {
+  width: 39px;
+  height: 39px;
+
+  flex: 0 0 39px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 8px;
+
+  color: #20afff;
+
+  background: rgba(32, 175, 255, 0.1);
+
+  font-size: 18px;
+}
+
+.manager-access-card strong {
+  display: block;
+
+  color: #ffffff;
+
+  font-size: 15px;
+  font-weight: 800;
+}
+
+.manager-access-card p {
+  margin: 4px 0 0;
+
+  color: #8ca1b0;
+
+  font-size: 13px;
+  line-height: 1.35;
+}
+
+
+/* =========================================================
+   LOGOUT
+========================================================= */
+
+.manager-logout {
+  width: 100%;
+  min-height: 49px;
+
+  margin-top: auto;
+
+  display: flex;
+  align-items: center;
+
+  gap: 11px;
+
+  padding: 0 14px;
+
+  border: 1px solid rgba(255, 87, 103, 0.12);
+
+  border-radius: 9px;
+
+  color: #ff8997;
+
+  background: rgba(255, 75, 94, 0.04);
+
+  font-family: inherit;
+
+  font-size: 16px;
+  font-weight: 800;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.manager-logout svg {
+  font-size: 19px;
+}
+
+.manager-logout:hover {
+  color: #ffffff;
+
+  background: rgba(255, 75, 94, 0.11);
+}
+
+
+/* =========================================================
+   MAIN
+========================================================= */
+
+.manager-main {
+  width: 100%;
+  min-width: 0;
+  height: 100vh;
+
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  background:
+    radial-gradient(
+      circle at 92% 3%,
+      rgba(0, 157, 255, 0.09),
+      transparent 26%
+    ),
+    #040b14;
+
+  scrollbar-width: thin;
+  scrollbar-color: #158fd5 #06121e;
+}
+
+.manager-main::-webkit-scrollbar {
+  width: 7px;
+}
+
+.manager-main::-webkit-scrollbar-track {
+  background: #06121e;
+}
+
+.manager-main::-webkit-scrollbar-thumb {
+  background: #158fd5;
+
+  border-radius: 10px;
+}
+
+.manager-main-inner {
+  width: 100%;
+
+  padding: 24px 26px 32px;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.manager-header {
+  min-height: 74px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  margin-bottom: 17px;
+}
+
+.manager-header-left {
+  display: flex;
+  align-items: center;
+
+  gap: 13px;
+}
+
+.manager-mobile-menu {
+  display: none;
+
+  width: 46px;
+  height: 46px;
+
+  place-items: center;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  border-radius: 9px;
+
+  color: #ffffff;
+
+  background: #091827;
+
+  font-size: 23px;
+
+  cursor: pointer;
+}
+
+.manager-page-title > span {
+  color: #20afff;
+
+  font-size: 13px;
+  font-weight: 900;
+
+  letter-spacing: 1.3px;
+}
+
+.manager-page-title h1 {
+  margin: 5px 0 0;
+
+  color: #ffffff;
+
+  font-size: 32px;
+  font-weight: 900;
+
+  line-height: 1.15;
+}
+
+.manager-page-title h1 strong {
+  color: #20afff;
+}
+
+
+/* =========================================================
+   PROFILE
+========================================================= */
+
+.manager-profile {
+  display: flex;
+  align-items: center;
+
+  gap: 11px;
+
+  padding: 8px 12px;
+
+  border: 1px solid rgba(255, 255, 255, 0.07);
+
+  border-radius: 11px;
+
+  background: rgba(255, 255, 255, 0.025);
+}
+
+.manager-profile-avatar {
+  width: 43px;
+  height: 43px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 50%;
+
+  color: #ffffff;
+
+  background:
+    linear-gradient(
+      135deg,
+      #19b9ff,
+      #0871ef
+    );
+
+  font-size: 15px;
+  font-weight: 900;
+}
+
+.manager-profile-info strong {
+  display: block;
+
+  color: #ffffff;
+
+  font-size: 15px;
+  font-weight: 800;
+}
+
+.manager-profile-info small {
+  display: block;
+
+  margin-top: 3px;
+
+  color: #8da2b1;
+
+  font-size: 12px;
+}
+
+
+/* =========================================================
+   WELCOME HERO
+========================================================= */
+
+.manager-welcome {
+  position: relative;
+
+  min-height: 205px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  overflow: hidden;
+
+  padding: 28px 31px;
+
+  margin-bottom: 15px;
+
+  border: 1px solid rgba(32, 175, 255, 0.11);
+
+  border-radius: 16px;
+
+  background:
+    radial-gradient(
+      circle at 88% 50%,
+      rgba(32, 175, 255, 0.15),
+      transparent 27%
+    ),
+    linear-gradient(
+      135deg,
+      #0a1c2c,
+      #07131f
+    );
+}
+
+.manager-welcome-content {
+  position: relative;
+
+  z-index: 2;
+}
+
+.manager-welcome-content > span {
+  color: #20afff;
+
+  font-size: 13px;
+  font-weight: 900;
+
+  letter-spacing: 1.3px;
+}
+
+.manager-welcome h2 {
+  margin: 7px 0;
+
+  color: #ffffff;
+
+  font-size: 36px;
+  font-weight: 900;
+
+  line-height: 1.15;
+}
+
+.manager-welcome h2 strong {
+  color: #20afff;
+}
+
+.manager-welcome p {
+  max-width: 650px;
+
+  margin: 0;
+
+  color: #a1b3bf;
+
+  font-size: 16px;
+  line-height: 1.65;
+}
+
+.manager-welcome-content button {
+  min-height: 46px;
+
+  display: inline-flex;
+  align-items: center;
+
+  gap: 9px;
+
+  margin-top: 17px;
+
+  padding: 0 19px;
+
+  border: 0;
+  border-radius: 8px;
+
+  color: #ffffff;
+
+  background:
+    linear-gradient(
+      135deg,
+      #19b9ff,
+      #0871ef
+    );
+
+  font-family: inherit;
+
+  font-size: 14px;
+  font-weight: 900;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.manager-welcome-content button:hover {
+  transform: translateY(-2px);
+}
+
+.manager-welcome-art {
+  margin-right: 50px;
+
+  color: rgba(32, 175, 255, 0.14);
+
+  font-size: 120px;
+
+  transform: rotate(-12deg);
+}
+
+
+/* =========================================================
+   STATS
+========================================================= */
+
+.manager-stats {
+  display: grid;
+
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+
+  gap: 13px;
+
+  margin-bottom: 15px;
+}
+
+.manager-stat-card {
+  min-width: 0;
+
+  padding: 18px;
+
+  border: 1px solid rgba(255, 255, 255, 0.07);
+
+  border-radius: 13px;
+
+  color: inherit;
+
+  background:
+    linear-gradient(
+      145deg,
+      #091827,
+      #06121e
+    );
+
+  font-family: inherit;
+
+  text-align: left;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    background 0.2s ease;
+}
+
+.manager-stat-card:hover {
+  transform: translateY(-3px);
+
+  border-color: rgba(32, 175, 255, 0.25);
+
+  background:
+    linear-gradient(
+      145deg,
+      #0b1d2e,
+      #071522
+    );
+}
+
+.manager-stat-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 13px;
+}
+
+.manager-stat-head > svg {
+  color: #668094;
+
+  font-size: 19px;
+}
+
+.manager-stat-icon {
+  width: 46px;
+  height: 46px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 10px;
+
+  color: #20afff;
+
+  background: rgba(25, 174, 255, 0.1);
+
+  font-size: 21px;
+}
+
+.manager-stat-title {
+  display: block;
+
+  color: #a1b3bf;
+
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.manager-stat-number {
+  display: block;
+
+  margin: 5px 0;
+
+  color: #ffffff;
+
+  font-size: 34px;
+  font-weight: 900;
+
+  line-height: 1.1;
+}
+
+.manager-stat-card p {
+  margin: 0;
+
+  color: #8096a6;
+
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.manager-stat-action {
+  display: flex;
+  align-items: center;
+
+  gap: 6px;
+
+  margin-top: 14px;
+
+  color: #20afff;
+
+  font-size: 13px;
+  font-weight: 900;
+}
+
+
+/* =========================================================
+   LOWER GRID
+========================================================= */
+
+.manager-lower-grid {
+  display: grid;
+
+  grid-template-columns: 1.05fr 0.95fr;
+
+  gap: 13px;
+}
+
+.manager-panel {
+  padding: 21px;
+
+  border: 1px solid rgba(255, 255, 255, 0.07);
+
+  border-radius: 14px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #091827,
+      #06121e
+    );
+}
+
+.manager-panel-heading > span {
+  color: #20afff;
+
+  font-size: 12px;
+  font-weight: 900;
+
+  letter-spacing: 1.3px;
+}
+
+.manager-panel-heading h3 {
+  margin: 5px 0;
+
+  color: #ffffff;
+
+  font-size: 24px;
+  font-weight: 900;
+}
+
+.manager-panel-heading p {
+  margin: 0 0 17px;
+
+  color: #8da2b1;
+
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+
+/* =========================================================
+   QUICK ACCESS
+========================================================= */
+
+.manager-quick-list {
+  display: grid;
+
+  gap: 8px;
+}
+
+.manager-quick-list > button {
+  width: 100%;
+  min-height: 62px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 11px;
+
+  padding: 8px 13px;
+
+  border: 1px solid rgba(255, 255, 255, 0.06);
+
+  border-radius: 9px;
+
+  color: #ffffff;
+
+  background: rgba(255, 255, 255, 0.02);
+
+  font-family: inherit;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.manager-quick-list > button:hover {
+  border-color: rgba(32, 175, 255, 0.15);
+
+  background: rgba(25, 174, 255, 0.065);
+}
+
+.manager-quick-list > button > div {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+}
+
+.manager-quick-list > button > div > span {
+  width: 41px;
+  height: 41px;
+
+  flex: 0 0 41px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 8px;
+
+  color: #20afff;
+
+  background: rgba(25, 174, 255, 0.1);
+
+  font-size: 19px;
+}
+
+.manager-quick-list > button > svg {
+  color: #71899a;
+
+  font-size: 18px;
+}
+
+.manager-quick-list strong {
+  display: block;
+
+  color: #ffffff;
+
+  font-size: 16px;
+  font-weight: 800;
+
+  text-align: left;
+}
+
+.manager-quick-list small {
+  display: block;
+
+  margin-top: 3px;
+
+  color: #8499a8;
+
+  font-size: 13px;
+
+  text-align: left;
+}
+
+
+/* =========================================================
+   PERMISSIONS
+========================================================= */
+
+.manager-permission-list {
+  display: grid;
+
+  gap: 8px;
+}
+
+.manager-permission-list > div {
+  display: flex;
+
+  gap: 11px;
+
+  padding: 12px;
+
+  border: 1px solid rgba(255, 255, 255, 0.06);
+
+  border-radius: 9px;
+
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.manager-permission-list > div > span {
+  width: 41px;
+  height: 41px;
+
+  flex: 0 0 41px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 8px;
+
+  color: #20afff;
+
+  background: rgba(25, 174, 255, 0.1);
+
+  font-size: 18px;
+}
+
+.manager-permission-list strong {
+  display: block;
+
+  color: #ffffff;
+
+  font-size: 16px;
+  font-weight: 800;
+}
+
+.manager-permission-list p {
+  margin: 4px 0 0;
+
+  color: #8499a8;
+
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+
+/* =========================================================
+   RESTRICTED
+========================================================= */
+
+.manager-restricted {
+  display: flex;
+
+  gap: 11px;
+
+  margin-top: 11px;
+
+  padding: 13px;
+
+  border: 1px solid rgba(255, 184, 77, 0.14);
+
+  border-radius: 9px;
+
+  background: rgba(255, 184, 77, 0.045);
+}
+
+.manager-restricted > svg {
+  flex: 0 0 auto;
+
+  margin-top: 2px;
+
+  color: #ffbd59;
+
+  font-size: 20px;
+}
+
+.manager-restricted strong {
+  display: block;
+
+  color: #ffffff;
+
+  font-size: 15px;
+  font-weight: 800;
+}
+
+.manager-restricted p {
+  margin: 4px 0 0;
+
+  color: #91a1ad;
+
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+
+/* =========================================================
+   BACKDROP
+========================================================= */
+
+.manager-backdrop {
+  display: none;
+}
+
+
+/* =========================================================
+   LAPTOP / TABLET
+========================================================= */
+
+@media (max-width: 1150px) {
+  .manager-dashboard {
+    grid-template-columns: 260px minmax(0, 1fr);
+  }
+
+  .manager-sidebar {
+    width: 260px;
+  }
+
+  .manager-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .manager-lower-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .manager-welcome h2 {
+    font-size: 33px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 760px) {
+  .manager-dashboard {
+    display: block;
+
+    width: 100%;
+    height: auto;
+    min-height: 100vh;
+
+    overflow: visible;
+
+    font-size: 16px;
+  }
+
+  .manager-sidebar {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 285px;
+    height: 100vh;
+
+    padding: 18px 14px;
+
+    transform: translateX(-105%);
+
+    transition: transform 0.3s ease;
+
+    box-shadow:
+      20px 0 50px rgba(0, 0, 0, 0.5);
+
+    z-index: 100;
+  }
+
+  .manager-sidebar.open {
+    transform: translateX(0);
+  }
+
+  .manager-sidebar-close {
+    display: grid;
+  }
+
+  .manager-backdrop {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 90;
+
+    display: block;
+
+    border: 0;
+
+    background: rgba(0, 4, 9, 0.72);
+
+    backdrop-filter: blur(3px);
+  }
+
+  .manager-navigation button {
+    min-height: 52px;
+
+    font-size: 16px;
+  }
+
+  .manager-main {
+    width: 100%;
+    height: auto;
+    min-height: 100vh;
+
+    overflow: visible;
+  }
+
+  .manager-main-inner {
+    padding: 16px;
+  }
+
+  .manager-mobile-menu {
+    display: grid;
+  }
+
+  .manager-page-title > span {
+    font-size: 11px;
+  }
+
+  .manager-page-title h1 {
+    font-size: 27px;
+  }
+
+  .manager-welcome {
+    min-height: 205px;
+
+    padding: 24px 21px;
+  }
+
+  .manager-welcome h2 {
+    font-size: 31px;
+  }
+
+  .manager-welcome p {
+    max-width: 80%;
+
+    font-size: 15px;
+  }
+
+  .manager-welcome-art {
+    position: absolute;
+
+    right: -12px;
+
+    margin: 0;
+
+    font-size: 90px;
+
+    opacity: 0.75;
+  }
+
+  .manager-stat-title {
+    font-size: 15px;
+  }
+
+  .manager-stat-number {
+    font-size: 32px;
+  }
+
+  .manager-stat-card p {
+    font-size: 13px;
+  }
+
+  .manager-stat-action {
+    font-size: 13px;
+  }
+
+  .manager-panel-heading h3 {
+    font-size: 23px;
+  }
+
+  .manager-panel-heading p {
+    font-size: 14px;
+  }
+
+  .manager-quick-list strong,
+  .manager-permission-list strong {
+    font-size: 16px;
+  }
+
+  .manager-quick-list small,
+  .manager-permission-list p {
+    font-size: 13px;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 520px) {
+  .manager-main-inner {
+    padding: 12px;
+  }
+
+  .manager-header {
+    min-height: 62px;
+
+    gap: 9px;
+
+    margin-bottom: 12px;
+  }
+
+  .manager-header-left {
+    gap: 9px;
+  }
+
+  .manager-mobile-menu {
+    width: 42px;
+    height: 42px;
+
+    flex: 0 0 42px;
+
+    font-size: 21px;
+  }
+
+  .manager-page-title > span {
+    font-size: 10px;
+
+    letter-spacing: 0.8px;
+  }
+
+  .manager-page-title h1 {
+    margin-top: 3px;
+
+    font-size: 22px;
+  }
+
+  .manager-profile {
+    padding: 4px;
+  }
+
+  .manager-profile-avatar {
+    width: 40px;
+    height: 40px;
+
+    font-size: 14px;
+  }
+
+  .manager-profile-info {
+    display: none;
+  }
+
+  .manager-welcome {
+    min-height: 215px;
+
+    padding: 21px 18px;
+  }
+
+  .manager-welcome-content > span {
+    font-size: 11px;
+  }
+
+  .manager-welcome h2 {
+    max-width: 85%;
+
+    font-size: 28px;
+  }
+
+  .manager-welcome p {
+    max-width: 88%;
+
+    font-size: 14px;
+    line-height: 1.55;
+  }
+
+  .manager-welcome-content button {
+    min-height: 44px;
+
+    padding: 0 15px;
+
+    font-size: 13px;
+  }
+
+  .manager-welcome-art {
+    right: -22px;
+
+    font-size: 85px;
+  }
+
+  .manager-stats {
+    grid-template-columns: 1fr 1fr;
+
+    gap: 9px;
+  }
+
+  .manager-stat-card {
+    padding: 14px;
+  }
+
+  .manager-stat-icon {
+    width: 42px;
+    height: 42px;
+
+    font-size: 20px;
+  }
+
+  .manager-stat-title {
+    font-size: 14px;
+  }
+
+  .manager-stat-number {
+    font-size: 29px;
+  }
+
+  .manager-stat-card p {
+    font-size: 12px;
+    line-height: 1.4;
+  }
+
+  .manager-stat-action {
+    margin-top: 11px;
+
+    font-size: 12px;
+  }
+
+  .manager-panel {
+    padding: 16px;
+  }
+
+  .manager-panel-heading > span {
+    font-size: 11px;
+  }
+
+  .manager-panel-heading h3 {
+    font-size: 22px;
+  }
+
+  .manager-panel-heading p {
+    font-size: 13px;
+  }
+
+  .manager-quick-list > button {
+    min-height: 62px;
+
+    padding: 8px 11px;
+  }
+
+  .manager-quick-list strong {
+    font-size: 15px;
+  }
+
+  .manager-quick-list small {
+    font-size: 12px;
+  }
+
+  .manager-permission-list strong {
+    font-size: 15px;
+  }
+
+  .manager-permission-list p {
+    font-size: 12px;
+  }
+
+  .manager-restricted strong {
+    font-size: 14px;
+  }
+
+  .manager-restricted p {
+    font-size: 12px;
+  }
+}
+
+
+/* =========================================================
+   EXTRA SMALL MOBILE
+========================================================= */
+
+@media (max-width: 380px) {
+  .manager-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .manager-page-title h1 {
+    font-size: 20px;
+  }
+
+  .manager-welcome h2 {
+    font-size: 26px;
+  }
+
+  .manager-stat-title {
+    font-size: 15px;
+  }
+
+  .manager-stat-number {
+    font-size: 31px;
+  }
+}

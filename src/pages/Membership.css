@@ -1,0 +1,1948 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap");
+
+/* =========================================================
+   GLOBAL
+========================================================= */
+
+.membership-page {
+  width: 100%;
+  overflow-x: hidden;
+  color: #ffffff;
+  background: #02131f;
+  font-family: "Inter", sans-serif;
+}
+
+.membership-page *,
+.membership-page *::before,
+.membership-page *::after {
+  box-sizing: border-box;
+}
+
+.membership-page button {
+  font-family: inherit;
+}
+
+.membership-container {
+  width: min(1280px, calc(100% - 48px));
+  margin: 0 auto;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.membership-hero {
+  position: relative;
+  width: 100%;
+
+  min-height: 450px;
+
+  display: flex;
+  align-items: center;
+
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(0, 14, 24, 0.98) 0%,
+      rgba(0, 14, 24, 0.93) 34%,
+      rgba(0, 14, 24, 0.42) 64%,
+      rgba(0, 14, 24, 0.38) 100%
+    ),
+    url("https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&fit=crop&w=1900&q=90");
+
+  background-size: cover;
+  background-position: center 32%;
+}
+
+.membership-hero-overlay {
+  position: absolute;
+  inset: 0;
+
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      0deg,
+      #02131f 0%,
+      transparent 18%
+    );
+}
+
+
+/* =========================================================
+   HERO GLOW
+========================================================= */
+
+.membership-hero-glow {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  filter: blur(30px);
+}
+
+.hero-glow-one {
+  width: 360px;
+  height: 360px;
+
+  top: -190px;
+  left: -160px;
+
+  background: rgba(0, 145, 255, 0.09);
+}
+
+.hero-glow-two {
+  width: 350px;
+  height: 350px;
+
+  right: -150px;
+  bottom: -180px;
+
+  background: rgba(0, 145, 255, 0.08);
+}
+
+
+/* =========================================================
+   HERO INNER
+========================================================= */
+
+.membership-hero-inner {
+  position: relative;
+  z-index: 3;
+
+  min-height: 450px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 42px 0 30px;
+}
+
+
+/* =========================================================
+   HERO CONTENT
+========================================================= */
+
+.membership-hero-content {
+  width: min(650px, 58%);
+}
+
+.membership-eyebrow {
+  display: block;
+
+  margin-bottom: 9px;
+
+  color: #079ff8;
+
+  font-size: 16px;
+  font-weight: 900;
+
+  letter-spacing: 2px;
+}
+
+.membership-hero-content h1 {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size: clamp(56px, 5.7vw, 80px);
+  line-height: 0.93;
+
+  font-weight: 900;
+  letter-spacing: -3.5px;
+}
+
+.membership-hero-content h1 span {
+  display: block;
+
+  margin-top: 5px;
+
+  color: #069df6;
+}
+
+.membership-hero-content > p {
+  width: min(600px, 100%);
+
+  margin: 14px 0 0;
+
+  color: #d1dde5;
+
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+
+/* =========================================================
+   HERO BUTTONS
+========================================================= */
+
+.membership-hero-actions {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  margin-top: 18px;
+}
+
+.membership-primary-btn,
+.membership-outline-btn {
+  min-width: 150px;
+  height: 48px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 9px;
+
+  padding: 0 20px;
+
+  border-radius: 7px;
+
+  font-size: 15px;
+  font-weight: 800;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    background 0.25s ease;
+}
+
+.membership-primary-btn {
+  border: 1px solid #079ff8;
+
+  color: #ffffff;
+
+  background:
+    linear-gradient(
+      135deg,
+      #087df0,
+      #0cb6ff
+    );
+
+  box-shadow:
+    0 10px 25px rgba(0, 142, 255, 0.2);
+}
+
+.membership-primary-btn:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 13px 30px rgba(0, 142, 255, 0.32);
+}
+
+.membership-outline-btn {
+  border: 1px solid #079ff8;
+
+  color: #ffffff;
+
+  background: rgba(0, 15, 25, 0.7);
+}
+
+.membership-outline-btn:hover {
+  transform: translateY(-2px);
+
+  background: rgba(0, 134, 226, 0.15);
+}
+
+
+/* =========================================================
+   HERO QUOTE
+========================================================= */
+
+.membership-hero-quote {
+  position: absolute;
+
+  right: 2%;
+  top: 50%;
+
+  transform:
+    translateY(-50%)
+    rotate(-5deg);
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: flex-end;
+
+  opacity: 0.78;
+
+  pointer-events: none;
+}
+
+.membership-hero-quote span,
+.membership-hero-quote strong {
+  color: #d7e2e8;
+
+  font-size: 33px;
+  line-height: 0.92;
+
+  font-style: italic;
+  font-weight: 700;
+}
+
+.membership-hero-quote strong {
+  font-size: 43px;
+}
+
+.quote-line {
+  width: 110px;
+  height: 4px;
+
+  margin-top: 10px;
+
+  transform: rotate(-7deg);
+
+  border-radius: 20px;
+
+  background: #079ff8;
+}
+
+
+/* =========================================================
+   BENEFITS STRIP
+========================================================= */
+
+.membership-benefits {
+  position: relative;
+  z-index: 5;
+
+  border-top: 1px solid rgba(0, 156, 255, 0.5);
+  border-bottom: 1px solid rgba(0, 156, 255, 0.45);
+
+  background:
+    linear-gradient(
+      90deg,
+      #032033,
+      #06283c,
+      #032033
+    );
+}
+
+.benefits-grid {
+  min-height: 82px;
+
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+
+  align-items: center;
+}
+
+.benefit-item {
+  min-height: 54px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 11px;
+
+  padding: 0 15px;
+
+  border-right: 1px solid rgba(0, 151, 255, 0.32);
+}
+
+.benefit-item:first-child {
+  padding-left: 0;
+}
+
+.benefit-item:last-child {
+  border-right: 0;
+}
+
+.benefit-icon {
+  flex: 0 0 auto;
+
+  width: 43px;
+  height: 43px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(0, 157, 255, 0.45);
+  border-radius: 50%;
+
+  color: #079ff8;
+
+  background: rgba(0, 145, 255, 0.08);
+}
+
+.benefit-icon svg {
+  font-size: 21px;
+}
+
+.benefit-item h3 {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size: 15px;
+  font-weight: 800;
+}
+
+.benefit-item p {
+  margin: 3px 0 0;
+
+  color: #aebfca;
+
+  font-size: 12px;
+  line-height: 1.35;
+}
+
+
+/* =========================================================
+   PLANS SECTION
+========================================================= */
+
+.membership-plans-section {
+  position: relative;
+
+  padding: 34px 0 38px;
+
+  background:
+    radial-gradient(
+      circle at 82% 40%,
+      rgba(0, 145, 255, 0.09),
+      transparent 30%
+    ),
+    #02131f;
+}
+
+
+/* =========================================================
+   SECTION HEADING
+========================================================= */
+
+.membership-section-heading {
+  max-width: 760px;
+
+  margin: 0 auto 23px;
+
+  text-align: center;
+}
+
+.membership-section-heading > span {
+  display: block;
+
+  margin-bottom: 6px;
+
+  color: #079ff8;
+
+  font-size: 15px;
+  font-weight: 900;
+
+  letter-spacing: 1.8px;
+}
+
+.membership-section-heading h2 {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size: clamp(38px, 4vw, 50px);
+  line-height: 1.04;
+
+  font-weight: 900;
+
+  letter-spacing: -1.7px;
+}
+
+.membership-section-heading p {
+  margin: 7px 0 0;
+
+  color: #aebfca;
+
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+
+/* =========================================================
+   PLAN GRID
+========================================================= */
+
+.membership-plan-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 14px;
+}
+
+
+/* =========================================================
+   PLAN CARD
+========================================================= */
+
+.membership-plan-card {
+  position: relative;
+
+  min-height: 355px;
+
+  display: grid;
+  grid-template-columns: 43% 57%;
+
+  overflow: hidden;
+
+  border: 1px solid rgba(0, 154, 255, 0.72);
+  border-radius: 11px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #05283d,
+      #031a29
+    );
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.membership-plan-card:hover {
+  transform: translateY(-5px);
+
+  border-color: #0daaff;
+
+  box-shadow:
+    0 17px 38px rgba(0, 132, 230, 0.15);
+}
+
+.membership-plan-card.popular-plan {
+  border: 2px solid #0daaff;
+
+  box-shadow:
+    0 0 25px rgba(0, 153, 255, 0.16);
+}
+
+
+/* =========================================================
+   POPULAR LABEL
+========================================================= */
+
+.popular-label {
+  position: absolute;
+  z-index: 8;
+
+  top: 0;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+
+  min-width: 125px;
+
+  padding: 6px 15px;
+
+  border-radius: 30px;
+
+  color: #ffffff;
+
+  background:
+    linear-gradient(
+      90deg,
+      #087df0,
+      #0cb6ff
+    );
+
+  text-align: center;
+
+  font-size: 12px;
+  font-weight: 800;
+}
+
+
+/* =========================================================
+   PLAN IMAGE
+========================================================= */
+
+.plan-image {
+  position: relative;
+
+  width: 100%;
+  height: 100%;
+
+  min-height: 355px;
+
+  overflow: hidden;
+}
+
+.plan-image img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+  object-position: center;
+
+  transition: transform 0.5s ease;
+}
+
+.membership-plan-card:hover .plan-image img {
+  transform: scale(1.04);
+}
+
+.plan-image-overlay {
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent 55%,
+      rgba(3, 26, 41, 0.75)
+    );
+}
+
+
+/* =========================================================
+   PLAN CONTENT
+========================================================= */
+
+.plan-content {
+  position: relative;
+  z-index: 3;
+
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  padding: 17px 15px;
+}
+
+.plan-title h3 {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size: 23px;
+  font-weight: 900;
+}
+
+.plan-title p {
+  margin: 4px 0 0;
+
+  color: #aebfca;
+
+  font-size: 13px;
+}
+
+
+/* =========================================================
+   PLAN FEATURES
+========================================================= */
+
+.plan-features {
+  display: flex;
+  flex-direction: column;
+
+  gap: 7px;
+
+  margin: 13px 0 15px;
+
+  padding: 0;
+
+  list-style: none;
+}
+
+.plan-features li {
+  display: flex;
+  align-items: center;
+
+  gap: 7px;
+
+  color: #cbd7de;
+
+  font-size: 12px;
+  line-height: 1.35;
+}
+
+.plan-features li span {
+  flex: 0 0 auto;
+
+  width: 18px;
+  height: 18px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  color: #ffffff;
+  background: #079ff8;
+}
+
+.plan-features li svg {
+  font-size: 10px;
+  stroke-width: 4;
+}
+
+
+/* =========================================================
+   PRICE
+========================================================= */
+
+.plan-price {
+  margin-top: auto;
+
+  display: flex;
+  align-items: flex-end;
+
+  gap: 6px;
+}
+
+.plan-price strong {
+  color: #ffffff;
+
+  font-size: 33px;
+  line-height: 1;
+
+  font-weight: 900;
+  letter-spacing: -1.3px;
+}
+
+.plan-price span {
+  padding-bottom: 3px;
+
+  color: #d1dce2;
+
+  font-size: 13px;
+}
+
+
+/* =========================================================
+   PLAN BUTTON
+========================================================= */
+
+.plan-join-btn {
+  width: 100%;
+  min-height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 7px;
+
+  margin-top: 11px;
+
+  border: 0;
+  border-radius: 24px;
+
+  color: #ffffff;
+
+  background:
+    linear-gradient(
+      90deg,
+      #087df0,
+      #0cb6ff
+    );
+
+  font-size: 13px;
+  font-weight: 800;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.plan-join-btn:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 9px 22px rgba(0, 145, 255, 0.25);
+}
+
+
+/* =========================================================
+   BOTTOM SECTION
+========================================================= */
+
+.membership-bottom {
+  padding: 0 0 38px;
+
+  background: #02131f;
+}
+
+.membership-bottom-grid {
+  display: grid;
+
+  grid-template-columns:
+    1.05fr
+    0.95fr
+    0.9fr;
+
+  gap: 1px;
+
+  overflow: hidden;
+
+  border: 1px solid rgba(0, 154, 255, 0.55);
+  border-radius: 11px;
+
+  background: rgba(0, 151, 255, 0.3);
+}
+
+
+/* =========================================================
+   WHY CARD
+========================================================= */
+
+.membership-why-card {
+  min-height: 190px;
+
+  padding: 21px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #05263a,
+      #031a29
+    );
+}
+
+.membership-why-card h2 {
+  margin: 0 0 18px;
+
+  color: #ffffff;
+
+  font-size: 26px;
+  font-weight: 900;
+}
+
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 8px;
+}
+
+.why-item {
+  text-align: center;
+}
+
+.why-item span {
+  width: 44px;
+  height: 44px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin: 0 auto 7px;
+
+  border: 1px solid rgba(0, 153, 255, 0.35);
+  border-radius: 50%;
+
+  color: #079ff8;
+
+  background: rgba(0, 145, 255, 0.07);
+}
+
+.why-item span svg {
+  font-size: 21px;
+}
+
+.why-item p {
+  margin: 0;
+
+  color: #c4d2da;
+
+  font-size: 12px;
+  line-height: 1.35;
+}
+
+
+/* =========================================================
+   REVIEW
+========================================================= */
+
+.membership-review-card {
+  position: relative;
+
+  min-height: 190px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  padding: 21px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #05263a,
+      #031a29
+    );
+}
+
+.review-top {
+  display: flex;
+  align-items: flex-start;
+
+  gap: 12px;
+}
+
+.review-top > img {
+  flex: 0 0 auto;
+
+  width: 54px;
+  height: 54px;
+
+  object-fit: cover;
+
+  border: 2px solid rgba(0, 164, 255, 0.8);
+  border-radius: 50%;
+}
+
+.review-text {
+  margin: 0;
+
+  color: #d4dee4;
+
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.review-stars {
+  display: flex;
+
+  gap: 3px;
+
+  margin: 7px 0;
+}
+
+.review-stars svg {
+  color: #ffad19;
+  fill: #ffad19;
+
+  font-size: 14px;
+}
+
+.review-top strong {
+  display: block;
+
+  color: #ffffff;
+
+  font-size: 13px;
+}
+
+.review-top span {
+  display: block;
+
+  margin-top: 2px;
+
+  color: #839ba9;
+
+  font-size: 11px;
+}
+
+.review-dots {
+  display: flex;
+  justify-content: center;
+
+  gap: 6px;
+
+  margin-top: 12px;
+}
+
+.review-dots span {
+  width: 5px;
+  height: 5px;
+
+  border-radius: 50%;
+
+  background: #355263;
+}
+
+.review-dots span.active {
+  background: #079ff8;
+}
+/* =========================================================
+   FINAL CTA
+========================================================= */
+
+.membership-final-cta {
+  position: relative;
+
+  min-height: 190px;
+
+  overflow: hidden;
+
+  padding: 21px;
+
+  background:
+    url("https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=900&q=90")
+    center / cover no-repeat;
+}
+
+.final-cta-overlay {
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(2, 22, 35, 0.98),
+      rgba(2, 22, 35, 0.73)
+    );
+}
+
+.final-cta-content {
+  position: relative;
+  z-index: 2;
+}
+
+.final-cta-content > span {
+  display: block;
+
+  margin-bottom: 5px;
+
+  color: #079ff8;
+
+  font-size: 12px;
+  font-weight: 900;
+
+  letter-spacing: 1.2px;
+}
+
+.final-cta-content h2 {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size: 29px;
+  line-height: 1.05;
+
+  font-weight: 900;
+}
+
+.final-cta-content p {
+  margin: 7px 0 12px;
+
+  color: #c2d0d8;
+
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+.final-cta-content button {
+  min-width: 145px;
+  min-height: 40px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 7px;
+
+  padding: 0 17px;
+
+  border: 0;
+  border-radius: 7px;
+
+  color: #ffffff;
+
+  background:
+    linear-gradient(
+      90deg,
+      #087df0,
+      #0cb6ff
+    );
+
+  font-size: 13px;
+  font-weight: 800;
+
+  cursor: pointer;
+}
+
+
+/* =========================================================
+   LAPTOP — 1200px
+========================================================= */
+
+@media (max-width: 1200px) {
+
+  .membership-container {
+    width: calc(100% - 40px);
+  }
+
+  .benefit-item {
+    padding: 0 10px;
+  }
+
+  .benefit-icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .benefit-item h3 {
+    font-size: 13px;
+  }
+
+  .membership-plan-card {
+    grid-template-columns: 40% 60%;
+  }
+
+  .plan-content {
+    padding: 16px 12px;
+  }
+}
+
+
+/* =========================================================
+   TABLET — 1000px
+========================================================= */
+
+@media (max-width: 1000px) {
+
+  .membership-container {
+    width: calc(100% - 36px);
+  }
+
+
+  /* ================= HERO ================= */
+
+  .membership-hero {
+    min-height: 430px;
+
+    background-position: 60% center;
+  }
+
+  .membership-hero-inner {
+    min-height: 430px;
+
+    padding: 38px 0 25px;
+  }
+
+  .membership-hero-content {
+    width: 72%;
+  }
+
+  .membership-hero-content h1 {
+    font-size: 59px;
+  }
+
+  .membership-hero-content > p {
+    font-size: 17px;
+  }
+
+  .membership-hero-quote {
+    display: none;
+  }
+
+
+  /* ================= BENEFITS ================= */
+
+  .benefits-grid {
+    grid-template-columns: repeat(2, 1fr);
+
+    min-height: 0;
+
+    padding: 8px 0;
+  }
+
+  .benefit-item {
+    min-height: 60px;
+
+    padding: 8px 12px;
+
+    border-right: 0;
+  }
+
+  .benefit-item:nth-child(odd) {
+    border-right: 1px solid rgba(0, 151, 255, 0.25);
+  }
+
+  .benefit-item:last-child {
+    grid-column: 1 / -1;
+
+    border-right: 0;
+  }
+
+  .benefit-item h3 {
+    font-size: 15px;
+  }
+
+  .benefit-item p {
+    font-size: 12px;
+  }
+
+
+  /* ================= PLANS ================= */
+
+  .membership-plans-section {
+    padding: 31px 0 35px;
+  }
+
+  .membership-plan-grid {
+    grid-template-columns: 1fr;
+
+    gap: 15px;
+  }
+
+  .membership-plan-card {
+    min-height: 330px;
+
+    grid-template-columns:
+      minmax(250px, 0.75fr)
+      minmax(0, 1.25fr);
+  }
+
+  .plan-image {
+    min-height: 330px;
+  }
+
+  .plan-content {
+    padding: 22px;
+  }
+
+  .plan-title h3 {
+    font-size: 26px;
+  }
+
+  .plan-title p {
+    font-size: 14px;
+  }
+
+  .plan-features li {
+    font-size: 14px;
+  }
+
+  .plan-price strong {
+    font-size: 36px;
+  }
+
+
+  /* ================= BOTTOM ================= */
+
+  .membership-bottom-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .membership-why-card,
+  .membership-review-card,
+  .membership-final-cta {
+    min-height: 180px;
+  }
+}
+
+
+/* =========================================================
+   TABLET PORTRAIT — 768px
+========================================================= */
+
+@media (max-width: 768px) {
+
+  .membership-container {
+    width: calc(100% - 32px);
+  }
+
+
+  /* ================= HERO ================= */
+
+  .membership-hero {
+    min-height: 410px;
+
+    background-position: 62% center;
+  }
+
+  .membership-hero-inner {
+    min-height: 410px;
+
+    padding: 35px 0 24px;
+  }
+
+  .membership-hero-content {
+    width: 82%;
+  }
+
+  .membership-eyebrow {
+    margin-bottom: 7px;
+
+    font-size: 15px;
+  }
+
+  .membership-hero-content h1 {
+    font-size: 53px;
+
+    letter-spacing: -2.5px;
+  }
+
+  .membership-hero-content > p {
+    margin-top: 11px;
+
+    font-size: 16px;
+  }
+
+  .membership-hero-actions {
+    margin-top: 15px;
+  }
+
+
+  /* ================= PLANS ================= */
+
+  .membership-section-heading h2 {
+    font-size: 40px;
+  }
+
+  .membership-section-heading p {
+    font-size: 14px;
+  }
+
+  .membership-plan-card {
+    min-height: 315px;
+
+    grid-template-columns: 42% 58%;
+  }
+
+  .plan-image {
+    min-height: 315px;
+  }
+
+  .plan-content {
+    padding: 18px;
+  }
+
+
+  /* ================= BOTTOM ================= */
+
+  .membership-bottom {
+    padding-bottom: 30px;
+  }
+
+  .membership-why-card,
+  .membership-review-card,
+  .membership-final-cta {
+    padding: 19px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE — 650px
+========================================================= */
+
+@media (max-width: 650px) {
+
+  /* =======================================================
+     CONTAINER
+  ======================================================= */
+
+  .membership-container {
+    width: calc(100% - 28px);
+    margin: 0 auto;
+  }
+
+
+  /* =======================================================
+     HERO — COMPACT
+  ======================================================= */
+
+  .membership-hero {
+    min-height: 385px;
+
+    align-items: flex-end;
+
+    background:
+      linear-gradient(
+        0deg,
+        rgba(1, 15, 24, 0.99) 0%,
+        rgba(1, 15, 24, 0.88) 42%,
+        rgba(1, 15, 24, 0.28) 100%
+      ),
+      url("https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&fit=crop&w=1000&q=90");
+
+    background-size: cover;
+    background-position: 58% center;
+  }
+
+  .membership-hero-inner {
+    width: 100%;
+
+    min-height: 385px;
+
+    display: flex;
+    align-items: flex-end;
+
+    padding-top: 55px;
+    padding-bottom: 25px;
+  }
+
+  .membership-hero-content {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .membership-eyebrow {
+    margin-bottom: 6px;
+
+    font-size: 14px;
+    line-height: 1.2;
+
+    letter-spacing: 1.5px;
+  }
+
+  .membership-hero-content h1 {
+    font-size: 48px;
+    line-height: 0.94;
+
+    letter-spacing: -2px;
+  }
+
+  .membership-hero-content h1 span {
+    margin-top: 3px;
+  }
+
+  .membership-hero-content > p {
+    width: 100%;
+
+    margin-top: 9px;
+
+    font-size: 16px;
+    line-height: 1.45;
+  }
+
+  .membership-hero-actions {
+    width: 100%;
+
+    gap: 8px;
+
+    margin-top: 13px;
+  }
+
+  .membership-primary-btn,
+  .membership-outline-btn {
+    min-width: 0;
+    height: 45px;
+
+    flex: 1;
+
+    padding: 0 10px;
+
+    font-size: 14px;
+  }
+
+
+  /* =======================================================
+     BENEFITS
+  ======================================================= */
+
+  .benefits-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    padding: 6px 0;
+  }
+
+  .benefit-item {
+    min-width: 0;
+    min-height: 66px;
+
+    gap: 9px;
+
+    padding: 8px 6px;
+  }
+
+  .benefit-item:nth-child(odd) {
+    border-right: 1px solid rgba(0, 151, 255, 0.25);
+  }
+
+  .benefit-item:nth-child(even) {
+    border-right: 0;
+  }
+
+  .benefit-item:last-child {
+    grid-column: 1 / -1;
+
+    border-right: 0;
+  }
+
+  .benefit-icon {
+    width: 38px;
+    height: 38px;
+
+    flex: 0 0 38px;
+  }
+
+  .benefit-icon svg {
+    font-size: 19px;
+  }
+
+  .benefit-item h3 {
+    font-size: 14px;
+    line-height: 1.2;
+  }
+
+  .benefit-item p {
+    margin-top: 2px;
+
+    font-size: 11px;
+    line-height: 1.3;
+  }
+
+
+  /* =======================================================
+     PLANS
+  ======================================================= */
+
+  .membership-plans-section {
+    padding: 27px 0 30px;
+  }
+
+  .membership-section-heading {
+    margin-bottom: 18px;
+  }
+
+  .membership-section-heading > span {
+    margin-bottom: 5px;
+
+    font-size: 13px;
+  }
+
+  .membership-section-heading h2 {
+    font-size: 35px;
+    line-height: 1.03;
+  }
+
+  .membership-section-heading p {
+    margin-top: 6px;
+
+    font-size: 13px;
+    line-height: 1.45;
+  }
+
+  .membership-plan-grid {
+    gap: 14px;
+  }
+
+  .membership-plan-card {
+    display: block;
+
+    min-height: 0;
+
+    border-radius: 10px;
+  }
+
+  .plan-image {
+    width: 100%;
+    height: 245px;
+
+    min-height: 0;
+  }
+
+  .plan-image-overlay {
+    background:
+      linear-gradient(
+        0deg,
+        #031a29 0%,
+        rgba(3, 26, 41, 0.4) 35%,
+        transparent 65%
+      );
+  }
+
+  .plan-content {
+    padding: 15px;
+  }
+
+  .plan-title h3 {
+    font-size: 25px;
+  }
+
+  .plan-title p {
+    margin-top: 3px;
+
+    font-size: 13px;
+  }
+
+  .plan-features {
+    gap: 7px;
+
+    margin: 12px 0 14px;
+  }
+
+  .plan-features li {
+    gap: 7px;
+
+    font-size: 13px;
+  }
+
+  .plan-features li span {
+    width: 19px;
+    height: 19px;
+  }
+
+  .plan-price strong {
+    font-size: 35px;
+  }
+
+  .plan-price span {
+    font-size: 13px;
+  }
+
+  .plan-join-btn {
+    min-height: 44px;
+
+    margin-top: 11px;
+
+    font-size: 14px;
+  }
+
+
+  /* =======================================================
+     BOTTOM
+  ======================================================= */
+
+  .membership-bottom {
+    padding-bottom: 25px;
+  }
+
+  .membership-bottom-grid {
+    border-radius: 10px;
+  }
+
+  .membership-why-card,
+  .membership-review-card,
+  .membership-final-cta {
+    min-height: 0;
+
+    padding: 18px 15px;
+  }
+
+  .membership-why-card h2 {
+    margin-bottom: 15px;
+
+    font-size: 25px;
+  }
+
+  .why-grid {
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 14px 8px;
+  }
+
+  .why-item span {
+    width: 42px;
+    height: 42px;
+
+    margin-bottom: 6px;
+  }
+
+  .why-item span svg {
+    font-size: 20px;
+  }
+
+  .why-item p {
+    font-size: 12px;
+  }
+
+
+  /* =======================================================
+     REVIEW
+  ======================================================= */
+
+  .review-top {
+    gap: 10px;
+  }
+
+  .review-top > img {
+    width: 52px;
+    height: 52px;
+  }
+
+  .review-text {
+    font-size: 12px;
+  }
+
+  .review-top strong {
+    font-size: 13px;
+  }
+
+  .review-top span {
+    font-size: 11px;
+  }
+
+  .review-dots {
+    margin-top: 10px;
+  }
+
+
+  /* =======================================================
+     FINAL CTA
+  ======================================================= */
+
+  .final-cta-content > span {
+    font-size: 12px;
+  }
+
+  .final-cta-content h2 {
+    font-size: 28px;
+  }
+
+  .final-cta-content p {
+    margin: 7px 0 11px;
+
+    font-size: 12px;
+  }
+
+  .final-cta-content button {
+    min-height: 42px;
+
+    font-size: 13px;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE — 430px
+========================================================= */
+
+@media (max-width: 430px) {
+
+  .membership-container {
+    width: calc(100% - 24px);
+  }
+
+
+  /* ================= HERO ================= */
+
+  .membership-hero,
+  .membership-hero-inner {
+    min-height: 365px;
+  }
+
+  .membership-hero-inner {
+    padding-top: 50px;
+    padding-bottom: 21px;
+  }
+
+  .membership-hero {
+    background-position: 60% center;
+  }
+
+  .membership-eyebrow {
+    font-size: 13px;
+  }
+
+  .membership-hero-content h1 {
+    font-size: 43px;
+  }
+
+  .membership-hero-content > p {
+    font-size: 15px;
+  }
+
+  .membership-primary-btn,
+  .membership-outline-btn {
+    height: 43px;
+
+    font-size: 13px;
+  }
+
+
+  /* ================= BENEFITS ================= */
+
+  .benefit-item {
+    min-height: 63px;
+
+    padding: 7px 5px;
+  }
+
+  .benefit-icon {
+    width: 35px;
+    height: 35px;
+
+    flex-basis: 35px;
+  }
+
+  .benefit-item h3 {
+    font-size: 13px;
+  }
+
+  .benefit-item p {
+    font-size: 10px;
+  }
+
+
+  /* ================= PLANS ================= */
+
+  .membership-plans-section {
+    padding: 24px 0 27px;
+  }
+
+  .membership-section-heading h2 {
+    font-size: 32px;
+  }
+
+  .membership-section-heading p {
+    font-size: 12px;
+  }
+
+  .plan-image {
+    height: 220px;
+  }
+
+  .plan-content {
+    padding: 14px;
+  }
+
+  .plan-title h3 {
+    font-size: 23px;
+  }
+
+  .plan-features li {
+    font-size: 12px;
+  }
+
+  .plan-price strong {
+    font-size: 33px;
+  }
+
+
+  /* ================= BOTTOM ================= */
+
+  .membership-why-card,
+  .membership-review-card,
+  .membership-final-cta {
+    padding: 16px 13px;
+  }
+
+  .membership-why-card h2 {
+    font-size: 23px;
+  }
+
+  .final-cta-content h2 {
+    font-size: 26px;
+  }
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE — 360px
+========================================================= */
+
+@media (max-width: 360px) {
+
+  .membership-container {
+    width: calc(100% - 20px);
+  }
+
+  .membership-hero,
+  .membership-hero-inner {
+    min-height: 350px;
+  }
+
+  .membership-hero-inner {
+    padding-top: 46px;
+    padding-bottom: 18px;
+  }
+
+  .membership-hero-content h1 {
+    font-size: 39px;
+
+    letter-spacing: -1.6px;
+  }
+
+  .membership-hero-content > p {
+    font-size: 14px;
+  }
+
+  .membership-hero-actions {
+    gap: 6px;
+  }
+
+  .membership-primary-btn,
+  .membership-outline-btn {
+    padding: 0 7px;
+
+    font-size: 12px;
+  }
+
+  .benefits-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .benefit-item,
+  .benefit-item:nth-child(odd) {
+    border-right: 0;
+  }
+
+  .benefit-item {
+    min-height: 58px;
+
+    padding: 7px 5px;
+  }
+
+  .benefit-item h3 {
+    font-size: 14px;
+  }
+
+  .benefit-item p {
+    font-size: 11px;
+  }
+
+  .membership-section-heading h2 {
+    font-size: 30px;
+  }
+
+  .plan-image {
+    height: 205px;
+  }
+
+  .plan-title h3 {
+    font-size: 22px;
+  }
+
+  .plan-features li {
+    font-size: 12px;
+  }
+
+  .why-item p {
+    font-size: 11px;
+  }
+}
+
+
+/* =========================================================
+   TOUCH DEVICES
+========================================================= */
+
+@media (hover: none) {
+
+  .membership-primary-btn:hover,
+  .membership-outline-btn:hover,
+  .membership-plan-card:hover,
+  .plan-join-btn:hover {
+    transform: none;
+  }
+
+  .membership-primary-btn,
+  .membership-outline-btn,
+  .plan-join-btn,
+  .final-cta-content button {
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .membership-page *,
+  .membership-page *::before,
+  .membership-page *::after {
+    transition: none !important;
+  }
+}
