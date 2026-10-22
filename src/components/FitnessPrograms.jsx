@@ -1,13 +1,12 @@
+
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
 import {
   FiUsers,
   FiHeart,
-  FiAward,
   FiActivity,
   FiArrowUpRight,
-  FiTarget,
 } from "react-icons/fi";
 
 import "./FitnessPrograms.css";
@@ -16,34 +15,7 @@ const FitnessPrograms = () => {
   const navigate = useNavigate();
 
   /* =========================================================
-     TOP FEATURES
-  ========================================================= */
-
-  const features = [
-    {
-      icon: <FiActivity />,
-      title: "Modern Equipment",
-      text: "World-class gym facilities",
-    },
-    {
-      icon: <FiAward />,
-      title: "Expert Trainers",
-      text: "Certified & experienced",
-    },
-    {
-      icon: <FiTarget />,
-      title: "Personalized Plans",
-      text: "Plans for every fitness level",
-    },
-    {
-      icon: <FiUsers />,
-      title: "Supportive Community",
-      text: "Stay motivated together",
-    },
-  ];
-
-  /* =========================================================
-     FITNESS PROGRAMS
+     FITNESS PROGRAMS DATA
   ========================================================= */
 
   const programs = [
@@ -115,152 +87,153 @@ const FitnessPrograms = () => {
   };
 
   return (
-    <>
-      {/* =====================================================
-          FEATURES STRIP
-      ====================================================== */}
+    <section className="fitness-programs">
 
-      <section className="fitness-features">
-        <div className="fitness-features-container">
-          {features.map((item, index) => (
-            <div
-              className="fitness-feature-item"
-              key={index}
+      {/* ============================================
+          BACKGROUND TEXT
+      ============================================ */}
+
+      <div
+        className="fitness-programs-bg-text"
+        aria-hidden="true"
+      >
+        FITNESS
+      </div>
+
+      <div className="programs-container">
+
+        {/* ============================================
+            SECTION HEADING
+        ============================================ */}
+
+        <div className="programs-heading">
+
+          <span className="program-small-title">
+            OUR PROGRAMS
+          </span>
+
+          <h2>
+            Popular Fitness <span>Programs</span>
+          </h2>
+
+          <p>
+            Choose a program that fits your goals
+            and start your fitness journey today.
+          </p>
+
+        </div>
+
+        {/* ============================================
+            PROGRAM CARDS
+        ============================================ */}
+
+        <div className="programs-grid">
+
+          {programs.map((program, index) => (
+
+            <article
+              className="program-card"
+              key={program.id}
+              role="button"
+              tabIndex={0}
+              onClick={() => openProgram(program)}
+              onKeyDown={(e) => {
+                if (e.key === "Enter" || e.key === " ") {
+                  e.preventDefault();
+                  openProgram(program);
+                }
+              }}
             >
-              <div className="fitness-feature-icon">
-                {item.icon}
+
+              {/* PROGRAM IMAGE */}
+
+              <div className="program-image">
+
+                <img
+                  src={program.image}
+                  alt={program.title}
+                  loading="lazy"
+                />
+
+                <div className="program-image-overlay" />
+
+                {/* PROGRAM NUMBER */}
+
+                <div className="program-number">
+                  {String(index + 1).padStart(2, "0")}
+                </div>
+
+                {/* PROGRAM ICON */}
+
+                <div className="program-icon">
+                  {program.icon}
+                </div>
+
               </div>
 
-              <div className="fitness-feature-text">
-                <h3>{item.title}</h3>
-                <p>{item.text}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
+              {/* ====================================
+                  PROGRAM CONTENT
+              ==================================== */}
 
-      {/* =====================================================
-          FITNESS PROGRAMS
-      ====================================================== */}
+              <div className="program-content">
 
-      <section className="fitness-programs">
-        {/* BACKGROUND TEXT */}
+                <div className="program-text">
 
-        <div
-          className="fitness-programs-bg-text"
-          aria-hidden="true"
-        >
-          FITNESS
-        </div>
+                  <h3>
+                    {program.title}
+                  </h3>
 
-        <div className="programs-container">
+                  <p>
+                    {program.text}
+                  </p>
 
-          {/* =================================================
-              HEADING
-          ================================================= */}
+                </div>
 
-          <div className="programs-heading">
-            <span className="program-small-title">
-              OUR PROGRAMS
-            </span>
+                {/* ARROW BUTTON */}
 
-            <h2>
-              Popular Fitness <span>Programs</span>
-            </h2>
-
-            <p>
-              Choose a program that fits your goals
-              and start your fitness journey today.
-            </p>
-          </div>
-
-          {/* =================================================
-              PROGRAM CARDS
-          ================================================= */}
-
-          <div className="programs-grid">
-            {programs.map((program, index) => (
-              <article
-                className="program-card"
-                key={program.id}
-                role="button"
-                tabIndex={0}
-                onClick={() => openProgram(program)}
-                onKeyDown={(e) => {
-                  if (e.key === "Enter" || e.key === " ") {
-                    e.preventDefault();
+                <button
+                  type="button"
+                  className="program-arrow"
+                  aria-label={`View ${program.title}`}
+                  onClick={(e) => {
+                    e.stopPropagation();
                     openProgram(program);
-                  }
-                }}
-              >
-                {/* IMAGE */}
+                  }}
+                >
+                  <FiArrowUpRight />
+                </button>
 
-                <div className="program-image">
-                  <img
-                    src={program.image}
-                    alt={program.title}
-                  />
+              </div>
 
-                  <div className="program-image-overlay" />
+            </article>
 
-                  {/* NUMBER */}
+          ))}
 
-                  <div className="program-number">
-                    {String(index + 1).padStart(2, "0")}
-                  </div>
-
-                  {/* ICON */}
-
-                  <div className="program-icon">
-                    {program.icon}
-                  </div>
-                </div>
-
-                {/* CONTENT */}
-
-                <div className="program-content">
-                  <div className="program-text">
-                    <h3>{program.title}</h3>
-                    <p>{program.text}</p>
-                  </div>
-
-                  <button
-                    type="button"
-                    className="program-arrow"
-                    aria-label={`View ${program.title}`}
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      openProgram(program);
-                    }}
-                  >
-                    <FiArrowUpRight />
-                  </button>
-                </div>
-              </article>
-            ))}
-          </div>
-
-          {/* =================================================
-              BOTTOM CTA
-          ================================================= */}
-
-          <div className="programs-bottom">
-            <p>
-              Not sure which program is right for you?
-            </p>
-
-            <button
-              type="button"
-              onClick={openAllPrograms}
-            >
-              Explore All Programs
-              <FiArrowUpRight />
-            </button>
-          </div>
         </div>
-      </section>
-    </>
+
+        {/* ============================================
+            BOTTOM CTA
+        ============================================ */}
+
+        <div className="programs-bottom">
+
+          <p>
+            Not sure which program is right for you?
+          </p>
+
+          <button
+            type="button"
+            onClick={openAllPrograms}
+          >
+            Explore All Programs
+            <FiArrowUpRight />
+          </button>
+
+        </div>
+
+      </div>
+
+    </section>
   );
 };
 

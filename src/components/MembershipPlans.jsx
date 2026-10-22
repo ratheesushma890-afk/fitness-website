@@ -1,5 +1,7 @@
-import React from "react";
+
+import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+
 import {
   FiCheck,
   FiArrowUpRight,
@@ -8,63 +10,93 @@ import {
   FiAward,
 } from "react-icons/fi";
 
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 import "./MembershipPlans.css";
+
+/* =====================================================
+   MEMBERSHIP DATA
+===================================================== */
+
+const plans = [
+  {
+    id: 1,
+    name: "Basic",
+    subtitle: "Start Your Journey",
+    price: "999",
+    period: "/ month",
+    icon: <FiZap />,
+    popular: false,
+    image:
+      "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=1000&q=85",
+    features: [
+      "Full Gym Access",
+      "Modern Equipment",
+      "Locker Facility",
+      "Fitness Assessment",
+      "General Workout Plan",
+    ],
+  },
+  {
+    id: 2,
+    name: "Pro",
+    subtitle: "Train Without Limits",
+    price: "1,499",
+    period: "/ month",
+    icon: <FiStar />,
+    popular: true,
+    image:
+      "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1000&q=85",
+    features: [
+      "Everything in Basic",
+      "All Fitness Classes",
+      "Personalized Workout Plan",
+      "Basic Diet Guidance",
+      "Progress Tracking",
+    ],
+  },
+  {
+    id: 3,
+    name: "Elite",
+    subtitle: "Maximum Results",
+    price: "2,499",
+    period: "/ month",
+    icon: <FiAward />,
+    popular: false,
+    image:
+      "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=1000&q=85",
+    features: [
+      "Everything in Pro",
+      "Personal Trainer Sessions",
+      "Custom Diet Plan",
+      "Advanced Body Analysis",
+      "Priority Support",
+    ],
+  },
+];
+
+/* =====================================================
+   MEMBERSHIP COMPONENT
+===================================================== */
 
 const MembershipPlans = () => {
   const navigate = useNavigate();
 
-  const plans = [
-    {
-      id: 1,
-      name: "Basic",
-      subtitle: "Start Your Journey",
-      price: "999",
-      period: "/ month",
-      icon: <FiZap />,
-      popular: false,
-      features: [
-        "Full Gym Access",
-        "Modern Equipment",
-        "Locker Facility",
-        "Fitness Assessment",
-        "General Workout Plan",
-      ],
-    },
+  /* AOS SCROLL ANIMATION */
 
-    {
-      id: 2,
-      name: "Pro",
-      subtitle: "Train Without Limits",
-      price: "1,499",
-      period: "/ month",
-      icon: <FiStar />,
-      popular: true,
-      features: [
-        "Everything in Basic",
-        "All Fitness Classes",
-        "Personalized Workout Plan",
-        "Basic Diet Guidance",
-        "Progress Tracking",
-      ],
-    },
+  useEffect(() => {
+    AOS.init({
+      duration: 900,
+      easing: "ease-out-cubic",
+      once: true,
+      offset: 80,
+      delay: 0,
+      mirror: false,
+    });
 
-    {
-      id: 3,
-      name: "Elite",
-      subtitle: "Maximum Results",
-      price: "2,499",
-      period: "/ month",
-      icon: <FiAward />,
-      popular: false,
-      features: [
-        "Everything in Pro",
-        "Personal Trainer Sessions",
-        "Custom Diet Plan",
-        "Advanced Body Analysis",
-        "Priority Support",
-      ],
-    },
-  ];
+    AOS.refresh();
+  }, []);
 
   const handlePlan = (plan) => {
     navigate("/join", {
@@ -84,6 +116,7 @@ const MembershipPlans = () => {
     <section className="membership-section">
 
       {/* BACKGROUND TEXT */}
+
       <div
         className="membership-bg-text"
         aria-hidden="true"
@@ -93,47 +126,54 @@ const MembershipPlans = () => {
 
       <div className="membership-container">
 
-        {/* ================================================
-            HEADING
-        ================================================= */}
+        {/* HEADING */}
 
         <div className="membership-heading">
 
-          <div className="membership-small-title">
+          <div
+            className="membership-small-title"
+            data-aos="fade-up"
+            data-aos-duration="700"
+          >
             <span></span>
             MEMBERSHIP PLANS
             <span></span>
           </div>
 
-          <h2>
-            Find The Plan
-            <span> That Fits You</span>
+          <h2
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            Find The Plan <span>That Fits You</span>
           </h2>
 
-          <p>
-            Simple membership plans designed for every
-            fitness goal. Choose your plan and start
-            becoming stronger today.
+          <p
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            Simple membership plans designed for every fitness goal.
+            <br />
+            Choose your plan and start becoming stronger today.
           </p>
 
         </div>
 
-
-        {/* ================================================
-            PLANS
-        ================================================= */}
+        {/* MEMBERSHIP CARDS */}
 
         <div className="membership-grid">
 
-          {plans.map((plan) => (
+          {plans.map((plan, index) => (
             <article
               key={plan.id}
               className={`membership-card ${
                 plan.popular ? "membership-popular" : ""
               }`}
+              data-aos="fade-up"
+              data-aos-delay={index * 150}
+              data-aos-duration="850"
             >
 
-              {/* POPULAR BADGE */}
+              {/* MOST POPULAR BADGE */}
 
               {plan.popular && (
                 <div className="popular-badge">
@@ -142,120 +182,93 @@ const MembershipPlans = () => {
                 </div>
               )}
 
+              {/* CARD IMAGE */}
 
-              {/* TOP */}
+              <div className="membership-image">
 
-              <div className="membership-card-top">
+                <img
+                  src={plan.image}
+                  alt={`${plan.name} gym membership`}
+                  loading="lazy"
+                />
 
-                <div className="membership-icon">
-                  {plan.icon}
-                </div>
+                <div className="membership-image-overlay"></div>
 
-                <div className="membership-plan-number">
-                  0{plan.id}
-                </div>
+                <div className="membership-card-top">
 
-              </div>
-
-
-              {/* PLAN NAME */}
-
-              <div className="membership-name">
-
-                <span>
-                  {plan.subtitle}
-                </span>
-
-                <h3>
-                  {plan.name}
-                </h3>
-
-              </div>
-
-
-              {/* PRICE */}
-
-              <div className="membership-price">
-
-                <span className="membership-currency">
-                  ₹
-                </span>
-
-                <strong>
-                  {plan.price}
-                </strong>
-
-                <span className="membership-period">
-                  {plan.period}
-                </span>
-
-              </div>
-
-
-              {/* LINE */}
-
-              <div className="membership-line"></div>
-
-
-              {/* FEATURES */}
-
-              <div className="membership-features">
-
-                {plan.features.map((feature, index) => (
-                  <div
-                    className="membership-feature"
-                    key={index}
-                  >
-                    <span className="membership-check">
-                      <FiCheck />
-                    </span>
-
-                    <p>
-                      {feature}
-                    </p>
+                  <div className="membership-icon">
+                    {plan.icon}
                   </div>
-                ))}
+
+                  <div className="membership-plan-number">
+                    {String(plan.id).padStart(2, "0")}
+                  </div>
+
+                </div>
 
               </div>
 
+              {/* CARD BODY */}
 
-              {/* BUTTON */}
+              <div className="membership-card-body">
 
-              <button
-                type="button"
-                className="membership-btn"
-                onClick={() => handlePlan(plan)}
-              >
-                {plan.popular
-                  ? "Join Pro"
-                  : "Get Started"}
+                <div className="membership-name">
+                  <span>{plan.subtitle}</span>
+                  <h3>{plan.name}</h3>
+                </div>
 
-                <FiArrowUpRight />
-              </button>
+                {/* PRICE */}
+
+                <div className="membership-price">
+
+                  <span className="membership-currency">
+                    ₹
+                  </span>
+
+                  <strong>{plan.price}</strong>
+
+                  <span className="membership-period">
+                    {plan.period}
+                  </span>
+
+                </div>
+
+                <div className="membership-line"></div>
+
+                {/* FEATURES */}
+
+                <div className="membership-features">
+
+                  {plan.features.map((feature, featureIndex) => (
+                    <div
+                      className="membership-feature"
+                      key={featureIndex}
+                    >
+                      <span className="membership-check">
+                        <FiCheck />
+                      </span>
+
+                      <p>{feature}</p>
+                    </div>
+                  ))}
+
+                </div>
+
+                {/* BUTTON */}
+
+                <button
+                  type="button"
+                  className="membership-btn"
+                  onClick={() => handlePlan(plan)}
+                >
+                  {plan.popular ? "Join Pro" : "Get Started"}
+                  <FiArrowUpRight />
+                </button>
+
+              </div>
 
             </article>
           ))}
-
-        </div>
-
-
-        {/* ================================================
-            BOTTOM NOTE
-        ================================================= */}
-
-        <div className="membership-bottom">
-
-          <div className="membership-bottom-line"></div>
-
-          <p>
-            No complicated contracts
-            <span> • </span>
-            Flexible membership
-            <span> • </span>
-            Cancel anytime
-          </p>
-
-          <div className="membership-bottom-line"></div>
 
         </div>
 

@@ -1335,3 +1335,62 @@
     font-size: 13px;
   }
 }
+
+/* ==========================================
+   MOBILE AUTO-SCROLL PROGRAM CARDS
+========================================== */
+
+@media (max-width: 600px) {
+
+  .fitness-programs {
+    overflow: hidden;
+  }
+
+  .programs-grid {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 14px;
+
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: 15px;
+
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-x: contain;
+
+    scrollbar-width: none;
+    padding: 8px 2px 16px;
+  }
+
+  .programs-grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .program-card {
+    flex: 0 0 82%;
+    min-width: 0;
+    max-width: 340px;
+    scroll-snap-align: start;
+  }
+
+  .program-image {
+    height: 220px;
+  }
+
+  .program-content {
+    min-height: 128px;
+  }
+}
+
+@media (max-width: 390px) {
+  .program-card {
+    flex-basis: 88%;
+  }
+
+  .program-image {
+    height: 205px;
+  }
+}

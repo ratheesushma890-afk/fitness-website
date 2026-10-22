@@ -1,335 +1,223 @@
-/* =========================================================
-   FITNESS HERO — FINAL RESPONSIVE CSS
-========================================================= */
+
+/* ==========================================
+   FIT ZONE HERO — FINAL RESPONSIVE DESIGN
+========================================== */
+
+.hero,
+.hero * {
+  box-sizing: border-box;
+}
 
 .hero {
   position: relative;
+  isolation: isolate;
   width: 100%;
-  height: 520px;
+  min-height: 0;
+  height: auto;
   overflow: hidden;
-
-  display: flex;
-  align-items: center;
-
   background: #031522;
-  color: #ffffff;
+  color: #fff;
+  font-family: "Inter", sans-serif;
 }
 
-
-/* =========================================================
-   BACKGROUND IMAGE
-========================================================= */
+/* BACKGROUND IMAGE */
 
 .hero-bg {
   position: absolute;
   inset: 0;
-
+  z-index: -2;
   width: 100%;
   height: 100%;
-
   object-fit: cover;
-  object-position: center center;
-
-  display: block;
-
-  z-index: 1;
+  object-position: center 35%;
 }
-
-
-/* =========================================================
-   DARK OVERLAY
-========================================================= */
 
 .hero-overlay {
   position: absolute;
   inset: 0;
-
-  z-index: 2;
-
-  background: linear-gradient(
-    90deg,
-    rgba(2, 15, 27, 0.97) 0%,
-    rgba(3, 19, 33, 0.91) 35%,
-    rgba(3, 21, 37, 0.58) 64%,
-    rgba(3, 21, 37, 0.12) 100%
-  );
+  z-index: -1;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(2, 15, 27, 0.94) 0%,
+      rgba(2, 15, 27, 0.78) 38%,
+      rgba(2, 15, 27, 0.18) 100%
+    ),
+    linear-gradient(
+      0deg,
+      rgba(2, 15, 27, 0.55),
+      transparent 55%
+    );
 }
 
-
-/* =========================================================
-   BLUE CIRCLE
-========================================================= */
-
-.hero::before {
-  content: "";
-
-  position: absolute;
-  z-index: 3;
-
-  width: 350px;
-  height: 350px;
-
-  right: 8%;
-  top: 50%;
-
-  transform: translateY(-50%);
-
-  border: 38px solid rgba(0, 145, 255, 0.21);
-  border-radius: 50%;
-
-  pointer-events: none;
-}
-
-
-/* =========================================================
-   CONTAINER
-========================================================= */
+/* CONTAINER */
 
 .hero-container {
-  position: relative;
-  z-index: 5;
-
-  width: min(1200px, calc(100% - 48px));
-
+  width: min(1240px, calc(100% - 64px));
+  min-height: 0;
+  height: auto;
   margin: 0 auto;
-
-  padding: 24px 0;
-}
-
-
-/* =========================================================
-   CONTENT
-========================================================= */
-
-.hero-content {
-  position: relative;
-  z-index: 10;
-
-  width: min(620px, 100%);
-}
-
-
-/* =========================================================
-   TOP TAG
-========================================================= */
-
-.hero-tag {
-  width: fit-content;
-  min-height: 34px;
-
-  padding: 0 14px;
-  margin-bottom: 10px;
+  padding: 55px 0 42px;
 
   display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 38px;
+}
+
+/* MAIN CONTENT */
+
+.hero-content {
+  width: 100%;
+  max-width: 950px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/* TOP TAG */
+
+.hero-tag {
+  display: inline-flex;
   align-items: center;
+  gap: 9px;
+  margin: 0 0 17px;
+  padding: 8px 15px;
 
-  gap: 8px;
-
-  border: 1px solid rgba(35, 162, 255, 0.4);
+  border: 1px solid rgba(35, 162, 255, 0.5);
   border-radius: 50px;
-
   background: rgba(0, 126, 219, 0.16);
 
   color: #eaf7ff;
-
   font-size: 12px;
   font-weight: 700;
-
-  letter-spacing: 1.2px;
+  letter-spacing: 1.3px;
 }
 
 .hero-tag svg {
   color: #20a5ff;
-
   font-size: 16px;
 }
 
+/* HEADING */
 
-/* =========================================================
-   TITLE
-========================================================= */
-
-.hero-title,
-.hero-content h1 {
+.hero-title {
   margin: 0;
-
-  display: flex;
-  flex-direction: column;
-
-  font-size: clamp(46px, 4.3vw, 64px);
-  line-height: 0.95;
-
+  padding: 0;
+  font-size: clamp(34px, 4.1vw, 60px);
   font-weight: 900;
   font-style: italic;
-
-  letter-spacing: -2px;
-
+  line-height: 1.08;
+  letter-spacing: -1.5px;
   text-transform: uppercase;
-
-  color: #ffffff;
 }
 
-.hero-title span,
-.hero-content h1 span {
-  margin: 3px 0;
+.hero-title-first,
+.hero-title-second {
+  display: block;
+  color: #fff;
+}
 
+.hero-title-first {
+  white-space: nowrap;
+}
+
+.hero-title-first em {
   color: #078ff7;
-
-  text-shadow: 0 5px 22px rgba(7, 143, 247, 0.3);
+  font-style: inherit;
 }
 
-
-/* =========================================================
-   BLUE LINE
-========================================================= */
+/* BLUE LINE */
 
 .hero-line {
-  width: 145px;
-  height: 5px;
-
-  margin: 12px 0;
-
+  width: 80px;
+  height: 4px;
+  margin: 18px 0 16px;
   border-radius: 20px;
-
-  background: linear-gradient(
-    90deg,
-    #078ff7,
-    #2ab7ff
-  );
-
-  transform: skewX(-25deg);
+  background: linear-gradient(90deg, #078ff7, #2ab7ff);
 }
 
+/* DESCRIPTION */
 
-/* =========================================================
-   DESCRIPTION
-========================================================= */
-
-.hero-description,
-.hero-content > p {
-  width: 100%;
-  max-width: 550px;
-
-  margin: 0 0 15px;
-
-  color: #d7e1e9;
-
+.hero-description {
+  max-width: 700px;
+  margin: 0;
+  color: #e0e9f1;
   font-size: 16px;
-  line-height: 1.5;
+  line-height: 1.65;
 }
 
-
-/* =========================================================
-   ACTIONS
-========================================================= */
+/* BUTTONS */
 
 .hero-actions {
-  position: relative;
-  z-index: 20;
-
   display: flex;
   align-items: center;
-
-  gap: 18px;
-
-  margin-bottom: 17px;
+  flex-wrap: wrap;
+  gap: 22px;
+  margin-top: 24px;
 }
 
-
-/* =========================================================
-   GET STARTED
-========================================================= */
-
 .hero-main-btn {
-  min-width: 155px;
-  height: 46px;
-
-  padding: 0 20px;
-
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  gap: 13px;
 
-  gap: 9px;
+  min-height: 52px;
+  padding: 0 28px;
 
+  border: 0;
   border-radius: 50px;
+  background: #078ff7;
+  color: #fff;
 
-  background: linear-gradient(
-    135deg,
-    #078ff7,
-    #006ed4
-  );
-
-  color: #ffffff;
-
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 700;
-
   text-decoration: none;
-
-  box-shadow: 0 8px 24px rgba(7, 143, 247, 0.3);
-
   transition: 0.3s ease;
 }
 
 .hero-main-btn:hover {
+  background: #006fd9;
+  color: #fff;
   transform: translateY(-2px);
-
-  box-shadow: 0 12px 28px rgba(7, 143, 247, 0.4);
 }
 
 .hero-main-btn svg {
-  font-size: 18px;
+  font-size: 19px;
 }
 
-
-/* =========================================================
-   VIDEO BUTTON
-========================================================= */
+/* VIDEO BUTTON */
 
 .hero-video-btn {
-  position: relative;
-  z-index: 30;
-
-  padding: 0;
-
-  display: flex;
+  display: inline-flex;
   align-items: center;
-
-  gap: 10px;
-
-  border: none;
-
+  gap: 12px;
+  padding: 0;
+  border: 0;
   background: transparent;
-  color: #ffffff;
-
+  color: #fff;
   cursor: pointer;
-
-  pointer-events: auto;
 }
 
 .hero-play {
-  width: 45px;
-  height: 45px;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
 
-  flex: 0 0 45px;
+  width: 49px;
+  height: 49px;
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  border: 2px solid rgba(255, 255, 255, 0.9);
+  border: 2px solid #fff;
   border-radius: 50%;
-
-  font-size: 17px;
-
   transition: 0.3s ease;
-
-  pointer-events: none;
 }
 
 .hero-play svg {
   margin-left: 2px;
+  font-size: 18px;
 }
 
 .hero-video-btn:hover .hero-play {
@@ -341,479 +229,555 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-
+  gap: 4px;
   text-align: left;
-
-  pointer-events: none;
 }
 
 .hero-video-text strong {
-  color: #ffffff;
-
-  font-size: 15px;
-  line-height: 1.2;
-
+  font-size: 16px;
   font-weight: 700;
+  color: #fff;
 }
 
 .hero-video-text small {
-  margin-top: 3px;
-
-  color: #b6c5d0;
-
-  font-size: 12px;
-  line-height: 1.2;
+  font-size: 13px;
+  color: #bdcbd7;
 }
 
-
-/* =========================================================
-   STATS
-========================================================= */
+/* ==========================================
+   STATS — NO BOXES
+========================================== */
 
 .hero-stats {
   width: 100%;
+  max-width: 1080px;
+  margin: 0;
 
   display: grid;
-
   grid-template-columns: repeat(4, minmax(0, 1fr));
-
-  gap: 8px;
+  align-items: center;
+  gap: 0;
 }
-
-
-/* =========================================================
-   STAT CARD
-========================================================= */
 
 .hero-stat {
-  min-width: 0;
-  min-height: 68px;
-
-  padding: 9px 10px;
-
-  display: flex;
-  align-items: center;
-
-  gap: 9px;
-
-  border: 1px solid rgba(160, 195, 220, 0.2);
-  border-radius: 11px;
-
-  background: rgba(8, 36, 56, 0.68);
-
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-
-  transition: 0.3s ease;
-}
-
-.hero-stat:hover {
-  transform: translateY(-3px);
-
-  border-color: rgba(26, 160, 255, 0.5);
-
-  background: rgba(8, 47, 74, 0.82);
-}
-
-
-/* =========================================================
-   STAT ICON
-========================================================= */
-
-.hero-stat-icon {
-  width: 37px;
-  height: 37px;
-
-  flex: 0 0 37px;
-
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 12px;
+  min-width: 0;
 
-  border-radius: 50%;
+  padding: 10px 15px;
+  border: 0;
+  background: transparent;
+}
 
-  background: rgba(8, 143, 247, 0.18);
+.hero-stat:not(:last-child) {
+  border-right: 1px solid rgba(255, 255, 255, 0.28);
+}
 
-  color: #28a9ff;
+.hero-stat-icon {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  color: #078ff7;
+  background: transparent;
 }
 
 .hero-stat-icon svg {
-  width: 18px;
-  height: 18px;
-
-  font-size: 18px;
+  width: 30px;
+  height: 30px;
 }
-
-
-/* =========================================================
-   IMPORTANT — STAT TEXT
-========================================================= */
 
 .hero-stat-info {
-  min-width: 0;
-
   display: flex;
   flex-direction: column;
-
-  gap: 3px;
+  gap: 5px;
+  min-width: 0;
 }
 
-.hero-stat-info strong,
-.hero-stat strong {
-  display: block;
-
-  margin: 0;
-
-  color: #ffffff;
-
-  font-size: 19px;
-  line-height: 1;
-
-  font-weight: 900;
+.hero-stat-info strong {
+  font-size: 29px;
+  font-weight: 800;
+  line-height: 1.1;
+  color: #fff;
+  white-space: nowrap;
 }
 
 .hero-stat-info > span {
-  display: block;
-
-  margin: 0;
-
-  color: #c7d4dd;
-
-  font-size: 11px;
-  line-height: 1.25;
-
-  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.35;
+  color: #d4e0e9;
 }
 
-
-/* =========================================================
+/* ==========================================
    VIDEO POPUP
-========================================================= */
+========================================== */
 
 .video-modal {
   position: fixed;
   inset: 0;
-
-  width: 100%;
-  height: 100%;
-
   z-index: 999999;
-
-  padding: 18px;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
+  padding: 20px;
   background: rgba(0, 0, 0, 0.88);
-
   backdrop-filter: blur(6px);
 }
 
 .video-modal-box {
   position: relative;
-
-  width: min(850px, 95%);
-
+  width: min(850px, 100%);
   overflow: hidden;
-
-  border-radius: 16px;
-
+  border-radius: 14px;
   background: #000;
 }
 
 .gym-video {
   display: block;
-
   width: 100%;
-  height: auto;
-
   max-height: 80vh;
-
   object-fit: contain;
-
   background: #000;
 }
 
 .video-close {
   position: absolute;
-
   top: 10px;
   right: 10px;
+  z-index: 10;
 
-  z-index: 20;
+  display: grid;
+  place-items: center;
 
-  width: 40px;
-  height: 40px;
+  width: 42px;
+  height: 42px;
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  border: none;
+  border: 0;
   border-radius: 50%;
-
   background: #078ff7;
-  color: #ffffff;
-
-  font-size: 21px;
-
+  color: #fff;
   cursor: pointer;
 }
 
+.video-close svg {
+  font-size: 20px;
+}
 
-/* =========================================================
-   LAPTOP
-========================================================= */
 
-@media (max-width: 1100px) {
+/* ==========================================================
+   FITZONE HERO — RESPONSIVE FIX
+   Desktop design unchanged
+========================================================== */
+
+/* ==========================================================
+   TABLET — 1024px
+========================================================== */
+
+@media screen and (max-width: 1024px) {
 
   .hero {
-    height: 510px;
+    width: 100%;
+    min-height: 0;
+    height: auto;
   }
 
   .hero-container {
-    width: calc(100% - 40px);
+    width: calc(100% - 48px);
+    min-height: 0;
+    height: auto;
+    padding: 55px 0 42px;
+    gap: 35px;
   }
 
   .hero-content {
-    width: 570px;
+    width: 100%;
+    max-width: 760px;
   }
 
-  .hero-title,
-  .hero-content h1 {
-    font-size: 52px;
+  .hero-title {
+    font-size: clamp(36px, 4.7vw, 52px);
+    line-height: 1.12;
+    letter-spacing: -1px;
+  }
+
+  .hero-title-first {
+    white-space: normal;
+  }
+
+  .hero-description {
+    max-width: 650px;
+    font-size: 15px;
+    line-height: 1.75;
+  }
+
+  .hero-actions {
+    gap: 20px;
+    margin-top: 25px;
   }
 
   .hero-stats {
-    max-width: 510px;
-
-    grid-template-columns: repeat(2, 1fr);
+    width: 100%;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 
-  .hero-stat-info strong,
-  .hero-stat strong {
-    font-size: 20px;
+  .hero-stat {
+    gap: 9px;
+    padding: 12px 8px;
+  }
+
+  .hero-stat-icon {
+    width: 36px;
+    height: 36px;
+  }
+
+  .hero-stat-icon svg {
+    width: 28px;
+    height: 28px;
+  }
+
+  .hero-stat-info strong {
+    font-size: 26px;
   }
 
   .hero-stat-info > span {
     font-size: 12px;
   }
-
-  .hero::before {
-    width: 320px;
-    height: 320px;
-
-    right: -60px;
-
-    border-width: 34px;
-  }
 }
 
+/* ==========================================================
+   TABLET / LARGE MOBILE — 767px
+========================================================== */
 
-/* =========================================================
-   TABLET
-========================================================= */
-
-@media (max-width: 800px) {
-
-  .hero {
-    height: 540px;
-  }
-
-  .hero-bg {
-    object-position: 62% center;
-  }
-
-  .hero-container {
-    width: calc(100% - 32px);
-
-    padding: 20px 0;
-  }
-
-  .hero-content {
-    width: 540px;
-  }
-
-  .hero-title,
-  .hero-content h1 {
-    font-size: 47px;
-  }
-
-  .hero-description,
-  .hero-content > p {
-    font-size: 16px;
-  }
-}
-
-
-/* =========================================================
-   MOBILE — IMPORTANT
-========================================================= */
-
-@media (max-width: 600px) {
+@media screen and (max-width: 767px) {
 
   .hero {
+    position: relative;
     width: 100%;
-
+    min-height: 0;
     height: auto;
-    min-height: 610px;
-
-    display: flex;
-    align-items: center;
-
     overflow: hidden;
   }
 
-
-  /* IMAGE */
+  /* Background image */
 
   .hero-bg {
+    position: absolute;
+    inset: 0;
     width: 100%;
     height: 100%;
-
     object-fit: cover;
-
-    /* people image ko mobile me proper position */
-    object-position: 58% center;
+    object-position: 60% center;
   }
-
-
-  /* DARKER MOBILE OVERLAY */
 
   .hero-overlay {
-    background: linear-gradient(
-      90deg,
-      rgba(2, 15, 27, 0.94) 0%,
-      rgba(2, 17, 30, 0.82) 100%
-    );
+    background:
+      linear-gradient(
+        90deg,
+        rgba(2, 15, 27, 0.95) 0%,
+        rgba(2, 15, 27, 0.81) 55%,
+        rgba(2, 15, 27, 0.65) 100%
+      ),
+      linear-gradient(
+        0deg,
+        rgba(2, 15, 27, 0.75),
+        transparent 65%
+      );
   }
 
-
-  /* REMOVE BIG CIRCLE */
-
-  .hero::before {
-    display: none;
-  }
-
-
-  /* CONTAINER */
+  /* Main container */
 
   .hero-container {
-    width: 100%;
-    max-width: 100%;
+    width: calc(100% - 40px);
+    min-height: 0;
+    height: auto;
+    margin: 0 auto;
+    padding: 58px 0 42px;
 
-    margin: 0;
-
-    padding: 22px 15px;
-
-    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 36px;
   }
-
-
-  /* CONTENT */
 
   .hero-content {
     width: 100%;
     max-width: 100%;
+    min-width: 0;
+    align-items: flex-start;
   }
 
-
-  /* TAG */
+  /* Top tag */
 
   .hero-tag {
-    min-height: 34px;
-
-    padding: 0 12px;
-
-    margin-bottom: 9px;
-
-    gap: 7px;
-
-    font-size: 11px;
-    letter-spacing: 1px;
+    margin: 0 0 17px;
+    padding: 8px 13px;
+    gap: 8px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.8px;
   }
 
   .hero-tag svg {
-    font-size: 15px;
+    font-size: 16px;
   }
 
+  /* Heading */
 
-  /* HEADING */
-
-  .hero-title,
-  .hero-content h1 {
-    width: 100%;
-
-    font-size: 41px;
-    line-height: 0.98;
-
-    letter-spacing: -1.4px;
-  }
-
-  .hero-title span,
-  .hero-content h1 span {
-    margin: 2px 0;
-  }
-
-
-  /* LINE */
-
-  .hero-line {
-    width: 125px;
-    height: 5px;
-
-    margin: 10px 0;
-  }
-
-
-  /* DESCRIPTION */
-
-  .hero-description,
-  .hero-content > p {
+  .hero-title {
     width: 100%;
     max-width: 100%;
+    margin: 0;
 
-    margin: 0 0 13px;
+    font-size: clamp(32px, 6.5vw, 46px);
+    font-weight: 800;
+    line-height: 1.14;
+    letter-spacing: -0.8px;
 
-    font-size: 15px;
-    line-height: 1.45;
-
-    white-space: normal;
     overflow-wrap: break-word;
   }
 
-
-  /* ACTIONS */
-
-  .hero-actions {
-    width: 100%;
-
-    gap: 14px;
-
-    margin-bottom: 15px;
+  .hero-title-first,
+  .hero-title-second {
+    display: block;
+    white-space: normal;
   }
 
+  .hero-line {
+    width: 70px;
+    height: 3px;
+    margin: 20px 0 17px;
+  }
 
-  /* GET STARTED */
+  /* Description */
+
+  .hero-description {
+    width: 100%;
+    max-width: 620px;
+    margin: 0;
+
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.75;
+  }
+
+  /* Buttons */
+
+  .hero-actions {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 18px;
+    margin-top: 25px;
+  }
 
   .hero-main-btn {
-    min-width: 145px;
-    height: 45px;
+    min-height: 48px;
+    padding: 0 21px;
+    gap: 10px;
 
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  .hero-main-btn svg {
+    font-size: 18px;
+  }
+
+  .hero-video-btn {
+    gap: 11px;
+  }
+
+  .hero-play {
+    width: 44px;
+    height: 44px;
+  }
+
+  .hero-play svg {
+    font-size: 17px;
+  }
+
+  .hero-video-text {
+    gap: 4px;
+  }
+
+  .hero-video-text strong {
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  .hero-video-text small {
+    font-size: 12px;
+  }
+
+  /* Stats — two columns */
+
+  .hero-stats {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: center;
+
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    column-gap: 0;
+    row-gap: 18px;
+  }
+
+  .hero-stat {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 12px;
+
+    min-width: 0;
+    padding: 12px 15px;
+    border: 0;
+  }
+
+  .hero-stat:not(:last-child) {
+    border-right: 0;
+  }
+
+  .hero-stat:nth-child(odd) {
+    border-right: 1px solid rgba(255, 255, 255, 0.24);
+  }
+
+  .hero-stat-icon {
+    display: grid;
+    place-items: center;
+    flex: 0 0 39px;
+
+    width: 39px;
+    height: 39px;
+  }
+
+  .hero-stat-icon svg {
+    width: 30px;
+    height: 30px;
+  }
+
+  .hero-stat-info {
+    gap: 5px;
+    min-width: 0;
+  }
+
+  .hero-stat-info strong {
+    font-size: 29px;
+    font-weight: 700;
+    line-height: 1.15;
+  }
+
+  .hero-stat-info > span {
+    font-size: 13px;
+    line-height: 1.45;
+    white-space: normal;
+  }
+
+  /* Video popup */
+
+  .video-modal {
+    padding: 15px;
+  }
+
+  .video-modal-box {
+    width: 100%;
+    max-height: 85dvh;
+    border-radius: 12px;
+  }
+
+  .gym-video {
+    width: 100%;
+    max-height: 80dvh;
+    object-fit: contain;
+  }
+
+  .video-close {
+    top: 9px;
+    right: 9px;
+    width: 39px;
+    height: 39px;
+  }
+}
+
+/* ==========================================================
+   MOBILE — 480px
+========================================================== */
+
+@media screen and (max-width: 480px) {
+
+  .hero {
+    min-height: 0;
+    height: auto;
+  }
+
+  .hero-bg {
+    object-position: 63% center;
+  }
+
+  .hero-container {
+    width: calc(100% - 34px);
+    padding: 48px 0 36px;
+    gap: 30px;
+  }
+
+  /* Tag */
+
+  .hero-tag {
+    padding: 8px 12px;
+    margin-bottom: 17px;
+    font-size: 11px;
+  }
+
+  /* Heading — clearly visible */
+
+  .hero-title {
+    font-size: clamp(30px, 7.4vw, 37px);
+    line-height: 1.16;
+    letter-spacing: -0.5px;
+  }
+
+  .hero-title-first {
+    white-space: normal;
+  }
+
+  .hero-line {
+    width: 66px;
+    margin: 18px 0 16px;
+  }
+
+  /* Description */
+
+  .hero-description {
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  /* Buttons */
+
+  .hero-actions {
+    gap: 15px;
+    margin-top: 23px;
+  }
+
+  .hero-main-btn {
+    min-height: 46px;
     padding: 0 18px;
-
     font-size: 14px;
   }
 
-
-  /* WATCH VIDEO */
+  .hero-video-btn {
+    gap: 9px;
+  }
 
   .hero-play {
-    width: 43px;
-    height: 43px;
-
-    flex-basis: 43px;
+    width: 42px;
+    height: 42px;
   }
 
   .hero-video-text strong {
@@ -824,266 +788,190 @@
     font-size: 11px;
   }
 
-
-  /* =======================================================
-     MOBILE STATS
-  ======================================================= */
+  /* Stats */
 
   .hero-stats {
-    width: 100%;
-    max-width: 100%;
-
-    display: grid;
-
     grid-template-columns: repeat(2, minmax(0, 1fr));
-
-    gap: 9px;
+    column-gap: 0;
+    row-gap: 16px;
   }
-
-
-  /* STAT CARD */
 
   .hero-stat {
-    width: 100%;
-    min-width: 0;
-    min-height: 76px;
-
-    padding: 11px;
-
-    display: flex;
-    align-items: center;
-
-    gap: 10px;
-
-    border-radius: 11px;
+    gap: 9px;
+    padding: 11px 8px;
   }
 
-
-  /* ICON */
-
   .hero-stat-icon {
-    width: 39px;
-    height: 39px;
-
-    flex: 0 0 39px;
+    flex: 0 0 34px;
+    width: 34px;
+    height: 34px;
   }
 
   .hero-stat-icon svg {
-    width: 19px;
-    height: 19px;
-
-    font-size: 19px;
+    width: 27px;
+    height: 27px;
   }
 
-
-  /* 500+ / 50+ / 20+ / 4.9 */
-
-  .hero-stat-info strong,
-  .hero-stat strong {
-    margin: 0;
-
-    font-size: 21px;
-    line-height: 1;
-
-    font-weight: 900;
-
-    color: #ffffff;
+  .hero-stat-info strong {
+    font-size: 27px;
+    font-weight: 700;
   }
-
-
-  /* Happy Members etc */
 
   .hero-stat-info > span {
-    margin-top: 4px;
-
     font-size: 12px;
-    line-height: 1.25;
-
-    font-weight: 600;
-
-    color: #d4dee6;
-
-    white-space: normal;
   }
 }
 
+/* ==========================================================
+   SMALL MOBILE — 390px
+========================================================== */
 
-/* =========================================================
-   SMALL MOBILE — 430PX
-========================================================= */
-
-@media (max-width: 430px) {
-
-  .hero {
-    min-height: 590px;
-  }
+@media screen and (max-width: 390px) {
 
   .hero-container {
-    padding: 18px 14px;
+    width: calc(100% - 30px);
+    padding: 42px 0 32px;
+    gap: 27px;
   }
 
-
-  /* TAG */
-
-  .hero-tag {
-    min-height: 32px;
-
-    margin-bottom: 8px;
-
-    font-size: 10px;
+  .hero-title {
+    font-size: clamp(27px, 7.5vw, 32px);
+    line-height: 1.17;
   }
 
-
-  /* TITLE */
-
-  .hero-title,
-  .hero-content h1 {
-    font-size: 37px;
-    line-height: 0.98;
-  }
-
-
-  /* DESCRIPTION */
-
-  .hero-description,
-  .hero-content > p {
-    margin-bottom: 12px;
-
+  .hero-description {
     font-size: 14px;
-    line-height: 1.4;
+    line-height: 1.7;
   }
-
-
-  /* BUTTON AREA */
 
   .hero-actions {
     gap: 12px;
-
-    margin-bottom: 14px;
+    margin-top: 21px;
   }
 
   .hero-main-btn {
-    min-width: 138px;
-    height: 43px;
-
+    min-height: 44px;
     padding: 0 15px;
-
-    font-size: 14px;
-  }
-
-  .hero-play {
-    width: 41px;
-    height: 41px;
-
-    flex-basis: 41px;
-  }
-
-
-  /* STATS */
-
-  .hero-stats {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-
-    gap: 8px;
-  }
-
-  .hero-stat {
-    min-height: 74px;
-
-    padding: 10px 9px;
-
-    gap: 9px;
-  }
-
-  .hero-stat-icon {
-    width: 37px;
-    height: 37px;
-
-    flex-basis: 37px;
-  }
-
-
-  /* BIG NUMBERS */
-
-  .hero-stat-info strong,
-  .hero-stat strong {
-    font-size: 20px;
-  }
-
-
-  /* BIGGER LABEL */
-
-  .hero-stat-info > span {
-    margin-top: 4px;
-
-    font-size: 12px;
-    line-height: 1.2;
-
-    font-weight: 600;
-  }
-}
-
-
-/* =========================================================
-   VERY SMALL MOBILE
-========================================================= */
-
-@media (max-width: 360px) {
-
-  .hero {
-    min-height: 600px;
-  }
-
-  .hero-container {
-    padding-left: 12px;
-    padding-right: 12px;
-  }
-
-  .hero-title,
-  .hero-content h1 {
-    font-size: 34px;
-  }
-
-  .hero-description,
-  .hero-content > p {
     font-size: 13px;
   }
 
-  .hero-actions {
-    gap: 10px;
+  .hero-play {
+    width: 40px;
+    height: 40px;
   }
 
-  .hero-main-btn {
-    min-width: 128px;
-
-    padding: 0 13px;
+  .hero-video-text strong {
+    font-size: 13px;
   }
 
   .hero-video-text small {
-    display: none;
+    font-size: 11px;
+  }
+
+  .hero-stats {
+    row-gap: 12px;
   }
 
   .hero-stat {
-    min-height: 72px;
-
-    padding: 9px 7px;
-
     gap: 7px;
+    padding: 10px 5px;
   }
 
   .hero-stat-icon {
-    width: 35px;
-    height: 35px;
-
-    flex-basis: 35px;
+    flex-basis: 31px;
+    width: 31px;
+    height: 31px;
   }
 
-  .hero-stat-info strong,
-  .hero-stat strong {
-    font-size: 19px;
+  .hero-stat-icon svg {
+    width: 25px;
+    height: 25px;
+  }
+
+  .hero-stat-info strong {
+    font-size: 25px;
   }
 
   .hero-stat-info > span {
     font-size: 11px;
+  }
+}
+
+/* ==========================================================
+   EXTRA SMALL MOBILE — 360px
+========================================================== */
+
+@media screen and (max-width: 360px) {
+
+  .hero-container {
+    width: calc(100% - 26px);
+    padding: 38px 0 30px;
+    gap: 25px;
+  }
+
+  .hero-title {
+    font-size: 26px;
+    letter-spacing: -0.3px;
+  }
+
+  .hero-description {
+    font-size: 14px;
+  }
+
+  .hero-actions {
+    gap: 10px;
+  }
+
+  .hero-main-btn {
+    padding: 0 13px;
+    font-size: 12px;
+  }
+
+  .hero-video-btn {
+    gap: 7px;
+  }
+
+  .hero-play {
+    width: 38px;
+    height: 38px;
+  }
+
+  .hero-stats {
+    row-gap: 10px;
+  }
+
+  .hero-stat {
+    gap: 6px;
+    padding: 9px 4px;
+  }
+
+  .hero-stat-icon {
+    flex-basis: 29px;
+    width: 29px;
+    height: 29px;
+  }
+
+  .hero-stat-icon svg {
+    width: 23px;
+    height: 23px;
+  }
+
+  .hero-stat-info strong {
+    font-size: 23px;
+  }
+
+  .hero-stat-info > span {
+    font-size: 10px;
+  }
+}
+
+/* ==========================================================
+   ACCESSIBILITY
+========================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-main-btn,
+  .hero-play {
+    transition: none;
   }
 }

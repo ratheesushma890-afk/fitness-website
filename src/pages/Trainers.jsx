@@ -1,10 +1,9 @@
-import React from "react";
 
+import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 import {
   FiArrowRight,
-  FiAward,
   FiBarChart2,
   FiCheck,
   FiHeart,
@@ -12,38 +11,33 @@ import {
   FiLinkedin,
   FiStar,
   FiUsers,
+  FiArrowUpRight,
+  FiShield,
+  FiTarget,
 } from "react-icons/fi";
 
-import {
-  FaFacebookF,
-  FaYoutube,
-} from "react-icons/fa";
+import { FaFacebookF, FaYoutube } from "react-icons/fa";
 
+import AOS from "aos";
+import "aos/dist/aos.css";
 import "./Trainers.css";
+import Testimonials from "../components/Testimonials";
 
-
-/* =========================================================
-   TRAINER DATA
-========================================================= */
+/* =========================================
+   TRAINERS DATA
+========================================= */
 
 const trainers = [
   {
     id: 1,
-
     name: "Arjun Mehta",
-
     role: "Strength & Conditioning",
-
     rating: "4.9",
-
     reviews: "120 reviews",
-
     image:
       "https://images.unsplash.com/photo-1567013127542-490d757e51fc?auto=format&fit=crop&w=900&q=90",
-
     description:
       "Specializes in strength training, muscle building, and overall fitness improvement.",
-
     socials: [
       {
         type: "instagram",
@@ -59,24 +53,16 @@ const trainers = [
       },
     ],
   },
-
   {
     id: 2,
-
     name: "Riya Sharma",
-
     role: "Yoga & Flexibility",
-
     rating: "4.9",
-
     reviews: "98 reviews",
-
     image:
       "https://images.unsplash.com/photo-1594381898411-846e7d193883?auto=format&fit=crop&w=900&q=90",
-
     description:
       "Helps you build strength, improve flexibility, and find balance through personalized sessions.",
-
     socials: [
       {
         type: "instagram",
@@ -92,24 +78,16 @@ const trainers = [
       },
     ],
   },
-
   {
     id: 3,
-
     name: "Kabir Singh",
-
     role: "Nutrition & Fitness",
-
     rating: "4.8",
-
     reviews: "110 reviews",
-
     image:
       "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&fit=crop&w=900&q=90",
-
     description:
       "Expert in nutrition planning, weight management, and personalized fitness guidance.",
-
     socials: [
       {
         type: "instagram",
@@ -127,596 +105,306 @@ const trainers = [
   },
 ];
 
+/* =========================================
+   BENEFITS DATA
+========================================= */
 
-/* =========================================================
-   TESTIMONIAL DATA
-========================================================= */
-
-const testimonials = [
+const benefits = [
   {
-    id: 1,
-
-    name: "Aarav Sharma",
-
-    image:
-      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=200&q=80",
-
-    text:
-      "Arjun helped me transform my body in just 3 months. His training style is professional and motivating!",
+    icon: FiUsers,
+    title: "Certified Experts",
+    text: "Experienced professionals who know how to guide your progress.",
   },
-
   {
-    id: 2,
-
-    name: "Priya Malik",
-
-    image:
-      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=200&q=80",
-
-    text:
-      "Riya's sessions have improved my flexibility and reduced my stress. Amazing training experience!",
+    icon: FiTarget,
+    title: "Personalized Plans",
+    text: "Training tailored to your goals, ability, and schedule.",
   },
-
   {
-    id: 3,
-
-    name: "Rahul Verma",
-
-    image:
-      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80",
-
-    text:
-      "The fitness and nutrition guidance completely changed my lifestyle. I feel healthier and more energetic.",
+    icon: FiBarChart2,
+    title: "Proven Results",
+    text: "Trackable progress and steady improvements that last.",
+  },
+  {
+    icon: FiHeart,
+    title: "Ongoing Support",
+    text: "Encouragement and guidance at every stage of your journey.",
   },
 ];
 
-
-/* =========================================================
-   SOCIAL ICON
-========================================================= */
+/* =========================================
+   SOCIAL ICON COMPONENT
+========================================= */
 
 const SocialIcon = ({ type }) => {
-  if (type === "instagram") {
-    return <FiInstagram />;
-  }
-
-  if (type === "facebook") {
-    return <FaFacebookF />;
-  }
-
-  if (type === "youtube") {
-    return <FaYoutube />;
-  }
-
-  if (type === "linkedin") {
-    return <FiLinkedin />;
-  }
+  if (type === "instagram") return <FiInstagram />;
+  if (type === "facebook") return <FaFacebookF />;
+  if (type === "linkedin") return <FiLinkedin />;
+  if (type === "youtube") return <FaYoutube />;
 
   return null;
 };
 
-
-/* =========================================================
+/* =========================================
    TRAINERS PAGE
-========================================================= */
+========================================= */
 
 const Trainers = () => {
   const navigate = useNavigate();
 
+  useEffect(() => {
+    AOS.init({
+      duration: 750,
+      easing: "ease-out-cubic",
+      once: true,
+      offset: 75,
+    });
 
-  /* =======================================================
-     VIEW PROFILE
-  ======================================================= */
+    AOS.refresh();
+  }, []);
 
-  const handleProfile = (trainer) => {
-    navigate(`/trainer/${trainer.id}`, {
-      state: {
-        trainer,
-      },
+  const scrollToTrainers = () => {
+    document.getElementById("our-trainers")?.scrollIntoView({
+      behavior: "smooth",
     });
   };
 
-
-  /* =======================================================
-     SOCIAL CLICK
-  ======================================================= */
-
-  const handleSocialClick = (url) => {
-    window.open(
-      url,
-      "_blank",
-      "noopener,noreferrer"
-    );
+  const viewProfile = (trainer) => {
+    navigate(`/trainer/${trainer.id}`, {
+      state: { trainer },
+    });
   };
-
 
   return (
     <main className="ft-trainers-page">
+      {/* =====================================
+          HERO SECTION
+      ===================================== */}
 
-
-      {/* ===================================================
-          HERO
-      =================================================== */}
-
-      <section className="ft-trainers-hero">
-
+      <section
+        className="ft-trainers-hero"
+        aria-labelledby="ft-hero-title"
+      >
         <div className="ft-trainers-hero-overlay" />
 
+        <div
+          className="ft-hero-orb ft-hero-orb-one"
+          aria-hidden="true"
+        />
+
+        <div
+          className="ft-hero-orb ft-hero-orb-two"
+          aria-hidden="true"
+        />
 
         <div className="ft-trainers-container ft-trainers-hero-inner">
-
-
           <div className="ft-trainers-hero-content">
-
             <span className="ft-small-title">
+              <span className="ft-title-line" />
               OUR TRAINERS
             </span>
 
-
-            <h1>
-              Meet Our
+            <h1 id="ft-hero-title">
+              Meet Our <span>Expert</span>
               <br />
-              Expert Trainers
+              Trainers
+              <span className="ft-hero-dot">.</span>
             </h1>
 
-
             <p>
-              Our certified trainers are here to guide,
-              motivate, and support you on your fitness
-              journey. Get personalized training, expert
-              advice, and real results.
+              Meet the people who turn your fitness goals
+              into real progress. Expert coaching, personal
+              attention, and motivation that lasts.
             </p>
 
+            <div className="ft-hero-actions">
+              <button
+                type="button"
+                className="ft-main-btn"
+                onClick={scrollToTrainers}
+              >
+                Find Your Trainer
+                <FiArrowRight />
+              </button>
 
-            <button
-              type="button"
-              onClick={() => {
-                document
-                  .getElementById("our-trainers")
-                  ?.scrollIntoView({
-                    behavior: "smooth",
-                  });
-              }}
-            >
-              Find Your Trainer
-
-              <FiArrowRight />
-            </button>
-
+              <span className="ft-hero-hint">
+                <FiCheck />
+                Expert guidance, every step
+              </span>
+            </div>
           </div>
 
-
-          <div className="ft-hero-quote">
-
-            <span>
-              Stronger
-            </span>
+          <div
+            className="ft-hero-quote"
+            aria-label="Stronger every day"
+          >
+            <span>TRAIN WITH PURPOSE</span>
 
             <strong>
-              Every Day
+              Stronger
+              <br />
+              Every Day.
             </strong>
 
+            <div className="ft-quote-rule" />
           </div>
-
-
         </div>
 
+        <div className="ft-hero-bottom">
+          <span>01 / MEET THE TEAM</span>
+          <span>SCROLL TO EXPLORE ↓</span>
+        </div>
       </section>
 
-
-      {/* ===================================================
-          TRAINERS
-      =================================================== */}
+      {/* =====================================
+          TRAINERS SECTION
+      ===================================== */}
 
       <section
         className="ft-trainers-section"
         id="our-trainers"
+        aria-labelledby="ft-trainers-title"
       >
-
         <div className="ft-trainers-container">
-
-
-          <div className="ft-section-heading">
-
-            <span>
-              OUR EXPERTS
+          <div
+            className="ft-section-heading"
+            data-aos="fade-up"
+          >
+            <span className="ft-section-eyebrow">
+              THE PEOPLE BEHIND YOUR PROGRESS
             </span>
 
-            <h2>
-              Meet Our Trainers
+            <h2 id="ft-trainers-title">
+              Meet Our <em>Trainers</em>
             </h2>
 
             <p>
-              Certified professionals, real experience, and
-              a passion for helping you achieve your fitness
-              goals.
+              Dedicated professionals with the experience
+              and passion to help you become your strongest
+              self.
             </p>
-
           </div>
 
-
-          {/* =================================================
-              3 CARDS
-          ================================================= */}
-
           <div className="ft-trainer-grid">
-
-
-            {trainers.map((trainer) => (
-
+            {trainers.map((trainer, index) => (
               <article
                 className="ft-trainer-card"
                 key={trainer.id}
+                data-aos="fade-up"
+                data-aos-delay={index * 100}
               >
-
-
-                {/* IMAGE */}
-
                 <div className="ft-trainer-image">
-
                   <img
                     src={trainer.image}
-                    alt={trainer.name}
+                    alt={`${trainer.name}, ${trainer.role} trainer`}
+                    loading="lazy"
                   />
 
                   <div className="ft-trainer-image-shade" />
 
+                  <span className="ft-trainer-image-tag">
+                    <FiShield />
+                    Certified Trainer
+                  </span>
+
+                  <span className="ft-trainer-index">
+                    0{index + 1}
+                  </span>
                 </div>
 
-
-                {/* CONTENT */}
-
                 <div className="ft-trainer-content">
-
-
-                  <h3>
-                    {trainer.name}
-                  </h3>
-
-
                   <span className="ft-trainer-role">
                     {trainer.role}
                   </span>
 
-
-                  {/* RATING */}
+                  <h3>{trainer.name}</h3>
 
                   <div className="ft-trainer-rating">
-
-                    <div>
-
-                      {[1, 2, 3, 4, 5].map(
-                        (star) => (
-                          <FiStar key={star} />
-                        )
-                      )}
-
+                    <div
+                      className="ft-rating-stars"
+                      aria-label={`${trainer.rating} out of 5 stars`}
+                    >
+                      {[1, 2, 3, 4, 5].map((star) => (
+                        <FiStar key={star} />
+                      ))}
                     </div>
 
+                    <strong>{trainer.rating}</strong>
 
-                    <strong>
-                      {trainer.rating}
-                    </strong>
-
-
-                    <span>
-                      ({trainer.reviews})
-                    </span>
-
+                    <span>({trainer.reviews})</span>
                   </div>
-
 
                   <p className="ft-trainer-description">
                     {trainer.description}
                   </p>
 
-
-                  {/* BOTTOM */}
-
                   <div className="ft-trainer-bottom">
-
-
-                    {/* SOCIAL ICONS */}
-
                     <div className="ft-trainer-socials">
-
-
-                      {trainer.socials.map(
-                        (social) => (
-
-                          <button
-                            type="button"
-                            key={social.type}
-                            aria-label={social.type}
-                            title={`Open ${social.type}`}
-                            onClick={() =>
-                              handleSocialClick(
-                                social.url
-                              )
-                            }
-                          >
-
-                            <SocialIcon
-                              type={social.type}
-                            />
-
-                          </button>
-
-                        )
-                      )}
-
-
+                      {trainer.socials.map((social) => (
+                        <a
+                          key={social.type}
+                          href={social.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label={`${trainer.name} on ${social.type}`}
+                          title={social.type}
+                        >
+                          <SocialIcon type={social.type} />
+                        </a>
+                      ))}
                     </div>
-
-
-                    {/* VIEW PROFILE */}
 
                     <button
                       type="button"
                       className="ft-profile-btn"
-                      onClick={() =>
-                        handleProfile(trainer)
-                      }
+                      onClick={() => viewProfile(trainer)}
                     >
                       View Profile
-
-                      <FiArrowRight />
+                      <FiArrowUpRight />
                     </button>
-
-
                   </div>
-
                 </div>
-
               </article>
-
             ))}
-
-
           </div>
-
         </div>
-
       </section>
 
+      {/* =====================================
+          BENEFITS SECTION
+      ===================================== */}
 
-      {/* ===================================================
-          BENEFITS
-      =================================================== */}
-
-      <section className="ft-benefits-section">
-
+      <section
+        className="ft-benefits-section"
+        aria-label="Why train with FitZone"
+      >
         <div className="ft-trainers-container">
-
           <div className="ft-benefits-box">
-
-
-            {/* BENEFIT 1 */}
-
-            <div className="ft-benefit">
-
-              <FiUsers />
-
-              <h3>
-                Certified Experts
-              </h3>
-
-              <p>
-                Trained and certified
-                <br />
-                professionals
-              </p>
-
-            </div>
-
-
-            {/* BENEFIT 2 */}
-
-            <div className="ft-benefit">
-
-              <FiAward />
-
-              <h3>
-                Personalized Plans
-              </h3>
-
-              <p>
-                Training plans tailored
-                <br />
-                to your goals
-              </p>
-
-            </div>
-
-
-            {/* BENEFIT 3 */}
-
-            <div className="ft-benefit">
-
-              <FiBarChart2 />
-
-              <h3>
-                Proven Results
-              </h3>
-
-              <p>
-                Real transformations
-                <br />
-                and success stories
-              </p>
-
-            </div>
-
-
-            {/* BENEFIT 4 */}
-
-            <div className="ft-benefit">
-
-              <FiHeart />
-
-              <h3>
-                Ongoing Support
-              </h3>
-
-              <p>
-                Guidance at every
-                <br />
-                step of your journey
-              </p>
-
-            </div>
-
-
-          </div>
-
-        </div>
-
-      </section>
-
-
-      {/* ===================================================
-          CTA
-      =================================================== */}
-
-      <section className="ft-trainer-cta">
-
-        <div className="ft-trainers-container">
-
-          <div className="ft-trainer-cta-box">
-
-            <div className="ft-trainer-cta-overlay" />
-
-
-            <div className="ft-trainer-cta-content">
-
-              <span>
-                READY TO START?
-              </span>
-
-              <h2>
-                Train with the Best
-              </h2>
-
-              <p>
-                Get expert guidance and take the first step
-                towards a stronger, healthier you.
-              </p>
-
-            </div>
-
-
-            <button
-              type="button"
-              onClick={() => navigate("/join")}
-            >
-              Join Now
-
-              <FiArrowRight />
-            </button>
-
-          </div>
-
-        </div>
-
-      </section>
-
-
-      {/* ===================================================
-          SUCCESS STORIES
-      =================================================== */}
-
-      <section className="ft-success-section">
-
-        <div className="ft-trainers-container">
-
-
-          <div className="ft-section-heading">
-
-            <span>
-              WHAT OUR MEMBERS SAY
-            </span>
-
-            <h2>
-              Success Stories
-            </h2>
-
-            <p>
-              Real people. Real results. Hear from our
-              members who trained with our experts.
-            </p>
-
-          </div>
-
-
-          <div className="ft-testimonial-grid">
-
-
-            {testimonials.map((item) => (
-
-              <article
-                className="ft-testimonial-card"
-                key={item.id}
-              >
-
-                <div className="ft-testimonial-top">
-
-
-                  <img
-                    src={item.image}
-                    alt={item.name}
-                  />
-
-
-                  <div>
-
-                    <h3>
-                      {item.name}
-                    </h3>
-
-
-                    <div className="ft-testimonial-stars">
-
-                      {[1, 2, 3, 4, 5].map(
-                        (star) => (
-                          <FiStar key={star} />
-                        )
-                      )}
-
-                    </div>
-
+            {benefits.map(
+              ({ icon: Icon, title, text }, index) => (
+                <div
+                  className="ft-benefit"
+                  key={title}
+                  data-aos="fade-up"
+                  data-aos-delay={index * 70}
+                >
+                  <div className="ft-benefit-icon">
+                    <Icon />
                   </div>
 
+                  <h3>{title}</h3>
 
-                  <span className="ft-quote">
-                    “
-                  </span>
-
-
+                  <p>{text}</p>
                 </div>
-
-
-                <p>
-                  “{item.text}”
-                </p>
-
-
-              </article>
-
-            ))}
-
-
+              )
+            )}
           </div>
-
         </div>
-
       </section>
 
-
-    
-
+     <Testimonials />
     </main>
   );
 };
-
 
 export default Trainers;

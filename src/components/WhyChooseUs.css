@@ -936,3 +936,128 @@
     font-size: 19px;
   }
 }
+
+/* ==========================================
+   WHY CHOOSE US — ANIMATION EFFECTS
+========================================== */
+
+/* IMAGE HOVER ZOOM */
+
+.why-image-box {
+  overflow: hidden;
+}
+
+.why-image-box img {
+  transition:
+    transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1),
+    filter 0.6s ease;
+}
+
+.why-image-box:hover img {
+  transform: scale(1.07);
+  filter: brightness(1.08);
+}
+
+/* FLOATING BACKGROUND CIRCLE */
+
+.why-circle {
+  animation: whyCircleFloat 7s ease-in-out infinite;
+}
+
+@keyframes whyCircleFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+/* BENEFIT CARD HOVER */
+
+.why-benefit {
+  transition:
+    background 0.35s ease,
+    border-color 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.why-benefit:hover {
+  background: rgba(25, 150, 255, 0.08);
+  border-color: rgba(60, 185, 255, 0.35);
+  box-shadow: 0 12px 28px rgba(0, 80, 170, 0.1);
+}
+
+/* ICON ANIMATION */
+
+.why-benefit-icon {
+  transition:
+    transform 0.35s ease,
+    background 0.35s ease,
+    color 0.35s ease;
+}
+
+.why-benefit:hover .why-benefit-icon {
+  transform: rotate(-8deg) scale(1.12);
+  color: #ffffff;
+  background: #168fff;
+}
+
+/* BUTTON EFFECT */
+
+.why-btn {
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.why-btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 15px 35px rgba(22, 143, 255, 0.3);
+}
+
+.why-btn svg {
+  transition: transform 0.3s ease;
+}
+
+.why-btn:hover svg {
+  transform: translate(4px, -4px);
+}
+
+/* FLOATING CARDS HOVER */
+
+.why-experience-card,
+.why-small-card {
+  transition:
+    box-shadow 0.35s ease,
+    border-color 0.35s ease;
+}
+
+.why-experience-card:hover,
+.why-small-card:hover {
+  box-shadow: 0 16px 38px rgba(0, 110, 220, 0.22);
+}
+
+/* AOS MOBILE ADJUSTMENTS */
+
+@media (max-width: 768px) {
+  .why-benefit:hover .why-benefit-icon {
+    transform: scale(1.05);
+  }
+
+  .why-circle {
+    animation-duration: 9s;
+  }
+}
+
+/* ACCESSIBILITY */
+
+@media (prefers-reduced-motion: reduce) {
+  .why-section *,
+  .why-section *::before,
+  .why-section *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}

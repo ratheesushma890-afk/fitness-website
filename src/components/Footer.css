@@ -1,7 +1,8 @@
+
 /* =========================================================
-   FITZONE FOOTER
-   PART 1 / 2
-   SAME DESIGN — ONLY FONT SIZES INCREASED
+   FIT ZONE FOOTER
+   PREMIUM NAVY BLUE DESIGN
+   DESKTOP + TABLET + MOBILE
 ========================================================= */
 
 .fzft-root,
@@ -11,15 +12,18 @@
   box-sizing: border-box;
 }
 
-
 /* =========================================================
-   ROOT
+   FOOTER ROOT
 ========================================================= */
 
 .fzft-root {
   position: relative;
 
+  display: block;
+
   width: 100%;
+  min-width: 0;
+
   height: auto;
   min-height: 0;
   max-height: none;
@@ -27,242 +31,24 @@
   margin: 0;
   padding: 0;
 
+  flex: 0 0 auto;
+
   overflow: visible;
 
   font-family: "Inter", sans-serif;
-
   color: #ffffff;
 
-  background: #020f19;
-
-  clear: both;
+  background: #06182d;
 }
-
 
 /* =========================================================
-   TOP CTA
-========================================================= */
-
-.fzft-cta {
-  position: relative;
-
-  width: 100%;
-  min-height: 245px;
-
-  display: flex;
-  align-items: center;
-
-  overflow: hidden;
-
-  background-image:
-    url("https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1900&q=90");
-
-  background-size: cover;
-  background-position: center 43%;
-
-  border-bottom: 1px solid rgba(0, 145, 255, 0.55);
-}
-
-
-/* =========================================================
-   CTA OVERLAY
-========================================================= */
-
-.fzft-cta-overlay {
-  position: absolute;
-
-  inset: 0;
-
-  z-index: 1;
-
-  background:
-    linear-gradient(
-      90deg,
-      rgba(1, 14, 24, 0.98) 0%,
-      rgba(2, 19, 32, 0.93) 42%,
-      rgba(2, 18, 30, 0.65) 72%,
-      rgba(2, 16, 27, 0.4) 100%
-    );
-
-  pointer-events: none;
-}
-
-
-/* =========================================================
-   CTA INNER
-========================================================= */
-
-.fzft-cta-inner {
-  position: relative;
-
-  z-index: 2;
-
-  width: min(1400px, calc(100% - 80px));
-
-  margin: 0 auto;
-
-  display: flex;
-
-  align-items: center;
-  justify-content: space-between;
-
-  gap: 40px;
-}
-
-
-/* =========================================================
-   EYEBROW
-========================================================= */
-
-.fzft-eyebrow {
-  display: flex;
-
-  align-items: center;
-
-  gap: 10px;
-
-  margin-bottom: 9px;
-
-  color: #d8e9f5;
-
-  /* FONT INCREASED */
-  font-size: 16px;
-  font-weight: 800;
-
-  letter-spacing: 4px;
-}
-
-.fzft-eyebrow span {
-  width: 35px;
-  height: 2px;
-
-  flex-shrink: 0;
-
-  background: #078ff7;
-}
-
-
-/* =========================================================
-   CTA TITLE
-========================================================= */
-
-.fzft-cta-title {
-  margin: 0;
-
-  color: #ffffff;
-
-  /* FONT INCREASED SLIGHTLY */
-  font-size: clamp(42px, 4.4vw, 70px);
-
-  line-height: 0.98;
-
-  font-weight: 900;
-
-  letter-spacing: -2px;
-}
-
-.fzft-cta-title strong {
-  color: #078ff7;
-
-  font-weight: 900;
-}
-
-
-/* =========================================================
-   CTA DESCRIPTION
-========================================================= */
-
-.fzft-cta-description {
-  max-width: 650px;
-
-  margin: 12px 0 0;
-
-  color: #c2d1dc;
-
-  /* FONT INCREASED */
-  font-size: 20px;
-
-  line-height: 1.5;
-
-  font-weight: 500;
-}
-
-
-/* =========================================================
-   JOIN BUTTON
-========================================================= */
-
-.fzft-join-button {
-  min-width: 230px;
-  height: 62px;
-
-  padding: 0 30px;
-
-  flex-shrink: 0;
-
-  display: flex;
-
-  align-items: center;
-  justify-content: center;
-
-  gap: 18px;
-
-  border: 2px solid #ffffff;
-
-  border-radius: 50px;
-
-  background:
-    linear-gradient(
-      135deg,
-      #159cff,
-      #0073df
-    );
-
-  color: #ffffff;
-
-  font-family: inherit;
-
-  /* FONT INCREASED */
-  font-size: 18px;
-  font-weight: 800;
-
-  letter-spacing: 0.5px;
-
-  cursor: pointer;
-
-  box-shadow:
-    0 0 25px rgba(7, 143, 247, 0.28);
-
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease,
-    background 0.3s ease;
-}
-
-.fzft-join-button svg {
-  font-size: 22px;
-
-  transition: transform 0.3s ease;
-}
-
-.fzft-join-button:hover {
-  transform: translateY(-3px);
-
-  box-shadow:
-    0 10px 35px rgba(7, 143, 247, 0.45);
-}
-
-.fzft-join-button:hover svg {
-  transform: translateX(5px);
-}
-
-
-/* =========================================================
-   MAIN FOOTER
+   MAIN BACKGROUND
 ========================================================= */
 
 .fzft-main {
   position: relative;
+
+  display: block;
 
   width: 100%;
 
@@ -274,52 +60,22 @@
 
   background:
     radial-gradient(
-      circle at 90% 50%,
-      rgba(7, 143, 247, 0.09),
-      transparent 27%
+      circle at 8% 12%,
+      rgba(31, 156, 255, 0.16),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 95% 85%,
+      rgba(0, 111, 255, 0.15),
+      transparent 32%
     ),
     linear-gradient(
-      110deg,
-      #02111d,
-      #031725 55%,
-      #041b2b
+      120deg,
+      #06172d 0%,
+      #08294e 55%,
+      #073563 100%
     );
 }
-
-
-/* =========================================================
-   DECORATIVE IMAGE
-========================================================= */
-
-.fzft-main::after {
-  content: "";
-
-  position: absolute;
-
-  right: -35px;
-  bottom: 0;
-
-  width: 330px;
-  height: 100%;
-
-  opacity: 0.12;
-
-  background-image:
-    url("https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?auto=format&fit=crop&w=800&q=80");
-
-  background-size: cover;
-  background-position: center;
-
-  pointer-events: none;
-
-  mask-image:
-    linear-gradient(
-      90deg,
-      transparent,
-      #000
-    );
-}
-
 
 /* =========================================================
    MAIN GRID
@@ -327,25 +83,34 @@
 
 .fzft-main-grid {
   position: relative;
-
-  z-index: 2;
-
-  width: min(1400px, calc(100% - 80px));
-
-  margin: 0 auto;
-
-  padding: 38px 0 34px;
+  z-index: 1;
 
   display: grid;
 
   grid-template-columns:
-    1.25fr 0.75fr 0.75fr 1.2fr;
+    minmax(0, 1.5fr)
+    minmax(0, 0.9fr)
+    minmax(0, 1.05fr)
+    minmax(0, 0.9fr)
+    minmax(0, 1.45fr);
 
-  gap: 55px;
+  align-items: start;
 
-  overflow: visible;
+  gap: 28px;
+
+  width: min(1320px, calc(100% - 64px));
+
+  height: auto;
+  min-height: 0;
+
+  margin: 0 auto;
+  padding: 58px 0 54px;
 }
 
+.fzft-main-grid > * {
+  min-width: 0;
+  max-width: 100%;
+}
 
 /* =========================================================
    BRAND
@@ -353,184 +118,164 @@
 
 .fzft-brand {
   min-width: 0;
-
-  max-width: 360px;
 }
 
 .fzft-brand-logo {
-  width: fit-content;
-
-  margin: 0;
-  padding: 0;
-
-  display: flex;
-
+  display: inline-flex;
   align-items: center;
 
-  gap: 10px;
+  gap: 11px;
 
-  border: 0;
-
-  background: transparent;
+  max-width: 100%;
 
   color: #ffffff;
-
-  font-family: inherit;
-
-  text-align: left;
-
-  cursor: pointer;
+  text-decoration: none;
 }
 
 .fzft-brand-icon {
   display: flex;
-
   align-items: center;
   justify-content: center;
 
-  color: #078ff7;
+  width: 46px;
+  height: 46px;
 
-  /* FONT INCREASED */
-  font-size: 44px;
+  flex: 0 0 46px;
 
-  line-height: 1;
+  border-radius: 12px;
 
-  font-weight: 900;
+  background: linear-gradient(
+    135deg,
+    #26b9ff,
+    #0875e8
+  );
+
+  color: #ffffff;
+  font-size: 23px;
+
+  box-shadow:
+    0 8px 20px rgba(0, 123, 255, 0.2);
+
+  transition: transform 0.3s ease;
+}
+
+.fzft-brand-logo:hover .fzft-brand-icon {
+  transform: rotate(-10deg);
 }
 
 .fzft-brand-name {
-  color: #ffffff;
+  display: inline-flex;
+  align-items: baseline;
 
-  /* FONT INCREASED */
-  font-size: 36px;
+  gap: 5px;
 
+  font-size: 29px;
   line-height: 1;
+  letter-spacing: -1px;
 
+  white-space: nowrap;
+}
+
+.fzft-brand-name span {
+  color: #ffffff;
+  font-weight: 800;
+}
+
+.fzft-brand-name strong {
+  color: #39baff;
   font-weight: 900;
-
-  letter-spacing: -1.5px;
 }
-
-.fzft-brand-name > span {
-  color: #078ff7;
-}
-
-.fzft-brand-name small {
-  display: block;
-
-  margin-top: 7px;
-
-  color: #b3c4cf;
-
-  /* FONT INCREASED */
-  font-size: 11px;
-
-  font-weight: 700;
-
-  letter-spacing: 3px;
-}
-
 
 /* =========================================================
    BRAND DESCRIPTION
 ========================================================= */
 
 .fzft-brand-description {
-  max-width: 350px;
+  max-width: 290px;
 
-  margin: 20px 0 0;
+  margin: 20px 0 22px;
 
-  color: #b7c5cf;
+  color: #c2d6e8;
 
-  /* FONT INCREASED */
-  font-size: 18px;
-
-  line-height: 1.65;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.8;
 }
 
-
 /* =========================================================
-   SOCIALS
+   SOCIAL ICONS
 ========================================================= */
 
 .fzft-social-list {
   display: flex;
+  align-items: center;
+  flex-wrap: wrap;
 
-  gap: 12px;
-
-  margin-top: 20px;
+  gap: 10px;
 }
 
 .fzft-social-button {
-  width: 46px;
-  height: 46px;
-
-  padding: 0;
-
   display: flex;
-
   align-items: center;
   justify-content: center;
 
-  border-radius: 50%;
+  width: 43px;
+  height: 43px;
 
-  border: 1px solid rgba(25, 151, 255, 0.65);
+  flex: 0 0 43px;
 
-  background: rgba(7, 143, 247, 0.09);
+  border: 1px solid rgba(105, 191, 255, 0.3);
+  border-radius: 11px;
+
+  background: rgba(255, 255, 255, 0.07);
 
   color: #ffffff;
+  font-size: 19px;
 
-  /* ICON SIZE INCREASED */
-  font-size: 21px;
-
-  cursor: pointer;
+  text-decoration: none;
 
   transition:
-    transform 0.3s ease,
-    background 0.3s ease;
+    background 0.3s ease,
+    transform 0.3s ease;
 }
 
 .fzft-social-button:hover {
+  background: #139cff;
   transform: translateY(-4px);
-
-  background: #078ff7;
 }
 
-
 /* =========================================================
-   LINK BLOCKS
+   FOOTER COLUMNS
 ========================================================= */
 
 .fzft-links-block,
+.fzft-classes-block,
 .fzft-membership-block,
 .fzft-contact-block {
   position: relative;
 
+  width: 100%;
   min-width: 0;
 
   height: auto;
+  min-height: 0;
 }
 
-
 /* =========================================================
-   BLOCK TITLES
+   HEADINGS
 ========================================================= */
 
 .fzft-block-title {
   position: relative;
 
-  margin: 0 0 22px;
-
-  padding-bottom: 11px;
+  margin: 7px 0 24px;
+  padding: 0 0 12px;
 
   color: #ffffff;
 
-  /* FONT INCREASED */
-  font-size: 20px;
-
+  font-size: 17px;
   font-weight: 800;
-
-  letter-spacing: 1.5px;
+  line-height: 1.4;
 }
 
 .fzft-block-title::after {
@@ -541,20 +286,24 @@
   left: 0;
   bottom: 0;
 
-  width: 48px;
+  width: 36px;
   height: 3px;
 
-  border-radius: 20px;
+  border-radius: 10px;
 
-  background: #078ff7;
+  background: #36b8ff;
 }
 
-
 /* =========================================================
-   NAVIGATION LIST
+   LINKS
 ========================================================= */
 
 .fzft-link-list {
+  display: flex;
+  flex-direction: column;
+
+  gap: 13px;
+
   margin: 0;
   padding: 0;
 
@@ -562,37 +311,27 @@
 }
 
 .fzft-link-list li {
-  margin: 0 0 13px;
-
+  margin: 0;
   padding: 0;
 }
 
 .fzft-nav-link {
   display: inline-flex;
+  align-items: flex-start;
 
-  align-items: center;
+  gap: 8px;
 
-  gap: 10px;
+  max-width: 100%;
 
-  margin: 0;
-  padding: 0;
+  color: #c8daeb;
 
-  border: 0;
-
-  background: transparent;
-
-  color: #d1dce4;
-
-  font-family: inherit;
-
-  /* FONT INCREASED */
-  font-size: 17px;
-
+  font-size: 14px;
   font-weight: 500;
+  line-height: 1.6;
 
-  cursor: pointer;
+  text-decoration: none;
 
-  text-align: left;
+  overflow-wrap: anywhere;
 
   transition:
     color 0.25s ease,
@@ -600,104 +339,79 @@
 }
 
 .fzft-nav-link svg {
-  flex-shrink: 0;
+  flex: 0 0 14px;
 
-  color: #dce8ef;
+  margin-top: 4px;
 
-  /* ICON SIZE INCREASED */
-  font-size: 19px;
+  color: #49bfff;
+  font-size: 14px;
 }
 
 .fzft-nav-link:hover {
-  color: #28a9ff;
-
-  transform: translateX(5px);
+  color: #ffffff;
+  transform: translateX(3px);
 }
-
 
 /* =========================================================
    CONTACT
 ========================================================= */
 
-.fzft-contact-block {
-  position: relative;
+.fzft-contact-list {
+  display: flex;
+  flex-direction: column;
 
-  z-index: 3;
+  gap: 15px;
 }
 
 .fzft-contact-row {
-  width: 100%;
-
-  margin: 0 0 12px;
-  padding: 0;
-
   display: flex;
+  align-items: flex-start;
 
-  align-items: center;
+  gap: 10px;
 
-  gap: 12px;
-
-  border: 0;
-
-  background: transparent;
+  width: 100%;
+  min-width: 0;
 
   color: inherit;
-
-  font-family: inherit;
-
-  text-align: left;
-
   text-decoration: none;
 }
 
-button.fzft-contact-row {
-  cursor: pointer;
-}
-
 .fzft-contact-icon {
-  width: 43px;
-  height: 43px;
-
-  flex: 0 0 43px;
-
   display: flex;
-
   align-items: center;
   justify-content: center;
 
-  border-radius: 50%;
+  flex: 0 0 36px;
 
-  border:
-    1px solid rgba(7, 143, 247, 0.55);
+  width: 36px;
+  height: 36px;
 
-  background:
-    rgba(7, 143, 247, 0.08);
+  border: 1px solid rgba(83, 179, 255, 0.35);
+  border-radius: 10px;
 
-  color: #ffffff;
+  background: rgba(17, 144, 255, 0.13);
 
-  /* ICON SIZE INCREASED */
-  font-size: 20px;
+  color: #55c2ff;
+  font-size: 17px;
 }
 
 .fzft-contact-copy {
-  min-width: 0;
+  display: flex;
+  flex-direction: column;
 
-  display: block;
+  gap: 3px;
+
+  min-width: 0;
 }
 
 .fzft-contact-copy strong {
   display: block;
 
-  margin-bottom: 3px;
+  color: #f1f8ff;
 
-  color: #e2eaf0;
-
-  /* FONT INCREASED */
-  font-size: 16px;
-
-  line-height: 1.3;
-
+  font-size: 13px;
   font-weight: 600;
+  line-height: 1.5;
 
   overflow-wrap: anywhere;
 }
@@ -705,228 +419,242 @@ button.fzft-contact-row {
 .fzft-contact-copy small {
   display: block;
 
-  color: #7890a1;
+  color: #aac7e0;
 
-  /* FONT INCREASED */
-  font-size: 13px;
-
-  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.5;
 }
 
+a.fzft-contact-row:hover strong {
+  color: #56c2ff;
+}
 
 /* =========================================================
-   BOTTOM
+   COPYRIGHT SECTION
 ========================================================= */
 
 .fzft-bottom {
   position: relative;
+  z-index: 2;
 
-  z-index: 5;
+  display: block;
 
   width: 100%;
 
   height: auto;
+  min-height: 0;
+  max-height: none;
+
+  margin: 0;
+  padding: 0;
 
   border-top:
-    1px solid rgba(7, 143, 247, 0.5);
+    1px solid rgba(135, 202, 255, 0.2);
 
-  background: #020e18;
+  background: #041326;
 
   overflow: visible;
 }
 
+/* =========================================================
+   COPYRIGHT INNER
+========================================================= */
+
 .fzft-bottom-inner {
-  width: min(1400px, calc(100% - 80px));
-
-  min-height: 66px;
-
-  margin: 0 auto;
-
   display: flex;
-
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
 
-  gap: 25px;
+  gap: 18px;
+
+  width: min(1320px, calc(100% - 64px));
+
+  height: auto;
+  min-height: 76px;
+  max-height: none;
+
+  margin: 0 auto;
+  padding: 18px 0;
+
+  overflow: visible;
 }
 
-
 /* =========================================================
-   COPYRIGHT
+   COPYRIGHT TEXT
 ========================================================= */
 
 .fzft-copyright {
   margin: 0;
 
-  color: #aebdc7;
+  color: #c0d2e5;
 
-  /* FONT INCREASED */
-  font-size: 15px;
+  font-size: 13px;
+  line-height: 1.6;
 }
 
-
 /* =========================================================
-   POLICY
+   PRIVACY POLICY
 ========================================================= */
 
 .fzft-policy {
   display: flex;
-
   align-items: center;
+  flex-wrap: wrap;
 
-  gap: 16px;
+  gap: 12px;
 }
 
 .fzft-policy a {
-  color: #b5c3cc;
+  color: #c0d2e5;
 
-  /* FONT INCREASED */
-  font-size: 15px;
+  font-size: 13px;
+  line-height: 1.5;
 
   text-decoration: none;
 
-  transition: color 0.25s ease;
+  transition: color 0.3s ease;
 }
 
 .fzft-policy a:hover {
-  color: #28a9ff;
+  color: #59c5ff;
 }
 
 .fzft-policy-divider {
   width: 1px;
-  height: 18px;
+  height: 15px;
 
-  background:
-    rgba(255, 255, 255, 0.25);
+  background: rgba(200, 225, 255, 0.35);
 }
-
 
 /* =========================================================
    BACK TO TOP
 ========================================================= */
 
 .fzft-back-top {
-  display: flex;
-
+  display: inline-flex;
   align-items: center;
+  justify-content: center;
 
-  gap: 13px;
+  gap: 10px;
 
+  min-height: 42px;
+
+  margin: 0;
   padding: 0;
 
   border: 0;
-
   background: transparent;
 
   color: #ffffff;
 
   font-family: inherit;
-
-  /* FONT INCREASED */
-  font-size: 14px;
-
-  font-weight: 800;
-
-  letter-spacing: 1px;
+  font-size: 13px;
+  font-weight: 700;
 
   cursor: pointer;
 }
 
 .fzft-back-top > span {
-  width: 42px;
-  height: 42px;
-
   display: flex;
-
   align-items: center;
   justify-content: center;
 
+  flex: 0 0 40px;
+
+  width: 40px;
+  height: 40px;
+
   border-radius: 50%;
 
-  border: 2px solid #078ff7;
+  background: #139aff;
 
   color: #ffffff;
+  font-size: 18px;
 
-  /* ICON SIZE INCREASED */
-  font-size: 20px;
-
-  transition:
-    background 0.3s ease,
-    transform 0.3s ease;
+  transition: transform 0.3s ease;
 }
 
 .fzft-back-top:hover > span {
-  transform: translateY(-3px);
-
-  background: #078ff7;
+  transform: translateY(-4px);
 }
 
-
 /* =========================================================
-   TABLET
+   LAPTOP — 1200PX
 ========================================================= */
 
-@media (max-width: 1050px) {
-
-  .fzft-cta-inner,
-  .fzft-main-grid,
-  .fzft-bottom-inner {
-    width: calc(100% - 50px);
-  }
-
-  .fzft-cta-title {
-    font-size: 47px;
-  }
-
-  .fzft-join-button {
-    min-width: 190px;
-
-    height: 56px;
-
-    /* FONT INCREASED */
-    font-size: 17px;
-  }
+@media (max-width: 1200px) {
 
   .fzft-main-grid {
     grid-template-columns:
-      1.2fr 1fr 1fr;
+      minmax(0, 1.25fr)
+      repeat(3, minmax(0, 1fr));
 
-    gap: 35px;
+    gap: 30px 24px;
   }
 
   .fzft-contact-block {
     grid-column: 1 / -1;
+  }
 
+  .fzft-contact-list {
     display: grid;
 
     grid-template-columns:
       repeat(2, minmax(0, 1fr));
 
-    gap: 10px 30px;
-  }
-
-  .fzft-contact-block .fzft-block-title {
-    grid-column: 1 / -1;
+    gap: 18px 25px;
   }
 }
-/* =========================================================
-   FITZONE FOOTER
-   PART 2 / 2
-   RESPONSIVE
-   SAME DESIGN — BIGGER READABLE FONTS
-   MOBILE NO-CUT FIX INCLUDED
-========================================================= */
-
 
 /* =========================================================
-   TABLET / SMALL LAPTOP — 900px
+   TABLET — 900PX
 ========================================================= */
 
 @media (max-width: 900px) {
 
+  .fzft-main-grid {
+    width: calc(100% - 48px);
+
+    grid-template-columns:
+      repeat(3, minmax(0, 1fr));
+
+    gap: 30px 22px;
+
+    padding: 45px 0 42px;
+  }
+
+  .fzft-brand {
+    grid-column: 1 / -1;
+  }
+
+  .fzft-brand-description {
+    max-width: 430px;
+  }
+
+  .fzft-contact-block {
+    grid-column: 1 / -1;
+  }
+
+  .fzft-bottom-inner {
+    width: calc(100% - 48px);
+  }
+}
+
+/* =========================================================
+   MOBILE — 700PX
+   TWO COLUMN LAYOUT
+========================================================= */
+
+@media (max-width: 700px) {
+
+  /* ROOT */
+
   .fzft-root {
     position: relative;
 
+    display: block;
+
     width: 100%;
 
     height: auto;
@@ -935,32 +663,6 @@ button.fzft-contact-row {
 
     overflow: visible;
   }
-
-
-  /* CTA */
-
-  .fzft-cta {
-    width: 100%;
-
-    height: auto;
-
-    min-height: 270px;
-    max-height: none;
-
-    overflow: hidden;
-  }
-
-  .fzft-cta-inner {
-    position: relative;
-
-    height: auto;
-
-    min-height: 0;
-    max-height: none;
-
-    overflow: visible;
-  }
-
 
   /* MAIN */
 
@@ -976,347 +678,84 @@ button.fzft-contact-row {
     overflow: visible;
   }
 
-  .fzft-main-grid {
-    height: auto;
-
-    min-height: 0;
-    max-height: none;
-
-    overflow: visible;
-  }
-
-
-  /* COLUMNS */
-
-  .fzft-brand,
-  .fzft-links-block,
-  .fzft-membership-block,
-  .fzft-contact-block {
-    height: auto;
-
-    min-height: 0;
-    max-height: none;
-
-    overflow: visible;
-  }
-
-
-  /* BOTTOM */
-
-  .fzft-bottom {
-    position: relative;
-
-    width: 100%;
-
-    height: auto;
-
-    min-height: 0;
-    max-height: none;
-
-    overflow: visible;
-  }
-
-  .fzft-bottom-inner {
-    height: auto;
-
-    max-height: none;
-
-    overflow: visible;
-  }
-}
-
-
-/* =========================================================
-   MOBILE — 700px
-========================================================= */
-
-@media (max-width: 700px) {
-
-  /* =======================================================
-     ROOT
-  ======================================================= */
-
-  .fzft-root {
-    position: relative !important;
-
-    display: block !important;
-
-    width: 100% !important;
-
-    height: auto !important;
-    min-height: 0 !important;
-    max-height: none !important;
-
-    margin: 0 !important;
-
-    padding: 0 0 45px !important;
-
-    overflow: visible !important;
-
-    flex: none !important;
-  }
-
-
-  /* =======================================================
-     CTA
-  ======================================================= */
-
-  .fzft-cta {
-    position: relative;
-
-    width: 100%;
-
-    height: auto;
-
-    min-height: 270px;
-    max-height: none;
-
-    background-position: 65% center;
-
-    overflow: hidden;
-  }
-
-  .fzft-cta-overlay {
-    background:
-      linear-gradient(
-        90deg,
-        rgba(2, 15, 25, 0.97),
-        rgba(2, 15, 25, 0.82)
-      );
-  }
-
-  .fzft-cta-inner {
-    width: 100%;
-
-    height: auto;
-
-    margin: 0;
-
-    padding: 28px 16px;
-
-    flex-direction: column;
-
-    align-items: flex-start;
-    justify-content: center;
-
-    gap: 20px;
-
-    overflow: visible;
-  }
-
-
-  /* =======================================================
-     EYEBROW — BIGGER FONT
-  ======================================================= */
-
-  .fzft-eyebrow {
-    margin-bottom: 7px;
-
-    font-size: 14px;
-
-    font-weight: 800;
-
-    letter-spacing: 2.5px;
-  }
-
-  .fzft-eyebrow span {
-    width: 25px;
-  }
-
-
-  /* =======================================================
-     CTA TITLE — BIGGER
-  ======================================================= */
-
-  .fzft-cta-title {
-    max-width: 430px;
-
-    font-size: 40px;
-
-    line-height: 1.02;
-
-    letter-spacing: -1.2px;
-  }
-
-  .fzft-cta-title strong {
-    display: block;
-
-    margin-top: 3px;
-  }
-
-
-  /* =======================================================
-     CTA DESCRIPTION — BIGGER
-  ======================================================= */
-
-  .fzft-cta-description {
-    max-width: 370px;
-
-    margin-top: 10px;
-
-    font-size: 17px;
-
-    line-height: 1.6;
-  }
-
-
-  /* =======================================================
-     JOIN BUTTON — BIGGER TEXT
-  ======================================================= */
-
-  .fzft-join-button {
-    min-width: 175px;
-
-    height: 52px;
-
-    padding: 0 23px;
-
-    gap: 12px;
-
-    font-size: 16px;
-  }
-
-  .fzft-join-button svg {
-    font-size: 20px;
-  }
-
-
-  /* =======================================================
-     MAIN FOOTER
-  ======================================================= */
-
-  .fzft-main {
-    position: relative !important;
-
-    display: block !important;
-
-    width: 100% !important;
-
-    height: auto !important;
-    min-height: 0 !important;
-    max-height: none !important;
-
-    overflow: visible !important;
-  }
-
-  .fzft-main::after {
-    width: 220px;
-
-    opacity: 0.07;
-  }
-
-
-  /* =======================================================
-     MAIN GRID
-     SAME 2 COLUMN MOBILE DESIGN
-  ======================================================= */
+  /* GRID */
 
   .fzft-main-grid {
-    position: relative !important;
-
-    display: grid !important;
-
-    width: 100% !important;
-
-    height: auto !important;
-    min-height: 0 !important;
-    max-height: none !important;
-
-    margin: 0 !important;
-
-    padding: 32px 16px 40px !important;
+    display: grid;
 
     grid-template-columns:
-      repeat(2, minmax(0, 1fr)) !important;
+      repeat(2, minmax(0, 1fr));
 
-    gap: 32px 20px !important;
+    align-items: start;
 
-    overflow: visible !important;
+    column-gap: 14px;
+    row-gap: 29px;
+
+    width: calc(100% - 32px);
+
+    height: auto;
+    min-height: 0;
+    max-height: none;
+
+    margin: 0 auto;
+    padding: 35px 0 38px;
+
+    overflow: visible;
   }
 
-
-  /* =======================================================
-     BRAND
-  ======================================================= */
+  /* BRAND FULL WIDTH */
 
   .fzft-brand {
-    grid-column: 1 / -1 !important;
+    grid-column: 1 / -1;
 
-    width: 100% !important;
-    max-width: none !important;
-
-    height: auto !important;
-
-    overflow: visible !important;
+    width: 100%;
+    max-width: none;
   }
-
-
-  /* BRAND ICON */
 
   .fzft-brand-icon {
-    font-size: 41px;
+    width: 43px;
+    height: 43px;
+
+    flex-basis: 43px;
+
+    font-size: 21px;
   }
-
-
-  /* BRAND NAME */
 
   .fzft-brand-name {
-    font-size: 34px;
+    font-size: 27px;
   }
-
-
-  /* SMALL TAGLINE */
-
-  .fzft-brand-name small {
-    margin-top: 7px;
-
-    font-size: 11px;
-
-    letter-spacing: 2.5px;
-  }
-
-
-  /* BRAND DESCRIPTION */
 
   .fzft-brand-description {
-    max-width: 450px;
+    max-width: 400px;
 
-    margin-top: 15px;
+    margin: 16px 0 18px;
 
-    font-size: 17px;
-
-    line-height: 1.65;
+    font-size: 15px;
+    line-height: 1.7;
   }
 
-
-  /* =======================================================
-     SOCIAL ICONS
-  ======================================================= */
-
   .fzft-social-list {
-    flex-wrap: wrap;
-
     gap: 10px;
   }
 
   .fzft-social-button {
-    width: 44px;
-    height: 44px;
+    width: 41px;
+    height: 41px;
 
-    flex-shrink: 0;
+    flex-basis: 41px;
 
-    font-size: 20px;
+    font-size: 18px;
   }
 
-
-  /* =======================================================
-     QUICK LINKS + MEMBERSHIP
-  ======================================================= */
+  /* COLUMNS */
 
   .fzft-links-block,
-  .fzft-membership-block {
-    width: 100%;
+  .fzft-classes-block,
+  .fzft-membership-block,
+  .fzft-contact-block {
+    grid-column: auto;
 
+    width: 100%;
     min-width: 0;
 
     height: auto;
@@ -1326,733 +765,288 @@ button.fzft-contact-row {
     overflow: visible;
   }
 
-
-  /* TITLES */
-
   .fzft-block-title {
-    margin-bottom: 18px;
+    margin: 0 0 19px;
+    padding-bottom: 10px;
 
-    font-size: 18px;
-
-    font-weight: 800;
-
-    line-height: 1.3;
+    font-size: 16px;
+    line-height: 1.4;
   }
 
-
-  /* LINKS */
+  .fzft-link-list {
+    gap: 12px;
+  }
 
   .fzft-nav-link {
-    font-size: 16px;
+    gap: 6px;
 
-    line-height: 1.4;
+    font-size: 14px;
+    line-height: 1.5;
   }
 
   .fzft-nav-link svg {
-    font-size: 18px;
+    flex: 0 0 12px;
+
+    font-size: 12px;
+    margin-top: 4px;
   }
 
+  /* CONTACT BESIDE MEMBERSHIP */
 
-  /* =======================================================
-     CONTACT
-  ======================================================= */
+  .fzft-contact-list {
+    display: flex;
+    flex-direction: column;
 
-  .fzft-contact-block {
-    grid-column: 1 / -1 !important;
-
-    position: relative !important;
-
-    display: block !important;
-
-    width: 100% !important;
-
-    height: auto !important;
-    min-height: 0 !important;
-    max-height: none !important;
-
-    overflow: visible !important;
+    gap: 13px;
   }
 
   .fzft-contact-row {
-    width: 100%;
+    align-items: flex-start;
 
-    height: auto;
+    gap: 7px;
 
-    margin-bottom: 12px;
-
-    overflow: visible;
+    min-width: 0;
   }
 
   .fzft-contact-icon {
-    width: 43px;
-    height: 43px;
+    flex: 0 0 29px;
 
-    flex: 0 0 43px;
+    width: 29px;
+    height: 29px;
 
-    font-size: 19px;
+    border-radius: 8px;
+
+    font-size: 14px;
   }
 
   .fzft-contact-copy {
-    height: auto;
+    min-width: 0;
+  }
 
+  .fzft-contact-copy strong {
+    font-size: 12px;
+    line-height: 1.45;
+
+    overflow-wrap: anywhere;
+  }
+
+  .fzft-contact-copy small {
+    font-size: 11px;
+    line-height: 1.4;
+  }
+
+  /* COPYRIGHT BOTTOM */
+
+  .fzft-bottom {
+    position: relative;
+
+    display: block;
+
+    width: 100%;
+
+    height: auto;
+    min-height: 0;
     max-height: none;
+
+    margin: 0;
+    padding: 0;
 
     overflow: visible;
   }
 
-
-  /* CONTACT MAIN TEXT */
-
-  .fzft-contact-copy strong {
-    font-size: 16px;
-
-    line-height: 1.4;
-  }
-
-
-  /* CONTACT SMALL LABEL */
-
-  .fzft-contact-copy small {
-    font-size: 13px;
-
-    line-height: 1.4;
-  }
-
-
-  /* =======================================================
-     BOTTOM FOOTER
-     MOBILE NO CUT
-  ======================================================= */
-
-  .fzft-bottom {
-    position: relative !important;
-
-    display: block !important;
-
-    clear: both !important;
-
-    width: 100% !important;
-
-    height: auto !important;
-
-    min-height: 230px !important;
-    max-height: none !important;
-
-    margin: 0 !important;
-
-    padding: 0 0 35px !important;
-
-    overflow: visible !important;
-
-    flex: none !important;
-  }
-
   .fzft-bottom-inner {
-    position: relative !important;
+    display: flex;
+    flex-direction: column;
 
-    display: flex !important;
+    align-items: flex-start;
+    justify-content: flex-start;
 
-    flex-direction: column !important;
+    width: calc(100% - 32px);
 
-    align-items: flex-start !important;
-    justify-content: flex-start !important;
+    height: auto;
+    min-height: 0;
+    max-height: none;
 
-    width: 100% !important;
-
-    height: auto !important;
-
-    min-height: 210px !important;
-    max-height: none !important;
-
-    margin: 0 !important;
+    margin: 0 auto;
 
     padding:
-      20px
-      16px
-      55px !important;
+      24px 0
+      calc(38px + env(safe-area-inset-bottom, 0px));
 
-    gap: 16px !important;
+    gap: 16px;
 
-    overflow: visible !important;
+    overflow: visible;
   }
-
-
-  /* =======================================================
-     COPYRIGHT — BIGGER
-  ======================================================= */
 
   .fzft-copyright {
-    display: block !important;
+    width: 100%;
+    margin: 0;
 
-    width: 100% !important;
-
-    height: auto !important;
-
-    margin: 0 !important;
-
-    color: #aebdc7;
-
-    font-size: 14px !important;
-
+    font-size: 14px;
     line-height: 1.6;
-
-    visibility: visible !important;
-
-    opacity: 1 !important;
-
-    flex-shrink: 0 !important;
   }
 
-
-  /* =======================================================
-     PRIVACY + TERMS — BIGGER
-  ======================================================= */
-
   .fzft-policy {
-    display: flex !important;
-
-    width: 100% !important;
-
-    height: auto !important;
-
-    min-height: 22px !important;
-    max-height: none !important;
+    display: flex;
 
     align-items: center;
+    flex-wrap: wrap;
 
-    flex-wrap: wrap !important;
+    gap: 11px;
 
-    gap: 11px !important;
-
-    visibility: visible !important;
-
-    opacity: 1 !important;
-
-    overflow: visible !important;
-
-    flex-shrink: 0 !important;
+    width: 100%;
   }
 
   .fzft-policy a {
-    display: inline-flex !important;
-
-    font-size: 14px !important;
-
-    line-height: 1.4;
-
-    visibility: visible !important;
-
-    opacity: 1 !important;
+    font-size: 14px;
+    line-height: 1.5;
   }
-
-  .fzft-policy-divider {
-    height: 17px;
-  }
-
-
-  /* =======================================================
-     BACK TO TOP — BIGGER
-  ======================================================= */
 
   .fzft-back-top {
-    position: relative !important;
+    display: inline-flex;
 
-    display: flex !important;
+    align-self: flex-start;
 
-    width: auto !important;
+    min-height: 42px;
 
-    height: auto !important;
+    margin: 0;
+    padding: 0;
 
-    min-height: 42px !important;
-
-    margin: 2px 0 20px !important;
-
-    padding: 0 !important;
-
-    justify-content: flex-start;
-
-    font-size: 13px !important;
-
-    visibility: visible !important;
-
-    opacity: 1 !important;
-
-    flex-shrink: 0 !important;
-  }
-
-  .fzft-back-top > span {
-    width: 40px;
-    height: 40px;
-
-    font-size: 19px;
+    font-size: 14px;
   }
 }
 
-
 /* =========================================================
-   SMALL MOBILE — 430px
-   SAME DESIGN, FONT SMALL NAHI HOGA
+   SMALL MOBILE — 430PX
 ========================================================= */
 
 @media (max-width: 430px) {
 
-  /* =======================================================
-     ROOT
-  ======================================================= */
-
-  .fzft-root {
-    width: 100% !important;
-
-    height: auto !important;
-
-    min-height: 0 !important;
-    max-height: none !important;
-
-    padding-bottom: 65px !important;
-
-    overflow: visible !important;
-  }
-
-
-  /* =======================================================
-     CTA
-  ======================================================= */
-
-  .fzft-cta {
-    height: auto;
-
-    min-height: 255px;
-  }
-
-  .fzft-cta-inner {
-    padding: 24px 14px;
-  }
-
-
-  /* EYEBROW */
-
-  .fzft-eyebrow {
-    font-size: 13px;
-
-    letter-spacing: 2px;
-  }
-
-
-  /* TITLE */
-
-  .fzft-cta-title {
-    font-size: 36px;
-
-    line-height: 1.04;
-  }
-
-
-  /* DESCRIPTION */
-
-  .fzft-cta-description {
-    font-size: 16px;
-
-    line-height: 1.6;
-  }
-
-
-  /* BUTTON */
-
-  .fzft-join-button {
-    height: 50px;
-
-    padding: 0 20px;
-
-    font-size: 15px;
-  }
-
-
-  /* =======================================================
-     MAIN
-  ======================================================= */
-
-  .fzft-main {
-    width: 100% !important;
-
-    height: auto !important;
-
-    min-height: 0 !important;
-    max-height: none !important;
-
-    overflow: visible !important;
-  }
-
-
-  /* =======================================================
-     GRID
-     SAME TWO COLUMNS
-  ======================================================= */
-
   .fzft-main-grid {
-    width: 100% !important;
+    width: calc(100% - 28px);
 
-    height: auto !important;
+    column-gap: 12px;
+    row-gap: 27px;
 
-    min-height: 0 !important;
-    max-height: none !important;
-
-    padding:
-      28px
-      14px
-      42px !important;
-
-    grid-template-columns:
-      repeat(2, minmax(0, 1fr)) !important;
-
-    gap: 28px 14px !important;
-
-    overflow: visible !important;
-  }
-
-
-  /* =======================================================
-     BRAND
-  ======================================================= */
-
-  .fzft-brand {
-    height: auto !important;
-
-    overflow: visible !important;
-  }
-
-  .fzft-brand-icon {
-    font-size: 39px;
+    padding: 32px 0 36px;
   }
 
   .fzft-brand-name {
-    font-size: 32px;
-  }
-
-  .fzft-brand-name small {
-    font-size: 10px;
-
-    letter-spacing: 2.3px;
+    font-size: 26px;
   }
 
   .fzft-brand-description {
-    font-size: 16px;
-
-    line-height: 1.65;
+    font-size: 14px;
   }
-
-
-  /* =======================================================
-     SOCIAL
-  ======================================================= */
-
-  .fzft-social-button {
-    width: 42px;
-    height: 42px;
-
-    font-size: 19px;
-  }
-
-
-  /* =======================================================
-     QUICK LINKS / MEMBERSHIP
-  ======================================================= */
 
   .fzft-block-title {
-    font-size: 17px;
-
-    line-height: 1.3;
+    font-size: 15px;
   }
 
   .fzft-nav-link {
-    font-size: 15px;
-
-    line-height: 1.45;
-  }
-
-  .fzft-nav-link svg {
-    font-size: 17px;
-  }
-
-
-  /* =======================================================
-     CONTACT
-  ======================================================= */
-
-  .fzft-contact-block {
-    grid-column: 1 / -1 !important;
-
-    height: auto !important;
-
-    max-height: none !important;
-
-    overflow: visible !important;
-  }
-
-  .fzft-contact-icon {
-    width: 40px;
-    height: 40px;
-
-    flex: 0 0 40px;
-
-    font-size: 18px;
-  }
-
-  .fzft-contact-copy strong {
-    font-size: 15px;
-
-    line-height: 1.4;
-  }
-
-  .fzft-contact-copy small {
     font-size: 13px;
   }
 
+  .fzft-contact-icon {
+    flex: 0 0 27px;
 
-  /* =======================================================
-     BOTTOM
-     EXTRA PHONE SPACE — NO CUT
-  ======================================================= */
+    width: 27px;
+    height: 27px;
 
-  .fzft-bottom {
-    position: relative !important;
+    font-size: 13px;
+  }
 
-    display: block !important;
+  .fzft-contact-row {
+    gap: 6px;
+  }
 
-    width: 100% !important;
+  .fzft-contact-copy strong {
+    font-size: 11px;
+  }
 
-    height: auto !important;
-
-    min-height: 270px !important;
-    max-height: none !important;
-
-    padding-bottom: 50px !important;
-
-    overflow: visible !important;
+  .fzft-contact-copy small {
+    font-size: 10px;
   }
 
   .fzft-bottom-inner {
-    position: relative !important;
-
-    display: flex !important;
-
-    flex-direction: column !important;
-
-    align-items: flex-start !important;
-    justify-content: flex-start !important;
-
-    width: 100% !important;
-
-    height: auto !important;
-
-    min-height: 240px !important;
-    max-height: none !important;
-
-    margin: 0 !important;
+    width: calc(100% - 28px);
 
     padding:
-      20px
-      14px
-      75px !important;
-
-    gap: 15px !important;
-
-    overflow: visible !important;
-  }
-
-
-  /* COPYRIGHT */
-
-  .fzft-copyright {
-    display: block !important;
-
-    width: 100% !important;
-
-    height: auto !important;
-
-    font-size: 14px !important;
-
-    line-height: 1.6;
-
-    flex-shrink: 0 !important;
-  }
-
-
-  /* PRIVACY + TERMS */
-
-  .fzft-policy {
-    display: flex !important;
-
-    width: 100% !important;
-
-    height: auto !important;
-
-    flex-wrap: wrap !important;
-
-    gap: 10px !important;
-
-    flex-shrink: 0 !important;
-
-    overflow: visible !important;
-  }
-
-  .fzft-policy a {
-    font-size: 14px !important;
-  }
-
-
-  /* BACK TO TOP */
-
-  .fzft-back-top {
-    display: flex !important;
-
-    width: 100% !important;
-
-    height: auto !important;
-
-    min-height: 42px !important;
-
-    margin: 4px 0 30px !important;
-
-    justify-content: flex-start;
-
-    font-size: 13px !important;
-
-    visibility: visible !important;
-
-    opacity: 1 !important;
-
-    flex-shrink: 0 !important;
-  }
-
-  .fzft-back-top > span {
-    width: 40px;
-    height: 40px;
-
-    font-size: 19px;
+      23px 0
+      calc(42px + env(safe-area-inset-bottom, 0px));
   }
 }
 
-
 /* =========================================================
-   VERY SMALL MOBILE — 360px
-   FONT STILL READABLE
+   VERY SMALL MOBILE — 360PX
 ========================================================= */
 
 @media (max-width: 360px) {
 
-  .fzft-cta-title {
-    font-size: 33px;
-  }
-
-  .fzft-eyebrow {
-    font-size: 12px;
-  }
-
-  .fzft-cta-description {
-    font-size: 16px;
-  }
-
   .fzft-main-grid {
-    padding-left: 12px !important;
-    padding-right: 12px !important;
+    width: calc(100% - 24px);
 
-    gap: 25px 12px !important;
-  }
-
-  .fzft-brand-name {
-    font-size: 30px;
-  }
-
-  .fzft-brand-description {
-    font-size: 16px;
+    column-gap: 9px;
+    row-gap: 25px;
   }
 
   .fzft-block-title {
-    font-size: 16px;
+    font-size: 14px;
   }
 
   .fzft-nav-link {
-    font-size: 15px;
-  }
-
-  .fzft-contact-copy strong {
-    font-size: 15px;
-  }
-
-  .fzft-contact-copy small {
     font-size: 12px;
   }
 
-  .fzft-copyright {
-    font-size: 13px !important;
+  .fzft-contact-icon {
+    flex-basis: 25px;
+
+    width: 25px;
+    height: 25px;
   }
 
-  .fzft-policy a {
-    font-size: 13px !important;
-  }
-
-  .fzft-back-top {
-    font-size: 12px !important;
-  }
-
-
-  /* EXTRA BOTTOM SAFETY */
-
-  .fzft-bottom {
-    min-height: 290px !important;
-
-    padding-bottom: 60px !important;
+  .fzft-contact-copy strong {
+    font-size: 10px;
   }
 
   .fzft-bottom-inner {
-    min-height: 260px !important;
-
-    padding:
-      20px
-      12px
-      90px !important;
-  }
-
-  .fzft-back-top {
-    margin-bottom: 35px !important;
+    width: calc(100% - 24px);
   }
 }
 
-
 /* =========================================================
-   FINAL MOBILE NO-CUT SAFETY
-   NOTHING SHOULD BE ADDED BELOW THIS
+   ACCESSIBILITY
 ========================================================= */
 
+@media (prefers-reduced-motion: reduce) {
+
+  .fzft-root a,
+  .fzft-root button,
+  .fzft-root svg {
+    transition: none;
+  }
+}
+
+/* FOOTER BOTTOM BORDER RESTORE */
+
+.fzft-bottom {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: auto;
+
+  border-top: 1px solid #37618a;
+  background: #041326;
+}
+
+.fzft-bottom-inner {
+  position: relative;
+  height: auto;
+  max-height: none;
+}
+
 @media (max-width: 700px) {
-
-  .fzft-root,
-  .fzft-main,
-  .fzft-main-grid,
-  .fzft-brand,
-  .fzft-links-block,
-  .fzft-membership-block,
-  .fzft-contact-block,
-  .fzft-bottom,
   .fzft-bottom-inner {
-    max-height: none !important;
-
-    overflow-y: visible !important;
-  }
-
-  .fzft-root,
-  .fzft-main,
-  .fzft-main-grid,
-  .fzft-bottom,
-  .fzft-bottom-inner {
-    height: auto !important;
-  }
-
-  .fzft-copyright,
-  .fzft-policy,
-  .fzft-back-top {
-    visibility: visible !important;
-
-    opacity: 1 !important;
+    padding: 24px 0 38px;
   }
 }

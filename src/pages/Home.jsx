@@ -8,6 +8,7 @@ import Trainers from "../components/Trainers";
 import GymGallery from "../components/GymGallery";
 import Testimonials from "../components/Testimonials";
 
+
 const Home = () => {
   return (
     <>
@@ -19,6 +20,7 @@ const Home = () => {
       <Trainers />
       <GymGallery />
       <Testimonials />
+      
     </>
   );
 };

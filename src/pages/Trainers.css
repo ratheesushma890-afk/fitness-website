@@ -1,29 +1,37 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap");
 
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
 
-/* =========================================================
-   TRAINERS PAGE
-========================================================= */
+/* =========================================
+   FITZONE TRAINERS — GLOBAL
+========================================= */
 
 .ft-trainers-page {
-  width: 100%;
-  max-width: 100%;
+  --ft-bg: #041521;
+  --ft-surface: #0b2333;
+  --ft-blue: #159cf5;
+  --ft-cyan: #69d6ff;
+  --ft-muted: #b3c4d0;
 
-  overflow-x: hidden;
+  width: 100%;
+  overflow-x: clip;
+  background: var(--ft-bg);
+  color: #f7fbff;
 
   font-family: "Inter", sans-serif;
-
-  color: #ffffff;
-
-  background: #031522;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.7;
 }
 
-.ft-trainers-page * {
+.ft-trainers-page *,
+.ft-trainers-page *::before,
+.ft-trainers-page *::after {
   box-sizing: border-box;
 }
 
 .ft-trainers-page button {
   font-family: inherit;
+  cursor: pointer;
 }
 
 .ft-trainers-page img {
@@ -32,462 +40,357 @@
 }
 
 .ft-trainers-container {
-  width: min(1220px, calc(100% - 48px));
-
-  margin: 0 auto;
+  width: min(1180px, calc(100% - 48px));
+  margin-inline: auto;
 }
 
-
-/* =========================================================
-   HERO
-========================================================= */
+/* =========================================
+   HERO — COMPACT PREMIUM DESIGN
+========================================= */
 
 .ft-trainers-hero {
   position: relative;
-
-  width: 100%;
-
-  min-height: 390px;
-  height: 54vh;
-  max-height: 460px;
+  isolation: isolate;
 
   display: flex;
-  align-items: flex-end;
+  align-items: center;
 
+  min-height: 400px;
   overflow: hidden;
 
   background:
+    #071522
     url("https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1900&q=90")
-    center 38% / cover no-repeat;
+    center 42% / cover no-repeat;
 }
 
+.ft-trainers-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -2;
 
-/* =========================================================
-   HERO OVERLAY
-========================================================= */
+  background: linear-gradient(
+    90deg,
+    rgba(2, 13, 24, 0.97) 0%,
+    rgba(2, 18, 31, 0.89) 44%,
+    rgba(2, 18, 31, 0.28) 100%
+  );
+}
 
 .ft-trainers-hero-overlay {
   position: absolute;
   inset: 0;
-
-  z-index: 1;
+  z-index: -1;
 
   background:
-    radial-gradient(
-      circle at 88% 20%,
-      rgba(7, 143, 247, 0.18),
-      transparent 28%
-    ),
-    linear-gradient(
-      90deg,
-      rgba(2, 14, 24, 0.99) 0%,
-      rgba(3, 21, 34, 0.94) 43%,
-      rgba(3, 21, 34, 0.38) 100%
-    ),
     linear-gradient(
       0deg,
-      rgba(3, 21, 34, 0.98) 0%,
-      rgba(3, 21, 34, 0.1) 55%,
-      transparent 100%
+      #041521 0%,
+      transparent 38%
+    ),
+    radial-gradient(
+      circle at 78% 20%,
+      rgba(22, 157, 255, 0.17),
+      transparent 35%
     );
 }
 
+/* HERO DECORATIONS */
 
-/* =========================================================
-   HERO DECORATION
-========================================================= */
-
-.ft-trainers-hero::before {
-  content: "";
-
+.ft-hero-orb {
   position: absolute;
+  pointer-events: none;
 
-  z-index: 2;
-
-  width: 270px;
-  height: 270px;
-
-  top: 20px;
-  right: -95px;
-
-  border:
-    1px solid
-    rgba(42, 183, 255, 0.14);
+  border: 1px solid rgba(105, 214, 255, 0.2);
 
   transform: rotate(45deg);
+  animation: ft-float 7s ease-in-out infinite;
 }
 
-.ft-trainers-hero::after {
-  content: "";
-
-  position: absolute;
-
-  z-index: 2;
-
-  width: 130px;
-  height: 130px;
-
-  top: 120px;
-  right: 150px;
-
-  border:
-    1px solid
-    rgba(42, 183, 255, 0.12);
-
-  transform: rotate(45deg);
+.ft-hero-orb-one {
+  width: 220px;
+  height: 220px;
+  right: -100px;
+  top: 70px;
 }
 
+.ft-hero-orb-two {
+  width: 100px;
+  height: 100px;
+  right: 155px;
+  top: 170px;
+  animation-delay: -3s;
+}
 
-/* =========================================================
-   HERO INNER
-========================================================= */
+/* HERO CONTENT */
 
 .ft-trainers-hero-inner {
   position: relative;
-  z-index: 3;
-
-  width: min(1220px, calc(100% - 48px));
-
-  min-height: 390px;
-
-  margin: 0 auto;
-
-  padding: 70px 0 38px;
+  z-index: 1;
 
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   justify-content: space-between;
+  gap: 40px;
 
-  gap: 55px;
+  padding: 95px 0 90px;
 }
 
 .ft-trainers-hero-content {
-  max-width: 760px;
+  max-width: 730px;
+  animation: ft-reveal 0.9s ease both;
 }
-
-
-/* =========================================================
-   SMALL TITLE
-========================================================= */
 
 .ft-small-title {
-  display: flex;
+  display: inline-flex;
   align-items: center;
+  gap: 11px;
 
-  width: fit-content;
-
-  gap: 10px;
-
-  margin-bottom: 10px;
-
-  color: #2ab7ff;
-
-  font-size: 14px;
-  line-height: 1.2;
-
-  font-weight: 900;
-
-  letter-spacing: 2px;
-
-  text-transform: uppercase;
+  color: var(--ft-cyan);
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 1.6px;
 }
 
-.ft-small-title::before {
-  content: "";
-
-  width: 38px;
-  height: 3px;
-
-  border-radius: 20px;
-
-  background: #078ff7;
+.ft-title-line {
+  width: 32px;
+  height: 2px;
+  background: var(--ft-cyan);
 }
-
-
-/* =========================================================
-   HERO HEADING
-========================================================= */
 
 .ft-trainers-hero-content h1 {
-  margin: 0;
+  margin: 15px 0 18px;
 
-  color: #ffffff;
-
-  font-size: clamp(55px, 6vw, 80px);
-  line-height: 0.92;
-
-  font-weight: 900;
-
-  letter-spacing: -4px;
-
-  text-transform: uppercase;
+  color: #fff;
+  font-size: clamp(49px, 5.6vw, 73px);
+  font-weight: 600;
+  line-height: 1.09;
+  letter-spacing: -2.4px;
 }
 
-.ft-trainers-hero-content h1 span {
-  color: #078ff7 !important;
-
-  background: none !important;
-
-  -webkit-text-fill-color: #078ff7 !important;
+.ft-trainers-hero-content h1 > span:not(.ft-hero-dot) {
+  color: var(--ft-cyan);
 }
 
-
-/* =========================================================
-   HERO PARAGRAPH
-========================================================= */
+.ft-hero-dot {
+  color: var(--ft-blue);
+}
 
 .ft-trainers-hero-content > p {
-  max-width: 620px;
+  max-width: 550px;
+  margin: 0;
 
-  margin: 15px 0 0;
-
-  color: #b9cbd5;
-
-  font-size: 17px;
-  line-height: 1.6;
-
-  font-weight: 500;
+  color: #d2e0e9;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.75;
 }
 
+/* HERO BUTTON */
 
-/* =========================================================
-   HERO BUTTON
-========================================================= */
+.ft-hero-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
 
-.ft-trainers-hero-content > button {
-  min-height: 51px;
+  margin-top: 25px;
+}
 
-  margin-top: 20px;
-  padding: 0 21px;
-
+.ft-main-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  gap: 11px;
 
-  gap: 9px;
+  min-height: 46px;
+  padding: 0 20px;
 
-  border:
-    1px solid #35b7ff;
+  border: 1px solid #43baff;
+  border-radius: 9px;
 
-  border-radius: 8px;
+  color: #fff;
+  background: linear-gradient(
+    115deg,
+    #159cf5,
+    #0766d8
+  );
 
-  color: #ffffff;
+  font-size: 15px;
+  font-weight: 500;
 
-  background:
-    linear-gradient(
-      100deg,
-      #078ff7,
-      #006ed4
-    );
-
-  box-shadow:
-    0 11px 28px
-    rgba(7, 143, 247, 0.2);
-
-  font-size: 13px;
-  font-weight: 900;
-
-  letter-spacing: 0.6px;
-
-  cursor: pointer;
+  box-shadow: 0 10px 24px rgba(9, 109, 215, 0.22);
 
   transition:
     transform 0.3s ease,
     box-shadow 0.3s ease;
 }
 
-.ft-trainers-hero-content > button svg {
-  font-size: 17px;
-
-  transition:
-    transform 0.3s ease;
-}
-
-.ft-trainers-hero-content > button:hover {
+.ft-main-btn:hover {
   transform: translateY(-3px);
-
-  box-shadow:
-    0 15px 35px
-    rgba(7, 143, 247, 0.3);
+  box-shadow: 0 15px 32px rgba(9, 109, 215, 0.35);
 }
 
-.ft-trainers-hero-content > button:hover svg {
+.ft-main-btn svg {
+  font-size: 17px;
+  transition: transform 0.3s ease;
+}
+
+.ft-main-btn:hover svg {
   transform: translateX(4px);
 }
 
+.ft-hero-hint {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
 
-/* =========================================================
-   HERO RIGHT QUOTE
-========================================================= */
-
-.ft-hero-quote {
-  min-width: 185px;
-
-  margin-bottom: 4px;
-  padding: 15px 0 15px 20px;
-
-  border-left:
-    2px solid #078ff7;
+  color: #c3d7e5;
+  font-size: 15px;
+  font-weight: 400;
 }
 
-.ft-hero-quote span {
+.ft-hero-hint svg {
+  color: var(--ft-cyan);
+}
+
+/* HERO RIGHT QUOTE */
+
+.ft-hero-quote {
+  flex-shrink: 0;
+  min-width: 165px;
+  padding: 12px 0 12px 18px;
+
+  border-left: 2px solid var(--ft-blue);
+  animation: ft-reveal 1s 0.25s both;
+}
+
+.ft-hero-quote > span {
   display: block;
-
-  color: #829ba9;
-
-  font-size: 16px;
-  font-weight: 700;
+  color: #b3c6d3;
+  font-size: 13px;
+  letter-spacing: 1px;
 }
 
 .ft-hero-quote strong {
   display: block;
+  margin-top: 8px;
 
-  margin-top: 3px;
-
-  color: #2ab7ff;
-
-  font-size: 29px;
-  line-height: 1;
-
-  font-weight: 900;
+  color: #fff;
+  font-size: 26px;
+  font-weight: 600;
+  line-height: 1.3;
 }
 
+.ft-quote-rule {
+  width: 45px;
+  height: 2px;
+  margin-top: 13px;
+  background: var(--ft-cyan);
+}
 
-/* =========================================================
+.ft-hero-bottom {
+  position: absolute;
+  bottom: 22px;
+  left: 50%;
+  z-index: 2;
+
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+
+  width: min(1180px, calc(100% - 48px));
+  transform: translateX(-50%);
+
+  color: #9bb2c1;
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+
+/* =========================================
    TRAINERS SECTION
-========================================================= */
+========================================= */
 
 .ft-trainers-section {
-  position: relative;
-
-  padding: 68px 0 40px;
-
-  overflow: hidden;
-
-  border-top:
-    1px solid
-    rgba(255, 255, 255, 0.06);
+  padding: 65px 0 45px;
+  scroll-margin-top: 80px;
 
   background:
     radial-gradient(
       circle at 100% 10%,
-      rgba(7, 143, 247, 0.08),
-      transparent 24%
+      rgba(22, 157, 255, 0.08),
+      transparent 32%
     ),
-    radial-gradient(
-      circle at 0% 90%,
-      rgba(42, 183, 255, 0.04),
-      transparent 20%
-    ),
-    #031522;
+    #041521;
 }
 
-
-/* =========================================================
-   SECTION HEADING
-========================================================= */
-
 .ft-section-heading {
-  max-width: 760px;
-
-  margin: 0 auto 35px;
-
+  max-width: 680px;
+  margin: 0 auto 34px;
   text-align: center;
 }
 
-.ft-section-heading > span {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  gap: 9px;
-
-  margin-bottom: 10px;
-
-  color: #2ab7ff;
-
-  font-size: 12px;
-  font-weight: 900;
-
-  letter-spacing: 2px;
-
-  text-transform: uppercase;
-}
-
-.ft-section-heading > span::before,
-.ft-section-heading > span::after {
-  content: "";
-
-  width: 25px;
-  height: 2px;
-
-  background: #078ff7;
+.ft-section-eyebrow {
+  color: var(--ft-cyan);
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 1.4px;
 }
 
 .ft-section-heading h2 {
-  margin: 0;
+  margin: 11px 0 12px;
 
-  color: #ffffff;
+  color: #fff;
+  font-size: clamp(35px, 4.2vw, 49px);
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -1.3px;
+}
 
-  font-size: clamp(43px, 4.5vw, 60px);
-  line-height: 0.98;
-
-  font-weight: 900;
-
-  letter-spacing: -2.4px;
+.ft-section-heading h2 em {
+  color: var(--ft-cyan);
+  font-style: normal;
 }
 
 .ft-section-heading p {
-  max-width: 610px;
-
-  margin: 14px auto 0;
-
-  color: #8da5b2;
-
+  margin: 0 auto;
+  color: var(--ft-muted);
   font-size: 15px;
-  line-height: 1.7;
+  font-weight: 400;
+  line-height: 1.75;
 }
 
-
-/* =========================================================
-   TRAINER GRID
-========================================================= */
+/* =========================================
+   SMALLER TRAINER CARDS
+========================================= */
 
 .ft-trainer-grid {
   display: grid;
-
-  grid-template-columns:
-    repeat(3, minmax(0, 1fr));
-
-  gap: 18px;
+  grid-template-columns: repeat(3, minmax(0, 350px));
+  justify-content: center;
+  align-items: stretch;
+  gap: 26px;
 }
 
-
-/* =========================================================
-   TRAINER CARD
-========================================================= */
-
 .ft-trainer-card {
-  min-width: 0;
+  display: flex;
+  flex-direction: column;
 
+  width: 100%;
+  min-width: 0;
   overflow: hidden;
 
-  border:
-    1px solid
-    rgba(255, 255, 255, 0.08);
-
+  border: 1px solid rgba(105, 214, 255, 0.16);
   border-radius: 16px;
 
-  background:
-    linear-gradient(
-      145deg,
-      #082438,
-      #051a29
-    );
+  background: linear-gradient(
+    155deg,
+    #102d41,
+    #071d2c
+  );
 
-  box-shadow:
-    0 15px 35px
-    rgba(0, 0, 0, 0.13);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.14);
 
   transition:
     transform 0.35s ease,
@@ -496,1097 +399,656 @@
 }
 
 .ft-trainer-card:hover {
-  transform: translateY(-6px);
-
-  border-color:
-    rgba(42, 183, 255, 0.43);
-
-  box-shadow:
-    0 22px 48px
-    rgba(0, 0, 0, 0.24);
+  transform: translateY(-5px);
+  border-color: rgba(105, 214, 255, 0.48);
+  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.23);
 }
 
-
-/* =========================================================
-   TRAINER IMAGE
-========================================================= */
+/* CARD IMAGE */
 
 .ft-trainer-image {
   position: relative;
-
-  height: 240px;
-
+  height: 210px;
+  flex-shrink: 0;
   overflow: hidden;
+  background: #17384b;
 }
 
 .ft-trainer-image img {
   width: 100%;
   height: 100%;
-
   object-fit: cover;
-  object-position: center 20%;
+  object-position: center 22%;
 
-  transition:
-    transform 0.6s ease;
+  transition: transform 0.6s ease;
 }
 
-.ft-trainer-card:hover
-.ft-trainer-image img {
-  transform: scale(1.065);
+.ft-trainer-card:hover .ft-trainer-image img {
+  transform: scale(1.055);
 }
 
 .ft-trainer-image-shade {
   position: absolute;
   inset: 0;
 
-  background:
-    linear-gradient(
-      0deg,
-      rgba(5, 26, 41, 0.97),
-      rgba(5, 26, 41, 0.02) 63%
-    );
+  background: linear-gradient(
+    0deg,
+    rgba(4, 18, 30, 0.8),
+    transparent 55%
+  );
 }
 
+.ft-trainer-image-tag {
+  position: absolute;
+  left: 14px;
+  bottom: 13px;
 
-/* =========================================================
-   TRAINER CONTENT
-========================================================= */
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+
+  padding: 6px 10px;
+
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 7px;
+
+  color: #fff;
+  background: rgba(5, 22, 35, 0.75);
+  backdrop-filter: blur(8px);
+
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.ft-trainer-image-tag svg {
+  color: var(--ft-cyan);
+}
+
+.ft-trainer-index {
+  position: absolute;
+  top: 13px;
+  right: 14px;
+
+  color: #fff;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+/* CARD CONTENT */
 
 .ft-trainer-content {
-  padding: 19px;
-}
-
-.ft-trainer-content h3 {
-  margin: 0;
-
-  color: #ffffff;
-
-  font-size: 25px;
-  line-height: 1.1;
-
-  font-weight: 900;
-
-  letter-spacing: -0.7px;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: 18px 20px 19px;
 }
 
 .ft-trainer-role {
   display: block;
-
-  margin-top: 6px;
-
-  color: #2ab7ff;
-
-  font-size: 13px;
-  line-height: 1.4;
-
-  font-weight: 800;
+  color: var(--ft-cyan);
+  font-size: 15px;
+  font-weight: 500;
 }
 
+.ft-trainer-content h3 {
+  margin: 6px 0 9px;
 
-/* =========================================================
-   RATING
-========================================================= */
+  color: #fff;
+  font-size: 23px;
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: -0.4px;
+}
+
+/* RATING */
 
 .ft-trainer-rating {
-  margin-top: 11px;
-
   display: flex;
   align-items: center;
-
+  flex-wrap: wrap;
   gap: 7px;
 }
 
-.ft-trainer-rating > div {
+.ft-rating-stars {
   display: flex;
-
   gap: 2px;
+  color: #ffc54a;
 }
 
-.ft-trainer-rating svg {
-  color: #ffb92e;
-  fill: #ffb92e;
-
+.ft-rating-stars svg {
   font-size: 13px;
+  fill: currentColor;
 }
 
 .ft-trainer-rating strong {
-  color: #ffffff;
-
-  font-size: 13px;
-  font-weight: 900;
+  font-size: 15px;
+  font-weight: 500;
 }
 
 .ft-trainer-rating > span {
-  color: #6f8998;
-
-  font-size: 11px;
-  font-weight: 700;
+  color: #a8becd;
+  font-size: 15px;
 }
 
-
-/* =========================================================
-   TRAINER DESCRIPTION
-========================================================= */
+/* DESCRIPTION */
 
 .ft-trainer-description {
-  min-height: 63px;
+  margin: 12px 0 16px;
 
-  margin: 12px 0 0;
-
-  color: #8ca3af;
-
-  font-size: 13px;
-  line-height: 1.62;
+  color: #b1c4d0;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.65;
 }
 
-
-/* =========================================================
-   TRAINER BOTTOM
-========================================================= */
+/* CARD BOTTOM */
 
 .ft-trainer-bottom {
-  margin-top: 15px;
-  padding-top: 14px;
-
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 9px;
 
-  gap: 10px;
+  margin-top: auto;
+  padding-top: 14px;
 
-  border-top:
-    1px solid
-    rgba(255, 255, 255, 0.07);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
-
-
-/* =========================================================
-   SOCIAL ICONS
-========================================================= */
 
 .ft-trainer-socials {
   display: flex;
-
-  gap: 6px;
+  gap: 7px;
 }
 
-.ft-trainer-socials button {
+.ft-trainer-socials a {
+  display: grid;
+  place-items: center;
+
   width: 34px;
   height: 34px;
 
-  padding: 0;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  border:
-    1px solid
-    rgba(42, 183, 255, 0.17);
-
+  border: 1px solid rgba(105, 214, 255, 0.25);
   border-radius: 8px;
 
-  color: #2ab7ff;
-
-  background:
-    rgba(7, 143, 247, 0.08);
-
-  cursor: pointer;
+  color: var(--ft-cyan);
+  background: rgba(21, 156, 245, 0.07);
+  text-decoration: none;
 
   transition:
-    color 0.25s ease,
     background 0.25s ease,
+    color 0.25s ease,
     transform 0.25s ease;
 }
 
-.ft-trainer-socials button svg {
-  font-size: 14px;
-}
-
-.ft-trainer-socials button:hover {
+.ft-trainer-socials a:hover {
+  color: #fff;
+  background: var(--ft-blue);
   transform: translateY(-2px);
-
-  color: #ffffff;
-
-  background: #078ff7;
 }
 
+.ft-trainer-socials svg {
+  font-size: 15px;
+}
 
-/* =========================================================
-   VIEW PROFILE BUTTON
-========================================================= */
+/* VIEW PROFILE BUTTON */
 
 .ft-profile-btn {
-  min-height: 39px;
-
-  padding: 0 13px;
-
   display: inline-flex;
   align-items: center;
   justify-content: center;
-
   gap: 7px;
 
-  border:
-    1px solid
-    rgba(42, 183, 255, 0.28);
+  min-height: 36px;
+  padding: 0 11px;
 
+  border: 1px solid rgba(105, 214, 255, 0.3);
   border-radius: 8px;
 
-  color: #ffffff;
-
-  background:
-    rgba(7, 143, 247, 0.09);
-
-  font-size: 11px;
-  font-weight: 900;
-
-  letter-spacing: 0.5px;
-
-  cursor: pointer;
-
-  transition:
-    background 0.3s ease,
-    border-color 0.3s ease;
-}
-
-.ft-profile-btn svg {
-  color: #2ab7ff;
+  color: #fff;
+  background: rgba(21, 156, 245, 0.1);
 
   font-size: 15px;
+  font-weight: 500;
 
   transition:
-    transform 0.3s ease;
+    background 0.25s ease,
+    border-color 0.25s ease;
 }
 
 .ft-profile-btn:hover {
-  border-color: #078ff7;
+  background: var(--ft-blue);
+  border-color: var(--ft-blue);
+}
 
-  background: #078ff7;
+.ft-profile-btn svg {
+  color: var(--ft-cyan);
+  font-size: 16px;
 }
 
 .ft-profile-btn:hover svg {
-  color: #ffffff;
-
-  transform: translateX(3px);
+  color: #fff;
 }
 
-
-/* =========================================================
+/* =========================================
    BENEFITS SECTION
-========================================================= */
+========================================= */
 
 .ft-benefits-section {
-  padding: 25px 0 55px;
-
-  background: #031522;
+  padding: 15px 0 65px;
+  background: #041521;
 }
 
 .ft-benefits-box {
   display: grid;
-
-  grid-template-columns:
-    repeat(4, minmax(0, 1fr));
-
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   overflow: hidden;
 
-  border:
-    1px solid
-    rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(105, 214, 255, 0.13);
+  border-radius: 16px;
 
-  border-radius: 15px;
-
-  background:
-    linear-gradient(
-      90deg,
-      #041a29,
-      #062338,
-      #041a29
-    );
+  background: linear-gradient(
+    120deg,
+    #092337,
+    #0b2b40,
+    #092337
+  );
 }
 
-
-/* =========================================================
-   BENEFIT
-========================================================= */
-
 .ft-benefit {
-  min-height: 170px;
+  min-width: 0;
+  padding: 24px 17px;
 
-  padding: 25px 18px;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
   text-align: center;
-
-  border-right:
-    1px solid
-    rgba(255, 255, 255, 0.07);
 }
 
 .ft-benefit:last-child {
   border-right: 0;
 }
 
-.ft-benefit > svg {
-  width: 48px;
-  height: 48px;
+.ft-benefit-icon {
+  display: grid;
+  place-items: center;
 
-  padding: 11px;
+  width: 47px;
+  height: 47px;
+  margin: 0 auto 13px;
 
-  border-radius: 11px;
+  border-radius: 12px;
+  color: var(--ft-cyan);
+  background: rgba(21, 156, 245, 0.13);
+}
 
-  color: #2ab7ff;
-
-  background:
-    rgba(7, 143, 247, 0.11);
+.ft-benefit-icon svg {
+  font-size: 23px;
 }
 
 .ft-benefit h3 {
-  margin: 13px 0 0;
+  margin: 0 0 7px;
 
-  color: #ffffff;
-
+  color: #fff;
   font-size: 17px;
-  line-height: 1.25;
-
-  font-weight: 900;
+  font-weight: 600;
 }
 
 .ft-benefit p {
-  margin: 7px 0 0;
-
-  color: #819aa8;
-
-  font-size: 12px;
-  line-height: 1.55;
+  margin: 0;
+  color: #b0c4d0;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.6;
 }
 
-
-/* =========================================================
+/* =========================================
    CTA SECTION
-========================================================= */
+========================================= */
 
 .ft-trainer-cta {
-  padding: 0 0 55px;
-
-  background: #031522;
+  padding: 0 0 65px;
+  background: #041521;
 }
 
 .ft-trainer-cta-box {
   position: relative;
-
-  min-height: 230px;
-
-  padding: 38px 42px;
+  isolation: isolate;
 
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 30px;
 
-  gap: 35px;
-
+  min-height: 260px;
+  padding: 38px 42px;
   overflow: hidden;
 
-  border:
-    1px solid
-    rgba(255, 255, 255, 0.08);
-
-  border-radius: 16px;
+  border: 1px solid rgba(105, 214, 255, 0.2);
+  border-radius: 18px;
 
   background:
+    #082033
     url("https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&fit=crop&w=1600&q=90")
-    center 37% / cover no-repeat;
+    center 42% / cover no-repeat;
 }
 
 .ft-trainer-cta-overlay {
   position: absolute;
   inset: 0;
+  z-index: -1;
 
-  background:
-    linear-gradient(
-      90deg,
-      rgba(2, 15, 25, 0.98) 0%,
-      rgba(3, 30, 49, 0.94) 55%,
-      rgba(4, 65, 101, 0.68) 100%
-    );
-}
-
-.ft-trainer-cta-content,
-.ft-trainer-cta-box > button {
-  position: relative;
-  z-index: 2;
+  background: linear-gradient(
+    90deg,
+    rgba(3, 17, 28, 0.97),
+    rgba(5, 31, 49, 0.9) 65%,
+    rgba(5, 31, 49, 0.5)
+  );
 }
 
 .ft-trainer-cta-content {
-  max-width: 680px;
+  max-width: 620px;
 }
 
 .ft-trainer-cta-content > span {
-  color: #2ab7ff;
-
-  font-size: 12px;
-  font-weight: 900;
-
-  letter-spacing: 2px;
+  color: var(--ft-cyan);
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 1px;
 }
 
 .ft-trainer-cta-content h2 {
-  margin: 8px 0 0;
+  margin: 10px 0 12px;
 
-  color: #ffffff;
+  color: #fff;
+  font-size: clamp(32px, 4vw, 46px);
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -1px;
+}
 
-  font-size: 42px;
-  line-height: 1;
-
-  font-weight: 900;
-
-  letter-spacing: -1.7px;
+.ft-trainer-cta-content h2 em {
+  color: var(--ft-cyan);
+  font-style: normal;
 }
 
 .ft-trainer-cta-content p {
-  max-width: 530px;
-
-  margin: 12px 0 0;
-
-  color: #9fb1bc;
-
-  font-size: 14px;
-  line-height: 1.65;
-}
-
-
-/* =========================================================
-   CTA BUTTON
-========================================================= */
-
-.ft-trainer-cta-box > button {
-  min-width: 150px;
-  min-height: 51px;
-
-  padding: 0 18px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  gap: 8px;
-
-  flex-shrink: 0;
-
-  border:
-    1px solid #35b7ff;
-
-  border-radius: 8px;
-
-  color: #ffffff;
-
-  background:
-    linear-gradient(
-      100deg,
-      #078ff7,
-      #006ed4
-    );
-
-  box-shadow:
-    0 11px 28px
-    rgba(7, 143, 247, 0.2);
-
-  font-size: 12px;
-  font-weight: 900;
-
-  cursor: pointer;
-
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease;
-}
-
-.ft-trainer-cta-box > button:hover {
-  transform: translateY(-3px);
-
-  box-shadow:
-    0 15px 35px
-    rgba(7, 143, 247, 0.3);
-}
-
-
-/* =========================================================
-   SUCCESS STORIES
-========================================================= */
-
-.ft-success-section {
-  padding: 65px 0 60px;
-
-  border-top:
-    1px solid
-    rgba(255, 255, 255, 0.06);
-
-  background:
-    radial-gradient(
-      circle at 0% 0%,
-      rgba(7, 143, 247, 0.07),
-      transparent 22%
-    ),
-    #041a29;
-}
-
-.ft-success-section
-.ft-section-heading {
-  margin-bottom: 32px;
-}
-
-
-/* =========================================================
-   TESTIMONIAL GRID
-========================================================= */
-
-.ft-testimonial-grid {
-  display: grid;
-
-  grid-template-columns:
-    repeat(3, minmax(0, 1fr));
-
-  gap: 17px;
-}
-
-
-/* =========================================================
-   TESTIMONIAL CARD
-========================================================= */
-
-.ft-testimonial-card {
-  position: relative;
-
-  min-width: 0;
-
-  padding: 22px;
-
-  overflow: hidden;
-
-  border:
-    1px solid
-    rgba(255, 255, 255, 0.08);
-
-  border-radius: 15px;
-
-  background:
-    linear-gradient(
-      145deg,
-      #082438,
-      #051a29
-    );
-
-  box-shadow:
-    0 15px 35px
-    rgba(0, 0, 0, 0.12);
-
-  transition:
-    transform 0.3s ease,
-    border-color 0.3s ease;
-}
-
-.ft-testimonial-card:hover {
-  transform: translateY(-5px);
-
-  border-color:
-    rgba(42, 183, 255, 0.38);
-}
-
-
-/* =========================================================
-   TESTIMONIAL TOP
-========================================================= */
-
-.ft-testimonial-top {
-  position: relative;
-
-  display: flex;
-  align-items: center;
-
-  gap: 12px;
-}
-
-.ft-testimonial-top img {
-  width: 52px;
-  height: 52px;
-
-  flex-shrink: 0;
-
-  border:
-    2px solid
-    rgba(42, 183, 255, 0.28);
-
-  border-radius: 50%;
-
-  object-fit: cover;
-}
-
-.ft-testimonial-top h3 {
+  max-width: 500px;
   margin: 0;
 
-  color: #ffffff;
-
+  color: #c1d1dc;
   font-size: 15px;
-  line-height: 1.3;
-
-  font-weight: 900;
-}
-
-.ft-testimonial-stars {
-  margin-top: 5px;
-
-  display: flex;
-
-  gap: 2px;
-}
-
-.ft-testimonial-stars svg {
-  color: #ffb72b;
-  fill: #ffb72b;
-
-  font-size: 12px;
-}
-
-.ft-quote {
-  position: absolute;
-
-  right: 0;
-  top: -12px;
-
-  color:
-    rgba(42, 183, 255, 0.17);
-
-  font-family: Georgia, serif;
-
-  font-size: 58px;
-  line-height: 1;
-}
-
-.ft-testimonial-card > p {
-  margin: 16px 0 0;
-
-  color: #8ca3af;
-
-  font-size: 13px;
+  font-weight: 400;
   line-height: 1.7;
 }
 
-
-/* =========================================================
-   BOTTOM CTA
-========================================================= */
-
-.ft-trainer-bottom-cta {
-  padding: 0 0 60px;
-
-  background: #041a29;
-}
-
-.ft-bottom-cta-inner {
-  padding: 17px 19px;
-
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  gap: 20px;
-
-  border:
-    1px solid
-    rgba(42, 183, 255, 0.16);
-
-  border-radius: 11px;
-
-  background:
-    rgba(7, 143, 247, 0.06);
-}
-
-.ft-bottom-cta-inner > div {
-  display: flex;
-  align-items: center;
-
-  gap: 10px;
-}
-
-.ft-bottom-cta-inner > div > svg {
-  width: 32px;
-  height: 32px;
-
-  padding: 7px;
-
+.ft-trainer-cta-box > .ft-main-btn {
   flex-shrink: 0;
-
-  border-radius: 50%;
-
-  color: #ffffff;
-
-  background: #078ff7;
 }
 
-.ft-bottom-cta-inner span {
-  color: #c8d5dc;
+/* =========================================
+   ANIMATIONS
+========================================= */
 
-  font-size: 14px;
-  font-weight: 700;
+@keyframes ft-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-.ft-bottom-cta-inner > button {
-  min-height: 42px;
+@keyframes ft-float {
+  0%,
+  100% {
+    transform: rotate(45deg) translateY(0);
+  }
 
-  padding: 0 16px;
-
-  display: flex;
-  align-items: center;
-
-  gap: 7px;
-
-  border:
-    1px solid #078ff7;
-
-  border-radius: 7px;
-
-  color: #ffffff;
-
-  background: #078ff7;
-
-  font-size: 11px;
-  font-weight: 900;
-
-  cursor: pointer;
+  50% {
+    transform: rotate(45deg) translateY(-10px);
+  }
 }
 
+.ft-trainers-page a:focus-visible,
+.ft-trainers-page button:focus-visible {
+  outline: 3px solid var(--ft-cyan);
+  outline-offset: 4px;
+}
 
-/* =========================================================
-   TABLET
-========================================================= */
+/* =========================================
+   LAPTOP — 1100PX
+========================================= */
 
-@media (max-width: 1000px) {
-
-  .ft-trainers-container {
-    width: calc(100% - 40px);
-  }
-
-  .ft-trainers-hero-inner {
-    width: calc(100% - 40px);
-  }
-
-  .ft-trainers-hero-content h1 {
-    font-size: 58px;
-  }
-
+@media (max-width: 1100px) {
   .ft-trainer-grid {
-    grid-template-columns:
-      repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
   }
 
-  .ft-benefits-box {
-    grid-template-columns:
-      repeat(2, minmax(0, 1fr));
+  .ft-trainer-content {
+    padding: 17px;
   }
 
-  .ft-benefit:nth-child(2) {
-    border-right: 0;
+  .ft-trainer-image {
+    height: 195px;
   }
 
-  .ft-benefit:nth-child(3),
-  .ft-benefit:nth-child(4) {
-    border-top:
-      1px solid
-      rgba(255, 255, 255, 0.07);
-  }
-
-  .ft-testimonial-grid {
-    grid-template-columns:
-      repeat(2, minmax(0, 1fr));
+  .ft-hero-quote {
+    min-width: 150px;
   }
 }
 
+/* =========================================
+   TABLET — 850PX
+========================================= */
 
-/* =========================================================
-   MOBILE
-========================================================= */
-
-@media (max-width: 700px) {
-
-  .ft-trainers-container {
-    width: 100%;
-
-    padding: 0 16px;
-  }
-
-
-  /* HERO */
-
+@media (max-width: 850px) {
   .ft-trainers-hero {
-    min-height: 400px;
-    height: auto;
-
-    background-position: 61% center;
+    min-height: 500px;
   }
 
   .ft-trainers-hero-inner {
-    width: 100%;
-    min-height: 400px;
-
-    padding:
-      60px 17px 30px;
-
-    display: block;
-  }
-
-  .ft-trainers-hero::before,
-  .ft-trainers-hero::after {
-    opacity: 0.55;
-  }
-
-  .ft-small-title {
-    font-size: 12px;
-
-    letter-spacing: 1.6px;
-  }
-
-  .ft-small-title::before {
-    width: 30px;
-  }
-
-  .ft-trainers-hero-content h1 {
-    max-width: 95%;
-
-    font-size: 48px;
-    line-height: 0.94;
-
-    letter-spacing: -2.5px;
-  }
-
-  .ft-trainers-hero-content > p {
-    max-width: 480px;
-
-    margin-top: 13px;
-
-    font-size: 15px;
-    line-height: 1.55;
-  }
-
-  .ft-trainers-hero-content > button {
-    min-height: 49px;
-
-    margin-top: 17px;
-
-    padding: 0 17px;
-
-    font-size: 12px;
+    padding: 95px 0 80px;
   }
 
   .ft-hero-quote {
     display: none;
   }
 
+  .ft-trainer-grid {
+    grid-template-columns: repeat(2, minmax(0, 350px));
+    gap: 22px;
+  }
 
-  /* TRAINERS */
+  .ft-trainer-image {
+    height: 220px;
+  }
+
+  .ft-benefits-box {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .ft-benefit:nth-child(2) {
+    border-right: 0;
+  }
+
+  .ft-benefit:nth-child(-n + 2) {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .ft-trainer-cta-box {
+    padding: 35px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* =========================================
+   MOBILE — 600PX
+========================================= */
+
+@media (max-width: 600px) {
+  .ft-trainers-container {
+    width: calc(100% - 34px);
+  }
+
+  .ft-trainers-hero {
+    min-height: 480px;
+    background-position: 58% center;
+  }
+
+  .ft-trainers-hero::before {
+    background: linear-gradient(
+      90deg,
+      rgba(2, 13, 24, 0.95),
+      rgba(2, 13, 24, 0.57)
+    );
+  }
+
+  .ft-trainers-hero-inner {
+    padding: 95px 0 75px;
+  }
+
+  .ft-hero-orb-one {
+    width: 155px;
+    height: 155px;
+    right: -90px;
+  }
+
+  .ft-hero-orb-two {
+    width: 75px;
+    height: 75px;
+    right: 12px;
+    top: 100px;
+  }
+
+  .ft-small-title {
+    font-size: 15px;
+    letter-spacing: 1px;
+  }
+
+  .ft-trainers-hero-content h1 {
+    font-size: clamp(40px, 10vw, 54px);
+    letter-spacing: -1.4px;
+    margin: 14px 0 16px;
+  }
+
+  .ft-trainers-hero-content > p {
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  .ft-hero-actions {
+    gap: 13px;
+    margin-top: 22px;
+  }
+
+  .ft-hero-hint {
+    font-size: 15px;
+  }
+
+  .ft-hero-bottom {
+    width: calc(100% - 34px);
+    font-size: 11px;
+  }
 
   .ft-trainers-section {
-    padding:
-      55px 0 32px;
+    padding: 55px 0 38px;
   }
 
   .ft-section-heading {
     margin-bottom: 27px;
-
-    padding: 0 5px;
-  }
-
-  .ft-section-heading > span {
-    font-size: 11px;
   }
 
   .ft-section-heading h2 {
-    font-size: 39px;
-    line-height: 0.99;
-
-    letter-spacing: -1.8px;
+    font-size: clamp(33px, 8vw, 40px);
   }
 
-  .ft-section-heading p {
-    font-size: 14px;
-    line-height: 1.65;
+  .ft-section-eyebrow {
+    font-size: 15px;
+    letter-spacing: 1px;
   }
 
   .ft-trainer-grid {
-    grid-template-columns: 1fr;
-
-    gap: 16px;
-  }
-
-  .ft-trainer-image {
-    height: 270px;
-  }
-
-  .ft-trainer-content {
-    padding: 20px;
-  }
-
-  .ft-trainer-content h3 {
-    font-size: 25px;
-  }
-
-  .ft-trainer-role {
-    font-size: 14px;
-  }
-
-  .ft-trainer-description {
-    min-height: auto;
-
-    font-size: 14px;
-  }
-
-  .ft-trainer-rating strong {
-    font-size: 13px;
-  }
-
-  .ft-trainer-rating > span {
-    font-size: 11px;
-  }
-
-
-  /* BENEFITS */
-
-  .ft-benefits-section {
-    padding:
-      20px 0 45px;
-  }
-
-  .ft-benefits-box {
-    grid-template-columns:
-      repeat(2, minmax(0, 1fr));
-  }
-
-  .ft-benefit {
-    min-height: 155px;
-
-    padding: 20px 10px;
-  }
-
-  .ft-benefit h3 {
-    font-size: 15px;
-  }
-
-  .ft-benefit p {
-    font-size: 11px;
-  }
-
-
-  /* CTA */
-
-  .ft-trainer-cta {
-    padding-bottom: 45px;
-  }
-
-  .ft-trainer-cta-box {
-    min-height: 290px;
-
-    padding: 30px 22px;
-
-    align-items: flex-start;
-    flex-direction: column;
+    grid-template-columns: minmax(0, 380px);
     justify-content: center;
-
     gap: 20px;
   }
 
-  .ft-trainer-cta-content h2 {
-    font-size: 36px;
-  }
-
-  .ft-trainer-cta-content p {
-    font-size: 14px;
-  }
-
-
-  /* TESTIMONIALS */
-
-  .ft-success-section {
-    padding:
-      55px 0 45px;
-  }
-
-  .ft-testimonial-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .ft-testimonial-card {
-    padding: 20px;
-  }
-
-  .ft-testimonial-card > p {
-    font-size: 14px;
-  }
-
-
-  /* BOTTOM CTA */
-
-  .ft-trainer-bottom-cta {
-    padding-bottom: 45px;
-  }
-
-  .ft-bottom-cta-inner {
-    align-items: flex-start;
-    flex-direction: column;
-  }
-
-  .ft-bottom-cta-inner span {
-    font-size: 13px;
-  }
-}
-
-
-/* =========================================================
-   SMALL MOBILE
-========================================================= */
-
-@media (max-width: 430px) {
-
-  .ft-trainers-hero {
-    min-height: 385px;
-  }
-
-  .ft-trainers-hero-inner {
-    min-height: 385px;
-
-    padding:
-      55px 15px 28px;
-  }
-
-  .ft-trainers-hero-content h1 {
-    font-size: 43px;
-  }
-
-  .ft-trainers-hero-content > p {
-    font-size: 14px;
-  }
-
-  .ft-section-heading h2 {
-    font-size: 35px;
-  }
-
   .ft-trainer-image {
-    height: 245px;
+    height: 220px;
   }
 
   .ft-trainer-content {
-    padding: 18px 16px;
+    padding: 19px;
   }
 
   .ft-trainer-content h3 {
     font-size: 23px;
   }
 
+  .ft-trainer-description {
+    font-size: 15px;
+  }
+
+  .ft-benefits-section {
+    padding: 10px 0 52px;
+  }
+
+  .ft-benefit {
+    padding: 21px 12px;
+  }
+
+  .ft-benefit h3 {
+    font-size: 16px;
+  }
+
+  .ft-benefit p {
+    font-size: 15px;
+  }
+
+  .ft-trainer-cta {
+    padding-bottom: 55px;
+  }
+
+  .ft-trainer-cta-box {
+    padding: 30px 23px;
+    min-height: 310px;
+  }
+
+  .ft-trainer-cta-content h2 {
+    font-size: 35px;
+  }
+}
+
+/* =========================================
+   SMALL MOBILE — 390PX
+========================================= */
+
+@media (max-width: 390px) {
+  .ft-trainers-hero {
+    min-height: 470px;
+  }
+
+  .ft-trainers-hero-content h1 {
+    font-size: 39px;
+  }
+
+  .ft-hero-hint {
+    width: 100%;
+  }
+
+  .ft-trainer-image {
+    height: 205px;
+  }
+
+  .ft-trainer-content {
+    padding: 17px;
+  }
+
   .ft-trainer-bottom {
-    align-items: flex-start;
-    flex-direction: column;
+    flex-wrap: wrap;
   }
 
   .ft-benefits-box {
@@ -1595,53 +1057,32 @@
 
   .ft-benefit {
     border-right: 0;
-
-    border-bottom:
-      1px solid
-      rgba(255, 255, 255, 0.07);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   }
 
   .ft-benefit:last-child {
     border-bottom: 0;
   }
 
+  .ft-trainer-cta-box {
+    padding: 26px 19px;
+  }
+
   .ft-trainer-cta-content h2 {
-    font-size: 33px;
-  }
-}
-
-
-/* =========================================================
-   VERY SMALL MOBILE
-========================================================= */
-
-@media (max-width: 360px) {
-
-  .ft-trainers-hero-content h1 {
-    font-size: 39px;
-  }
-
-  .ft-section-heading h2 {
     font-size: 32px;
   }
+}
 
-  .ft-trainer-image {
-    height: 225px;
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .ft-trainers-page *,
+  .ft-trainers-page *::before,
+  .ft-trainers-page *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
   }
 }
-
-
-/* =========================================================
-   OVERFLOW FIX
-========================================================= */
-
-html,
-body,
-#root {
-  width: 100%;
-  max-width: 100%;
-
-  overflow-x: hidden;
-}
-
-

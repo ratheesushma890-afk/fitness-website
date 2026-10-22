@@ -1,13 +1,6 @@
-import React, {
-  useEffect,
-  useMemo,
-  useState,
-} from "react";
 
-import {
-  Link,
-  useLocation,
-} from "react-router-dom";
+import React, { useEffect, useMemo, useState } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 import {
   FiActivity,
@@ -25,17 +18,18 @@ import {
 
 import { FaDumbbell } from "react-icons/fa";
 
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 import "./Classes.css";
 
-
 /* =========================================================
-   CLASS DATA
-   3 CLASSES IN EACH CATEGORY
+   FITZONE CLASSES DATA
+   18 CLASSES — 6 CATEGORIES
 ========================================================= */
 
 const classesData = [
-
-  /* ===================== STRENGTH ===================== */
+  /* ================= STRENGTH ================= */
 
   {
     id: 1,
@@ -52,7 +46,6 @@ const classesData = [
     description:
       "Learn proper lifting technique, build full-body strength and create a strong foundation for long-term progress.",
   },
-
   {
     id: 2,
     number: "02",
@@ -68,7 +61,6 @@ const classesData = [
     description:
       "Improve your squat, bench and deadlift with focused strength programming and expert coaching.",
   },
-
   {
     id: 3,
     number: "03",
@@ -85,8 +77,7 @@ const classesData = [
       "Structured resistance training designed to improve muscle strength, control and overall body composition.",
   },
 
-
-  /* ===================== CARDIO ===================== */
+  /* ================= CARDIO ================= */
 
   {
     id: 4,
@@ -103,7 +94,6 @@ const classesData = [
     description:
       "Boost stamina, burn calories and improve cardiovascular fitness with an energetic guided workout.",
   },
-
   {
     id: 5,
     number: "05",
@@ -119,7 +109,6 @@ const classesData = [
     description:
       "Build endurance and cardiovascular strength through challenging intervals and controlled intensity.",
   },
-
   {
     id: 6,
     number: "06",
@@ -136,8 +125,7 @@ const classesData = [
       "Improve speed, stamina and total-body conditioning with fast-moving cardio exercises and circuits.",
   },
 
-
-  /* ===================== HIIT ===================== */
+  /* ================= HIIT ================= */
 
   {
     id: 7,
@@ -154,7 +142,6 @@ const classesData = [
     description:
       "High-intensity intervals combine strength and cardio for a powerful, efficient full-body workout.",
   },
-
   {
     id: 8,
     number: "08",
@@ -170,7 +157,6 @@ const classesData = [
     description:
       "Push your limits with explosive exercises, short recovery periods and high-energy conditioning.",
   },
-
   {
     id: 9,
     number: "09",
@@ -187,8 +173,7 @@ const classesData = [
       "Train your entire body through dynamic intervals that build endurance, strength and athletic fitness.",
   },
 
-
-  /* ===================== YOGA ===================== */
+  /* ================= YOGA ================= */
 
   {
     id: 10,
@@ -205,7 +190,6 @@ const classesData = [
     description:
       "Start your day with mindful movement, controlled breathing and gentle flexibility training.",
   },
-
   {
     id: 11,
     number: "11",
@@ -221,7 +205,6 @@ const classesData = [
     description:
       "Improve mobility, posture and flexibility through controlled yoga flows and stretching exercises.",
   },
-
   {
     id: 12,
     number: "12",
@@ -238,8 +221,7 @@ const classesData = [
       "A stronger yoga session combining balance, mobility, flexibility and controlled bodyweight strength.",
   },
 
-
-  /* ===================== PERSONAL ===================== */
+  /* ================= PERSONAL ================= */
 
   {
     id: 13,
@@ -256,7 +238,6 @@ const classesData = [
     description:
       "Personalized one-to-one workouts designed around your fitness level, lifestyle and weight-loss goal.",
   },
-
   {
     id: 14,
     number: "14",
@@ -272,7 +253,6 @@ const classesData = [
     description:
       "Train one-to-one with focused strength programming, technique correction and progress tracking.",
   },
-
   {
     id: 15,
     number: "15",
@@ -289,8 +269,7 @@ const classesData = [
       "A complete personal fitness approach built around your body, goals, schedule and training experience.",
   },
 
-
-  /* ===================== FUNCTIONAL ===================== */
+  /* ================= FUNCTIONAL ================= */
 
   {
     id: 16,
@@ -307,7 +286,6 @@ const classesData = [
     description:
       "Build better movement, balance and everyday strength through practical full-body exercises.",
   },
-
   {
     id: 17,
     number: "17",
@@ -323,7 +301,6 @@ const classesData = [
     description:
       "Develop speed, agility, coordination and strength through athletic movement-based training.",
   },
-
   {
     id: 18,
     number: "18",
@@ -341,7 +318,6 @@ const classesData = [
   },
 ];
 
-
 /* =========================================================
    CATEGORIES
 ========================================================= */
@@ -356,64 +332,90 @@ const categories = [
   "Functional",
 ];
 
+/* =========================================================
+   CATEGORY FROM FOOTER URL OR HOME STATE
+========================================================= */
+
+const getCategoryFromLocation = (location) => {
+  const params = new URLSearchParams(location.search);
+
+  const urlCategory = params.get("category");
+  const stateCategory = location.state?.category;
+
+  const requested = String(
+    urlCategory || stateCategory || "All"
+  )
+    .trim()
+    .toLowerCase();
+
+  return (
+    categories.find(
+      (category) => category.toLowerCase() === requested
+    ) || "All"
+  );
+};
 
 /* =========================================================
-   COMPONENT
+   CLASSES COMPONENT
 ========================================================= */
 
 const Classes = () => {
   const location = useLocation();
+  const navigate = useNavigate();
 
-  const [activeCategory, setActiveCategory] =
-    useState("All");
+  const [activeCategory, setActiveCategory] = useState(() =>
+    getCategoryFromLocation(location)
+  );
 
-
-  /* =========================================================
-     HOME PROGRAM -> SELECT CATEGORY + SCROLL
-  ========================================================= */
+  /* ================= AOS ================= */
 
   useEffect(() => {
-    const selectedCategory =
-      location.state?.category;
+    AOS.init({
+      duration: 800,
+      easing: "ease-out-cubic",
+      once: true,
+      offset: 80,
+      mirror: false,
+    });
 
-    if (!selectedCategory) {
-      return;
-    }
+    return () => {
+      AOS.refresh();
+    };
+  }, []);
 
-    if (categories.includes(selectedCategory)) {
-      setActiveCategory(selectedCategory);
-    }
+  /* ================= FOOTER CATEGORY ================= */
+
+  useEffect(() => {
+    const selected = getCategoryFromLocation(location);
+
+    setActiveCategory(selected);
+
+    if (selected === "All") return;
 
     const timer = setTimeout(() => {
-      const classesSection =
-        document.getElementById(
-          "fitness-classes"
-        );
+      const section = document.getElementById(
+        "fitness-classes"
+      );
 
-      if (!classesSection) {
-        return;
-      }
+      if (!section) return;
 
       const navbarHeight = 85;
 
-      const sectionPosition =
-        classesSection.getBoundingClientRect().top +
+      const top =
+        section.getBoundingClientRect().top +
         window.scrollY -
         navbarHeight;
 
       window.scrollTo({
-        top: sectionPosition,
+        top: Math.max(0, top),
         behavior: "smooth",
       });
-    }, 250);
+    }, 200);
 
     return () => clearTimeout(timer);
-  }, [location.state]);
+  }, [location.search, location.state]);
 
-
-  /* =========================================================
-     FILTER CLASSES
-  ========================================================= */
+  /* ================= FILTER CLASSES ================= */
 
   const filteredClasses = useMemo(() => {
     if (activeCategory === "All") {
@@ -421,34 +423,82 @@ const Classes = () => {
     }
 
     return classesData.filter(
-      (item) =>
-        item.category === activeCategory
+      (item) => item.category === activeCategory
     );
   }, [activeCategory]);
 
+  /* ================= CATEGORY BUTTON CLICK ================= */
+
+  const handleCategoryChange = (category) => {
+    setActiveCategory(category);
+
+    navigate(
+      category === "All"
+        ? "/classes"
+        : `/classes?category=${category.toLowerCase()}`,
+      {
+        replace: true,
+        state: null,
+        preventScrollReset: true,
+      }
+    );
+  };
+
+  /* ================= REFRESH ANIMATION ================= */
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      AOS.refreshHard();
+    }, 120);
+
+    return () => clearTimeout(timer);
+  }, [activeCategory]);
+
+  /* ================= CLASS ICON ================= */
+
+  const getClassIcon = (category) => {
+    switch (category) {
+      case "Strength":
+        return <FaDumbbell />;
+      case "Cardio":
+        return <FiActivity />;
+      case "HIIT":
+        return <FiZap />;
+      case "Yoga":
+        return <FiHeart />;
+      case "Personal":
+        return <FiTarget />;
+      default:
+        return <FiTrendingUp />;
+    }
+  };
+
 
   /* =========================================================
-     RETURN
+     MAIN JSX
   ========================================================= */
 
   return (
     <main className="classes-page">
 
       {/* =====================================================
-          HERO
-      ====================================================== */}
+          HERO SECTION
+      ===================================================== */}
 
       <section className="classes-hero">
 
         <div className="classes-hero-overlay" />
 
         <div className="classes-hero-decoration classes-decoration-one" />
-
         <div className="classes-hero-decoration classes-decoration-two" />
 
         <div className="classes-hero-container">
 
-          <div className="classes-hero-content">
+          <div
+            className="classes-hero-content"
+            data-aos="fade-right"
+            data-aos-duration="900"
+          >
 
             <div className="classes-eyebrow">
               <span />
@@ -490,8 +540,11 @@ const Classes = () => {
 
           </div>
 
-
-          <div className="classes-hero-right">
+          <div
+            className="classes-hero-right"
+            data-aos="fade-left"
+            data-aos-delay="200"
+          >
 
             <span>01</span>
 
@@ -499,9 +552,7 @@ const Classes = () => {
 
             <p>
               18 CLASSES
-              <strong>
-                6 TRAINING STYLES
-              </strong>
+              <strong>6 TRAINING STYLES</strong>
             </p>
 
           </div>
@@ -510,70 +561,72 @@ const Classes = () => {
 
       </section>
 
-
       {/* =====================================================
-          STATS
-      ====================================================== */}
+          STATS SECTION
+      ===================================================== */}
 
       <section className="classes-stats">
 
         <div className="classes-stats-container">
 
-          <div className="classes-stat">
-
+          <div
+            className="classes-stat"
+            data-aos="fade-up"
+          >
             <FiUsers />
 
             <div>
               <strong>50+</strong>
               <span>Weekly Sessions</span>
             </div>
-
           </div>
 
-
-          <div className="classes-stat">
-
+          <div
+            className="classes-stat"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
             <FiClock />
 
             <div>
               <strong>40–60</strong>
               <span>Minute Workouts</span>
             </div>
-
           </div>
 
-
-          <div className="classes-stat">
-
+          <div
+            className="classes-stat"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
             <FiTarget />
 
             <div>
               <strong>ALL</strong>
               <span>Fitness Levels</span>
             </div>
-
           </div>
 
-
-          <div className="classes-stat">
-
+          <div
+            className="classes-stat"
+            data-aos="fade-up"
+            data-aos-delay="300"
+          >
             <FiCalendar />
 
             <div>
               <strong>6 DAYS</strong>
               <span>Every Week</span>
             </div>
-
           </div>
 
         </div>
 
       </section>
 
-
       {/* =====================================================
-          CLASSES
-      ====================================================== */}
+          CLASSES SECTION
+      ===================================================== */}
 
       <section
         className="classes-main"
@@ -584,14 +637,15 @@ const Classes = () => {
           CLASSES
         </div>
 
-
         <div className="classes-container">
 
-          {/* =================================================
-              HEADING
-          ================================================= */}
+          {/* ================= HEADER ================= */}
 
-          <div className="classes-section-header">
+          <div
+            className="classes-section-header"
+            data-aos="fade-up"
+            data-aos-duration="800"
+          >
 
             <div>
 
@@ -603,14 +657,10 @@ const Classes = () => {
               <h2>
                 CHOOSE HOW YOU
                 <br />
-
-                <strong>
-                  WANT TO TRAIN.
-                </strong>
+                <strong>WANT TO TRAIN.</strong>
               </h2>
 
             </div>
-
 
             <p>
               Select a training style and
@@ -621,25 +671,26 @@ const Classes = () => {
 
           </div>
 
+          {/* ================= CATEGORY FILTER ================= */}
 
-          {/* =================================================
-              FILTER
-          ================================================= */}
-
-          <div className="classes-filter">
+          <div
+            className="classes-filter"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
 
             {categories.map((category) => (
 
               <button
-                type="button"
                 key={category}
+                type="button"
                 className={
                   activeCategory === category
                     ? "active"
                     : ""
                 }
                 onClick={() =>
-                  setActiveCategory(category)
+                  handleCategoryChange(category)
                 }
               >
                 {category}
@@ -649,33 +700,28 @@ const Classes = () => {
 
           </div>
 
+          {/* ================= CLASS CARDS ================= */}
 
-         
+          <div
+            className="classes-grid"
+            key={activeCategory}
+          >
 
-
-          {/* =================================================
-              CLASS CARDS
-          ================================================= */}
-
-          <div className="classes-grid">
-
-            {filteredClasses.map((item) => (
+            {filteredClasses.map((item, index) => (
 
               <article
                 className="class-card"
                 key={item.id}
+                data-aos="fade-up"
+                data-aos-duration="750"
+                data-aos-delay={(index % 3) * 100}
               >
 
-                {/* ===========================================
-                    IMAGE
-                    IMAGE TOUCH -> DETAIL PAGE
-                =========================================== */}
+                {/* IMAGE */}
 
                 <Link
                   to={`/classes/${item.id}`}
-                  state={{
-                    classData: item,
-                  }}
+                  state={{ classData: item }}
                   className="class-card-image"
                   aria-label={`View ${item.title} details`}
                 >
@@ -683,49 +729,28 @@ const Classes = () => {
                   <img
                     src={item.image}
                     alt={item.title}
+                    loading="lazy"
                   />
 
                   <div className="class-card-image-overlay" />
-
 
                   <span className="class-card-number">
                     {item.number}
                   </span>
 
-
                   <span className="class-card-category">
                     {item.category}
                   </span>
 
-
                   <div className="class-card-icon">
-
-                    {item.category === "Strength" ? (
-                      <FaDumbbell />
-                    ) : item.category === "Yoga" ? (
-                      <FiHeart />
-                    ) : item.category === "HIIT" ? (
-                      <FiZap />
-                    ) : item.category === "Cardio" ? (
-                      <FiActivity />
-                    ) : item.category === "Personal" ? (
-                      <FiTarget />
-                    ) : (
-                      <FiTrendingUp />
-                    )}
-
+                    {getClassIcon(item.category)}
                   </div>
 
                 </Link>
 
-
-                {/* ===========================================
-                    CONTENT
-                =========================================== */}
+                {/* CARD CONTENT */}
 
                 <div className="class-card-content">
-
-                  {/* META */}
 
                   <div className="class-card-meta">
 
@@ -741,21 +766,15 @@ const Classes = () => {
 
                   </div>
 
-
-                  {/* TITLE - ALSO CLICKABLE */}
+                  {/* TITLE */}
 
                   <Link
                     to={`/classes/${item.id}`}
-                    state={{
-                      classData: item,
-                    }}
+                    state={{ classData: item }}
                     className="class-card-title-link"
                   >
-                    <h3>
-                      {item.title}
-                    </h3>
+                    <h3>{item.title}</h3>
                   </Link>
-
 
                   {/* DESCRIPTION */}
 
@@ -763,38 +782,21 @@ const Classes = () => {
                     {item.description}
                   </p>
 
-
-                  {/* TRAINER + DAYS */}
+                  {/* TRAINER + SCHEDULE */}
 
                   <div className="class-card-info">
 
                     <div>
-
-                      <span>
-                        TRAINER
-                      </span>
-
-                      <strong>
-                        {item.trainer}
-                      </strong>
-
+                      <span>TRAINER</span>
+                      <strong>{item.trainer}</strong>
                     </div>
 
-
                     <div>
-
-                      <span>
-                        DAYS
-                      </span>
-
-                      <strong>
-                        {item.schedule}
-                      </strong>
-
+                      <span>DAYS</span>
+                      <strong>{item.schedule}</strong>
                     </div>
 
                   </div>
-
 
                   {/* CLASS TIME */}
 
@@ -803,24 +805,13 @@ const Classes = () => {
                     <FiClock />
 
                     <div>
-
-                      <span>
-                        CLASS TIME
-                      </span>
-
-                      <strong>
-                        {item.time}
-                      </strong>
-
+                      <span>CLASS TIME</span>
+                      <strong>{item.time}</strong>
                     </div>
 
                   </div>
 
-
-                 
-                  {/* =========================================
-                      JOIN CLASS
-                  ========================================= */}
+                  {/* JOIN BUTTON */}
 
                   <Link
                     to="/join"
@@ -828,20 +819,13 @@ const Classes = () => {
                       classBooking: {
                         id: item.id,
                         title: item.title,
-                        category:
-                          item.category,
-                        trainer:
-                          item.trainer,
-                        schedule:
-                          item.schedule,
-                        time:
-                          item.time,
-                        duration:
-                          item.duration,
-                        level:
-                          item.level,
-                        image:
-                          item.image,
+                        category: item.category,
+                        trainer: item.trainer,
+                        schedule: item.schedule,
+                        time: item.time,
+                        duration: item.duration,
+                        level: item.level,
+                        image: item.image,
                       },
                     }}
                     className="class-card-button"
@@ -862,16 +846,18 @@ const Classes = () => {
 
       </section>
 
-
       {/* =====================================================
-          PROCESS
-      ====================================================== */}
+          THREE STEPS SECTION
+      ===================================================== */}
 
       <section className="classes-process">
 
         <div className="classes-container">
 
-          <div className="classes-process-heading">
+          <div
+            className="classes-process-heading"
+            data-aos="fade-up"
+          >
 
             <div className="classes-section-label">
               <span>02</span>
@@ -881,20 +867,21 @@ const Classes = () => {
             <h2>
               THREE STEPS.
               <br />
-
-              <strong>
-                ONE STRONGER YOU.
-              </strong>
+              <strong>ONE STRONGER YOU.</strong>
             </h2>
 
           </div>
-
 
           <div className="classes-process-grid">
 
             {/* STEP 1 */}
 
-            <article className="classes-process-card">
+            <article
+              className="classes-process-card"
+              data-aos="fade-up"
+              data-aos-duration="750"
+              data-aos-delay="100"
+            >
 
               <span className="process-number">
                 01
@@ -904,9 +891,7 @@ const Classes = () => {
                 <FiTarget />
               </div>
 
-              <h3>
-                Choose Your Goal
-              </h3>
+              <h3>Choose Your Goal</h3>
 
               <p>
                 Decide whether you want to
@@ -917,10 +902,14 @@ const Classes = () => {
 
             </article>
 
-
             {/* STEP 2 */}
 
-            <article className="classes-process-card">
+            <article
+              className="classes-process-card"
+              data-aos="fade-up"
+              data-aos-duration="750"
+              data-aos-delay="200"
+            >
 
               <span className="process-number">
                 02
@@ -930,9 +919,7 @@ const Classes = () => {
                 <FiCalendar />
               </div>
 
-              <h3>
-                Pick Your Class
-              </h3>
+              <h3>Pick Your Class</h3>
 
               <p>
                 Select a class that fits your
@@ -942,10 +929,14 @@ const Classes = () => {
 
             </article>
 
-
             {/* STEP 3 */}
 
-            <article className="classes-process-card">
+            <article
+              className="classes-process-card"
+              data-aos="fade-up"
+              data-aos-duration="750"
+              data-aos-delay="300"
+            >
 
               <span className="process-number">
                 03
@@ -955,9 +946,7 @@ const Classes = () => {
                 <FiZap />
               </div>
 
-              <h3>
-                Start Training
-              </h3>
+              <h3>Start Training</h3>
 
               <p>
                 Train with expert coaches,
@@ -973,10 +962,9 @@ const Classes = () => {
 
       </section>
 
-
       {/* =====================================================
-          EXPERIENCE
-      ====================================================== */}
+          EXPERIENCE SECTION
+      ===================================================== */}
 
       <section className="classes-experience">
 
@@ -984,42 +972,43 @@ const Classes = () => {
 
           {/* IMAGE */}
 
-          <div className="classes-experience-visual">
+          <div
+            className="classes-experience-visual"
+            data-aos="fade-right"
+            data-aos-duration="900"
+          >
 
             <div className="classes-experience-image">
 
               <img
                 src="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?auto=format&fit=crop&w=1400&q=90"
                 alt="FitZone training"
+                loading="lazy"
               />
 
             </div>
-
 
             <div className="classes-experience-badge">
 
               <FaDumbbell />
 
               <div>
-
-                <span>
-                  FITZONE
-                </span>
-
-                <strong>
-                  TRAIN STRONG
-                </strong>
-
+                <span>FITZONE</span>
+                <strong>TRAIN STRONG</strong>
               </div>
 
             </div>
 
           </div>
 
-
           {/* CONTENT */}
 
-          <div className="classes-experience-content">
+          <div
+            className="classes-experience-content"
+            data-aos="fade-left"
+            data-aos-duration="900"
+            data-aos-delay="150"
+          >
 
             <div className="classes-section-label">
               <span>03</span>
@@ -1029,13 +1018,8 @@ const Classes = () => {
             <h2>
               MORE THAN
               <br />
-
-              JUST A{" "}
-              <strong>
-                WORKOUT.
-              </strong>
+              JUST A <strong>WORKOUT.</strong>
             </h2>
-
 
             <p>
               Every FitZone class combines
@@ -1045,60 +1029,39 @@ const Classes = () => {
               progress.
             </p>
 
-
-            {/* BENEFITS */}
-
             <div className="classes-benefits">
 
               <div>
-                <span>
-                  <FiCheck />
-                </span>
+                <span><FiCheck /></span>
                 Professional Coaching
               </div>
 
-
               <div>
-                <span>
-                  <FiCheck />
-                </span>
+                <span><FiCheck /></span>
                 Structured Workouts
               </div>
 
-
               <div>
-                <span>
-                  <FiCheck />
-                </span>
+                <span><FiCheck /></span>
                 Modern Equipment
               </div>
 
-
               <div>
-                <span>
-                  <FiCheck />
-                </span>
+                <span><FiCheck /></span>
                 Supportive Community
               </div>
 
-
               <div>
-                <span>
-                  <FiCheck />
-                </span>
+                <span><FiCheck /></span>
                 Multiple Fitness Levels
               </div>
 
-
               <div>
-                <span>
-                  <FiCheck />
-                </span>
+                <span><FiCheck /></span>
                 Progress Focused
               </div>
 
             </div>
-
 
             <Link
               to="/join"
